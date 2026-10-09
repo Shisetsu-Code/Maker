@@ -42,7 +42,7 @@ class MakerBrowser(unittest.TestCase):
     def test_02_template_import_and_export(self):
         self.page.get_by_role('button',name='Gestionar plantillas',exact=True).click()
         self.page.locator('#template-upload').set_input_files(str(ROOT/'templates/aurora.template.json'))
-        expect(self.page.get_by_text('Aurora',exact=True).first).to_be_visible()
+        expect(self.page.locator('#manager').get_by_role('heading',name='Aurora',exact=True)).to_be_visible()
         self.page.get_by_role('button',name='Usar Aurora',exact=True).click()
         expect(self.frame().locator('.mk-site')).to_have_attribute('data-layout','editorial')
         with self.page.expect_download() as download:
@@ -92,6 +92,43 @@ class MakerBrowser(unittest.TestCase):
         self.page.get_by_label('Nombre de plantilla',exact=True).fill('Mi nueva plantilla')
         self.page.get_by_role('button',name='Guardar plantilla',exact=True).click()
         expect(self.page.get_by_role('button',name='Usar Mi nueva plantilla',exact=True)).to_be_visible()
+        self.page.get_by_role('button',name='Archivar Mi nueva plantilla',exact=True).click()
+        expect(self.page.get_by_role('button',name='Restaurar Mi nueva plantilla',exact=True)).to_be_visible()
+        self.page.get_by_role('button',name='Restaurar Mi nueva plantilla',exact=True).click()
+        expect(self.page.get_by_role('button',name='Archivar Mi nueva plantilla',exact=True)).to_be_visible()
         self.page.screenshot(path=str(ARTIFACTS/'template-manager.png'),full_page=True)
+
+    def test_07_logo_and_project_import(self):
+        import base64
+        png=self.page.evaluate("""() => { const c=document.createElement('canvas');c.width=96;c.height=96;const x=c.getContext('2d');x.fillStyle='#ff8252';x.fillRect(0,0,96,96);return c.toDataURL('image/png').split(',')[1]; }""")
+        self.page.locator('#logo-upload').set_input_files({'name':'logo.png','mimeType':'image/png','buffer':base64.b64decode(png)})
+        expect(self.frame().locator('.mk-brand img')).to_be_visible()
+        with self.page.expect_download() as download:
+            self.page.get_by_role('button',name='Descargar proyecto',exact=True).click()
+        path=ARTIFACTS/'project-with-logo.json';download.value.save_as(str(path))
+        saved=json.loads(path.read_text());self.assertTrue(saved['site']['logo'].startswith('data:image/'))
+        self.page.get_by_role('button',name='Quitar',exact=True).click()
+        expect(self.frame().locator('.mk-brand img')).to_have_count(0)
+        self.page.locator('#project-upload').set_input_files(str(path))
+        expect(self.frame().locator('.mk-brand img')).to_be_visible()
+        self.assertFalse(self.errors)
+
+    def test_08_sections_history_and_escaped_content(self):
+        self.page.get_by_role('button',name='Estructura',exact=True).click()
+        self.page.get_by_label('Catálogo',exact=True).uncheck()
+        expect(self.frame().locator('#mk-catalog')).to_have_count(0)
+        self.page.get_by_role('button',name='Deshacer',exact=True).click()
+        expect(self.frame().locator('#mk-catalog')).to_be_visible()
+        self.page.get_by_role('button',name='Rehacer',exact=True).click()
+        expect(self.frame().locator('#mk-catalog')).to_have_count(0)
+        self.page.get_by_role('button',name='Subir Preguntas frecuentes',exact=True).click()
+        expect(self.frame().locator('.mk-main > section').nth(2)).to_have_attribute('id','mk-faq')
+        ids=self.frame().locator('.mk-main > section').evaluate_all('(els)=>els.map(el=>el.id)')
+        self.assertLess(ids.index('mk-faq'),ids.index('mk-features'))
+        self.page.get_by_role('button',name='Marca',exact=True).click()
+        self.page.get_by_label('Nombre de tu marca',exact=True).fill('<img src=x onerror=alert(1)>')
+        expect(self.frame().locator('.mk-brand')).to_contain_text('<img src=x onerror=alert(1)>')
+        expect(self.frame().locator('.mk-brand img')).to_have_count(0)
+        self.assertFalse(self.errors)
 
 if __name__=='__main__': unittest.main(verbosity=2)
