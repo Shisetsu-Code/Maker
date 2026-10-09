@@ -1,7 +1,7 @@
 name: Maker checks
 on:
   push:
-    branches: [main, maker-initial]
+    branches: [main, maker-initial, maker-functional-qa]
   pull_request:
   workflow_dispatch:
 permissions:
@@ -69,6 +69,11 @@ jobs:
           BROWSER: ${{ matrix.browser }}
           PYTHONUNBUFFERED: '1'
         run: python tests/localhost.py
+      - name: Extended customer journeys on localhost
+        env:
+          BROWSER: ${{ matrix.browser }}
+          PYTHONUNBUFFERED: '1'
+        run: python tests/functional.py
       - name: Screenshots, traces and JSON report
         if: always()
         uses: actions/upload-artifact@v4
