@@ -2,11 +2,9 @@
 import base64
 import json
 import os
-from pathlib import Path
 import sys
 import time
 import unittest
-
 import localhost as base
 from playwright.sync_api import expect
 
@@ -16,6 +14,10 @@ base.acceptance.ARTIFACTS = ARTIFACTS
 
 
 class CustomerFlows(base.MakerLocalhost):
+    def setUp(self):
+        super().setUp()
+        self.context.set_default_timeout(10000)
+
     def tab(self, name):
         self.page.get_by_role('button', name=name, exact=True).click()
 
@@ -53,9 +55,11 @@ class CustomerFlows(base.MakerLocalhost):
         self.fill('Nombre de tu marca', 'Diseño recibido')
         self.tab('Compartir diseño')
         url = self.page.get_by_label('Enlace del diseño', exact=True).input_value()
-        # A separate browser context is a real recipient, without sender storage.
         receiver = self.browser.new_context(viewport={'width': 1440, 'height': 1000})
         self.addCleanup(receiver.close)
+        receiver.set_default_timeout(10000)
+        receiver.tracing.start(screenshots=True, snapshots=True)
+        self.addCleanup(lambda: receiver.tracing.stop(path=str(ARTIFACTS / 'share-recipient.zip')))
         receiver.route('**/*', self.guard_request)
         receiver.on('page', self.observe_page)
         self.page = receiver.new_page()
@@ -82,7 +86,6 @@ class CustomerFlows(base.MakerLocalhost):
 
     def test_11_color_picker_updates_contrast_and_palette_selection(self):
         color = self.page.get_by_label('Color principal', exact=True)
-        # Native color dialogs are OS UI; dispatch the browser's input event.
         color.evaluate("el => {el.value='#ffffff';el.dispatchEvent(new Event('input',{bubbles:true}));}")
         expected = self.page.evaluate("async () => {const m=await import('./src/core.js');return m.contrast('#ffffff',m.ink('#ffffff')).toFixed(1);}")
         expect(self.page.locator('.contrast-badge')).to_contain_text('Contraste ' + expected + ':1')
@@ -163,7 +166,7 @@ class CustomerFlows(base.MakerLocalhost):
         dialog.get_by_label('Nombre de plantilla', exact=True).fill('Boreal')
         dialog.get_by_label('Identificador', exact=True).fill('boreal')
         dialog.get_by_label('Distribución', exact=True).select_option('compact')
-        dialog.get_by_label('Portada', exact=True).select_option('banner')
+        dialog.get_by_label('Tipo de portada', exact=True).select_option('banner')
         dialog.get_by_label('Columnas de catálogo', exact=True).fill('6')
         for label in ['Categorías', 'Catálogo', 'Destacados']:
             dialog.get_by_label(label, exact=True).uncheck()
@@ -267,7 +270,6 @@ class CustomerFlows(base.MakerLocalhost):
 
 def main():
     ARTIFACTS.mkdir(parents=True, exist_ok=True)
-    # The eight original scenarios are run separately by localhost.py in CI.
     names = sorted(name for name in CustomerFlows.__dict__ if name.startswith('test_'))
     suite = unittest.TestSuite(CustomerFlows(name) for name in names)
     started = time.monotonic()
