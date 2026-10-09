@@ -216,7 +216,7 @@ class CustomerFlows(base.MakerLocalhost):
         self.tab('Estilo')
         self.tab('Glass')
         for label in ['Redondeado', 'Desenfoque', 'Opacidad del vidrio']:
-            slider = self.page.get_by_label(label, exact=False)
+            slider = self.page.get_by_role('slider', name=label, exact=True)
             slider.focus()
             slider.press('End')
         self.page.get_by_label('Tipografía', exact=True).select_option('geometric')
