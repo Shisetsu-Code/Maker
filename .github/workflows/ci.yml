@@ -64,6 +64,11 @@ jobs:
         run: |
           python -m pip install playwright==1.56.0
           python -m playwright install --with-deps "$BROWSER"
+      - name: Immediate reload persistence regression
+        env:
+          BROWSER: ${{ matrix.browser }}
+          PYTHONUNBUFFERED: '1'
+        run: python tests/autosave.py
       - name: Exercise compiled website at 127.0.0.1 only
         env:
           BROWSER: ${{ matrix.browser }}
