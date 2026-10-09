@@ -2,7 +2,9 @@
 
 Editor visual del cliente y gestor de plantillas declarativas. Primera etapa: diseño, plantillas y exportación. Sin API de integración ni chat.
 
-## Probar
+**Se desarrolla y prueba en localhost dentro de GitHub Actions. No se publica en GitHub Pages ni en Cloudflare todavía.** No hace falta configurar Pages ni instalar un runner en tu PC.
+
+## Probar en tu PC
 
 Requiere Node.js 22 o superior. No hay dependencias de ejecución que instalar.
 
@@ -12,7 +14,7 @@ cd Maker
 npm run dev
 ```
 
-Abrir `http://127.0.0.1:4173/Maker/`. No abrir `index.html` con doble clic: los módulos y el catálogo necesitan un servidor HTTP. El HTML exportado sí se puede abrir como archivo.
+Abrir `http://127.0.0.1:4173/`. No abrir `index.html` con doble clic: los módulos y el catálogo necesitan un servidor HTTP. El HTML exportado sí se puede abrir como archivo.
 
 ## Qué incluye
 
@@ -32,27 +34,32 @@ En **Plantillas**, subir `templates/aurora.template.json` o duplicar una de las 
 
 Las nuevas composiciones de bloques se cargan sin reconstruir el motor. Un componente o interacción que todavía no exista necesita desarrollo. Nombre y versión identifican una instantánea inmutable; un cambio requiere nueva versión o ID. Los proyectos incluyen su propia copia para no romperse al archivar plantillas.
 
-**Las cargas son locales al navegador.** Para distribuir un catálogo a todos los usuarios: exportarlo desde el gestor, revisar el JSON y reemplazar `templates/catalog.json` en el repositorio. La próxima publicación lo ofrecerá a los navegadores nuevos y lo combinará con las plantillas locales existentes.
+**Las cargas son locales al navegador.** Para distribuir un catálogo a todos los usuarios: exportarlo desde el gestor, revisar el JSON y reemplazar `templates/catalog.json` en el repositorio. La próxima compilación lo incluirá y lo combinará con las plantillas locales existentes al abrir el editor.
 
 ## Guardado y privacidad
 
 Esta demo no tiene autenticación ni backend. El gestor no es un área administrativa protegida. Los cambios se guardan en `localStorage` de este origen; no se sincronizan entre dispositivos. Descargar el proyecto es la copia de respaldo. Las imágenes se redimensionan en el navegador y viajan dentro del proyecto, no se suben a un servidor.
 
-El enlace compartido incluye contenido, plantilla y estilo, pero omite logo y portada. Es público para cualquiera que lo reciba, no un enlace privado. No cargar datos sensibles en una demo.
+El enlace compartido incluye contenido, plantilla y estilo, pero omite logo y portada. No es un enlace privado. En localhost, sólo funciona para quien tenga la aplicación disponible en ese mismo origen; no crea un sitio en Internet. No cargar datos sensibles en una demo.
 
-## Pruebas y GitHub
+## Pruebas en GitHub Actions
+
+**Maker checks** ejecuta pruebas unitarias y compila `dist/`. Después, dos jobs descargan exactamente ese build, lo sirven en `127.0.0.1:4173` dentro de runners de GitHub y lo prueban con Chromium y Firefox. El servidor se cierra al terminar; no queda una URL pública.
+
+Se recorren todas las plantillas y materiales del catálogo en escritorio y móvil. Los artefactos de cada corrida incluyen:
+
+- `maker-static-site`: aplicación compilada. Su existencia no implica que todas las pruebas hayan pasado.
+- `maker-browser-evidence-chromium` y `maker-browser-evidence-firefox`: capturas por combinación, trazas, log de servidor y `summary.json` con SHA y resultados.
+
+Los artefactos se conservan siete días. Revisar la pestaña Actions y el resultado de ambos jobs; este README no sustituye una corrida real. [Detalle del flujo y comandos locales](docs/testing.md).
 
 ```sh
 npm test
 npm run build
 python -m pip install playwright==1.56.0
-python -m playwright install chromium
-python tests/browser.py
+python -m playwright install chromium firefox
+python tests/localhost.py
 ```
-
-`Maker checks` ejecuta sintaxis, pruebas unitarias y aceptación Chromium en GitHub Actions. Guarda capturas/trazas en `maker-browser-evidence` y la aplicación estática en `maker-static-site` durante siete días. Los resultados vigentes están en la pestaña Actions; este README no sustituye una corrida real.
-
-`Deploy Maker demo` publica `dist/` en GitHub Pages después de un push a main que haya superado las pruebas. Si Pages no estaba activado y falla el paso Configure Pages, elegir **Settings → Pages → Build and deployment → Source: GitHub Actions** y ejecutar ese workflow nuevamente. No se requieren tokens de terceros en el navegador.
 
 ## Arquitectura
 
@@ -64,4 +71,4 @@ python tests/browser.py
 
 Implementación propia basada en el flujo de la referencia aportada: barra de controles, vista previa, personalización y código de diseño. No contiene el HAR, credenciales, endpoints, marcas ni recursos gráficos del proveedor original. No es una copia de su backend.
 
-Próxima etapa, fuera de esta entrega: autenticación, catálogo compartido en servidor, publicación multisitio, Cloudflare, API de integración y chat.
+Próxima etapa, fuera de esta entrega: autenticación, catálogo compartido en servidor, publicación multisitio en Cloudflare, API de integración y chat. No hay despliegues automáticos configurados.
