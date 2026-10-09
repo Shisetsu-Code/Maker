@@ -1,0 +1,7 @@
+node_modules/
+dist/
+artifacts/
+.superpowers/
+__pycache__/
+*.har
+.env*

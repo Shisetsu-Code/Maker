@@ -1,0 +1,12 @@
+{
+  "format": "maker-template-1",
+  "version": "1.0.0",
+  "sections": ["hero", "features", "catalog", "faq"],
+  "materials": ["flat", "glass", "metal"],
+  "id": "aurora",
+  "name": "Aurora",
+  "description": "Plantilla de ejemplo: editá este archivo e importalo en Maker.",
+  "layout": "editorial",
+  "hero": "split",
+  "columns": 3
+}
