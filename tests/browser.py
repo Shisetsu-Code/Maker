@@ -31,7 +31,7 @@ class OriginalMaker(unittest.TestCase):
         self.page = self.context.new_page()
         self.console_errors=[]
         self.page.on('pageerror',lambda error:self.console_errors.append(str(error)))
-        self.page.goto(BASE+'/muestra/socio.html',wait_until='domcontentloaded')
+        self.page.goto(BASE+'/muestra/socio.html',wait_until='commit', timeout=8000)
         expect(self.page.locator('#seg-plantilla button[role="radio"]')).to_have_count(4,timeout=12000)
     def tearDown(self):
         self.page.screenshot(path=str(ART/(self._testMethodName+'.png')),full_page=True,animations='disabled')
@@ -40,7 +40,7 @@ class OriginalMaker(unittest.TestCase):
         expect(self.page.locator('#seg-vista [data-valor="lobby"]')).to_be_visible()
         expect(self.page.locator('#seg-disp [data-valor="celular"]')).to_be_visible()
         self.assertIn('Maker',self.page.title())
-        expect(self.page.locator('#filas')).to_be_visible()
+        expect(self.page.locator('#hoja-cabeza')).to_be_visible()
         self.assertEqual(self.page.locator('#seg-plantilla button').count(),4)
     def test_02_each_template_can_be_selected(self):
         for template in ('clasica','azul','blaze','brasa'):
