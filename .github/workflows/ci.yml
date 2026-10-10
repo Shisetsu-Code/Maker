@@ -25,6 +25,8 @@ jobs:
           node-version: '22'
       - name: Verify original code fidelity
         run: node --test tests/original-contract.test.cjs
+      - name: Verify optional full-HAR static resource recovery
+        run: python -m unittest discover -s tests -p test_extract_har_assets.py -v
       - name: Unpack captured static images
         run: python scripts/unpack_assets.py
       - name: Install headless browser
