@@ -6,21 +6,18 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="referrer" content="no-referrer">
 <meta name="dm-modo" content="socio">
-
-<title>Maker Studio — Personalizá tu sitio</title>
-<meta name="description" content="Maker: personalizá tu marca y previsualizá diseños, sin cuentas ni operaciones reales.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-src 'self' data: blob:; form-action 'none'; base-uri 'none'">
+<title>Demo de tu casino</title>
+<meta name="description" content="Tu casino con tus colores y tu logo, y tu panel de caja para probarlo. Demo: nada es real.">
 <link rel="icon" href="data:,">
-
-
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Oswald:wght@500;600;700&display=swap">
 <link rel="stylesheet" href="control.css">
 <link rel="stylesheet" href="socio.css">
 
 <!-- Lucide icons (ISC), as a sprite: <svg class="ic"><use href="#i-…"/></svg> -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; frame-src 'self' data: blob:; form-action 'none'; base-uri 'none'">
-<script src="./maker-offline.js"></script>
-<link rel="stylesheet" href="./maker-local.css">
-</head>
+<script src="./maker-offline.js"></script></head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></symbol>
@@ -58,7 +55,7 @@
 <div class="app" id="app" data-vista="lobby" data-disp="compu">
   <header class="barra">
     <div class="barra-marca">
-      <span class="barra-nombre" id="barra-nombre">Maker Base</span>
+      <span class="barra-nombre" id="barra-nombre">RushyBet</span>
       <span class="chip-demo">Demo</span>
     </div>
 
@@ -75,10 +72,10 @@
       </div>
       <div class="seg seg-barra" id="seg-plantilla" role="radiogroup" aria-label="Plantilla del lobby" data-solo="lobby">
         <span class="seg-pastilla" aria-hidden="true"></span>
-        <button type="button" class="tocable" role="radio" data-valor="clasica" aria-checked="true">Maker Base</button>
-        <button type="button" class="tocable" role="radio" data-valor="azul" aria-checked="false">Maker Azul</button>
-        <button type="button" class="tocable" role="radio" data-valor="blaze" aria-checked="false">Maker Neón</button>
-        <button type="button" class="tocable" role="radio" data-valor="brasa" aria-checked="false">Maker Cobre</button>
+        <button type="button" class="tocable" role="radio" data-valor="clasica" aria-checked="true">Rushybet</button>
+        <button type="button" class="tocable" role="radio" data-valor="azul" aria-checked="false">RushyClub azul</button>
+        <button type="button" class="tocable" role="radio" data-valor="blaze" aria-checked="false">BlazeBet</button>
+        <button type="button" class="tocable" role="radio" data-valor="brasa" aria-checked="false">Brasa</button>
       </div>
     </div>
 
@@ -213,6 +210,5 @@
 
 <noscript><p class="sin-js">Este probador necesita JavaScript para mostrar la vista previa.</p></noscript>
 <script src="socio.js"></script>
-<script src="./maker-control.js"></script>
 </body>
 </html>

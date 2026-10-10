@@ -709,7 +709,7 @@ button:disabled { cursor: not-allowed; opacity: 0.45; }
   .barra-marca { grid-area: marca; }
   .barra-acciones { grid-area: acciones; }
   .barra-pastillas { grid-area: pastillas; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  /* the template selector gets a row of its own (half a phone is too narrow for «Maker Azul») */
+  /* the template selector gets a row of its own (half a phone is too narrow for «RushyClub azul») */
   #seg-plantilla { grid-column: 1 / -1; }
   .seg-barra { width: 100%; }
   .seg-barra > button { padding: 0 8px; }

@@ -5,12 +5,12 @@
    --dm-* que calcula derivar.ts y que la madre cambia en vivo con setProperty. Mismo mecanismo que el clon: el
    `html ` delante suma especificidad y le gana a la regla original sin depender del orden de carga.
 
-   Con los valores por defecto tiene que verse como el Maker Base de producción. Por eso:
+   Con los valores por defecto tiene que verse como el Rushybet de producción. Por eso:
      · los resplandores grandes escalan con --dm-glow-a (0,30 con un color oscuro como el naranja, 0,14 con uno claro
-       como el dorado): calc(var(--dm-glow-a) * k) da el alfa exacto de Maker Base en el primer caso y la mitad, como en
+       como el dorado): calc(var(--dm-glow-a) * k) da el alfa exacto de Rushybet en el primer caso y la mitad, como en
        el clon, en el segundo;
      · la tinta sobre el color lleno de iconos y tildes (casilla, robots, ícono activo) usa --dm-p-ink-grande si
-       derivar lo da (blanco sobre el naranja, como Maker Base) y si no --dm-p-ink.
+       derivar lo da (blanco sobre el naranja, como Rushybet) y si no --dm-p-ink.
    Verde, ámbar, rojo y el badge rojo NO se tocan: son estados (bien, atención, error), no marca.
    ══════════════════════════════════════════════════════════════════════════════════════════════════ */
 
@@ -66,7 +66,7 @@ html .v4[data-estilo="1"] .fx-pastilla{background:linear-gradient(180deg,rgba(va
 html .v4[data-estilo="1"] .nav > .fx-pastilla{border-color:rgba(var(--dm-p-rgb),.78);background:rgba(var(--dm-p-rgb),.13)}
 html .v4[data-estilo="1"] .main[data-fx~="deslizando"]{background:radial-gradient(130% 340px at 10% -130px,rgba(var(--dm-p-rgb),calc(var(--dm-glow-a) * .8667)),transparent 70%),var(--fondo)}
 
-/* El destello de un número que cambia: en Maker Base es un keyframe naranja fijo (v4FxCambio); acá sigue al color. */
+/* El destello de un número que cambia: en Rushybet es un keyframe naranja fijo (v4FxCambio); acá sigue al color. */
 @keyframes dmCambio{0%{box-shadow:0 0 0 0 rgba(var(--dm-p-claro-rgb),0)}25%{box-shadow:0 0 0 1.5px rgba(var(--dm-p-claro-rgb),.4)}100%{box-shadow:0 18px 34px -24px rgba(0,0,0,.9)}}
 html .v4[data-estilo="1"] .numero[data-fx~="cambio"]{animation-name:dmCambio}
 
@@ -77,7 +77,7 @@ html .v4[data-estilo="1"] .btn.btn-naranja.jug-pendiente:disabled{background:var
 html .v4[data-estilo="1"] .fly-subida .btn.fly-subiendo:disabled{color:var(--dm-tinta-llena)}
 html .v4[data-estilo="1"] .sop-enviar.listo{background:radial-gradient(circle at 50% 35%,rgba(var(--dm-p-claro-rgb),.34),rgba(var(--dm-p-rgb),.14) 72%);color:var(--dm-p-crema);box-shadow:inset 0 0 0 1.5px var(--dm-vidrio-borde)}
 
-/* El menú de los Logs: un gris cálido fijo en Maker Base; acá sale del fondo. */
+/* El menú de los Logs: un gris cálido fijo en Rushybet; acá sale del fondo. */
 html .v4 .lg-menu{background:color-mix(in srgb,var(--dm-f) 95%,#fff)}
 
 /* ── escritorio ── */
@@ -100,7 +100,7 @@ html .v4[data-estilo="1"] .pl-grilla > .tarjeta:hover{border-color:color-mix(in 
 }
 }
 
-/* ── marca propia (otro nombre o logo subido): la R de Maker Base no queda en el panel del prospecto ──
+/* ── marca propia (otro nombre o logo subido): la R de Rushybet no queda en el panel del prospecto ──
    Como el clon (su piel esconde .isotipo), y en el círculo del encabezado va el isotipo de la demo (la inicial sobre
    el color de la marca, el mismo que ve el lobby). entry-panel.tsx pone la clase y --demo-iso = url(<isotipo>). */
 html.dm-marca-propia .v4 .isotipo{display:none}
@@ -108,4 +108,4 @@ html.dm-marca-propia .v4[data-estilo="1"] .hdr-iso{background:var(--demo-iso,non
 
 /* ── visor sin canvas (respaldo): el logo de marca con un corrimiento de tono aproximado. puente-vista.ts pone
    .dm-filtro en <html> sólo cuando la madre manda --dm-img-filtro; si no, esta regla no existe. ── */
-html.dm-filtro img[src*="maker-base/rushybet-logo"]{filter:var(--dm-img-filtro)}
+html.dm-filtro img[src*="rushybet/rushybet-logo"]{filter:var(--dm-img-filtro)}

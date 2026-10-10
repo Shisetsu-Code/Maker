@@ -36,7 +36,7 @@
 
 /* la barra de arriba lleva un botón más que el probador: hasta 1600 px, «Descargar» y «Restablecer» van sólo con su
    ícono (el nombre queda en aria-label) y «Mandame mi diseño», que es lo que importa, conserva el texto */
-/* LA BARRA EN LA COMPU NO SE PISA (2026-10-05: «Mandame mi diseño» tapaba «Maker Cobre» entre 1100 y 1600 px). La grilla del
+/* LA BARRA EN LA COMPU NO SE PISA (2026-10-05: «Mandame mi diseño» tapaba «Brasa» entre 1100 y 1600 px). La grilla del
    probador reparte los costados en partes iguales y centra las pastillas: con el botón más largo de la demo, la
    columna de la derecha quedaba más angosta que sus botones y éstos se le subían a la pastilla de plantillas. Acá
    cada costado mide lo que necesita y las pastillas se centran en lo que queda; además se achican un poco (cada

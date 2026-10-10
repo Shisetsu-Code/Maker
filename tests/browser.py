@@ -44,7 +44,7 @@ class OriginalMaker(unittest.TestCase):
     def test_01_editor_is_the_original(self):
         expect(self.page.locator('#seg-vista [data-valor="lobby"]')).to_be_visible()
         expect(self.page.locator('#seg-disp [data-valor="celular"]')).to_be_visible()
-        self.assertIn('Maker',self.page.title())
+        self.assertEqual(self.page.title(),'Demo de tu casino')
         # Desktop drawer is always visible; the sheet handle exists only on mobile.
         expect(self.page.locator('#filas [data-abrir="p"]')).to_be_visible()
         self.assertEqual(self.page.locator('#seg-plantilla button').count(),4)

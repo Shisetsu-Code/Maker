@@ -27,3 +27,18 @@ with ZipFile(BytesIO(payload)) as bundle:
 print(f'Unpacked {extracted} local image resources')
 if extracted != 78:
     raise SystemExit(f'Expected 78 images; got {extracted}')
+
+# The first asset bundle retained an intermediate 'maker-base' path.
+# Re-expose those same captured image bytes under the original source URLs.
+from shutil import copyfile
+source = ROOT / 'muestra' / 'maker-base'
+if source.exists():
+    for asset in source.rglob('*'):
+        if not asset.is_file() or asset.suffix.lower() not in ('.webp', '.png'):
+            continue
+        relative = asset.relative_to(source)
+        for origin in (ROOT / 'muestra' / 'rushybet', ROOT / 'rushybet'):
+            target = origin / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            if not target.exists():
+                copyfile(asset, target)

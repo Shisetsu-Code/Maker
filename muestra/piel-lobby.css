@@ -1,7 +1,7 @@
 /* piel-lobby.css — la hoja de la marca para el lobby de la demo.
    Todas las reglas leen var(--dm-*): el control mueve las variables y esta hoja no cambia nunca.
    .lb.mb-tema = el lobby con tema (dos clases le ganan a la regla de una sola del CSS del lobby).
-   .mb-app     = la raiz de Maker BaseApp con tema (hojas de cargar/retirar, ingreso, juego, cargador).
+   .mb-app     = la raiz de RushybetApp con tema (hojas de cargar/retirar, ingreso, juego, cargador).
    .dm-aro     = la pone la vista en <html> cuando la marca lleva el borde metalico. */
 
 /* ---- estructura ---------------------------------------------------------------------------------------------- */
@@ -49,7 +49,7 @@
 /* ---- visor sin canvas (respaldo): el arte de marca con un corrimiento de tono aproximado --------------------------- */
 /* puente-vista.ts pone .dm-filtro en <html> sólo cuando la madre manda --dm-img-filtro (el visor no deja leer un
    canvas y las imágenes no se pueden pintar). Sin esa clase estas reglas no existen y los filtros del lobby siguen. */
-.dm-filtro img:is([src*="maker-base/rushybet-logo"],[src*="maker-base/v3/mark"],[src*="maker-base/v3/textura-banner"],[src*="maker-base/v3/cut-"],[src*="maker-base/v2/pop-"],[src*="maker-base/v2/recarga-fichas"]){filter:var(--dm-img-filtro)}
+.dm-filtro img:is([src*="rushybet/rushybet-logo"],[src*="rushybet/v3/mark"],[src*="rushybet/v3/textura-banner"],[src*="rushybet/v3/cut-"],[src*="rushybet/v2/pop-"],[src*="rushybet/v2/recarga-fichas"]){filter:var(--dm-img-filtro)}
 
 /* ---- la app (fuera del lobby) -------------------------------------------------------------------------------- */
 .mb-app .rb-input:focus{border-color:var(--dm-b-borde)!important;box-shadow:0 0 0 3px rgba(var(--dm-p-rgb),.16)!important}
