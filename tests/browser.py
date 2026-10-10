@@ -45,7 +45,8 @@ class OriginalMaker(unittest.TestCase):
         expect(self.page.locator('#seg-vista [data-valor="lobby"]')).to_be_visible()
         expect(self.page.locator('#seg-disp [data-valor="celular"]')).to_be_visible()
         self.assertIn('Maker',self.page.title())
-        expect(self.page.locator('#hoja-cabeza')).to_be_visible()
+        # Desktop drawer is always visible; the sheet handle exists only on mobile.
+        expect(self.page.locator('#filas [data-abrir="p"]')).to_be_visible()
         self.assertEqual(self.page.locator('#seg-plantilla button').count(),4)
     def test_02_each_template_can_be_selected(self):
         for template in ('clasica','azul','blaze','brasa'):
@@ -55,6 +56,8 @@ class OriginalMaker(unittest.TestCase):
             self.page.screenshot(path=str(ART/f'template-{template}.png'),animations='disabled')
     def test_03_panel_and_phone_switches(self):
         self.page.locator('#seg-vista [data-valor="panel"]').click()
+        # The original demo shows another tour when switching to the panel.
+        self.page.locator('#socio-tour .socio-tour-saltar').click(timeout=8000)
         expect(self.page.locator('#seg-vista [data-valor="panel"]')).to_have_attribute('aria-checked','true')
         self.page.locator('#seg-disp [data-valor="celular"]').click()
         expect(self.page.locator('#seg-disp [data-valor="celular"]')).to_have_attribute('aria-checked','true')
