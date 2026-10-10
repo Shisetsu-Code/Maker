@@ -53,6 +53,11 @@ class OriginalMaker(unittest.TestCase):
             btn=self.page.locator(f'#seg-plantilla [data-valor="{template}"]')
             btn.click()
             expect(btn).to_have_attribute('aria-checked','true')
+            # A selected tab alone is insufficient: assert the embedded template is actually ready.
+            active = self.page.locator('#escena .marco[data-activo="true"]')
+            expect(active).to_have_attribute('data-listo', 'true', timeout=20000)
+            view_text = active.locator('iframe').evaluate('(el) => el.contentDocument?.body?.innerText || ""')
+            self.assertGreater(len(view_text.strip()), 70, f'{template} is still empty')
             self.page.screenshot(path=str(ART/f'template-{template}.png'),animations='disabled')
     def test_03_panel_and_phone_switches(self):
         self.page.locator('#seg-vista [data-valor="panel"]').click()
