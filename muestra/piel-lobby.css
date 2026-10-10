@@ -1,0 +1,135 @@
+/* piel-lobby.css — la hoja de la marca para el lobby de la demo.
+   Todas las reglas leen var(--dm-*): el control mueve las variables y esta hoja no cambia nunca.
+   .lb.mb-tema = el lobby con tema (dos clases le ganan a la regla de una sola del CSS del lobby).
+   .mb-app     = la raiz de Maker BaseApp con tema (hojas de cargar/retirar, ingreso, juego, cargador).
+   .dm-aro     = la pone la vista en <html> cuando la marca lleva el borde metalico. */
+
+/* ---- estructura ---------------------------------------------------------------------------------------------- */
+.lb.mb-tema{background:var(--dm-f)}
+.lb.mb-tema .lb-side{background:var(--dm-riel-lado)}
+.lb.mb-tema .lb-tabbar{background:var(--dm-barra);box-shadow:inset 0 1px 0 0 rgba(255,255,255,.06),0 -12px 30px rgba(0,0,0,.6)}
+
+/* ---- marcas de color ----------------------------------------------------------------------------------------- */
+.lb.mb-tema .lb-tab::after{background:var(--dm-p-tab)}
+.lb.mb-tema .lb-marca{background:linear-gradient(180deg,var(--dm-p-tab),rgba(var(--dm-p-rgb),.35))!important}
+.lb.mb-tema .lb-nav::before,.lb.mb-tema .lb-trow::before{background:var(--dm-p)}
+.lb.mb-tema .lb-live{background:var(--dm-p-texto);box-shadow:0 0 10px rgba(var(--dm-p-rgb),.9)}
+
+/* ---- el ganador que entra ------------------------------------------------------------------------------------ */
+.lb.mb-tema .lb-win{animation-name:dmWin}
+@keyframes dmWin{0%{opacity:0;transform:translateY(-18px) scale(.985)}55%{opacity:1;background:rgba(var(--dm-p-rgb),.12)}100%{opacity:1;transform:none;background:transparent}}
+.lb.mb-tema .lb-win::after{background:linear-gradient(100deg,rgba(255,255,255,0),rgba(var(--dm-p-claro-rgb),.3),rgba(255,255,255,0))}
+
+/* ---- estados y detalles -------------------------------------------------------------------------------------- */
+.lb.mb-tema .lb-prov:hover{box-shadow:inset 0 0 0 1px rgba(var(--dm-p-rgb),.45)}
+.lb.mb-tema .lb-sug-n em{color:var(--dm-p-texto)}
+.lb.mb-tema .lb-prow:hover h2{color:var(--dm-p-texto)}
+.lb.mb-tema .lb-ord[data-on="1"]{background:rgba(var(--dm-p-rgb),.14);box-shadow:inset 0 0 0 1px rgba(var(--dm-p-rgb),.45);color:var(--dm-p-texto)}
+.lb.mb-tema .lb-fav[data-on="1"] path{fill:var(--dm-p);stroke:var(--dm-p)}
+
+/* ---- foco ---------------------------------------------------------------------------------------------------- */
+.lb.mb-tema button:focus-visible,.lb.mb-tema [role="button"]:focus-visible,.lb.mb-tema .lb-trow-ir:focus-visible,.lb.mb-tema .lb-fav:focus-visible{outline-color:var(--dm-p)}
+
+/* ---- campos y botones ---------------------------------------------------------------------------------------- */
+.lb.mb-tema .lb-busca-campo{background:var(--dm-f1)}
+.lb.mb-tema .lb-btn:active{box-shadow:inset 0 0 0 1px rgba(255,255,255,.09),inset 0 2px 4px rgba(var(--dm-b-activo-rgb),.32),0 1px 2px rgba(0,0,0,.32)}
+
+/* ---- neutros que en el lobby estan escritos fijos (siguen al fondo elegido) ---------------------------------- */
+/* El boton del azar y la lista de sugerencias eran RAISED/HOVER sobre #121212: pasan a la superficie del fondo.
+   El hover lleva su propia regla porque la de arriba (tres clases) le ganaria a la :hover del lobby (dos). */
+.lb.mb-tema .lb-azar,.lb.mb-tema .lb-sug{background:var(--dm-sup)}
+.lb.mb-tema .lb-azar:hover,.lb.mb-tema .lb-sug-r:hover,.lb.mb-tema .lb-sug-r:focus-visible{background:var(--dm-n-cerrar)}
+.lb.mb-tema .lb-sug-art{background-color:var(--dm-n-cerrar)}
+.lb.mb-tema .lb-tbl{background:var(--dm-riel)}
+/* Las tarjetas de PROVEEDORES (En vivo / Slots de compu) y la miniatura sin portada del ultimo ganador tienen el gris
+   escrito en linea (RAISED / HOVER): con un fondo teñido quedaban cajas grises. !important porque el estilo es en linea. */
+.lb.mb-tema button.lb-btn[aria-label^="Ver los "]{background:var(--dm-sup)!important;border-color:var(--dm-filo-campo)!important}
+.lb.mb-tema .lb-thumb{background-color:var(--dm-n-cerrar)!important}
+
+/* ---- visor sin canvas (respaldo): el arte de marca con un corrimiento de tono aproximado --------------------------- */
+/* puente-vista.ts pone .dm-filtro en <html> sólo cuando la madre manda --dm-img-filtro (el visor no deja leer un
+   canvas y las imágenes no se pueden pintar). Sin esa clase estas reglas no existen y los filtros del lobby siguen. */
+.dm-filtro img:is([src*="maker-base/rushybet-logo"],[src*="maker-base/v3/mark"],[src*="maker-base/v3/textura-banner"],[src*="maker-base/v3/cut-"],[src*="maker-base/v2/pop-"],[src*="maker-base/v2/recarga-fichas"]){filter:var(--dm-img-filtro)}
+
+/* ---- la app (fuera del lobby) -------------------------------------------------------------------------------- */
+.mb-app .rb-input:focus{border-color:var(--dm-b-borde)!important;box-shadow:0 0 0 3px rgba(var(--dm-p-rgb),.16)!important}
+.mb-app .rb-focus:focus-visible{outline-color:var(--dm-p)}
+.mb-app .lb-fav[data-on="1"] path{fill:var(--dm-p);stroke:var(--dm-p)}
+.mb-app .lb-fav:focus-visible{outline-color:var(--dm-p)}
+.mb-app .lb-btn:active{box-shadow:inset 0 0 0 1px rgba(255,255,255,.09),inset 0 2px 4px rgba(var(--dm-b-activo-rgb),.32),0 1px 2px rgba(0,0,0,.32)}
+
+/* ---- el borde metalico (con .dm-aro en <html>) ---------------------------------------------------------------- */
+/* Un borde de CSS es de un solo color; el canto de metal es un degradado recortado en anillo: se pinta en toda la
+   caja y una mascara tapa el centro, dejando solo los 2 px del contorno. */
+.dm-aro .lb.mb-tema .lb-side::after{content:'';position:absolute;top:0;bottom:0;right:0;width:2px;pointer-events:none;background:var(--dm-anillo)}
+.dm-aro .lb.mb-tema .lb-tabbar::before{content:'';position:absolute;left:0;right:0;top:0;height:2px;pointer-events:none;background:var(--dm-anillo)}
+.dm-aro .lb.mb-tema .lb-promo::after,.dm-aro .lb.mb-tema .lb-hero-panel::after{content:'';position:absolute;inset:0;border-radius:20px;padding:2px;pointer-events:none;background:var(--dm-anillo);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude}
+
+/* ---- la R del cargador de la casa (sin logo de marca: CargadorRushy dibuja la R con colores en atributos) ------ */
+/* Una regla de CSS le gana a un atributo de presentacion de SVG. */
+.mb-app svg [stroke="#ff5a00" i]{stroke:var(--dm-p)}
+.mb-app svg [stroke="#ff7d33" i]{stroke:var(--dm-p-claro)}
+.mb-app svg [stroke="#ffe2cc" i]{stroke:color-mix(in srgb,var(--dm-p) 20%,#fff)}
+.mb-app svg stop[stop-color="#ff5a00" i]{stop-color:var(--dm-p)}
+
+/* ---- atributos SVG que reciben var(--dm-*) ---------------------------------------------------------------------- */
+/* var() no vale dentro de un atributo de presentacion (fill="var(--dm-p)" pinta negro). Estas reglas le devuelven el
+   valor: cubren el chevron del carrusel, la flecha de RETIRAR, la lupa del buscador y el neon y el brillo del
+   cargador con logo. El bloque lo escribe build/reglas-svg.mjs a partir de TIPO_VAR (derivar.ts): no editar a mano. */
+/* reglas-svg:inicio */
+[fill="var(--dm-avatar-1)"]{fill:var(--dm-avatar-1)}[stroke="var(--dm-avatar-1)"]{stroke:var(--dm-avatar-1)}[stop-color="var(--dm-avatar-1)"]{stop-color:var(--dm-avatar-1)}
+[fill="var(--dm-avatar-2)"]{fill:var(--dm-avatar-2)}[stroke="var(--dm-avatar-2)"]{stroke:var(--dm-avatar-2)}[stop-color="var(--dm-avatar-2)"]{stop-color:var(--dm-avatar-2)}
+[fill="var(--dm-b)"]{fill:var(--dm-b)}[stroke="var(--dm-b)"]{stroke:var(--dm-b)}[stop-color="var(--dm-b)"]{stop-color:var(--dm-b)}
+[fill="var(--dm-b-borde)"]{fill:var(--dm-b-borde)}[stroke="var(--dm-b-borde)"]{stroke:var(--dm-b-borde)}[stop-color="var(--dm-b-borde)"]{stop-color:var(--dm-b-borde)}
+[fill="var(--dm-b-ink)"]{fill:var(--dm-b-ink)}[stroke="var(--dm-b-ink)"]{stroke:var(--dm-b-ink)}[stop-color="var(--dm-b-ink)"]{stop-color:var(--dm-b-ink)}
+[fill="var(--dm-b-ink-grande)"]{fill:var(--dm-b-ink-grande)}[stroke="var(--dm-b-ink-grande)"]{stroke:var(--dm-b-ink-grande)}[stop-color="var(--dm-b-ink-grande)"]{stop-color:var(--dm-b-ink-grande)}
+[fill="var(--dm-badge-aro)"]{fill:var(--dm-badge-aro)}[stroke="var(--dm-badge-aro)"]{stroke:var(--dm-badge-aro)}[stop-color="var(--dm-badge-aro)"]{stop-color:var(--dm-badge-aro)}
+[fill="var(--dm-barra)"]{fill:var(--dm-barra)}[stroke="var(--dm-barra)"]{stroke:var(--dm-barra)}[stop-color="var(--dm-barra)"]{stop-color:var(--dm-barra)}
+[fill="var(--dm-brillo)"]{fill:var(--dm-brillo)}[stroke="var(--dm-brillo)"]{stroke:var(--dm-brillo)}[stop-color="var(--dm-brillo)"]{stop-color:var(--dm-brillo)}
+[fill="var(--dm-busca-borde)"]{fill:var(--dm-busca-borde)}[stroke="var(--dm-busca-borde)"]{stroke:var(--dm-busca-borde)}[stop-color="var(--dm-busca-borde)"]{stop-color:var(--dm-busca-borde)}
+[fill="var(--dm-cajero-tinta)"]{fill:var(--dm-cajero-tinta)}[stroke="var(--dm-cajero-tinta)"]{stroke:var(--dm-cajero-tinta)}[stop-color="var(--dm-cajero-tinta)"]{stop-color:var(--dm-cajero-tinta)}
+[fill="var(--dm-calido)"]{fill:var(--dm-calido)}[stroke="var(--dm-calido)"]{stroke:var(--dm-calido)}[stop-color="var(--dm-calido)"]{stop-color:var(--dm-calido)}
+[fill="var(--dm-campo)"]{fill:var(--dm-campo)}[stroke="var(--dm-campo)"]{stroke:var(--dm-campo)}[stop-color="var(--dm-campo)"]{stop-color:var(--dm-campo)}
+[fill="var(--dm-campo-app)"]{fill:var(--dm-campo-app)}[stroke="var(--dm-campo-app)"]{stroke:var(--dm-campo-app)}[stop-color="var(--dm-campo-app)"]{stop-color:var(--dm-campo-app)}
+[fill="var(--dm-chat-ink)"]{fill:var(--dm-chat-ink)}[stroke="var(--dm-chat-ink)"]{stroke:var(--dm-chat-ink)}[stop-color="var(--dm-chat-ink)"]{stop-color:var(--dm-chat-ink)}
+[fill="var(--dm-deporte)"]{fill:var(--dm-deporte)}[stroke="var(--dm-deporte)"]{stroke:var(--dm-deporte)}[stop-color="var(--dm-deporte)"]{stop-color:var(--dm-deporte)}
+[fill="var(--dm-f)"]{fill:var(--dm-f)}[stroke="var(--dm-f)"]{stroke:var(--dm-f)}[stop-color="var(--dm-f)"]{stop-color:var(--dm-f)}
+[fill="var(--dm-f-afuera)"]{fill:var(--dm-f-afuera)}[stroke="var(--dm-f-afuera)"]{stroke:var(--dm-f-afuera)}[stop-color="var(--dm-f-afuera)"]{stop-color:var(--dm-f-afuera)}
+[fill="var(--dm-f1)"]{fill:var(--dm-f1)}[stroke="var(--dm-f1)"]{stroke:var(--dm-f1)}[stop-color="var(--dm-f1)"]{stop-color:var(--dm-f1)}
+[fill="var(--dm-f3)"]{fill:var(--dm-f3)}[stroke="var(--dm-f3)"]{stroke:var(--dm-f3)}[stop-color="var(--dm-f3)"]{stop-color:var(--dm-f3)}
+[fill="var(--dm-filo-campo)"]{fill:var(--dm-filo-campo)}[stroke="var(--dm-filo-campo)"]{stroke:var(--dm-filo-campo)}[stop-color="var(--dm-filo-campo)"]{stop-color:var(--dm-filo-campo)}
+[fill="var(--dm-hoja)"]{fill:var(--dm-hoja)}[stroke="var(--dm-hoja)"]{stroke:var(--dm-hoja)}[stop-color="var(--dm-hoja)"]{stop-color:var(--dm-hoja)}
+[fill="var(--dm-marco)"]{fill:var(--dm-marco)}[stroke="var(--dm-marco)"]{stroke:var(--dm-marco)}[stop-color="var(--dm-marco)"]{stop-color:var(--dm-marco)}
+[fill="var(--dm-mult3-fg)"]{fill:var(--dm-mult3-fg)}[stroke="var(--dm-mult3-fg)"]{stroke:var(--dm-mult3-fg)}[stop-color="var(--dm-mult3-fg)"]{stop-color:var(--dm-mult3-fg)}
+[fill="var(--dm-mult3-ring)"]{fill:var(--dm-mult3-ring)}[stroke="var(--dm-mult3-ring)"]{stroke:var(--dm-mult3-ring)}[stop-color="var(--dm-mult3-ring)"]{stop-color:var(--dm-mult3-ring)}
+[fill="var(--dm-n-campo)"]{fill:var(--dm-n-campo)}[stroke="var(--dm-n-campo)"]{stroke:var(--dm-n-campo)}[stop-color="var(--dm-n-campo)"]{stop-color:var(--dm-n-campo)}
+[fill="var(--dm-n-cerrar)"]{fill:var(--dm-n-cerrar)}[stroke="var(--dm-n-cerrar)"]{stroke:var(--dm-n-cerrar)}[stop-color="var(--dm-n-cerrar)"]{stop-color:var(--dm-n-cerrar)}
+[fill="var(--dm-n-lista)"]{fill:var(--dm-n-lista)}[stroke="var(--dm-n-lista)"]{stroke:var(--dm-n-lista)}[stop-color="var(--dm-n-lista)"]{stop-color:var(--dm-n-lista)}
+[fill="var(--dm-n-pedido)"]{fill:var(--dm-n-pedido)}[stroke="var(--dm-n-pedido)"]{stroke:var(--dm-n-pedido)}[stop-color="var(--dm-n-pedido)"]{stop-color:var(--dm-n-pedido)}
+[fill="var(--dm-neon-1)"]{fill:var(--dm-neon-1)}[stroke="var(--dm-neon-1)"]{stroke:var(--dm-neon-1)}[stop-color="var(--dm-neon-1)"]{stop-color:var(--dm-neon-1)}
+[fill="var(--dm-neon-2)"]{fill:var(--dm-neon-2)}[stroke="var(--dm-neon-2)"]{stroke:var(--dm-neon-2)}[stop-color="var(--dm-neon-2)"]{stop-color:var(--dm-neon-2)}
+[fill="var(--dm-neon-3)"]{fill:var(--dm-neon-3)}[stroke="var(--dm-neon-3)"]{stroke:var(--dm-neon-3)}[stop-color="var(--dm-neon-3)"]{stop-color:var(--dm-neon-3)}
+[fill="var(--dm-p)"]{fill:var(--dm-p)}[stroke="var(--dm-p)"]{stroke:var(--dm-p)}[stop-color="var(--dm-p)"]{stop-color:var(--dm-p)}
+[fill="var(--dm-p-barra)"]{fill:var(--dm-p-barra)}[stroke="var(--dm-p-barra)"]{stroke:var(--dm-p-barra)}[stop-color="var(--dm-p-barra)"]{stop-color:var(--dm-p-barra)}
+[fill="var(--dm-p-claro)"]{fill:var(--dm-p-claro)}[stroke="var(--dm-p-claro)"]{stroke:var(--dm-p-claro)}[stop-color="var(--dm-p-claro)"]{stop-color:var(--dm-p-claro)}
+[fill="var(--dm-p-crema)"]{fill:var(--dm-p-crema)}[stroke="var(--dm-p-crema)"]{stroke:var(--dm-p-crema)}[stop-color="var(--dm-p-crema)"]{stop-color:var(--dm-p-crema)}
+[fill="var(--dm-p-hondo)"]{fill:var(--dm-p-hondo)}[stroke="var(--dm-p-hondo)"]{stroke:var(--dm-p-hondo)}[stop-color="var(--dm-p-hondo)"]{stop-color:var(--dm-p-hondo)}
+[fill="var(--dm-p-ink)"]{fill:var(--dm-p-ink)}[stroke="var(--dm-p-ink)"]{stroke:var(--dm-p-ink)}[stop-color="var(--dm-p-ink)"]{stop-color:var(--dm-p-ink)}
+[fill="var(--dm-p-ink-grande)"]{fill:var(--dm-p-ink-grande)}[stroke="var(--dm-p-ink-grande)"]{stroke:var(--dm-p-ink-grande)}[stop-color="var(--dm-p-ink-grande)"]{stop-color:var(--dm-p-ink-grande)}
+[fill="var(--dm-p-mas14)"]{fill:var(--dm-p-mas14)}[stroke="var(--dm-p-mas14)"]{stroke:var(--dm-p-mas14)}[stop-color="var(--dm-p-mas14)"]{stop-color:var(--dm-p-mas14)}
+[fill="var(--dm-p-tab)"]{fill:var(--dm-p-tab)}[stroke="var(--dm-p-tab)"]{stroke:var(--dm-p-tab)}[stop-color="var(--dm-p-tab)"]{stop-color:var(--dm-p-tab)}
+[fill="var(--dm-p-texto)"]{fill:var(--dm-p-texto)}[stroke="var(--dm-p-texto)"]{stroke:var(--dm-p-texto)}[stop-color="var(--dm-p-texto)"]{stop-color:var(--dm-p-texto)}
+[fill="var(--dm-p-v4)"]{fill:var(--dm-p-v4)}[stroke="var(--dm-p-v4)"]{stroke:var(--dm-p-v4)}[stop-color="var(--dm-p-v4)"]{stop-color:var(--dm-p-v4)}
+[fill="var(--dm-riel)"]{fill:var(--dm-riel)}[stroke="var(--dm-riel)"]{stroke:var(--dm-riel)}[stop-color="var(--dm-riel)"]{stop-color:var(--dm-riel)}
+[fill="var(--dm-riel-lado)"]{fill:var(--dm-riel-lado)}[stroke="var(--dm-riel-lado)"]{stroke:var(--dm-riel-lado)}[stop-color="var(--dm-riel-lado)"]{stop-color:var(--dm-riel-lado)}
+[fill="var(--dm-sup)"]{fill:var(--dm-sup)}[stroke="var(--dm-sup)"]{stroke:var(--dm-sup)}[stop-color="var(--dm-sup)"]{stop-color:var(--dm-sup)}
+[fill="var(--dm-sup-borde)"]{fill:var(--dm-sup-borde)}[stroke="var(--dm-sup-borde)"]{stroke:var(--dm-sup-borde)}[stop-color="var(--dm-sup-borde)"]{stop-color:var(--dm-sup-borde)}
+[fill="var(--dm-t)"]{fill:var(--dm-t)}[stroke="var(--dm-t)"]{stroke:var(--dm-t)}[stop-color="var(--dm-t)"]{stop-color:var(--dm-t)}
+[fill="var(--dm-t2)"]{fill:var(--dm-t2)}[stroke="var(--dm-t2)"]{stroke:var(--dm-t2)}[stop-color="var(--dm-t2)"]{stop-color:var(--dm-t2)}
+[fill="var(--dm-tx)"]{fill:var(--dm-tx)}[stroke="var(--dm-tx)"]{stroke:var(--dm-tx)}[stop-color="var(--dm-tx)"]{stop-color:var(--dm-tx)}
+[fill="var(--dm-tx2)"]{fill:var(--dm-tx2)}[stroke="var(--dm-tx2)"]{stroke:var(--dm-tx2)}[stop-color="var(--dm-tx2)"]{stop-color:var(--dm-tx2)}
+[fill="var(--dm-tx3)"]{fill:var(--dm-tx3)}[stroke="var(--dm-tx3)"]{stroke:var(--dm-tx3)}[stop-color="var(--dm-tx3)"]{stop-color:var(--dm-tx3)}
+[fill="var(--dm-tx4)"]{fill:var(--dm-tx4)}[stroke="var(--dm-tx4)"]{stroke:var(--dm-tx4)}[stop-color="var(--dm-tx4)"]{stop-color:var(--dm-tx4)}
+[fill="var(--dm-v4-sup)"]{fill:var(--dm-v4-sup)}[stroke="var(--dm-v4-sup)"]{stroke:var(--dm-v4-sup)}[stop-color="var(--dm-v4-sup)"]{stop-color:var(--dm-v4-sup)}
+[fill="var(--dm-vidrio-borde)"]{fill:var(--dm-vidrio-borde)}[stroke="var(--dm-vidrio-borde)"]{stroke:var(--dm-vidrio-borde)}[stop-color="var(--dm-vidrio-borde)"]{stop-color:var(--dm-vidrio-borde)}
+/* reglas-svg:fin */

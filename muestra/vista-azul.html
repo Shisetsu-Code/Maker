@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="demo-origen" content="524050d">
+<title>Vista del lobby azul</title>
+<link rel="icon" href="data:,">
+<!-- The template's Google Fonts, its stylesheet and its colour tokens are injected by azul.js per layout
+     (desktop / phone), exactly as each prototype's <helmet> declares them. No app.css here: the template is
+     self-contained and a global reset would change it. -->
+<!-- Until azul.js paints the template (it is ~1 MB), the page is the template's night blue instead of white. The
+     template's own stylesheet, injected later, sets the same properties and wins. -->
+<style id="azul-previo">html,body{margin:0;background:rgb(var(--rc-fondo,1,0,40))}</style>
+<style id="dm-defaults">:root{--dm-p:#ff5500;--dm-p-rgb:255,85,0;--dm-p-texto:#ff5500;--dm-p-claro:#ff7b3d;--dm-p-claro-rgb:255,123,61;--dm-p-hondo:#d64400;--dm-p-barra:#ff691f;--dm-p-tab:#ff6314;--dm-p-mas14:#ff8547;--dm-p-ink:#180902;--dm-p-ink-grande:#ffffff;--dm-p-crema:#ffc4a8;--dm-p-v4:#ff5a00;--dm-glow-a:.3;--dm-cajero-tinta:#ff5500;--dm-avatar-1:#6d3a1d;--dm-avatar-2:#2f1b11;--dm-b:#ff5500;--dm-b-rgb:255,85,0;--dm-b-grad:linear-gradient(180deg,#ff742a 0%,#ff5a0c 58%,#f24e00 100%);--dm-b-ink:#180902;--dm-b-ink-rgb:24,9,2;--dm-b-ink-grande:#ffffff;--dm-b-sombra:0 10px 24px rgba(255,85,0,.3);--dm-b-mas:#ff5500;--dm-b-borde:rgba(245,92,36,.8);--dm-b-filo-rgb:208,60,11;--dm-sup-borde:rgba(255,162,115,.26);--dm-busca-borde:rgba(245,92,36,.55);--dm-b-activo-rgb:102,34,0;--dm-cajero-fondo:#ff5500;--dm-chat-boton:linear-gradient(180deg,#ff691f,#eb4e00);--dm-chat-ink:#ffffff;--dm-chat-sombra:0 12px 30px -8px rgba(170,44,9,.6),inset 0 1px 0 rgba(255,170,128,.45);--dm-vidrio:linear-gradient(180deg,rgba(255,123,61,.26),rgba(255,85,0,.13));--dm-vidrio-borde:rgba(255,123,61,.62);--dm-vidrio-sombra:0 14px 28px -20px rgba(255,85,0,.6),inset 0 0 18px rgba(255,85,0,.08);--dm-f:#0f0f0f;--dm-f-rgb:15,15,15;--dm-f-afuera:#020202;--dm-sup:#181818;--dm-campo:#181818;--dm-riel:#141414;--dm-riel-lado:#1a1a1a;--dm-barra:#151515;--dm-hoja:#141414;--dm-campo-app:#101010;--dm-filo-campo:#232323;--dm-marco:#111111;--dm-f1:#121212;--dm-f3:#171717;--dm-calido:#20140e;--dm-badge-aro:#191919;--dm-n-lista:#141414;--dm-n-campo:#191919;--dm-n-cerrar:#1c1c1c;--dm-n-pedido:#101010;--dm-velo-puerta:linear-gradient(90deg,rgba(15,15,15,.9) 8%,rgba(15,15,15,.04) 70%);--dm-velo-dep:linear-gradient(90deg,rgba(15,15,15,.92) 6%,rgba(15,15,15,.04) 62%);--dm-img-panel-r:url("./maker-base/v2/panel-r.webp") left center/100% 100% no-repeat;--dm-t:#1d1410;--dm-t2:#150e0b;--dm-puerta-base:linear-gradient(160deg,#1d1410,#150e0b);--dm-ganador-fondo:linear-gradient(155deg,#1d1410,#121212);--dm-img-promo-base:url("./maker-base/v2/base-carta.webp");--dm-v4-sup:rgba(30,30,30,.92);--dm-g1-rgb:217,57,13;--dm-g2-rgb:99,19,3;--dm-luz-puerta:radial-gradient(90% 110% at 82% 35%,rgba(217,57,13,.3),rgba(99,19,3,.12) 45%,transparent 72%);--dm-luz-dep:radial-gradient(90% 110% at 80% 45%,rgba(217,57,13,.26),rgba(99,19,3,.104) 45%,transparent 72%);--dm-saldo-brillo:0 0 22px rgba(217,57,13,.35);--dm-mult3-bg:linear-gradient(180deg,rgba(255,190,60,.28),rgba(255,120,0,.2));--dm-mult3-ring:rgba(255,200,90,.6);--dm-mult3-fg:#ffd27a;--dm-mult3-glow:0 0 18px rgba(255,170,40,.35);--dm-deporte:rgb(255,85,0);--dm-anillo:linear-gradient(120deg,#831e11 0%,#ff7b3d 18%,#ffc6ad 27%,#bb320c 42%,#591708 60%,#ff5b1a 80%,#8b2709 100%);--dm-neon-1:#c32d04;--dm-neon-2:#ff884d;--dm-neon-3:#ffc9b3;--dm-brillo:#ffceb8;--dm-billetera-brillo:radial-gradient(34% 70% at 88% 40%,rgba(255,123,61,.34),transparent 70%),radial-gradient(60% 115% at 84% 45%,rgba(217,57,13,.42),rgba(99,19,3,.16) 55%,transparent 80%),linear-gradient(90deg,#171717 0%,#171717 42%,#251b16 100%);--dm-img-bienvenida:url("./maker-base/v2/base-bienvenida.webp");--dm-tx:#f3ece7;--dm-tx2:#b3a69d;--dm-tx3:#8a7d75;--dm-tx4:#675d57;--dm-logo-alto:15px}</style>
+<script id="dm-defecto" type="application/json">{"disc":{"logoPropio":false,"logoTexto":false,"aro":false,"imgOn":true,"nombre":"Maker Base","tintaTexto":"calido","imgColor":"#ff5500"},"vars":{"--dm-p":"#ff5500","--dm-p-rgb":"255,85,0","--dm-p-texto":"#ff5500","--dm-p-claro":"#ff7b3d","--dm-p-claro-rgb":"255,123,61","--dm-p-hondo":"#d64400","--dm-p-barra":"#ff691f","--dm-p-tab":"#ff6314","--dm-p-mas14":"#ff8547","--dm-p-ink":"#180902","--dm-p-ink-grande":"#ffffff","--dm-p-crema":"#ffc4a8","--dm-p-v4":"#ff5a00","--dm-glow-a":".3","--dm-cajero-tinta":"#ff5500","--dm-avatar-1":"#6d3a1d","--dm-avatar-2":"#2f1b11","--dm-b":"#ff5500","--dm-b-rgb":"255,85,0","--dm-b-grad":"linear-gradient(180deg,#ff742a 0%,#ff5a0c 58%,#f24e00 100%)","--dm-b-ink":"#180902","--dm-b-ink-rgb":"24,9,2","--dm-b-ink-grande":"#ffffff","--dm-b-sombra":"0 10px 24px rgba(255,85,0,.3)","--dm-b-mas":"#ff5500","--dm-b-borde":"rgba(245,92,36,.8)","--dm-b-filo-rgb":"208,60,11","--dm-sup-borde":"rgba(255,162,115,.26)","--dm-busca-borde":"rgba(245,92,36,.55)","--dm-b-activo-rgb":"102,34,0","--dm-cajero-fondo":"#ff5500","--dm-chat-boton":"linear-gradient(180deg,#ff691f,#eb4e00)","--dm-chat-ink":"#ffffff","--dm-chat-sombra":"0 12px 30px -8px rgba(170,44,9,.6),inset 0 1px 0 rgba(255,170,128,.45)","--dm-vidrio":"linear-gradient(180deg,rgba(255,123,61,.26),rgba(255,85,0,.13))","--dm-vidrio-borde":"rgba(255,123,61,.62)","--dm-vidrio-sombra":"0 14px 28px -20px rgba(255,85,0,.6),inset 0 0 18px rgba(255,85,0,.08)","--dm-f":"#0f0f0f","--dm-f-rgb":"15,15,15","--dm-f-afuera":"#020202","--dm-sup":"#181818","--dm-campo":"#181818","--dm-riel":"#141414","--dm-riel-lado":"#1a1a1a","--dm-barra":"#151515","--dm-hoja":"#141414","--dm-campo-app":"#101010","--dm-filo-campo":"#232323","--dm-marco":"#111111","--dm-f1":"#121212","--dm-f3":"#171717","--dm-calido":"#20140e","--dm-badge-aro":"#191919","--dm-n-lista":"#141414","--dm-n-campo":"#191919","--dm-n-cerrar":"#1c1c1c","--dm-n-pedido":"#101010","--dm-velo-puerta":"linear-gradient(90deg,rgba(15,15,15,.9) 8%,rgba(15,15,15,.04) 70%)","--dm-velo-dep":"linear-gradient(90deg,rgba(15,15,15,.92) 6%,rgba(15,15,15,.04) 62%)","--dm-img-panel-r":"url(\"./maker-base/v2/panel-r.webp\") left center/100% 100% no-repeat","--dm-t":"#1d1410","--dm-t2":"#150e0b","--dm-puerta-base":"linear-gradient(160deg,#1d1410,#150e0b)","--dm-ganador-fondo":"linear-gradient(155deg,#1d1410,#121212)","--dm-img-promo-base":"url(\"./maker-base/v2/base-carta.webp\")","--dm-v4-sup":"rgba(30,30,30,.92)","--dm-g1-rgb":"217,57,13","--dm-g2-rgb":"99,19,3","--dm-luz-puerta":"radial-gradient(90% 110% at 82% 35%,rgba(217,57,13,.3),rgba(99,19,3,.12) 45%,transparent 72%)","--dm-luz-dep":"radial-gradient(90% 110% at 80% 45%,rgba(217,57,13,.26),rgba(99,19,3,.104) 45%,transparent 72%)","--dm-saldo-brillo":"0 0 22px rgba(217,57,13,.35)","--dm-mult3-bg":"linear-gradient(180deg,rgba(255,190,60,.28),rgba(255,120,0,.2))","--dm-mult3-ring":"rgba(255,200,90,.6)","--dm-mult3-fg":"#ffd27a","--dm-mult3-glow":"0 0 18px rgba(255,170,40,.35)","--dm-deporte":"rgb(255,85,0)","--dm-anillo":"linear-gradient(120deg,#831e11 0%,#ff7b3d 18%,#ffc6ad 27%,#bb320c 42%,#591708 60%,#ff5b1a 80%,#8b2709 100%)","--dm-neon-1":"#c32d04","--dm-neon-2":"#ff884d","--dm-neon-3":"#ffc9b3","--dm-brillo":"#ffceb8","--dm-billetera-brillo":"radial-gradient(34% 70% at 88% 40%,rgba(255,123,61,.34),transparent 70%),radial-gradient(60% 115% at 84% 45%,rgba(217,57,13,.42),rgba(99,19,3,.16) 55%,transparent 80%),linear-gradient(90deg,#171717 0%,#171717 42%,#251b16 100%)","--dm-img-bienvenida":"url(\"./maker-base/v2/base-bienvenida.webp\")","--dm-tx":"#f3ece7","--dm-tx2":"#b3a69d","--dm-tx3":"#8a7d75","--dm-tx4":"#675d57","--dm-logo-alto":"15px"}}</script>
+<script>
+/* Antes que nada: la vista no le habla a ningún servidor.
+   · Almacenamiento: si el navegador lo bloquea (captura de miniaturas, datos del sitio bloqueados), uno en memoria.
+   · fetch a /api/*: respuestas de ejemplo acá mismo; nada sale a la red. */
+(function () {
+  function memoria() {
+    var m = new Map();
+    return {
+      getItem: function (k) { k = String(k); return m.has(k) ? m.get(k) : null; },
+      setItem: function (k, v) { m.set(String(k), String(v)); },
+      removeItem: function (k) { m.delete(String(k)); },
+      clear: function () { m.clear(); },
+      key: function (i) { return Array.from(m.keys())[i] || null; },
+      get length() { return m.size; }
+    };
+  }
+  ['localStorage', 'sessionStorage'].forEach(function (n) {
+    try { var s = window[n]; s.setItem('__dm', '1'); s.removeItem('__dm'); }
+    catch (e) { try { Object.defineProperty(window, n, { value: memoria(), configurable: true }); } catch (e2) {} }
+  });
+  window.__csp = [];
+  document.addEventListener('securitypolicyviolation', function (e) { window.__csp.push(e.blockedURI + ' ' + e.violatedDirective); });
+  var original = window.fetch ? window.fetch.bind(window) : null;
+  function responder(o) {
+    return Promise.resolve(new Response(JSON.stringify(o), { status: 200, headers: { 'content-type': 'application/json' } }));
+  }
+  window.fetch = function (u, i) {
+    var s = typeof u === 'string' ? u : (u && u.url) ? u.url : String(u);
+    var m = /^(?:[a-z][a-z0-9+.-]*:\/\/[^\/]+)?(\/api\/[^?#]*)/i.exec(s);
+    if (m) {
+      var api = m[1];
+      if (api.indexOf('/api/winners') === 0) return responder({ winners: [] });
+      if (api.indexOf('/api/health') === 0) return responder({ ok: true });
+      return responder({ ok: false, motivo: 'demo' });
+    }
+    return original ? original(u, i) : Promise.reject(new Error('sin fetch'));
+  };
+})();
+</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; frame-src 'self' data: blob:; form-action 'none'; base-uri 'none'">
+<script src="./maker-offline.js"></script>
+<link rel="stylesheet" href="./maker-local.css">
+</head>
+<body>
+<script src="azul.js"></script>
+</body>
+</html>

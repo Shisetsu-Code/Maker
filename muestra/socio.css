@@ -1,0 +1,587 @@
+/* ══════════════════════════════════════════════════════════════════════════════════════════════════
+   LA DEMO DE SOCIO (socio.html): lo que se suma al probador. Los colores y movimientos son los del probador
+   (control.css: --sobre, --suave, --linea…); el ámbar es el mismo de la banda MODO PRUEBA de los juegos.
+   Sin cinta arriba: que es una demo lo dicen el chip DEMO de la barra, el tour y los avisos.
+   ══════════════════════════════════════════════════════════════════════════════════════════════════ */
+
+:root { --socio-ambar: #f2b544; }
+
+/* ── las burbujas de los botones nuevos ───────────────────────────────────────────────────────────── */
+.socio-burbuja { max-width: min(340px, calc(100vw - 32px)); }
+.socio-burbuja .burbuja-tx { line-height: 1.35; }
+.socio-burbuja .burbuja-tx[data-tipo="error"] { color: var(--error); }
+.socio-burbuja .burbuja-tx[data-tipo="aviso"] { color: var(--aviso); }
+.socio-burbuja .burbuja-tx[data-tipo="trabajo"] { color: var(--tx-2); }
+.btn[disabled] { opacity: 0.6; cursor: progress; }
+
+/* ── la nota «en la demo no se juega» de las plantillas sin lanzador ─────────────────────────────── */
+.socio-nota-juegos {
+  position: absolute;
+  z-index: 11;
+  left: 50%; top: 10px;
+  transform: translateX(-50%);
+  max-width: min(560px, calc(100% - 32px));
+  margin: 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(20, 20, 22, 0.9);
+  border: 1px solid var(--linea-2);
+  color: var(--tx-2);
+  font-size: 13px;
+  line-height: 1.3;
+  text-align: center;
+  pointer-events: none;
+}
+.socio-nota-juegos[hidden] { display: none; }
+
+/* la barra de arriba lleva un botón más que el probador: hasta 1600 px, «Descargar» y «Restablecer» van sólo con su
+   ícono (el nombre queda en aria-label) y «Mandame mi diseño», que es lo que importa, conserva el texto */
+/* LA BARRA EN LA COMPU NO SE PISA (2026-10-05: «Mandame mi diseño» tapaba «Maker Cobre» entre 1100 y 1600 px). La grilla del
+   probador reparte los costados en partes iguales y centra las pastillas: con el botón más largo de la demo, la
+   columna de la derecha quedaba más angosta que sus botones y éstos se le subían a la pastilla de plantillas. Acá
+   cada costado mide lo que necesita y las pastillas se centran en lo que queda; además se achican un poco (cada
+   plantilla del ancho de su nombre, menos relleno) y, en la compu angosta, sin los íconos de «Compu/Celular» y con el
+   nombre corto «Mandar diseño». */
+@media (min-width: 1100px) {
+  .app[data-modo="socio"] .barra { grid-template-columns: auto minmax(0, 1fr) auto; }
+  .app[data-modo="socio"] .barra-pastillas { min-width: 0; }
+  /* un nombre de marca largo se corta con «…» (barra-nombre) en vez de empujar las pastillas */
+  .app[data-modo="socio"] .barra-marca { max-width: 300px; }
+}
+@media (min-width: 1100px) and (max-width: 1599.98px) {
+  .app[data-modo="socio"] .barra-pastillas { gap: 8px; }
+  .app[data-modo="socio"] #seg-plantilla { grid-auto-columns: auto; }
+  .app[data-modo="socio"] .barra-pastillas .seg > button { padding: 0 12px; }
+}
+@media (min-width: 1100px) and (max-width: 1279.98px) {
+  .app[data-modo="socio"] .barra { gap: 10px; padding-inline: 12px; }
+  .app[data-modo="socio"] .barra-marca { max-width: 190px; }
+  .app[data-modo="socio"] .barra-pastillas .seg > button { padding: 0 10px; }
+  .app[data-modo="socio"] .barra-pastillas .ic-seg { display: none; }
+  .app[data-modo="socio"] #btn-mandar-diseno { width: auto; padding: 0 12px; }
+  .app[data-modo="socio"] #btn-mandar-diseno .btn-tx { display: none; }
+  .app[data-modo="socio"] #btn-mandar-diseno .btn-tx-corto { display: inline; white-space: nowrap; }
+}
+@media (min-width: 1100px) and (max-width: 1599.98px) {
+  .app[data-modo="socio"] .btn-barra:not(#btn-mandar-diseno) { width: 44px; padding: 0; }
+  .app[data-modo="socio"] .btn-barra:not(#btn-mandar-diseno) .btn-tx {
+    position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════════════════════════
+   CELULAR Y TABLETA (< 1100 px): LA VISTA PRIMERO. Arriba, una barra: el nombre con su chip DEMO, «Mandar diseño» y el
+   menú «⋯» (Descargar, Restablecer y el tour); debajo, «Lobby | Panel». En el medio, la vista a tamaño real y sin el
+   marco del teléfono (ui-socio.ts pone #app[data-completa] y control.ts la dibuja 1:1). Abajo, la hoja «¿Qué querés
+   cambiar?», que ahora empieza por «Plantilla». Nada flota sobre la vista.
+   ══════════════════════════════════════════════════════════════════════════════════════════════════ */
+.btn-tx-corto { display: none; }
+.socio-mas-ancla, .socio-hoja-plantilla { display: none; }
+
+@media (max-width: 1099.98px) {
+  .app[data-modo="socio"] { --hoja-cerrada: 64px; }
+
+  /* la barra: dos renglones en el teléfono */
+  .app[data-modo="socio"] .barra {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "marca acciones" "pastillas pastillas";
+    column-gap: 10px;
+    row-gap: 6px;
+    padding: 6px 12px 8px;
+  }
+  .app[data-modo="socio"] .barra-marca { gap: 8px; }
+  .app[data-modo="socio"] .barra-pastillas { display: flex; }
+  .app[data-modo="socio"] #seg-disp { display: none; }
+  /* «Lobby | Panel», finito: 38 px dibujados y 46 px para el dedo */
+  .app[data-modo="socio"] #seg-vista { width: 100%; }
+  .app[data-modo="socio"] #seg-vista > button { min-height: 38px; font-size: 13px; }
+  .app[data-modo="socio"] #seg-vista > button::before { content: ""; position: absolute; inset: -4px 0; }
+
+  /* «Mandar diseño» con su nombre corto; Descargar y Restablecer no se ven (están en «⋯»), pero sus anclas quedan a la
+     derecha de la barra para que sus burbujas salgan ahí */
+  .app[data-modo="socio"] .barra-acciones { position: relative; align-items: center; }
+  .app[data-modo="socio"] #btn-mandar-diseno { width: auto; padding: 0 12px; }
+  .app[data-modo="socio"] #btn-mandar-diseno .btn-tx-corto { display: inline; white-space: nowrap; font-size: 13px; }
+  .app[data-modo="socio"] .barra-acciones > .ancla:has(> #btn-bajar-diseno, > #btn-restablecer) {
+    position: absolute; top: 0; right: 0; bottom: 0; width: 0;
+  }
+  .app[data-modo="socio"] :is(#btn-bajar-diseno, #btn-restablecer) { display: none; }
+
+  /* el menú «⋯» */
+  .socio-mas-ancla { display: block; }
+  .socio-mas .ic { width: 20px; height: 20px; }
+  .socio-mas[aria-expanded="true"] { border-color: rgba(255, 255, 255, 0.24); background: var(--elevado-2); }
+  .socio-mas-menu {
+    position: absolute; z-index: 41; top: calc(100% + 8px); right: 0;
+    display: flex; flex-direction: column; gap: 2px;
+    width: min(260px, calc(100vw - 24px));
+    padding: 6px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(34, 33, 37, 0.98), rgba(18, 18, 20, 0.98));
+    border: 1px solid var(--linea-2);
+    box-shadow: 0 18px 44px -14px rgba(0, 0, 0, 0.9);
+    transform-origin: 100% 0;
+  }
+  .socio-mas-menu[hidden] { display: none; }
+  .socio-mas-tx { display: inline-flex; align-items: center; gap: 10px; min-width: 0; }
+  .socio-mas-tx .ic { width: 17px; height: 17px; color: var(--tx-3); }
+  .socio-mas-sep { height: 1px; margin: 4px 8px; background: var(--linea); }
+  .socio-mas-tours { display: flex; flex-direction: column; gap: 2px; }
+  .socio-mas-rot {
+    margin: 4px 12px 2px;
+    color: var(--tx-3);
+    font: 600 11px/1.2 var(--f-cuerpo); letter-spacing: 0.08em; text-transform: uppercase;
+  }
+
+  /* la vista, a tamaño real: de lado a lado y hasta la hoja */
+  .app[data-modo="socio"] .escena { inset: 0 0 calc(var(--hoja-cerrada) + env(safe-area-inset-bottom, 0px)) 0; }
+  .app[data-completa="true"] .telefono {
+    inset: 0; width: 100%; height: 100%;
+    padding: 0; border: 0; border-radius: 0;
+    background: var(--marca-fondo);
+    box-shadow: none;
+  }
+  .app[data-completa="true"] .pantalla { width: 100%; height: 100%; border-radius: 0; }
+  .app[data-completa="true"] :is(.celu-boton, .isla, .celu-estado, .celu-home) { display: none; }
+
+  /* la hoja: más baja cerrada, y «Plantilla» como su primera sección (con la nota de los juegos debajo) */
+  .app[data-modo="socio"] .hoja-cabeza { padding-top: 10px; }
+  .app[data-modo="socio"] .hoja-titulo { font-size: 18px; }
+  .socio-hoja-plantilla { display: block; margin: 4px 0 14px; padding: 0 2px; }
+  .socio-hoja-plantilla:not(:has(> #seg-plantilla:not([hidden]))) { display: none; }
+  .socio-hoja-tit { margin: 0 8px 10px; font: 600 15px/1.2 var(--f-cuerpo); }
+  .socio-hoja-plantilla #seg-plantilla { width: 100%; }
+  .socio-hoja-plantilla #seg-plantilla > button {
+    min-height: 48px; padding: 0 6px;
+    white-space: normal; text-align: center; line-height: 1.15; font-size: 12.5px;
+  }
+  .socio-hoja-plantilla .socio-nota-juegos {
+    position: static; transform: none;
+    max-width: none;
+    margin: 10px 8px 0; padding: 0;
+    border: 0; border-radius: 0; background: none;
+    color: var(--tx-3); font-size: 12.5px; text-align: left;
+  }
+
+  /* los botones del tour de la compu: en el celular están en «⋯» */
+  .app[data-modo="socio"] .socio-tour-botones { display: none; }
+}
+
+/* teléfono angosto (< 360 px): «Mandar diseño» queda en su ícono (el nombre sigue en aria-label) para que el nombre del
+   casino no se corte a dos letras */
+@media (max-width: 359.98px) {
+  .app[data-modo="socio"] #btn-mandar-diseno { width: 44px; padding: 0; }
+  .app[data-modo="socio"] #btn-mandar-diseno .btn-tx-corto { display: none; }
+}
+
+/* tableta: entra en un renglón (el nombre | Lobby · Panel | Mandar diseño · ⋯). Desde 760 px: más angosto, «Mandar
+   diseño» y «⋯» (~190 px) no entran al costado de la pastilla y se le subían encima; ahí sigue la barra de dos renglones.
+   La columna de las acciones nunca baja de lo que miden (max-content), por si una letra más ancha las empuja. */
+@media (min-width: 760px) and (max-width: 1099.98px) {
+  .app[data-modo="socio"] .barra {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 320px) minmax(max-content, 1fr);
+    grid-template-areas: "marca pastillas acciones";
+    padding: 8px 16px;
+  }
+  .app[data-modo="socio"] .barra-acciones { justify-content: flex-end; }
+}
+
+/* la capa que cierra el menú «⋯» o la hoja con un toque en la vista (ui-socio.ts, instalarAtrapa): transparente, sobre
+   la vista y debajo de la barra (20) y de la hoja (15); no con el tour abierto, que se toca por su hueco */
+.socio-atrapa { display: none; position: fixed; inset: 0; z-index: 14; -webkit-tap-highlight-color: transparent; }
+@media (max-width: 1099.98px) {
+  .app[data-modo="socio"]:is(:has(#socio-mas-menu:not([hidden])), :has(#cajon[data-abierto="true"])) .socio-atrapa,
+  .app[data-modo="socio"] .socio-atrapa[data-sostener] { display: block; }
+}
+body:has(#socio-tour:not([hidden])) .socio-atrapa { display: none; }
+
+/* el menú entra con rebote; con movimiento reducido, aparece */
+@media (prefers-reduced-motion: no-preference) {
+  .socio-mas-menu:not([hidden]) { animation: socio-materializa 260ms var(--sobre); }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════════════════════════
+   EL TOUR (src/socio/tour.ts): velos alrededor de un hueco, un aro ámbar y la tarjeta. Nada de esto toca al iframe
+   ni al objetivo: los toques pasan por el hueco tal cual. Por encima de todo lo demás (el menú «⋯» y la hoja se ven
+   por el hueco cuando el paso los señala).
+   ══════════════════════════════════════════════════════════════════════════════════════════════════ */
+.socio-tour { position: fixed; inset: 0; z-index: 70; pointer-events: none; }
+.socio-tour[hidden] { display: none; }
+.socio-tour-velo {
+  position: fixed; left: 0; top: 0; width: 0; height: 0;
+  background: rgba(6, 6, 8, 0.64);
+  pointer-events: auto;
+}
+.socio-tour-aro {
+  position: fixed; left: 0; top: 0; width: 0; height: 0;
+  border-radius: 12px;
+  box-shadow: 0 0 0 2px var(--socio-ambar), 0 0 22px -4px rgba(242, 181, 68, 0.7);
+  pointer-events: none;
+}
+.socio-tour-aro[hidden] { display: none; }
+.socio-tour-aro::after {
+  content: ""; position: absolute; inset: -5px;
+  border-radius: 16px;
+  box-shadow: 0 0 0 2px rgba(242, 181, 68, 0.45), 0 0 30px rgba(242, 181, 68, 0.55);
+  opacity: 0;
+}
+/* el cambio de paso viaja con rebote; después, el hueco sigue al objetivo sin demora */
+.socio-tour[data-mueve] :is(.socio-tour-velo, .socio-tour-aro) {
+  transition: left 420ms var(--sobre), top 420ms var(--sobre), width 420ms var(--sobre), height 420ms var(--sobre);
+}
+/* la tarjeta viaja sin pasarse: con rebote, en el borde de la pantalla saldría unos píxeles afuera */
+.socio-tour[data-mueve] .socio-tour-tarjeta { transition: left 380ms cubic-bezier(0.22, 1, 0.36, 1), top 380ms cubic-bezier(0.22, 1, 0.36, 1); }
+
+.socio-tour-tarjeta {
+  position: fixed; left: 16px; top: 16px;
+  width: min(360px, calc(100vw - 32px));
+  padding: 14px 16px 12px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(34, 33, 37, 0.97), rgba(18, 18, 20, 0.98));
+  border: 1px solid var(--linea-2);
+  box-shadow: 0 24px 60px -18px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  color: var(--tx);
+  pointer-events: auto;
+}
+.socio-tour-tarjeta[hidden] { display: none; }
+.socio-tour-tarjeta.entra { animation: socio-materializa 320ms var(--sobre); }
+.socio-tour-tarjeta.toque { animation: socio-tour-toque 360ms var(--sobre); }
+.socio-tour-tarjeta[data-cargando] .socio-tour-titulo::after {
+  content: ""; display: inline-block; width: 12px; height: 12px; margin-left: 10px; vertical-align: 1px;
+  border: 2px solid rgba(255, 255, 255, 0.25); border-top-color: var(--socio-ambar); border-radius: 50%;
+  animation: socio-tour-gira 700ms linear infinite;
+}
+@keyframes socio-materializa {
+  from { opacity: 0; transform: translateY(10px) scale(0.96); filter: blur(4px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+@keyframes socio-tour-toque {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.035); }
+  100% { transform: scale(1); }
+}
+@keyframes socio-tour-gira { to { transform: rotate(360deg); } }
+@keyframes socio-tour-late { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
+
+.socio-tour-cab { display: flex; align-items: center; gap: 8px; min-height: 18px; margin-bottom: 6px; }
+.socio-tour-cuenta { color: var(--tx-3); font: 500 12px/1 var(--f-cuerpo); letter-spacing: 0.04em; }
+.socio-tour-chip {
+  margin-left: auto;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font: 600 11px/1.2 var(--f-cuerpo); letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.socio-tour-chip[hidden] { display: none; }
+.socio-tour-chip[data-modo="probar"] { background: rgba(79, 216, 140, 0.14); color: var(--ok); }
+.socio-tour-chip[data-modo="real"] { background: rgba(242, 181, 68, 0.12); color: var(--socio-ambar); box-shadow: inset 0 0 0 1px rgba(242, 181, 68, 0.35); }
+.socio-tour-titulo { margin: 0 0 6px; font: 600 19px/1.15 var(--f-display); letter-spacing: 0.02em; outline: none; }
+.socio-tour-texto { margin: 0 0 12px; color: var(--tx-2); font-size: 14px; line-height: 1.45; }
+.socio-tour-extras { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.socio-tour-extras[hidden] { display: none; }
+.socio-tour-pie { display: flex; align-items: center; gap: 8px; }
+.socio-tour-pie [hidden] { display: none; }
+.socio-tour-saltar { margin-right: auto; font-size: 13px; }
+.socio-tour-cuenta-pie { display: none; color: var(--tx-3); font: 500 12px/1 var(--f-cuerpo); }
+.socio-tour-siguiente { min-width: 104px; }
+.socio-tour-siguiente[disabled] { opacity: 0.5; cursor: progress; }
+
+/* «Ver tour» y «Tour completo»: abajo a la izquierda, discretos (sólo en la compu: en el celular están en «⋯») */
+.socio-tour-botones {
+  position: fixed; z-index: 55; left: 20px; bottom: 20px;
+  display: flex; gap: 8px;
+}
+.socio-tx-corto { display: none; }
+/* el menú de «Ver tour»: arriba de los botones */
+.socio-tour-menu {
+  position: absolute; left: 0; bottom: calc(100% + 8px);
+  display: flex; flex-direction: column; gap: 2px;
+  min-width: 180px;
+  padding: 6px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(34, 33, 37, 0.98), rgba(18, 18, 20, 0.98));
+  border: 1px solid var(--linea-2);
+  box-shadow: 0 18px 44px -14px rgba(0, 0, 0, 0.9);
+  transform-origin: 0 100%;
+}
+.socio-tour-menu[hidden] { display: none; }
+.socio-tour-item {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  min-height: 44px; padding: 0 12px;
+  border: 0; border-radius: 10px;
+  background: transparent; color: var(--tx-2);
+  font: 500 14px/1 var(--f-cuerpo); text-align: left;
+  cursor: pointer;
+}
+.socio-tour-item[data-actual]::after { content: "esta pantalla"; color: var(--socio-ambar); font-size: 11px; letter-spacing: 0.02em; }
+.socio-tour-item:focus-visible { outline: 2px solid var(--socio-ambar); outline-offset: -2px; }
+.socio-tour-botones .btn { background: rgba(28, 27, 30, 0.88); color: var(--tx-2); }
+.socio-tour-botones .ic { width: 16px; height: 16px; }
+
+/* encendido progresivo (regla de la casa): entra en 300 ms, se apaga en 160 ms, todo junto */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  :where(.socio-tour-botones .btn, .socio-tour-saltar) { transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease; }
+  :where(.socio-tour-botones .btn):hover { transition-duration: 300ms; background-color: rgba(44, 42, 47, 0.95); color: var(--tx); border-color: rgba(242, 181, 68, 0.45); }
+  :where(.socio-tour-saltar):hover { transition-duration: 300ms; color: var(--tx); }
+  :where(.socio-tour-item) { transition: background-color 160ms ease, color 160ms ease, transform 120ms ease; }
+  :where(.socio-tour-item):hover { transition-duration: 300ms, 300ms, 120ms; background-color: rgba(255, 255, 255, 0.06); color: var(--tx); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .socio-tour-menu:not([hidden]) { animation: socio-materializa 260ms var(--sobre); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .socio-tour-aro::after { animation: socio-tour-late 1.6s ease-in-out infinite; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .socio-tour-tarjeta.entra, .socio-tour-tarjeta.toque { animation: none; }
+  .socio-tour[data-mueve] :is(.socio-tour-velo, .socio-tour-aro, .socio-tour-tarjeta) { transition: none; }
+}
+
+/* el celular: tarjeta compacta (~135 px), de lado a lado, con el contador al pie */
+@media (max-width: 1099.98px) {
+  .socio-tour-tarjeta { width: calc(100vw - 24px); padding: 10px 12px; border-radius: 14px; }
+  .socio-tour-cab { position: absolute; top: 10px; right: 12px; margin: 0; }
+  .socio-tour-cuenta { display: none; }
+  .socio-tour-titulo { margin: 0 112px 4px 0; font-size: 16px; }
+  .socio-tour-texto { margin-bottom: 8px; font-size: 13px; line-height: 1.38; }
+  .socio-tour-extras { margin-bottom: 8px; }
+  .socio-tour-cuenta-pie { display: inline; }
+  .socio-tour-siguiente { min-width: 96px; }
+}
+
+/* ── el tour en pausa: la persona prueba lo que tocó (tour.ts › pausar). Sin velos ni tarjeta: sólo la pastilla ── */
+.socio-tour[data-pausa] :is(.socio-tour-velo, .socio-tour-aro, .socio-tour-tarjeta) { display: none; }
+.socio-tour-pausa {
+  position: fixed; left: 50%; bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  display: flex; align-items: center; gap: 10px;
+  max-width: calc(100vw - 24px);
+  padding: 6px 6px 6px 16px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(34, 33, 37, 0.97), rgba(18, 18, 20, 0.98));
+  border: 1px solid rgba(242, 181, 68, 0.45);
+  box-shadow: 0 18px 44px -14px rgba(0, 0, 0, 0.9);
+  color: var(--tx-2);
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: auto;
+}
+.socio-tour-pausa[hidden] { display: none; }
+.socio-tour-pausa-tx { color: var(--socio-ambar); font-weight: 600; }
+.socio-tour-pausa-salir { min-height: 44px; padding: 0 10px; font-size: 13px; }
+.socio-tour-seguir { min-height: 40px; }
+@media (max-width: 1099.98px) {
+  /* entera sobre la cabecera de la hoja (abajo: 64 px), nunca sobre la vista */
+  .socio-tour-pausa { bottom: calc(5px + env(safe-area-inset-bottom, 0px)); padding: 4px 4px 4px 14px; gap: 6px; }
+}
+/* En pantalla completa no hay hoja: abajo quedaría sobre la barra del casino (las pestañas del lobby, la del panel; en
+   la compu también, con el «Celular» que llega hasta el borde) y no se podría tocar. Ahí no va: «Salir» de la pestaña
+   del borde ya hace lo mismo (sale y el tour sigue). */
+.app[data-entera="true"] .socio-tour-pausa { display: none; }
+@media (max-width: 359.98px) {
+  .socio-tour-pausa-tx { display: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .socio-tour-pausa:not([hidden]) { animation: socio-tour-pausa-entra 300ms var(--sobre); }
+}
+@keyframes socio-tour-pausa-entra {
+  from { opacity: 0; transform: translate(-50%, 10px) scale(0.96); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* ── el teclado del celular sobre la vista (ui-socio.ts › instalarTecladoVista): mientras se escribe en el panel o el
+   lobby, «Lobby | Panel» y la hoja se van y la vista usa ese lugar ── */
+@media (max-width: 1099.98px) {
+  .app[data-modo="socio"][data-teclado="true"] { --hoja-cerrada: 0px; }
+  .app[data-modo="socio"][data-teclado="true"] .barra { grid-template-areas: "marca acciones"; row-gap: 0; }
+  .app[data-modo="socio"][data-teclado="true"] .barra-pastillas,
+  .app[data-modo="socio"][data-teclado="true"] #cajon { display: none; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════════════════════════
+   «PANTALLA COMPLETA» (src/socio/pantalla-completa.ts): el casino solo, sin la demo alrededor.
+   Entrada: en el celular y la tableta, un botón redondo al lado de «Lobby | Panel»; en la compu, «Pantalla completa»
+   abajo a la derecha de la vista previa. Adentro (#app[data-entera]): ni barra, ni hoja, ni panel de opciones, ni
+   botones del tour; la vista de lado a lado y sin marco. Salida: una pestaña en el borde derecho, a media altura, que
+   se abre con «Lobby | Panel» y «Salir».
+   ══════════════════════════════════════════════════════════════════════════════════════════════════ */
+.socio-entera-btn .ic { width: 18px; height: 18px; }
+/* celular y tableta: redondo, de 44 px, del alto de «Lobby | Panel»; el nombre queda en aria-label */
+.barra-pastillas > .socio-entera-btn {
+  flex: 0 0 44px;
+  width: 44px; min-width: 44px; height: 44px; min-height: 44px;
+  padding: 0;
+  border-color: var(--linea);
+  border-radius: 999px;
+  background: #141416;
+  color: var(--tx-2);
+}
+.barra-pastillas > .socio-entera-btn .socio-entera-tx {
+  position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+@media (max-width: 1099.98px) {
+  .app[data-modo="socio"] .barra-pastillas:has(> .socio-entera-btn) { gap: 8px; align-items: center; }
+  .app[data-modo="socio"] .barra-pastillas:has(> .socio-entera-btn) #seg-vista { flex: 1 1 0; width: auto; min-width: 0; }
+}
+/* compu: abajo a la derecha de la vista previa (los botones del tour están abajo a la izquierda) */
+.socio-entera-escena { display: none; }
+@media (min-width: 1100px) {
+  .socio-entera-escena {
+    display: flex;
+    position: absolute; z-index: 12;
+    right: calc(var(--cajon-ancho) + 40px); bottom: 20px;
+  }
+  .socio-entera-escena .socio-entera-btn { background: rgba(28, 27, 30, 0.88); color: var(--tx-2); }
+}
+
+/* adentro: sólo el casino */
+.app[data-modo="socio"][data-entera="true"] { grid-template-rows: minmax(0, 1fr); }
+.app[data-entera="true"] > .barra,
+.app[data-entera="true"] > #cajon,
+.app[data-entera="true"] .socio-tour-botones,
+.app[data-entera="true"] .socio-entera-escena,
+.app[data-entera="true"] .socio-nota-juegos,
+.app[data-entera="true"] .socio-atrapa { display: none !important; }
+.app[data-entera="true"] .escenario { background: var(--marca-fondo); }
+.app[data-modo="socio"][data-entera="true"] .escena { inset: 0; place-items: stretch; }
+/* el tamaño que control.ts pone a mano (la escala del marco) no corre acá: la vista mide lo que la pantalla */
+.app[data-entera="true"] .marco { width: 100% !important; height: 100% !important; }
+/* «Compu»: la ventana a lo ancho, sin su barrita ni la escala */
+.app[data-entera="true"] .ventana { width: 100%; height: 100%; border-radius: 0; box-shadow: none; }
+.app[data-entera="true"] .ventana-barra { display: none; }
+.app[data-entera="true"] .lienzo { flex: 1 1 auto; width: 100% !important; height: 100% !important; }
+.app[data-entera="true"] .lienzo > iframe { width: 100% !important; height: 100% !important; transform: none !important; }
+/* «Celular»: sin el aparato. En el celular y la tableta, de lado a lado (control.ts ya la dibuja 1:1); en la compu,
+   una columna del ancho de un teléfono (393 px), centrada */
+.app[data-entera="true"] .telefono {
+  inset: 0; margin-inline: auto;
+  width: 100% !important; height: 100% !important;
+  padding: 0; border: 0; border-radius: 0;
+  background: var(--marca-fondo);
+  box-shadow: none;
+  transform: none !important;
+}
+.app[data-entera="true"] .pantalla { width: 100%; height: 100%; border-radius: 0; }
+.app[data-entera="true"] :is(.celu-boton, .isla, .celu-estado, .celu-home) { display: none; }
+.app[data-entera="true"] .pantalla > iframe { width: 100% !important; height: 100% !important; }
+@media (min-width: 1100px) {
+  .app[data-entera="true"] .telefono { width: 393px !important; max-width: 100%; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06); }
+  .app[data-entera="true"]:has(.marco[data-activo="true"] .telefono) .escenario {
+    background:
+      radial-gradient(58% 62% at 50% 46%, rgba(var(--marca-rgb), 0.08), transparent 72%),
+      var(--escena);
+  }
+}
+
+/* la salida: una pestaña de vidrio en el borde derecho; se abre hacia la izquierda */
+.socio-entera-salida {
+  position: fixed; z-index: 60;
+  top: 50%; right: env(safe-area-inset-right, 0px);
+  transform: translateY(-50%);
+  display: flex; align-items: center; gap: 8px;
+  max-width: calc(100vw - 8px);
+  pointer-events: none;
+}
+.socio-entera-salida[hidden] { display: none; }
+.socio-entera-salida > * { pointer-events: auto; }
+.socio-entera-asa {
+  position: relative;
+  display: grid; place-items: center;
+  width: 34px; height: 64px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16); border-right: 0;
+  border-radius: 14px 0 0 14px;
+  background: rgba(18, 18, 20, 0.72);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  backdrop-filter: blur(14px) saturate(1.2);
+  box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.8);
+  color: var(--tx);
+  opacity: 0.72;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+/* 34 px dibujados, 46 px para el dedo */
+.socio-entera-asa::before { content: ""; position: absolute; inset: -4px 0 -4px -12px; }
+@media (max-width: 1099.98px) {
+  /* En el celular el casino llega hasta 16 px del borde: la pestaña se angosta y no se agranda hacia adentro (sobre un
+     botón del casino, el toque abría la pestaña); el dedo gana en alto y el borde de la pantalla hace el resto. */
+  .socio-entera-asa { width: 28px; height: 72px; }
+  .socio-entera-asa::before { inset: -6px 0; }
+}
+/* Con una hoja o un diálogo abierto en la vista (pantalla-completa.ts › vigilarCapa) la pestaña se corre al borde: sus
+   filas llegan hasta ahí y no se pueden correr. Queda una lengüeta que igual se toca (y Escape / Atrás siguen). */
+.socio-entera-salida[data-capa="true"]:not([data-abierta="true"]) .socio-entera-asa { transform: translateX(calc(100% - 10px)); opacity: 0.5; }
+@media (prefers-reduced-motion: no-preference) {
+  /* se corre y vuelve deslizándose (en la compu, el bloque del «hover» de abajo manda) */
+  :where(.socio-entera-asa) { transition: transform 280ms var(--sobre), opacity 200ms ease; }
+}
+.socio-entera-asa .ic { width: 18px; height: 18px; transition: transform 300ms var(--sobre); }
+.socio-entera-salida[data-abierta="true"] .socio-entera-asa { opacity: 1; }
+.socio-entera-salida[data-abierta="true"] .socio-entera-asa .ic { transform: rotate(180deg); }
+.socio-entera-asa:focus-visible { opacity: 1; outline-offset: -3px; }
+.socio-entera-opciones {
+  display: none;
+  align-items: center; gap: 6px;
+  min-width: 0;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  background: rgba(18, 18, 20, 0.86);
+  -webkit-backdrop-filter: blur(16px) saturate(1.25);
+  backdrop-filter: blur(16px) saturate(1.25);
+  box-shadow: 0 18px 44px -14px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transform-origin: 100% 50%;
+}
+.socio-entera-salida[data-abierta="true"] .socio-entera-opciones { display: flex; }
+/* «Lobby | Panel» con su pastilla que se desliza */
+.socio-entera-vistas {
+  position: relative;
+  display: grid; grid-template-columns: 1fr 1fr;
+  padding: 2px;
+  border-radius: 999px;
+  background: #141416;
+  border: 1px solid var(--linea);
+}
+.socio-entera-vistas::before {
+  content: ""; position: absolute; z-index: 0;
+  top: 2px; bottom: 2px; left: 2px; width: calc(50% - 2px);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #2e2d32, #242327);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.09), 0 1px 3px rgba(0, 0, 0, 0.5);
+  transition: transform 280ms var(--sobre);
+}
+.socio-entera-vistas[data-valor="panel"]::before { transform: translateX(100%); }
+.socio-entera-vista {
+  position: relative; z-index: 1;
+  min-width: 58px; min-height: 40px;
+  padding: 0 12px;
+  border: 0; border-radius: 999px;
+  background: transparent;
+  color: var(--tx-2);
+  font: 600 13px/1 var(--f-cuerpo);
+  cursor: pointer;
+}
+/* 40 px dibujados, 44 px para el dedo */
+.socio-entera-vista::after { content: ""; position: absolute; inset: -2px 0; }
+.socio-entera-vista[aria-pressed="true"] { color: var(--tx); }
+.socio-entera-salir { min-height: 44px; padding: 0 14px; gap: 7px; font-size: 13.5px; }
+.socio-entera-salir .ic { width: 16px; height: 16px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .socio-entera-salida:not([hidden]) .socio-entera-asa { animation: socio-entera-asa 420ms var(--sobre); }
+  .socio-entera-salida[data-abierta="true"] .socio-entera-opciones { animation: socio-materializa 280ms var(--sobre); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .socio-entera-vistas::before, .socio-entera-asa .ic { transition: none; }
+}
+@keyframes socio-entera-asa {
+  from { opacity: 0; transform: translateX(100%); }
+}
+/* encendido progresivo (regla de la casa): entra en 300 ms, se apaga en 160 ms, todo junto */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  :where(.socio-entera-asa) { transition: opacity 160ms ease, background-color 160ms ease, border-color 160ms ease, transform 120ms ease; }
+  :where(.socio-entera-asa):hover { transition-duration: 300ms, 300ms, 300ms, 120ms; opacity: 1; background-color: rgba(34, 33, 37, 0.9); border-color: rgba(255, 255, 255, 0.26); }
+  :where(.socio-entera-vista) { transition: color 160ms ease, transform 120ms ease; }
+  :where(.socio-entera-vista):hover { transition-duration: 300ms, 120ms; color: var(--tx); }
+  :where(.barra-pastillas > .socio-entera-btn):hover { color: var(--tx); }
+}
