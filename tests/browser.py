@@ -99,4 +99,60 @@ class OriginalMaker(unittest.TestCase):
         src=(ROOT/'muestra'/'socio.js').read_text(encoding='utf-8')
         self.assertNotIn('rushyclub.com/api/demo/evento',src)
         self.assertTrue((ROOT/'muestra'/'maker-offline.js').is_file())
+
+    def test_06_every_editor_drawer_opens_and_returns(self):
+        for option in ('p', 'b', 'f', 't', 's', 'im', 'n'):
+            entry = self.page.locator(f'#filas [data-abrir="{option}"]')
+            expect(entry).to_be_visible()
+            entry.click()
+            expect(self.page.locator('#pistas')).to_have_attribute('data-en', 'detalle', timeout=6000)
+            detail = self.page.locator(f'#pista-detalle section[data-detalle="{option}"]')
+            expect(detail).to_be_visible(timeout=6000)
+            self.assertGreater(len(detail.inner_text().strip()), 30, f'{option} detail was empty')
+            detail.locator('button.volver').click()
+            expect(self.page.locator('#pistas')).to_have_attribute('data-en', 'lista', timeout=6000)
+
+    def test_07_color_change_reset_and_undo(self):
+        code = self.page.locator('#codigo-actual')
+        before = code.inner_text()
+        self.assertTrue(before.startswith('v=1&'))
+        self.page.locator('#filas [data-abrir="p"]').click()
+        picker = self.page.locator('#color-p')
+        expect(picker).to_have_count(1)
+        picker.evaluate("""el => {
+            el.value='#00cc88';
+            el.dispatchEvent(new Event('input', {bubbles:true}));
+            el.dispatchEvent(new Event('change', {bubbles:true}));
+        }""")
+        expect(code).not_to_have_text(before, timeout=6000)
+        modified = code.inner_text()
+        self.assertIn('00cc88', modified.lower())
+        self.page.locator('#btn-restablecer').click()
+        expect(code).to_have_text(before, timeout=6000)
+        undo = self.page.locator('#btn-deshacer')
+        expect(undo).to_be_visible(timeout=3000)
+        undo.click()
+        expect(code).to_have_text(modified, timeout=6000)
+
+    def test_08_invalid_import_is_rejected(self):
+        self.page.locator('#pegar-codigo').fill('invalid-data')
+        self.page.locator('#btn-aplicar-codigo').click()
+        expect(self.page.locator('#pegar-codigo')).to_have_attribute('aria-invalid', 'true')
+        expect(self.page.locator('#aviso-pegar-codigo')).to_contain_text('Ese código no sirve')
+
+    def test_09_export_contains_selected_original_template(self):
+        button = self.page.locator('#btn-bajar-diseno')
+        expect(button).to_be_visible(timeout=10000)
+        self.page.wait_for_timeout(1200)
+        with self.page.expect_download(timeout=15000) as handle:
+            button.click()
+        download = handle.value
+        target = ART / 'maker-export.json'
+        download.save_as(str(target))
+        data = json.loads(target.read_text(encoding='utf-8'))
+        self.assertEqual(data.get('formato'), 'rushybet-diseno-1')
+        self.assertEqual(data.get('plantilla'), 'clasica')
+        self.assertIn('codigoMarca', data)
+        self.assertIn('perillas', data)
+
 if __name__ == '__main__':unittest.main(verbosity=2)
