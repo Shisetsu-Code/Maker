@@ -23,8 +23,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Regression - avoid observer mutation loop
-        run: node --test tests/offline-control.test.cjs
+      - name: Verify original code fidelity
+        run: node --test tests/original-contract.test.cjs
       - name: Unpack captured static images
         run: python scripts/unpack_assets.py
       - name: Install headless browser
