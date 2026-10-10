@@ -33,6 +33,11 @@ class OriginalMaker(unittest.TestCase):
         self.page.on('pageerror',lambda error:self.console_errors.append(str(error)))
         self.page.goto(BASE+'/muestra/socio.html',wait_until='commit', timeout=8000)
         expect(self.page.locator('#seg-plantilla button[role="radio"]')).to_have_count(4,timeout=12000)
+        # The original onboarding tour intercepts clicks until it is dismissed.
+        skip = self.page.locator('#socio-tour .socio-tour-saltar')
+        expect(skip).to_be_visible(timeout=8000)
+        skip.click()
+        expect(self.page.locator('#socio-tour')).to_be_hidden(timeout=5000)
     def tearDown(self):
         self.page.screenshot(path=str(ART/(self._testMethodName+'.png')),full_page=True,animations='disabled')
         (ART/(self._testMethodName+'.json')).write_text(json.dumps({'title':self.page.title(),'errors':self.console_errors},ensure_ascii=False,indent=2),encoding='utf-8')
