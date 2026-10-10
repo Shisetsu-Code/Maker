@@ -98,28 +98,71 @@ def collect_from_har(har):
     return found, stats
 
 
+def alias_name(name):
+    """Mirror source-root assets for template URLs resolved relative to /muestra/.
+
+    Original captures can use /games-cartas/x while the saved demo loads
+    ./games-cartas/x from /muestra/. Both routes must resolve to identical bytes,
+    without rewriting the captured JavaScript or HTML.
+    """
+    if name.startswith(('games-cartas/', 'rushybet/')):
+        return 'muestra/' + name
+    if name.startswith(('muestra/games-cartas/', 'muestra/rushybet/')):
+        return name[len('muestra/'):]
+    return None
+
+
 def restore(har_path, dest_root, *, dry_run=False, overwrite=False):
     with Path(har_path).open('r', encoding='utf-8') as source:
         assets, stats = collect_from_har(json.load(source))
     root = Path(dest_root).resolve()
-    output = {'assets_available': len(assets), 'written': 0, 'already_present': 0,
-              'existing_different': 0, 'bytes_recovered': sum(len(b) for b in assets.values()),
-              'source': 'user HAR', **stats}
-    for name, raw in sorted(assets.items()):
+    output = {
+        'assets_available': len(assets), 'written': 0, 'already_present': 0,
+        'existing_different': 0, 'bytes_recovered': sum(len(b) for b in assets.values()),
+        'source': 'user HAR', **stats,
+        'aliases_available': 0, 'alias_written': 0,
+        'alias_already_present': 0, 'alias_existing_different': 0,
+        'alias_conflicts': 0,
+    }
+
+    def place(name, raw, prefix=''):
         target = (root / name).resolve()
         if not target.is_relative_to(root):
             raise ValueError('Unexpected path escape: ' + name)
         if target.exists():
-            if target.read_bytes() == raw:
-                output['already_present'] += 1
-                continue
+            if target.is_file() and target.read_bytes() == raw:
+                output[prefix + 'already_present'] += 1
+                return
             if not overwrite:
-                output['existing_different'] += 1
-                continue
+                output[prefix + 'existing_different'] += 1
+                return
         if not dry_run:
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(raw)
-        output['written'] += 1
+        output[prefix + 'written'] += 1
+
+    # Canonical paths take precedence over aliases when both were captured.
+    for name, raw in sorted(assets.items()):
+        place(name, raw)
+
+    aliases = {}
+    for name, raw in sorted(assets.items()):
+        alias = alias_name(name)
+        if not alias:
+            continue
+        if alias in assets:
+            if assets[alias] != raw:
+                output['alias_conflicts'] += 1
+            continue
+        if alias in aliases:
+            if aliases[alias] != raw:
+                output['alias_conflicts'] += 1
+            continue
+        aliases[alias] = raw
+
+    output['aliases_available'] = len(aliases)
+    for name, raw in sorted(aliases.items()):
+        place(name, raw, 'alias_')
     return output
 
 

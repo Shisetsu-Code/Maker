@@ -53,5 +53,64 @@ class AssetRecovery(unittest.TestCase):
             self.assertEqual(restore(src,dest,overwrite=True)['written'],1)
             self.assertEqual(target.read_bytes(),PNG)
 
+
+    def test_mirrors_captured_images_to_urls_used_by_saved_templates(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            src = root / 'sample.har'
+            src.write_text(json.dumps({'log': {'entries': [
+                entry('https://rushybet.com/games-cartas/slot/game.png'),
+                entry('https://rushybet.com/rushybet/v2/banner.png'),
+                entry('https://rushybet.com/muestra/games-cartas/slot/other.png'),
+                entry('https://rushybet.com/muestra/azul/assets/logo.png'),
+            ]}}))
+            dest = root / 'site'
+            dry = restore(src, dest, dry_run=True)
+            self.assertEqual((dry['assets_available'], dry['aliases_available']), (4, 3))
+            self.assertFalse(dest.exists())
+            stats = restore(src, dest)
+            self.assertEqual((stats['written'], stats['alias_written']), (4, 3))
+            for path in (
+                'games-cartas/slot/game.png', 'muestra/games-cartas/slot/game.png',
+                'rushybet/v2/banner.png', 'muestra/rushybet/v2/banner.png',
+                'games-cartas/slot/other.png', 'muestra/games-cartas/slot/other.png',
+                'muestra/azul/assets/logo.png',
+            ):
+                self.assertEqual((dest / path).read_bytes(), PNG, path)
+            self.assertEqual(restore(src, dest)['alias_already_present'], 3)
+
+    def test_canonical_capture_wins_when_alias_bytes_disagree(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            src = root / 'sample.har'
+            alternative = PNG[:-1] + bytes([PNG[-1] ^ 1])
+            src.write_text(json.dumps({'log': {'entries': [
+                entry('https://rushybet.com/games-cartas/a.png', PNG),
+                entry('https://rushybet.com/muestra/games-cartas/a.png', alternative),
+            ]}}))
+            dest = root / 'site'
+            report = restore(src, dest)
+            self.assertEqual(report['alias_conflicts'], 2)
+            self.assertEqual(report['alias_written'], 0)
+            self.assertEqual((dest / 'games-cartas/a.png').read_bytes(), PNG)
+            self.assertEqual((dest / 'muestra/games-cartas/a.png').read_bytes(), alternative)
+
+    def test_mirror_never_replaces_existing_different_asset_by_default(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            src = root / 'sample.har'
+            src.write_text(json.dumps({'log': {'entries': [
+                entry('https://rushybet.com/games-cartas/a.png'),
+            ]}}))
+            dest = root / 'site'
+            target = dest / 'muestra/games-cartas/a.png'
+            target.parent.mkdir(parents=True)
+            target.write_bytes(b'existing independent image')
+            report = restore(src, dest)
+            self.assertEqual(report['alias_existing_different'], 1)
+            self.assertEqual(target.read_bytes(), b'existing independent image')
+            restore(src, dest, overwrite=True)
+            self.assertEqual(target.read_bytes(), PNG)
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)

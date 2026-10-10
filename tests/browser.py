@@ -2,6 +2,7 @@
 from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
 from urllib.request import urlopen
+from urllib.parse import urlsplit
 import os, time, json, subprocess, unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,7 +31,15 @@ class OriginalMaker(unittest.TestCase):
         self.addCleanup(self.context.close)
         self.page = self.context.new_page()
         self.console_errors=[]
+        self.http_errors={}
         self.page.on('pageerror',lambda error:self.console_errors.append(str(error)))
+        def record_response(response):
+            if response.status < 400: return
+            url=urlsplit(response.url)
+            if url.hostname not in ('127.0.0.1','localhost'): return
+            key=f'{response.status} {url.path}'
+            self.http_errors[key]=self.http_errors.get(key,0)+1
+        self.page.on('response', record_response)
         self.page.goto(BASE+'/muestra/socio.html',wait_until='commit', timeout=8000)
         expect(self.page.locator('#seg-plantilla button[role="radio"]')).to_have_count(4,timeout=12000)
         # The original onboarding tour intercepts clicks until it is dismissed.
@@ -40,7 +49,7 @@ class OriginalMaker(unittest.TestCase):
         expect(self.page.locator('#socio-tour')).to_be_hidden(timeout=5000)
     def tearDown(self):
         self.page.screenshot(path=str(ART/(self._testMethodName+'.png')),full_page=True,animations='disabled')
-        (ART/(self._testMethodName+'.json')).write_text(json.dumps({'title':self.page.title(),'errors':self.console_errors},ensure_ascii=False,indent=2),encoding='utf-8')
+        (ART/(self._testMethodName+'.json')).write_text(json.dumps({'title':self.page.title(),'errors':self.console_errors,'http_errors':self.http_errors},ensure_ascii=False,indent=2,sort_keys=True),encoding='utf-8')
     def test_01_editor_is_the_original(self):
         expect(self.page.locator('#seg-vista [data-valor="lobby"]')).to_be_visible()
         expect(self.page.locator('#seg-disp [data-valor="celular"]')).to_be_visible()
@@ -58,6 +67,22 @@ class OriginalMaker(unittest.TestCase):
             expect(active).to_have_attribute('data-listo', 'true', timeout=20000)
             view_text = active.locator('iframe').evaluate('(el) => el.contentDocument?.body?.innerText || ""')
             self.assertGreater(len(view_text.strip()), 70, f'{template} is still empty')
+            # JS-ready can precede the actual visual render (the classic splash).
+            # Wait for a settled screenshot and record how many images really decode.
+            self.page.wait_for_timeout(2500)
+            metrics = active.locator('iframe').evaluate("""el => {
+                const doc=el.contentDocument;
+                const imgs=Array.from(doc.querySelectorAll('img'));
+                return {
+                    title: doc.title,
+                    text_length: (doc.body?.innerText||'').length,
+                    image_total: imgs.length,
+                    image_decoded: imgs.filter(x=>x.complete&&x.naturalWidth>0).length,
+                    image_broken: imgs.filter(x=>x.complete&&x.naturalWidth===0).length,
+                    image_pending: imgs.filter(x=>!x.complete).length,
+                };
+            }""")
+            (ART/f'template-{template}.json').write_text(json.dumps(metrics,ensure_ascii=False,indent=2),encoding='utf-8')
             self.page.screenshot(path=str(ART/f'template-{template}.png'),animations='disabled')
     def test_03_panel_and_phone_switches(self):
         self.page.locator('#seg-vista [data-valor="panel"]').click()
