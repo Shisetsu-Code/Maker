@@ -1,5 +1,8 @@
 # Rushybet replica
 
+Demo publicada: https://rushybet-replica.braian-n-l.workers.dev
+Repositorio privado: https://github.com/Shisetsu-Code/rushybet-replica
+
 Réplica de la muestra capturada en dos HAR aportados por el usuario. Conserva personalizador, lobby, panel y las variantes Rushybet, RushyClub azul, BlazeBet y Brasa.
 
 ## Ejecutar
@@ -41,4 +44,4 @@ Las imágenes adicionales recuperadas del sitio público permanecen incluidas. E
 - Se excluyen solicitudes, cookies, cabeceras, tokens y URLs de sesión de los HAR.
 - Las mejoras de producto se aplicarán después de revisar esta base.
 
-La especificación y el plan están en `outputs/`. El informe de validación documentará diferencias y estados comprobados antes de declarar fidelidad visual completa.
+La especificación, el plan y el informe de validación están en `outputs/`.
