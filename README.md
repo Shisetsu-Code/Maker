@@ -31,12 +31,15 @@ Los HAR no se incluyen en el repositorio. Con copias locales de las capturas:
 ```sh
 node scripts/recover.mjs --out public "captura1.har" "captura2.har"
 node scripts/adapt-demo.mjs
+node scripts/add-template.mjs
 npm run check:assets
 ```
 
 Las imágenes adicionales recuperadas del sitio público permanecen incluidas. El inventario intermedio se escribe en `work/`, que está excluido del repositorio.
 
 ## Alcance
+
+Rushybet 2 duplica el lobby Rushybet. Tiene una vista, código y estilos propios (`vista-rushybet-2.html`, `rushybet-2.js`, `rushybet-2.css`) para experimentar sin cambiar la plantilla original. El panel utiliza la vista común. Se selecciona con `pl=duplicada` en el enlace.
 
 - Interfaz y recursos recuperados; datos del panel y sus operaciones de ejemplo se simulan en el navegador como en la muestra original.
 - El botón de juego abre una vista local de demostración. Los juegos de terceros requieren integración propia.
