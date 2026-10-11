@@ -1,0 +1,22 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Spin-buttons/button-collect-big-enabled">
+<circle id="Oval" cx="100" cy="100" r="97" fill="black" stroke="url(#paint0_linear_1441_18105)" stroke-width="6"/>
+<circle id="Oval_2" cx="100" cy="100" r="91.5" fill="url(#paint1_linear_1441_18105)" stroke="#464646"/>
+<g id="Icon/v02/collect">
+<path id="Vector" fill-rule="evenodd" clip-rule="evenodd" d="M101.736 108.125L125.07 78.9584C126.389 77.3611 125.209 75 123.125 75H109.514C109.098 75 108.82 74.7222 108.82 74.3056V43.75C108.82 42.5695 107.917 41.6667 106.736 41.6667H93.2642C92.1531 41.6667 91.1809 42.5695 91.1809 43.75V74.3056C91.1809 74.7222 90.9031 75 90.4864 75H76.9448C74.8614 75 73.7503 77.3611 75.0003 78.9584L97.8476 108.125C98.8198 109.375 100.764 109.375 101.736 108.125ZM143.889 100.208H156.25C157.431 100.208 158.334 101.111 158.334 102.292V136.806C158.334 137.917 157.431 138.889 156.25 138.889H43.7503C42.6392 138.889 41.667 137.917 41.667 136.806V102.292C41.667 101.111 42.6392 100.208 43.7503 100.208H56.1114C57.292 100.208 58.1948 101.111 58.1948 102.292V121.736C58.1948 122.083 58.542 122.431 58.8892 122.431H141.111C141.528 122.431 141.806 122.083 141.806 121.736V102.292C141.806 101.111 142.778 100.208 143.889 100.208Z" fill="white"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1441_18105" x1="100" y1="0" x2="100" y2="200" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FCF1BD"/>
+<stop offset="0.22" stop-color="#E5BC53"/>
+<stop offset="0.475" stop-color="#F5DF96"/>
+<stop offset="0.76" stop-color="#B8A050"/>
+<stop offset="1" stop-color="#8A6D28"/>
+</linearGradient>
+<linearGradient id="paint1_linear_1441_18105" x1="100" y1="8" x2="100" y2="192" gradientUnits="userSpaceOnUse">
+<stop offset="0.05" stop-color="#555555"/>
+<stop offset="0.565"/>
+</linearGradient>
+</defs>
+</svg>

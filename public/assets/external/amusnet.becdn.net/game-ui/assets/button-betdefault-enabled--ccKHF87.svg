@@ -1,0 +1,25 @@
+<svg width="136" height="96" viewBox="0 0 136 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Bet-Buttons/button-betdefault-enabled">
+<g id="btn">
+<rect id="Rectangle 1" x="1" y="1" width="134" height="94" rx="7" fill="black" stroke="url(#paint0_linear_1469_18267)" stroke-width="2"/>
+<rect id="Rectangle 2" x="4.5" y="4.5" width="127" height="87" rx="5.5" fill="url(#paint1_linear_1469_18267)" stroke="url(#paint2_linear_1469_18267)"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1469_18267" x1="68" y1="0" x2="68" y2="96" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FCF1BD"/>
+<stop offset="0.22" stop-color="#E5BC53"/>
+<stop offset="0.475" stop-color="#F5DF96"/>
+<stop offset="0.76" stop-color="#B8A050"/>
+<stop offset="1" stop-color="#8A6D28"/>
+</linearGradient>
+<linearGradient id="paint1_linear_1469_18267" x1="68" y1="4" x2="68" y2="92" gradientUnits="userSpaceOnUse">
+<stop offset="0.05" stop-color="#555555"/>
+<stop offset="0.565"/>
+</linearGradient>
+<linearGradient id="paint2_linear_1469_18267" x1="68" y1="4" x2="68" y2="92" gradientUnits="userSpaceOnUse">
+<stop stop-color="#646363"/>
+<stop offset="1" stop-color="#515151"/>
+</linearGradient>
+</defs>
+</svg>

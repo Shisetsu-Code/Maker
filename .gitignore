@@ -1,0 +1,9 @@
+node_modules/
+.wrangler/
+.serena/
+.superpowers/
+work/
+*.har
+.env*
+.dev.vars*
+coverage/
