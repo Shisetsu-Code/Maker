@@ -39,7 +39,7 @@ Las imágenes adicionales recuperadas del sitio público permanecen incluidas. E
 
 ## Alcance
 
-Rushybet 2 duplica el lobby Rushybet. Tiene una vista, código y estilos propios (`vista-rushybet-2.html`, `rushybet-2.js`, `rushybet-2.css`) para experimentar sin cambiar la plantilla original. El panel utiliza la vista común. Se selecciona con `pl=duplicada` en el enlace.
+Rushybet 2 parte del lobby Rushybet y tiene un estilo de casino nocturno azul y dorado. Tiene una vista, código y estilos propios (`vista-rushybet-2.html`, `rushybet-2.js`, `rushybet-2.css`) para experimentar sin cambiar la plantilla original. El panel utiliza la vista común. Se selecciona con `pl=duplicada` en el enlace.
 
 - Interfaz y recursos recuperados; datos del panel y sus operaciones de ejemplo se simulan en el navegador como en la muestra original.
 - El botón de juego abre una vista local de demostración. Los juegos de terceros requieren integración propia.
