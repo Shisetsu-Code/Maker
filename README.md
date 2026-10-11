@@ -39,7 +39,7 @@ Las imágenes adicionales recuperadas del sitio público permanecen incluidas. E
 
 ## Alcance
 
-Rushybet 2 parte del lobby Rushybet y tiene un estilo de casino nocturno azul y dorado. Tiene una vista, código y estilos propios (`vista-rushybet-2.html`, `rushybet-2.js`, `rushybet-2.css`) para experimentar sin cambiar la plantilla original. El panel utiliza la vista común. Se selecciona con `pl=duplicada` en el enlace.
+Rushybet 2 tiene una estructura nueva de casino resort: cabecera horizontal, portada editorial, categorías, juego destacado y cuadrícula. Sus archivos son `resort.html`, `resort.js` y `resort.css`. Incluye un catálogo curado de ocho juegos con búsqueda, favoritos de sesión y apertura de vistas demo. El panel utiliza la vista común. Se selecciona con `pl=duplicada` en el enlace. La marca, logo, colores del banner y botones se actualizan desde el personalizador; la superficie clara es propia de esta plantilla.
 
 - Interfaz y recursos recuperados; datos del panel y sus operaciones de ejemplo se simulan en el navegador como en la muestra original.
 - El botón de juego abre una vista local de demostración. Los juegos de terceros requieren integración propia.
