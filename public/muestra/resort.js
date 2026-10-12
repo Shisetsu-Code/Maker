@@ -1,3 +1,4 @@
+document.body.classList.add('resort-view');
 const games=[
 {id:'book',name:'Book of Dead',provider:'Play’n GO',code:'bookofdead',vendor:'PLAYNGO',cat:'slots',image:'slot-playngo/bookofdead.webp',tag:'CLÁSICO'},
 {id:'tiger',name:'Fortune Tiger',provider:'PG Soft',code:'fortune-tiger',vendor:'PGSOFT',cat:'slots',image:'PGSOFT/fortune-tiger.webp',tag:'POPULAR'},

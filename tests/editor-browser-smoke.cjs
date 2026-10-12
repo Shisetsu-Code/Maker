@@ -1,0 +1,62 @@
+const assert=require('node:assert/strict');
+const path=require('node:path');
+const {chromium}=require(process.env.WORKSPACE_NODE_MODULES?path.join(process.env.WORKSPACE_NODE_MODULES,'playwright'):'playwright');
+async function main(){
+ const browser=await chromium.launch({channel:'msedge',headless:true});
+ try{
+  const page=await browser.newPage({viewport:{width:1280,height:800}});
+  async function waitCSS(url,needle,present=true){const frame=page.frames().find(frame=>frame.url().includes(url));assert.ok(frame);await frame.waitForFunction(({needle,present})=>document.getElementById('design-custom-style')?.textContent.includes(needle)===present,{needle,present});}
+  const origin=process.env.DEMO_ORIGIN||'http://127.0.0.1:8787';
+  await page.goto(origin+'/muestra/socio.html#v=1&p=ff5500&n=Prueba&vista=lobby&disp=celular&pl=clasica');
+  const skip=page.getByRole('button',{name:'Saltar',exact:true});if(await skip.count())await skip.click();
+  const editor=page.locator('.design-editor');await editor.waitFor();
+  await editor.locator('summary').filter({hasText:'Tipografía'}).click();
+  await editor.locator('[name=font]').selectOption('editorial');
+  const classic=page.frameLocator('iframe[src*="vista-socio-lobby.html"]');
+  await classic.locator('#design-custom-style').waitFor({state:'attached'});
+  await page.waitForFunction(()=>JSON.parse(localStorage.getItem('rushybet:design-extras:v1')).font==='editorial');
+  await classic.locator('#design-custom-style').evaluate(el=>{if(!el.textContent.includes('Georgia'))throw Error('Fuente no aplicada');});
+  await editor.locator('[name=scale]').focus();await editor.locator('[name=scale]').press('End');
+  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('rushybet:design-extras:v1')).scale),120);
+  await classic.locator('body').evaluate(body=>{const parent=document.createElement('p');parent.id='scale-probe';parent.style.fontSize='20px';parent.append('Texto ',Object.assign(document.createElement('span'),{textContent:'hijo'}));body.append(parent);});
+  await page.waitForTimeout(150);
+  const sizes=await classic.locator('#scale-probe').evaluate(el=>[parseFloat(getComputedStyle(el).fontSize),parseFloat(getComputedStyle(el.firstElementChild).fontSize)]);
+  assert.deepEqual(sizes,[24,24],'El tamaño no debe multiplicarse entre padre e hijo');
+  await classic.locator('#scale-probe').evaluate(el=>el.append(Object.assign(document.createElement('span'),{textContent:'nuevo'})));
+  await page.waitForTimeout(150);
+  assert.equal(await classic.locator('#scale-probe span').last().evaluate(el=>parseFloat(getComputedStyle(el).fontSize)),24,'Los textos nuevos deben usar el tamaño sin duplicarlo');
+  await classic.locator('#scale-probe').evaluate(el=>el.remove());
+  await editor.locator('summary').filter({hasText:'Fondo con imagen'}).click();
+  const data=await page.evaluate(()=>{const c=document.createElement('canvas');c.width=64;c.height=64;const x=c.getContext('2d');x.fillStyle='#243d73';x.fillRect(0,0,64,64);x.fillStyle='#ddbb66';x.fillRect(0,0,32,32);return c.toDataURL('image/png').split(',')[1];});
+  await editor.locator('[name=imageFile]').setInputFiles({name:'fondo.png',mimeType:'image/png',buffer:Buffer.from(data,'base64')});
+  await page.waitForFunction(()=>JSON.parse(localStorage.getItem('rushybet:design-extras:v1')).image.startsWith('data:image/'));
+  await classic.locator('html').evaluate(el=>{if(!getComputedStyle(el).backgroundImage.includes('data:image'))throw Error('Fondo no aplicado');});
+  await editor.locator('[name=imageEnabled]').uncheck();
+  await waitCSS('vista-socio-lobby.html','background-image',false);
+  await classic.locator('#design-custom-style').evaluate(el=>{if(el.textContent.includes('background-image'))throw Error('Fondo no desactivado');});
+  await editor.locator('[name=imageEnabled]').check();
+  await waitCSS('vista-socio-lobby.html','background-image');
+  await page.locator('#seg-plantilla [data-valor=duplicada]').click();
+  const resort=page.frameLocator('iframe[src*="resort.html"]');await resort.locator('#design-custom-style').waitFor({state:'attached'});
+  await resort.locator('#design-custom-style').evaluate(el=>{if(!el.textContent.includes('Georgia')||!el.textContent.includes('data:image'))throw Error('Ajustes perdidos entre plantillas');});
+  const resortSurface=await resort.locator('main').evaluate(el=>getComputedStyle(el).backgroundColor);
+  assert.equal(resortSurface,'rgba(245, 243, 237, 0.96)','Resort debe conservar una superficie clara sobre fondos oscuros');
+  await page.locator('#seg-vista [data-valor=panel]').click();
+  const panel=page.frameLocator('iframe[src*="vista-socio-panel.html"]');await panel.locator('#design-custom-style').waitFor({state:'attached'});
+  await panel.locator('#design-custom-style').evaluate(el=>{if(!el.textContent.includes('data:image'))throw Error('Fondo ausente en panel');});
+  try{await skip.waitFor({state:'visible',timeout:2500});await skip.click();}catch{}
+  await editor.locator('summary').filter({hasText:'Acabados'}).click();
+  const [download]=await Promise.all([page.waitForEvent('download'),editor.locator('[data-export]').click()]);assert.equal(download.suggestedFilename(),'ajustes-diseno.json');
+  await editor.locator('[data-reset]').click();
+  await waitCSS('vista-socio-panel.html','background-image',false);
+  await panel.locator('#design-custom-style').evaluate(el=>{if(el.textContent.includes('Georgia')||el.textContent.includes('background-image'))throw Error('Restablecimiento incompleto');});
+  const imported={version:1,ajustes:{font:'archivo',scale:110,image:'data:image/png;base64,'+data,shade:70}};
+  await editor.locator('[data-json]').setInputFiles({name:'ajustes.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(imported))});
+  await page.waitForFunction(()=>JSON.parse(localStorage.getItem('rushybet:design-extras:v1')).font==='archivo');
+  await panel.locator('body').evaluate(async()=>{await document.fonts.load('16px Archivo');if(![...document.fonts].some(font=>font.family==='Archivo'&&font.status==='loaded'))throw Error('Archivo no está cargada en el panel');});
+  await page.reload();await editor.waitFor();
+  assert.equal(await page.evaluate(()=>window.__designExtras.estado().font),'archivo');
+  console.log('PASS: tipografía, tamaño, subida/ocultar fondo, cambios de plantilla/panel, exportación, importación, restablecer y recarga.');
+ }finally{await browser.close();}
+}
+main().catch(error=>{console.error(error.message);process.exitCode=1;});

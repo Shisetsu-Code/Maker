@@ -7,7 +7,7 @@ test('rootServesPersonalizerEntry', async () => {
   assert.match(response.headers.get('content-type'),/text\/html/);
 });
 test('sixViewsAndCoreAssetsAreServed', async () => {
-  for (const name of ['socio.html','vista-socio-lobby.html','vista-socio-panel.html','vista-azul.html','vista-blaze.html','vista-brasa.html','resort.html','resort.js','resort.css','socio.js','socio-lobby.js','socio-panel.js','app.css','socio.css','panel.css']) {
+  for (const name of ['socio.html','vista-socio-lobby.html','vista-socio-panel.html','vista-azul.html','vista-blaze.html','vista-brasa.html','resort.html','resort.js','resort.css','design-editor.js','design-editor.css','design-settings.mjs','socio.js','socio-lobby.js','socio-panel.js','app.css','socio.css','panel.css']) {
     const response = await fetch(`${origin}/muestra/${name}`);
     assert.equal(response.status,200,name);
     assert.ok((await response.text()).length > 0,name);

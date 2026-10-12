@@ -1,5 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { rewriteDemoText } from './demo-rewrite.mjs';
+import { installDesignEditor } from './install-design-editor.mjs';
 const manifest = JSON.parse(await readFile('work/recovery-manifest.json','utf8'));
 const mappings = Object.fromEntries(manifest.resources.filter(r => r.mime.startsWith('image/') && !r.source.startsWith('https://rushybet.com/')).map(r=>[r.source,'/'+r.target]));
 await writeFile('public/muestra/demo-assets-map.js','window.__demoRecoveredAssets = Object.freeze('+JSON.stringify(mappings)+');\n');
@@ -15,3 +16,4 @@ for (const name of ['socio.html','vista-socio-lobby.html','vista-socio-panel.htm
   await writeFile(file,text);
 }
 console.log(JSON.stringify({localImageMappings:Object.keys(mappings).length,adaptedViews:6}));
+await installDesignEditor();

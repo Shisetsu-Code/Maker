@@ -39,6 +39,8 @@ Las imágenes adicionales recuperadas del sitio público permanecen incluidas. E
 
 ## Alcance
 
+El personalizador incluye tipografía, tamaño, peso, imagen propia de fondo, oscurecimiento, posición y esquinas. Los ajustes se guardan en este navegador y se aplican a todas las plantillas y al panel. Las imágenes se comprimen localmente; no se suben a un servidor. «Guardar ajustes» y «Cargar ajustes» permiten trasladarlos mediante JSON. «Descargar mi diseño» también incluye el campo `ajustes`. El enlace de marca no incluye estos ajustes ni la imagen; para compartirlos se utiliza el archivo.
+
 Rushybet 2 tiene una estructura nueva de casino resort: cabecera horizontal, portada editorial, categorías, juego destacado y cuadrícula. Sus archivos son `resort.html`, `resort.js` y `resort.css`. Incluye un catálogo curado de ocho juegos con búsqueda, favoritos de sesión y apertura de vistas demo. El panel utiliza la vista común. Se selecciona con `pl=duplicada` en el enlace. La marca, logo, colores del banner y botones se actualizan desde el personalizador; la superficie clara es propia de esta plantilla.
 
 - Interfaz y recursos recuperados; datos del panel y sus operaciones de ejemplo se simulan en el navegador como en la muestra original.
