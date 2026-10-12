@@ -1,4 +1,5 @@
 import {readFile,writeFile} from 'node:fs/promises';
+import {installBateupix} from './register-bateupix.mjs';
 
 export function addTemplate(source) {
   if (source.includes('duplicada:`Rushybet 2`')) return source.replaceAll('vista-rushybet-2.html','resort.html');
@@ -20,4 +21,5 @@ if (process.argv[1]?.endsWith('add-template.mjs')) {
   let html=await readFile(base+'socio.html','utf8');
   if(!html.includes('data-valor="duplicada"')) html=html.replace('>Brasa</button>', '>Brasa</button>\n        <button type="button" class="tocable" role="radio" data-valor="duplicada" aria-checked="false">Rushybet 2</button>');
   await writeFile(base+'socio.html',html);
+  await installBateupix();
 }
