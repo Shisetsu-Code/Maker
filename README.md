@@ -1,11 +1,19 @@
-# Rushybet replica
+# Maker — personalizador de casinos
 
-Demo publicada: https://rushybet-replica.braian-n-l.workers.dev
-Repositorio privado: https://github.com/Shisetsu-Code/rushybet-replica
+[Demo en Cloudflare](https://rushybet-replica.braian-n-l.workers.dev) · [Repositorio](https://github.com/Shisetsu-Code/Maker)
 
-Réplica de la muestra capturada en dos HAR aportados por el usuario. Conserva personalizador, lobby, panel y las variantes Rushybet, RushyClub azul, BlazeBet y Brasa.
+Personalizador de muestra reconstruido a partir de capturas HAR, con cinco plantillas, vista de lobby y panel, simulación de computadora/celular y edición de marca. Resort (Rushybet 2) tiene una estructura propia y permite editar portada y distribución.
 
-## Ejecutar
+## Qué se puede editar
+
+- Nombre, logo, colores, fuentes, tamaño, peso y fondos propios.
+- Portada Resort: título, descripción, botón e imagen.
+- Secciones Resort: portada, búsqueda/categorías, juegos y casino en vivo; mostrar, ocultar y ordenar.
+- Guardar/cargar ajustes JSON y restablecer los ajustes nuevos.
+
+Las imágenes se comprimen localmente y los ajustes permanecen en el navegador. No se envían diseños ni imágenes a un servidor. Los juegos abren vistas locales de demostración; no hay apuestas reales.
+
+## Ejecutar y verificar
 
 ```sh
 npm ci
@@ -13,40 +21,17 @@ npm test
 npm run dev
 ```
 
-Abrir `http://127.0.0.1:8787`. El enlace principal carga el personalizador con el estado de la captura; los colores, nombre, plantilla, vista y dispositivo pueden modificarse desde los controles originales.
+Abrir `http://127.0.0.1:8787`. Con el servidor activo, ejecutar `npm run test:runtime`. Para probar el recorrido con navegador, ver [Pruebas](docs/PRUEBAS.md).
 
-## Publicar en Cloudflare
+## Documentación
 
-```sh
-npx wrangler login
-npm run deploy
-```
+- [Manual del editor](docs/USO.md)
+- [Arquitectura y mantenimiento](docs/ARQUITECTURA.md)
+- [Publicación y recuperación](docs/PUBLICACION.md)
+- [Pruebas y límites](docs/PRUEBAS.md)
 
-`wrangler.jsonc` apunta al Worker de prueba `rushybet-replica`. Si se utiliza otra cuenta, actualizar `account_id`. El despliegue sirve recursos estáticos y únicamente datos de demostración; no requiere secretos ni bases de datos.
-
-## Recuperar de nuevo
-
-Los HAR no se incluyen en el repositorio. Con copias locales de las capturas:
-
-```sh
-node scripts/recover.mjs --out public "captura1.har" "captura2.har"
-node scripts/adapt-demo.mjs
-node scripts/add-template.mjs
-npm run check:assets
-```
-
-Las imágenes adicionales recuperadas del sitio público permanecen incluidas. El inventario intermedio se escribe en `work/`, que está excluido del repositorio.
+El nombre npm y el Worker conservan `rushybet-replica` para mantener la dirección existente. El repositorio de entrega es Maker. La carpeta `outputs/` contiene documentos de etapas previas; las especificaciones originales describen la recuperación inicial, no todas las funciones posteriores.
 
 ## Alcance
 
-El personalizador incluye tipografía, tamaño, peso, imagen propia de fondo, oscurecimiento, posición y esquinas. Los ajustes se guardan en este navegador y se aplican a todas las plantillas y al panel. Las imágenes se comprimen localmente; no se suben a un servidor. «Guardar ajustes» y «Cargar ajustes» permiten trasladarlos mediante JSON. «Descargar mi diseño» también incluye el campo `ajustes`. El enlace de marca no incluye estos ajustes ni la imagen; para compartirlos se utiliza el archivo.
-
-Rushybet 2 tiene una estructura nueva de casino resort: cabecera horizontal, portada editorial, categorías, juego destacado y cuadrícula. Sus archivos son `resort.html`, `resort.js` y `resort.css`. Incluye un catálogo curado de ocho juegos con búsqueda, favoritos de sesión y apertura de vistas demo. El panel utiliza la vista común. Se selecciona con `pl=duplicada` en el enlace. La marca, logo, colores del banner y botones se actualizan desde el personalizador; la superficie clara es propia de esta plantilla.
-
-- Interfaz y recursos recuperados; datos del panel y sus operaciones de ejemplo se simulan en el navegador como en la muestra original.
-- El botón de juego abre una vista local de demostración. Los juegos de terceros requieren integración propia.
-- El envío de diseño no envía mensajes; la descarga del diseño conserva el flujo local de la muestra.
-- Se excluyen solicitudes, cookies, cabeceras, tokens y URLs de sesión de los HAR.
-- Las mejoras de producto se aplicarán después de revisar esta base.
-
-La especificación, el plan y el informe de validación están en `outputs/`.
+Las otras cuatro plantillas conservan la distribución capturada; banners y orden de secciones se editan en Resort. Su catálogo es una selección de ocho juegos. El panel es compartido. Los favoritos de Resort son de sesión y pueden diferir entre las vistas de computadora y celular. Algunos recursos del catálogo original no capturados todavía usan URLs externas. Los HAR, cookies, cabeceras y datos de sesión no se publican.

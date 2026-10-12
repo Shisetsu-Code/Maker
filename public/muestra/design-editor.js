@@ -1,7 +1,9 @@
 import {DEFAULT_SETTINGS,normalizeSettings,designCSS} from './design-settings.mjs';
+import {applyContent,mountContentEditor} from './content-editor.js';
 const STORAGE='rushybet:design-extras:v1';
 let settings={...DEFAULT_SETTINGS};try{settings=normalizeSettings(JSON.parse(localStorage.getItem(STORAGE)||'null'));}catch{}
 const host=document.getElementById('filas');
+const contentStyles=document.createElement('link');contentStyles.rel='stylesheet';contentStyles.href=new URL('content-editor.css',import.meta.url).href;document.head.append(contentStyles);
 if(host)setupEditor();else setupView();
 
 function setupView(){
@@ -25,7 +27,7 @@ function setupView(){
     for(const node of nodes)node.classList.add('design-scaled-text');
     if(previous)root.style.setProperty('--design-text-scale',previous);else root.style.removeProperty('--design-text-scale');
   }
-  function apply(value){settings=normalizeSettings(value);const css=designCSS(settings);if(style.textContent!==css)style.textContent=css;textSizes();}
+  function apply(value){settings=normalizeSettings(value);const css=designCSS(settings);if(style.textContent!==css)style.textContent=css;applyContent(settings.content);textSizes();}
   const observer=new MutationObserver(()=>{if(scheduled)return;scheduled=true;requestAnimationFrame(()=>{scheduled=false;textSizes();});});
   observer.observe(document.body,{childList:true,subtree:true});
   window.addEventListener('message',event=>{if(event.source!==parent||event.origin!==location.origin||event.data?.tipo!=='design-extras')return;apply(event.data.settings);});
@@ -42,13 +44,13 @@ function setupEditor(){
   <details><summary>Acabados y guardado</summary><label>Esquinas de tarjetas<select name="radius"><option value="original">Originales</option><option value="0">Rectas</option><option value="8">Sutiles</option><option value="16">Redondeadas</option><option value="24">Muy redondeadas</option><option value="30">Suaves</option></select></label><div class="design-actions"><button type="button" data-export>Guardar ajustes</button><button type="button" data-import>Cargar ajustes</button><button type="button" data-reset>Restablecer estos ajustes</button></div><input data-json type="file" accept="application/json,.json" hidden><p>El archivo incluye tu imagen de fondo. Los enlaces de marca conservan los colores; estos ajustes se comparten con el archivo.</p></details><p class="design-status" role="status" aria-live="polite"></p>`;
   editor.querySelectorAll('summary').forEach(summary=>summary.setAttribute('role','button'));
   editor.querySelector('[name=radius]').parentElement.firstChild.textContent='Esquinas · Rushybet y Resort';
-  host.before(editor);const status=editor.querySelector('.design-status');
+  host.before(editor);const status=editor.querySelector('.design-status');let contentUI;
   function message(text){status.textContent=text;}
   function paint(){for(const key of ['font','scale','weight','radius','imageEnabled','shade','position','fit']){const input=editor.querySelector(`[name="${key}"]`);if(input.type==='checkbox')input.checked=settings[key];else input.value=String(settings[key]);}for(const key of ['scale','shade'])editor.querySelector(`[data-output="${key}"]`).value=settings[key]+'%';const image=editor.querySelector('[data-preview]');image.hidden=!settings.image;if(settings.image)image.src=settings.image;else image.removeAttribute('src');}
   function send(frame){try{frame.contentWindow?.postMessage({tipo:'design-extras',settings},location.origin);}catch{}}
   function broadcast(){document.querySelectorAll('iframe').forEach(send);}
-  function save(){settings=normalizeSettings(settings);try{localStorage.setItem(STORAGE,JSON.stringify(settings));message('Ajustes guardados en este navegador.');}catch{message('El navegador no pudo guardarlos. Usá «Guardar ajustes» para conservarlos.');}paint();broadcast();}
-  editor.addEventListener('input',event=>{const input=event.target;if(!Object.hasOwn(DEFAULT_SETTINGS,input.name)||input.name==='image')return;settings[input.name]=input.type==='checkbox'?input.checked:input.value;save();});
+  function save(){settings=normalizeSettings(settings);try{localStorage.setItem(STORAGE,JSON.stringify(settings));message('Ajustes guardados en este navegador.');}catch{message('El navegador no pudo guardarlos. Usá «Guardar ajustes» para conservarlos.');}paint();contentUI?.paint();broadcast();}
+  editor.addEventListener('input',event=>{const input=event.target;if(!Object.hasOwn(DEFAULT_SETTINGS,input.name)||input.name==='image'||input.name==='content')return;settings[input.name]=input.type==='checkbox'?input.checked:input.value;save();});
   const frames=new WeakSet();function connect(){for(const frame of document.querySelectorAll('iframe'))if(!frames.has(frame)){frames.add(frame);frame.addEventListener('load',()=>send(frame));send(frame);}}
   new MutationObserver(connect).observe(document.getElementById('escena')||document.body,{childList:true,subtree:true});connect();
   editor.querySelector('[name=imageFile]').addEventListener('change',async event=>{const file=event.target.files?.[0];if(!file)return;try{if(!['image/jpeg','image/png','image/webp'].includes(file.type)||file.size>8*1024*1024)throw Error('Elegí un JPG, PNG o WebP de hasta 8 MB.');const image=await createImageBitmap(file);const ratio=Math.min(1,1600/Math.max(image.width,image.height));const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(image.width*ratio));canvas.height=Math.max(1,Math.round(image.height*ratio));canvas.getContext('2d').drawImage(image,0,0,canvas.width,canvas.height);image.close();const result=canvas.toDataURL('image/webp',.82);if(result.length>1600000)throw Error('La imagen tiene mucho detalle. Probá una versión más pequeña.');settings.image=result;settings.imageEnabled=true;save();}catch(error){message(error.message||'No pudimos leer esa imagen.');}event.target.value='';});
@@ -56,6 +58,7 @@ function setupEditor(){
   editor.querySelector('[data-reset]').onclick=()=>{settings={...DEFAULT_SETTINGS};save();};
   editor.querySelector('[data-export]').onclick=()=>{const url=URL.createObjectURL(new Blob([JSON.stringify({version:1,ajustes:settings},null,2)],{type:'application/json'}));const anchor=document.createElement('a');anchor.href=url;anchor.download='ajustes-diseno.json';anchor.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};
   editor.querySelector('[data-import]').onclick=()=>editor.querySelector('[data-json]').click();
-  editor.querySelector('[data-json]').onchange=async event=>{const file=event.target.files?.[0];if(!file)return;try{if(file.size>2*1024*1024)throw Error('El archivo debe pesar menos de 2 MB.');const value=JSON.parse(await file.text());const data=value.ajustes||value;if(!data||typeof data!=='object'||!Object.keys(DEFAULT_SETTINGS).some(key=>Object.hasOwn(data,key)))throw Error('Ese archivo no contiene ajustes de diseño.');settings=normalizeSettings(data);save();}catch(error){message(error.message||'No pudimos cargar ese archivo.');}event.target.value='';};
+  editor.querySelector('[data-json]').onchange=async event=>{const file=event.target.files?.[0];if(!file)return;try{if(file.size>4*1024*1024)throw Error('El archivo debe pesar menos de 4 MB.');const value=JSON.parse(await file.text());const data=value.ajustes||value;if(!data||typeof data!=='object'||!Object.keys(DEFAULT_SETTINGS).some(key=>Object.hasOwn(data,key)))throw Error('Ese archivo no contiene ajustes de diseño.');settings=normalizeSettings(data);save();}catch(error){message(error.message||'No pudimos cargar ese archivo.');}event.target.value='';};
+  contentUI=mountContentEditor(editor,()=>settings.content,value=>{settings.content=value;save();},message);
   window.__designExtras={estado:()=>({...settings})};paint();
 }

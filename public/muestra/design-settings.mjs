@@ -1,10 +1,11 @@
+import {normalizeContent,DEFAULT_CONTENT} from './content-settings.mjs';
 export const FONT_OPTIONS = Object.freeze({ original:'', system:'system-ui, sans-serif', barlow:'Barlow, sans-serif', archivo:'Archivo, sans-serif', oswald:'Oswald, sans-serif', editorial:'Georgia, serif' });
-export const DEFAULT_SETTINGS = Object.freeze({font:'original',scale:100,weight:'original',radius:'original',image:'',imageEnabled:true,shade:55,position:'center',fit:'cover'});
+export const DEFAULT_SETTINGS = Object.freeze({font:'original',scale:100,weight:'original',radius:'original',image:'',imageEnabled:true,shade:55,position:'center',fit:'cover',content:DEFAULT_CONTENT});
 const number=(value,min,max,fallback)=>value==null||value===''?fallback:Number.isFinite(Number(value))?Math.min(max,Math.max(min,Number(value))):fallback;
 export function normalizeSettings(value={}) {
   if(!value||typeof value!=='object'||Array.isArray(value))value={};
   const image=typeof value.image==='string'&&value.image.length<=1600000&&/^data:image\/(?:jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(value.image)?value.image:'';
-  return {font:Object.hasOwn(FONT_OPTIONS,value.font)?value.font:'original',scale:number(value.scale,85,120,100),weight:['original','400','600','700'].includes(value.weight)?value.weight:'original',radius:value.radius==null||value.radius==='original'?'original':number(value.radius,0,30,16),image,imageEnabled:value.imageEnabled!==false,shade:number(value.shade,0,90,55),position:['center','top','bottom'].includes(value.position)?value.position:'center',fit:['cover','contain'].includes(value.fit)?value.fit:'cover'};
+  return {font:Object.hasOwn(FONT_OPTIONS,value.font)?value.font:'original',scale:number(value.scale,85,120,100),weight:['original','400','600','700'].includes(value.weight)?value.weight:'original',radius:value.radius==null||value.radius==='original'?'original':number(value.radius,0,30,16),image,imageEnabled:value.imageEnabled!==false,shade:number(value.shade,0,90,55),position:['center','top','bottom'].includes(value.position)?value.position:'center',fit:['cover','contain'].includes(value.fit)?value.fit:'cover',content:normalizeContent(value.content)};
 }
 export function designCSS(settings){
   const s=normalizeSettings(settings);

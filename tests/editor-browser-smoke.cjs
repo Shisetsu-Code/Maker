@@ -41,6 +41,16 @@ async function main(){
   await resort.locator('#design-custom-style').evaluate(el=>{if(!el.textContent.includes('Georgia')||!el.textContent.includes('data:image'))throw Error('Ajustes perdidos entre plantillas');});
   const resortSurface=await resort.locator('main').evaluate(el=>getComputedStyle(el).backgroundColor);
   assert.equal(resortSurface,'rgba(245, 243, 237, 0.96)','Resort debe conservar una superficie clara sobre fondos oscuros');
+  await editor.locator('summary').filter({hasText:'Banners y secciones'}).click();
+  await editor.locator('[data-content=title]').fill('Mi nuevo casino');
+  await page.frames().find(frame=>frame.url().includes('resort.html')).waitForFunction(()=>document.querySelector('.hero-copy h1').textContent==='Mi nuevo casino');
+  await editor.getByRole('checkbox',{name:'Mostrar Casino en vivo',exact:true}).uncheck();
+  await resort.locator('.lounge').waitFor({state:'hidden'});
+  await editor.getByRole('button',{name:'Bajar Portada',exact:true}).click();
+  await page.frames().find(frame=>frame.url().includes('resort.html')).waitForFunction(()=>document.querySelector('main>section').id==='discover');
+  await editor.locator('[data-banner-file]').setInputFiles({name:'portada.png',mimeType:'image/png',buffer:Buffer.from(data,'base64')});
+  await resort.locator('[data-banner-image]').waitFor({state:'visible'});
+  assert.match(await resort.locator('[data-banner-image]').getAttribute('src'),/^data:image\//);
   await page.locator('#seg-vista [data-valor=panel]').click();
   const panel=page.frameLocator('iframe[src*="vista-socio-panel.html"]');await panel.locator('#design-custom-style').waitFor({state:'attached'});
   await panel.locator('#design-custom-style').evaluate(el=>{if(!el.textContent.includes('data:image'))throw Error('Fondo ausente en panel');});
