@@ -8,6 +8,7 @@
 - `content-settings.mjs`: textos acotados, imágenes data locales y secciones permitidas; elimina claves y secciones desconocidas.
 - `content-editor.js`: portada y orden de Resort. Los textos se asignan con `textContent`. No se interpreta HTML del usuario.
 - `resort.html/css/js`: lobby propio; catálogo curado, búsqueda, favoritos y vistas de juego local.
+- `bateupix.js`: controlador común de Bateupix, Cobraya y Lunabet; cada plantilla carga su catálogo y recursos locales. Ver [sanitización y regeneración](COBRAYA-LUNABET.md).
 - `src/worker.mjs` y `src/demo-api.mjs`: recursos estáticos, alias de miniaturas y contratos de demostración. Sin base de datos ni servicios de apuestas.
 
 ## Datos
