@@ -1,6 +1,7 @@
 import {readFile,writeFile,mkdir,readdir,unlink} from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
+import {HarJsonError,parseHarJson} from './har-json.mjs';
 const ALLOWED_HOSTS=new Set(['bateupix.com','igamewin.com','gator.drakon.casino']);
 const key=url=>{const u=new URL(url,'https://bateupix.com');return u.origin+u.pathname;};
 const label=(value,max=100)=>typeof value==='string'?value.replace(/[\u0000-\u001f]/g,' ').trim().slice(0,max):'';
@@ -8,7 +9,7 @@ function extension(bytes,mime){if(mime==='image/png'&&bytes.subarray(0,8).equals
 export function sanitizeBateupix(har){
  const entries=har.log?.entries||[],images=new Map(),assets=[];
  for(const e of entries){try{const u=new URL(e.request.url),c=e.response?.content;if(!ALLOWED_HOSTS.has(u.hostname)||e.response.status!==200||!c?.text||c.encoding!=='base64')continue;const bytes=Buffer.from(c.text,'base64');if(bytes.length>8*1024*1024)continue;const ext=extension(bytes,(c.mimeType||'').split(';')[0]);if(!ext)continue;const id=key(u.href);if(images.has(id))continue;const target='assets/'+createHash('sha256').update(id).digest('hex').slice(0,20)+'.'+ext;images.set(id,target);assets.push({path:target,bytes});}catch{}}
- const json=path=>{for(const e of entries){try{const u=new URL(e.request.url);if(u.hostname==='bateupix.com'&&u.pathname===path&&e.response.status===200)return JSON.parse(e.response.content.text);}catch{}}return null;};
+ const json=path=>{for(const e of entries){try{const u=new URL(e.request.url);if(u.hostname==='bateupix.com'&&u.pathname===path&&e.response.status===200)return parseHarJson(e.response.content,path);}catch(error){if(error instanceof HarJsonError)throw error;}}return null;};
  const mapImage=url=>{try{const id=key(url);return images.get(id)||images.get(id+'.webp')||'';}catch{return'';}};
  const home=json('/api/games/homepage-sections')||[],all=json('/api/games')?.data||[],games=[],seen=new Set();
  for(const game of [...home.flatMap(s=>Array.isArray(s.games)?s.games:[]),...all]){const image=mapImage(game.image_url),name=label(game.name),code=label(game.game_code,120),provider=label(game.provider_code,120);if(!image||!name||!code||!provider)continue;const id=createHash('sha256').update(provider+':'+code).digest('hex').slice(0,16);if(seen.has(id))continue;seen.add(id);games.push({id,name,code,provider,image,category:label(typeof game.category==='string'?game.category:'slots',40)});}

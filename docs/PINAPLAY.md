@@ -23,4 +23,4 @@ El HAR permanece fuera del repositorio. Al usar otra captura, limpiar previament
 
 ## Verificación
 
-`npm test` comprueba proyección de datos, rechazo de APIs ajenas y uso limitado de imágenes. Con servidor activo, `DEMO_TEMPLATE=pinaplay` y `DEMO_ORIGIN` permiten ejecutar `tests/lobby-templates-browser-smoke.cjs` con Playwright disponible en `WORKSPACE_NODE_MODULES`. Verifica catálogo, portadas, búsqueda, favoritos, demo local, marca y móvil sin solicitudes externas.
+`npm test` comprueba los contratos de importación. Después de `npm run build`, ejecutar `npm run test:browser` con Playwright instalado desde el lockfile del proyecto. El recorrido común cubre las trece plantillas, búsqueda, favoritos, juego local, marca y móvil; usar `DEMO_ORIGIN` para verificar un servidor existente. Ver [PRUEBAS.md](PRUEBAS.md).

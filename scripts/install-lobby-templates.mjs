@@ -1,18 +1,51 @@
-import {installTemplatePicker} from './install-template-picker.mjs';
-import {casinoFamilyPage} from './casino-family-page.mjs';
-import {celuapuestas40Page} from './celuapuestas40-page.mjs';
-import {pinaplayPage} from './pinaplay-page.mjs';
-import {multisalaPage} from './multisala-page.mjs';
-import {readFile,writeFile} from 'node:fs/promises';
-const templates={bet30:{name:'Bet30',primary:'#da4168',background:'#000032',card:'#14142f'},casinotower30:{name:'CasinoTower30',primary:'#fdca55',background:'#1c1c1c',card:'#29251c'},celuapuestas40:{name:'Celuapuestas40',primary:'#da4167',background:'#000032',card:'#11112b'},pinaplay:{name:'Pinaplay',primary:'#71c92e',background:'#012326',card:'#012e32'},multisala:{name:'Multisala',primary:'#c34ee8',background:'#100a18',card:'#21132d'},cobraya:{name:'Cobraya',primary:'#ffc400',background:'#0c0d10',card:'#202126'},lunabet:{name:'Lunabet',primary:'#4d8df7',background:'#090d18',card:'#161e31'}};
-export function registerLobbyTemplates(source){for(const [slug,t]of Object.entries(templates)){if(source.includes(slug+':`'+t.name+'`'))continue;source=source.replace('function Bn(e){return','function Bn(e){return e===`'+slug+'`||').replace('Wn=Object.freeze({','Wn=Object.freeze({'+slug+':Object.freeze({p:`'+t.primary+'`,f:`'+t.background+'`,t:`'+t.card+'`}),').replace('function Nr(e){','function Nr(e){if(e===`'+slug+'`)return `'+slug+'.html`;').replace('function Xi(){','function Xi(){if(G.plantilla===`'+slug+'`&&G.vista===`lobby`)return `'+slug+'-${G.disp}`;').replace('zo=Object.freeze({','zo=Object.freeze({'+slug+':`'+t.name+'`,');}return source.replaceAll('Once diseños para tu lobby','Trece diseños para tu lobby').replaceAll('Diez diseños para tu lobby','Trece diseños para tu lobby').replaceAll('Nueve diseños para tu lobby','Diez diseños para tu lobby').replaceAll('Rushybet 2, Bateupix, Cobraya, Lunabet y Multisala.','Rushybet 2, Bateupix, Cobraya, Lunabet, Multisala y Pinaplay.').replaceAll('Seis diseños para tu lobby','Diez diseños para tu lobby').replaceAll('Ocho diseños para tu lobby','Diez diseños para tu lobby').replaceAll('Rushybet 2, Bateupix, Cobraya y Lunabet.','Rushybet 2, Bateupix, Cobraya, Lunabet y Multisala.').replaceAll('Rushybet 2 y Bateupix.','Rushybet 2, Bateupix, Cobraya, Lunabet y Multisala.');}
-export async function installLobbyTemplates(){const root='public/muestra/';await writeFile(root+'socio.js',registerLobbyTemplates(await readFile(root+'socio.js','utf8')));let html=await readFile(root+'socio.html','utf8');for(const [slug,t]of Object.entries(templates)){if(!html.includes('data-valor="'+slug+'"'))html=html.replace('>Bateupix</button>','>Bateupix</button>\n<button type="button" class="tocable" role="radio" data-valor="'+slug+'" aria-checked="false">'+t.name+'</button>');await writeFile(root+slug+'.html',['bet30','casinotower30'].includes(slug)?casinoFamilyPage(page(slug,t.name),slug):slug==='celuapuestas40'?celuapuestas40Page(page(slug,t.name)):slug==='pinaplay'?pinaplayPage(page(slug,t.name)):slug==='multisala'?multisalaPage(page(slug,t.name)):page(slug,t.name));}await writeFile(root+'socio.html',html);await installTemplatePicker();}
-function page(slug,name){return `<!doctype html><html lang="es" data-catalog="${slug}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"><title>${name} · Plantilla demo</title><link rel="stylesheet" href="lobby-templates.css"></head><body data-catalog="${slug}"><div class="bp-demo">DEMO · Sin apuestas reales ni promociones vigentes</div>
+import { installTemplatePickerHtml } from "./install-template-picker.mjs";
+import { syncTemplateChoices } from "./template-choices.mjs";
+import { TEMPLATE_REGISTRY } from "../src/client/editor/template-registry.js";
+import path from "node:path";
+import { casinoFamilyPage } from "./casino-family-page.mjs";
+import { celuapuestas40Page } from "./celuapuestas40-page.mjs";
+import { pinaplayPage } from "./pinaplay-page.mjs";
+import { multisalaPage } from "./multisala-page.mjs";
+import { readFile, writeFile } from "node:fs/promises";
+const generatedTemplates = [
+  "bet30",
+  "casinotower30",
+  "celuapuestas40",
+  "pinaplay",
+  "multisala",
+  "cobraya",
+  "lunabet",
+];
+
+/** Regenerate local lobby HTML. Template registration lives in source, never in bundles. */
+export async function installLobbyTemplates(directory = "public/muestra") {
+  const editorPath = path.join(directory, "socio.html");
+  const html = syncTemplateChoices(await readFile(editorPath, "utf8"));
+  await writeFile(editorPath, installTemplatePickerHtml(html));
+  for (const slug of generatedTemplates) {
+    const template = TEMPLATE_REGISTRY[slug];
+    const base = page(slug, template.label);
+    const content = ["bet30", "casinotower30"].includes(slug)
+      ? casinoFamilyPage(base, slug)
+      : slug === "celuapuestas40"
+        ? celuapuestas40Page(base)
+        : slug === "pinaplay"
+          ? pinaplayPage(base)
+          : slug === "multisala"
+            ? multisalaPage(base)
+            : base;
+    await writeFile(path.join(directory, template.url), content);
+  }
+}
+function page(slug, name) {
+  return `<!doctype html><html lang="es" data-catalog="${slug}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"><title>${name} · Plantilla demo</title><link rel="stylesheet" href="lobby-templates.css"></head><body data-catalog="${slug}"><div class="bp-demo">DEMO · Sin apuestas reales ni promociones vigentes</div>
 <header><button class="bp-menu" aria-label="Mostrar menú">☰</button><a class="bp-brand" href="#"><span>✦</span><strong id="bp-name">${name}</strong><img id="bp-logo" alt="Logo de tu casino" hidden></a><nav><button data-filter="todos">Casino</button><button data-info="Casino en vivo">En vivo</button><button data-info="Deportes">Deportes</button></nav><div class="bp-access"><button data-info="Ingreso">Ingresar</button><button class="bp-primary" data-info="Registro">Registrarse</button></div></header>
 <aside class="bp-sidebar"><h3>EXPLORAR</h3><button data-filter="todos">Todos los juegos</button><button data-filter="top">Destacados</button><button data-filter="favoritos">Mis favoritos</button><button data-info="Soporte">Soporte demo</button></aside>
 <main><section class="bp-banner"><img id="bp-banner" alt="Portada recuperada de ${name}"><button id="bp-prev" aria-label="Portada anterior">‹</button><button id="bp-next" aria-label="Portada siguiente">›</button><div class="bp-banner-note">Imagen de referencia · promociones no vigentes</div></section><div id="bp-dots" aria-label="Portadas"></div>
 <section class="quick-links" aria-label="Explorar casino"><button data-filter="todos"><span>♠</span>Casino</button><button data-info="Casino en vivo"><span>◉</span>En vivo</button><button data-info="Deportes"><span>⚽</span>Deportes</button><button data-filter="top"><span>♛</span>Destacados</button><button data-filter="favoritos"><span>♡</span>Favoritos</button><button data-info="Promociones"><span>✦</span>Promociones</button></section>
 <section class="provider-strip"><span>PROVEEDORES</span><div id="bp-providers"></div></section><section class="bp-discover"><div class="bp-tabs"><button data-filter="todos" class="active">Todos</button><button data-filter="top">Populares</button><button data-filter="favoritos">Favoritos</button></div><label>⌕ <input id="bp-search" type="search" placeholder="Buscar juegos o proveedores" aria-label="Buscar juegos o proveedores"></label></section>
 <section><div class="bp-section-head"><h1 id="bp-title">Todos los juegos</h1><span id="bp-count"></span></div><div id="bp-games" class="bp-grid"></div><p id="bp-empty" hidden>No encontramos juegos para esta selección.</p><button id="bp-more" class="bp-more">Ver más juegos</button><p id="bp-status" role="status"></p></section><footer><strong>${name} · Plantilla de Maker</strong><p>Interfaz de demostración con recursos locales. Ingreso, registro, soporte y deportes se muestran como ejemplos; no se procesan pagos ni apuestas.</p><span>18+ · Sin conexión al casino o proveedor original</span></footer></main>
-<nav class="bp-mobile" aria-label="Navegación móvil"><button data-filter="todos">⌂<small>Inicio</small></button><button data-filter="top">♠<small>Casino</small></button><button data-info="Deportes">⚽<small>Deportes</small></button><button data-filter="favoritos">♡<small>Favoritos</small></button><button data-info="Cuenta">◉<small>Cuenta</small></button></nav><dialog id="bp-dialog"><button class="bp-close" aria-label="Cerrar">×</button><h2 id="bp-dialog-title"></h2><div id="bp-dialog-body"></div><button class="bp-primary bp-close">Volver</button></dialog><script type="module" src="bateupix.js"></script><script type="module" src="design-editor.js"></script></body></html>`;}
-if(process.argv[1]?.endsWith('install-lobby-templates.mjs'))await installLobbyTemplates();
+<nav class="bp-mobile" aria-label="Navegación móvil"><button data-filter="todos">⌂<small>Inicio</small></button><button data-filter="top">♠<small>Casino</small></button><button data-info="Deportes">⚽<small>Deportes</small></button><button data-filter="favoritos">♡<small>Favoritos</small></button><button data-info="Cuenta">◉<small>Cuenta</small></button></nav><dialog id="bp-dialog"><button class="bp-close" aria-label="Cerrar">×</button><h2 id="bp-dialog-title"></h2><div id="bp-dialog-body"></div><button class="bp-primary bp-close">Volver</button></dialog><script type="module" src="bateupix.js"></script><script type="module" src="design-editor.js"></script></body></html>`;
+}
+if (process.argv[1]?.endsWith("install-lobby-templates.mjs"))
+  await installLobbyTemplates();

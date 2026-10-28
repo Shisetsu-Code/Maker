@@ -1,0 +1,3858 @@
+[
+  {
+    "proveedor": "PGSOFT",
+    "etiqueta": "PG Soft",
+    "juegos": [
+      {
+        "c": "fortune-gods",
+        "n": "Fortune Gods"
+      },
+      {
+        "c": "medusa",
+        "n": "Medusa"
+      },
+      {
+        "c": "reel-love",
+        "n": "Reel Love"
+      },
+      {
+        "c": "plushie-frenzy",
+        "n": "Plushie Frenzy"
+      },
+      {
+        "c": "dragon-legend",
+        "n": "Dragon Legend"
+      },
+      {
+        "c": "hip-hop-panda",
+        "n": "Hip Hop Panda"
+      },
+      {
+        "c": "legend-of-hou-yi",
+        "n": "Legend of Hou Yi"
+      },
+      {
+        "c": "mr-hallow-win",
+        "n": "Mr. Hallow-Win"
+      },
+      {
+        "c": "prosperity-lion",
+        "n": "Prosperity Lion"
+      },
+      {
+        "c": "santas-gift-rush",
+        "n": "Santa's Gift Rush"
+      },
+      {
+        "c": "gem-saviour-sword",
+        "n": "Gem Saviour Sword"
+      },
+      {
+        "c": "piggy-gold",
+        "n": "Piggy Gold"
+      },
+      {
+        "c": "jungle-delight",
+        "n": "Jungle Delight"
+      },
+      {
+        "c": "ganesha-gold",
+        "n": "Ganesha Gold"
+      },
+      {
+        "c": "emperors-favour",
+        "n": "Emperor's Favour"
+      },
+      {
+        "c": "double-fortune",
+        "n": "Double Fortune"
+      },
+      {
+        "c": "journey-to-the-wealth",
+        "n": "Journey to the Wealth"
+      },
+      {
+        "c": "the-great-icescape",
+        "n": "The Great Icescape"
+      },
+      {
+        "c": "captains-bounty",
+        "n": "Captain's Bounty"
+      },
+      {
+        "c": "dragon-hatch",
+        "n": "Dragon Hatch"
+      },
+      {
+        "c": "vampires-charm",
+        "n": "Vampires Charm"
+      },
+      {
+        "c": "ninja-vs-samurai",
+        "n": "Ninja vs Samurai"
+      },
+      {
+        "c": "leprechaun-riches",
+        "n": "Leprechaun Riches"
+      },
+      {
+        "c": "flirting-scholar",
+        "n": "Flirting Scholar"
+      },
+      {
+        "c": "gem-saviour-conquest",
+        "n": "Gem Saviour Conquest"
+      },
+      {
+        "c": "dragon-tiger-luck",
+        "n": "Dragon Tiger Luck"
+      },
+      {
+        "c": "muay-thai-champion",
+        "n": "Muay Thai Champion"
+      },
+      {
+        "c": "mahjong-ways",
+        "n": "Mahjong Ways"
+      },
+      {
+        "c": "fortune-mouse",
+        "n": "Fortune Mouse"
+      },
+      {
+        "c": "bikini-paradise",
+        "n": "Bikini Paradise"
+      },
+      {
+        "c": "candy-burst",
+        "n": "Candy Burst"
+      },
+      {
+        "c": "mahjong-ways2",
+        "n": "Mahjong Ways 2"
+      },
+      {
+        "c": "ganesha-fortune",
+        "n": "Ganesha Fortune"
+      },
+      {
+        "c": "dreams-of-macau",
+        "n": "Dreams of Macau"
+      },
+      {
+        "c": "phoenix-rises",
+        "n": "Phoenix Rises"
+      },
+      {
+        "c": "wild-fireworks",
+        "n": "Wild Fireworks"
+      },
+      {
+        "c": "galactic-gems",
+        "n": "Galactic Gems"
+      },
+      {
+        "c": "treasures-aztec",
+        "n": "Treasures of Aztec"
+      },
+      {
+        "c": "jewels-prosper",
+        "n": "Jewels of Prosperity"
+      },
+      {
+        "c": "lucky-neko",
+        "n": "Lucky Neko"
+      },
+      {
+        "c": "gdn-ice-fire",
+        "n": "Guardians of Ice and Fire"
+      },
+      {
+        "c": "thai-river",
+        "n": "Thai River Wonders"
+      },
+      {
+        "c": "opera-dynasty",
+        "n": "Opera Dynasty"
+      },
+      {
+        "c": "bali-vacation",
+        "n": "Bali Vacation"
+      },
+      {
+        "c": "majestic-ts",
+        "n": "Majestic Treasures"
+      },
+      {
+        "c": "jack-frosts",
+        "n": "Jack Frost's Winter"
+      },
+      {
+        "c": "fortune-ox",
+        "n": "Fortune Ox"
+      },
+      {
+        "c": "mermaid-riches",
+        "n": "Mermaid Riches"
+      },
+      {
+        "c": "crypto-gold",
+        "n": "Crypto Gold"
+      },
+      {
+        "c": "wild-bandito",
+        "n": "Wild Bandito"
+      },
+      {
+        "c": "heist-stakes",
+        "n": "Heist  Stakes"
+      },
+      {
+        "c": "ways-of-qilin",
+        "n": "Ways of the Qilin"
+      },
+      {
+        "c": "lgd-monkey-kg",
+        "n": "Legendary Monkey King"
+      },
+      {
+        "c": "buffalo-win",
+        "n": "Buffalo Win"
+      },
+      {
+        "c": "jurassic-kdm",
+        "n": "Jurassic Kingdom"
+      },
+      {
+        "c": "oriental-pros",
+        "n": "Oriental Prosperity"
+      },
+      {
+        "c": "crypt-fortune",
+        "n": "Raider Jane's Crypt of Fortune"
+      },
+      {
+        "c": "emoji-riches",
+        "n": "Emoji Riches"
+      },
+      {
+        "c": "sprmkt-spree",
+        "n": "Supermarket Spree"
+      },
+      {
+        "c": "cocktail-nite",
+        "n": "Cocktail Nights"
+      },
+      {
+        "c": "mask-carnival",
+        "n": "Mask Carnival"
+      },
+      {
+        "c": "spirit-wonder",
+        "n": "Spirited Wonders"
+      },
+      {
+        "c": "queen-banquet",
+        "n": "The Queen's Banquet"
+      },
+      {
+        "c": "dest-sun-moon",
+        "n": "Destiny of Sun & Moon"
+      },
+      {
+        "c": "garuda-gems",
+        "n": "Garuda Gems"
+      },
+      {
+        "c": "rooster-rbl",
+        "n": "Rooster Rumble"
+      },
+      {
+        "c": "battleground",
+        "n": "Battleground Royale"
+      },
+      {
+        "c": "btrfly-blossom",
+        "n": "Butterfly Blossom"
+      },
+      {
+        "c": "fortune-tiger",
+        "n": "Fortune Tiger"
+      },
+      {
+        "c": "speed-winner",
+        "n": "Speed Winner"
+      },
+      {
+        "c": "legend-perseus",
+        "n": "Legend of Perseus"
+      },
+      {
+        "c": "win-win-fpc",
+        "n": "Win Win Fish Prawn Crab"
+      },
+      {
+        "c": "lucky-piggy",
+        "n": "Lucky Piggy"
+      },
+      {
+        "c": "wild-coaster",
+        "n": "Wild Coaster"
+      },
+      {
+        "c": "wild-bounty-sd",
+        "n": "Wild Bounty Showdown"
+      },
+      {
+        "c": "prosper-ftree",
+        "n": "Prosperity Fortune Tree"
+      },
+      {
+        "c": "totem-wonders",
+        "n": "Totem Wonders"
+      },
+      {
+        "c": "asgardian-rs",
+        "n": "Asgardian Rising"
+      },
+      {
+        "c": "alchemy-gold",
+        "n": "Alchemy Gold"
+      },
+      {
+        "c": "diner-delights",
+        "n": "Diner Delights"
+      },
+      {
+        "c": "hawaiian-tiki",
+        "n": "Hawaiian Tiki"
+      },
+      {
+        "c": "fruity-candy",
+        "n": "Fruity Candy"
+      },
+      {
+        "c": "midas-fortune",
+        "n": "Midas Fortune"
+      },
+      {
+        "c": "bakery-bonanza",
+        "n": "Bakery Bonanza"
+      },
+      {
+        "c": "rave-party-fvr",
+        "n": "Rave Party Fever"
+      },
+      {
+        "c": "myst-spirits",
+        "n": "Mystical Spirits"
+      },
+      {
+        "c": "songkran-spl",
+        "n": "Songkran Splash"
+      },
+      {
+        "c": "dragon-hatch2",
+        "n": "Dragon Hatch 2"
+      },
+      {
+        "c": "cruise-royale",
+        "n": "Cruise Royale"
+      },
+      {
+        "c": "ult-striker",
+        "n": "Ultimate Striker"
+      },
+      {
+        "c": "pinata-wins",
+        "n": "Pinata Wins"
+      },
+      {
+        "c": "wild-ape-3258",
+        "n": "Wild Ape #3258"
+      },
+      {
+        "c": "spr-golf-drive",
+        "n": "Super Golf Drive"
+      },
+      {
+        "c": "ninja-raccoon",
+        "n": "Ninja Raccoon Frenzy"
+      },
+      {
+        "c": "fortune-rabbit",
+        "n": "Fortune Rabbit"
+      },
+      {
+        "c": "forge-wealth",
+        "n": "Forge of Wealth"
+      },
+      {
+        "c": "wild-heist-co",
+        "n": "Wild Heist Cashout"
+      },
+      {
+        "c": "gladi-glory",
+        "n": "Gladiator's Glory"
+      },
+      {
+        "c": "mafia-mayhem",
+        "n": "Mafia Mayhem"
+      },
+      {
+        "c": "safari-wilds",
+        "n": "Safari Wilds"
+      },
+      {
+        "c": "lucky-clover",
+        "n": "Lucky Clover Riches"
+      },
+      {
+        "c": "werewolf-hunt",
+        "n": "Werewolf's Hunt"
+      },
+      {
+        "c": "anubis-wrath",
+        "n": "Anubis Wrath"
+      },
+      {
+        "c": "zombie-outbrk",
+        "n": "Zombie Outbreak"
+      },
+      {
+        "c": "shark-bounty",
+        "n": "Shark Hunter"
+      },
+      {
+        "c": "tsar-treasures",
+        "n": "Tsar Treasures"
+      },
+      {
+        "c": "choc-deluxe",
+        "n": "Chocolate Deluxe"
+      },
+      {
+        "c": "gemstones-gold",
+        "n": "Gemstones Gold"
+      },
+      {
+        "c": "cash-mania",
+        "n": "Cash Mania"
+      },
+      {
+        "c": "fortune-dragon",
+        "n": "Fortune Dragon"
+      },
+      {
+        "c": "geisha-revenge",
+        "n": "Geisha's Revenge"
+      },
+      {
+        "c": "three-cz-pigs",
+        "n": "Three Crazy Piggies"
+      },
+      {
+        "c": "wings-iguazu",
+        "n": "Wings of Iguazu"
+      },
+      {
+        "c": "museum-mystery",
+        "n": "Museum Wonders"
+      },
+      {
+        "c": "yakuza-honor",
+        "n": "Yakuza Honor"
+      },
+      {
+        "c": "rio-fantasia",
+        "n": "Rio Fantasia"
+      },
+      {
+        "c": "mr-treas-fort",
+        "n": "Mr. Treasure’s Fortune"
+      },
+      {
+        "c": "graffiti-rush",
+        "n": "Graffiti Rush"
+      },
+      {
+        "c": "oishi-delights",
+        "n": "Oishi Delights"
+      },
+      {
+        "c": "doomsday-rampg",
+        "n": "Doomsday Rampage"
+      },
+      {
+        "c": "jack-giant-hunt",
+        "n": "Jack the Giant Hunter"
+      },
+      {
+        "c": "incan-wonders",
+        "n": "Incan Wonders"
+      },
+      {
+        "c": "fortune-snake",
+        "n": "Fortune Snake"
+      },
+      {
+        "c": "knockout-rich",
+        "n": "Knockout Riches"
+      },
+      {
+        "c": "galaxy-miner",
+        "n": "Galaxy Miner"
+      },
+      {
+        "c": "inferno-mayhem",
+        "n": "Inferno Mayhem"
+      },
+      {
+        "c": "pharaoh-royals",
+        "n": "Pharaoh Royals"
+      },
+      {
+        "c": "mayan-destiny",
+        "n": "Mayan Destiny"
+      },
+      {
+        "c": "perfect-strike",
+        "n": "Perfect Strike"
+      },
+      {
+        "c": "reel-royale-sd",
+        "n": "Reel Royale Showdown"
+      },
+      {
+        "c": "zombie-blaster",
+        "n": "Zombie Blasters"
+      },
+      {
+        "c": "monkey-wild-pty",
+        "n": "Monkeys Wild Party"
+      },
+      {
+        "c": "farmstead-fort",
+        "n": "Farmstead Fortune"
+      },
+      {
+        "c": "tornado-rampg",
+        "n": "Tornado Rampage"
+      }
+    ]
+  },
+  {
+    "proveedor": "CQ9",
+    "etiqueta": "CQ9",
+    "juegos": [
+      {
+        "c": "cq.125",
+        "n": "Zeus M"
+      },
+      {
+        "c": "cq.67",
+        "n": "Golden Eggs"
+      },
+      {
+        "c": "cq.161",
+        "n": "Hercules"
+      },
+      {
+        "c": "cq.131",
+        "n": "Fa Cai Shen M"
+      },
+      {
+        "c": "cq.16",
+        "n": "Super 5"
+      },
+      {
+        "c": "cq.1",
+        "n": "Fruit King"
+      },
+      {
+        "c": "cq.201",
+        "n": "Muay Thai"
+      },
+      {
+        "c": "cq.142",
+        "n": "Hephaestus"
+      },
+      {
+        "c": "cq.143",
+        "n": "Fa Cai Fu Wa"
+      },
+      {
+        "c": "cq.163",
+        "n": "Ne Zha Advent"
+      },
+      {
+        "c": "cq.33",
+        "n": "Fire Chibi"
+      },
+      {
+        "c": "cq.150",
+        "n": "Shou-Xin"
+      },
+      {
+        "c": "cq.26",
+        "n": "777"
+      },
+      {
+        "c": "cq.52",
+        "n": "Jump High"
+      },
+      {
+        "c": "cq.7",
+        "n": "Rave Jump"
+      },
+      {
+        "c": "cq.10",
+        "n": "Lucky Bats"
+      },
+      {
+        "c": "cq.31",
+        "n": "God of War"
+      },
+      {
+        "c": "cq.64",
+        "n": "Zeus"
+      },
+      {
+        "c": "cq.205",
+        "n": "Disco Night"
+      },
+      {
+        "c": "cq.138",
+        "n": "Move n' Jump"
+      },
+      {
+        "c": "cq.137",
+        "n": "DiscoNight M"
+      },
+      {
+        "c": "cq.105",
+        "n": "Jumping mobile"
+      },
+      {
+        "c": "cq.69",
+        "n": "Fa Cai Shen"
+      },
+      {
+        "c": "cq.89",
+        "n": "Thor"
+      },
+      {
+        "c": "cq.24",
+        "n": "Rave Jump2"
+      },
+      {
+        "c": "cq.123",
+        "n": "Lucky Bats M"
+      },
+      {
+        "c": "cq.136",
+        "n": "Running Animals"
+      },
+      {
+        "c": "cq.202",
+        "n": "Oriental Beauty"
+      },
+      {
+        "c": "cq.54",
+        "n": "Funny Alpaca"
+      },
+      {
+        "c": "cq.157",
+        "n": "5 Boxing"
+      },
+      {
+        "c": "cq.3",
+        "n": "Vampire Kiss"
+      },
+      {
+        "c": "cq.78",
+        "n": "Apollo"
+      },
+      {
+        "c": "cq.139",
+        "n": "Fire Chibi M"
+      },
+      {
+        "c": "cq.15",
+        "n": "GuGuGu"
+      },
+      {
+        "c": "cq.117",
+        "n": "5 God Beasts"
+      },
+      {
+        "c": "cq.140",
+        "n": "Fire Chibi 2"
+      },
+      {
+        "c": "cq.115",
+        "n": "Snow Queen"
+      },
+      {
+        "c": "cq.127",
+        "n": "God of War M"
+      },
+      {
+        "c": "cq.29",
+        "n": "Water World"
+      },
+      {
+        "c": "cq.79",
+        "n": "Chameleon"
+      },
+      {
+        "c": "cq.8",
+        "n": "So Sweet"
+      },
+      {
+        "c": "cq.147",
+        "n": "Flower Fortunes"
+      },
+      {
+        "c": "cq.203",
+        "n": "Rave High"
+      },
+      {
+        "c": "cq.113",
+        "n": "Flying Cai Shen"
+      },
+      {
+        "c": "cq.109",
+        "n": "Rave Jump mobile"
+      },
+      {
+        "c": "cq.173",
+        "n": "6 Toros"
+      },
+      {
+        "c": "cq.128",
+        "n": "Wheel Money"
+      },
+      {
+        "c": "cq.154",
+        "n": "Kronos"
+      },
+      {
+        "c": "cq.116",
+        "n": "Wonderland"
+      },
+      {
+        "c": "cq.152",
+        "n": "Double Fly"
+      },
+      {
+        "c": "cq.5",
+        "n": "Mr. Rich"
+      },
+      {
+        "c": "cq.121",
+        "n": "Rave Jump 2 M"
+      },
+      {
+        "c": "cq.118",
+        "n": "Skr Skr"
+      },
+      {
+        "c": "cq.148",
+        "n": "Fortune Totem"
+      },
+      {
+        "c": "cq.144",
+        "n": "Diamond treasure"
+      },
+      {
+        "c": "cq.39",
+        "n": "Apsaras"
+      },
+      {
+        "c": "cq.68",
+        "n": "Wu Kong & Peaches"
+      },
+      {
+        "c": "cq.4",
+        "n": "Wild Tarzan"
+      },
+      {
+        "c": "cq.55",
+        "n": "Dragon Heart"
+      },
+      {
+        "c": "cq.124",
+        "n": "Invincible Elephant"
+      },
+      {
+        "c": "cq.23",
+        "n": "Yuan Bao"
+      },
+      {
+        "c": "cq.19",
+        "n": "Hot Spin"
+      },
+      {
+        "c": "cq.112",
+        "n": "Pyramid Raider"
+      },
+      {
+        "c": "cq.12",
+        "n": "Treasure House"
+      },
+      {
+        "c": "cq.183",
+        "n": "Wolf Disco"
+      },
+      {
+        "c": "cq.83",
+        "n": "Fire Queen"
+      },
+      {
+        "c": "cq.153",
+        "n": "Six Candy"
+      },
+      {
+        "c": "cq.133",
+        "n": "Good Fortune M"
+      },
+      {
+        "c": "cq.9",
+        "n": "Zhong Kui"
+      },
+      {
+        "c": "cq.160",
+        "n": "Fa Cai Shen2"
+      },
+      {
+        "c": "cq.132",
+        "n": "Meow"
+      },
+      {
+        "c": "cq.221",
+        "n": "Detective Dee2"
+      },
+      {
+        "c": "cq.204",
+        "n": "Lucky Boxes"
+      },
+      {
+        "c": "cq.102",
+        "n": "Fruity Carnival"
+      },
+      {
+        "c": "cq.47",
+        "n": "Pharaoh's Gold"
+      },
+      {
+        "c": "cq.13",
+        "n": "Sakura Legend"
+      },
+      {
+        "c": "cq.34",
+        "n": "Gophers War"
+      },
+      {
+        "c": "cq.27",
+        "n": "Magic World"
+      },
+      {
+        "c": "cq.32",
+        "n": "Detective Dee"
+      },
+      {
+        "c": "cq.80",
+        "n": "Poseidon"
+      },
+      {
+        "c": "cq.59",
+        "n": "Summer Mood"
+      },
+      {
+        "c": "cq.76",
+        "n": "Won Won Won"
+      },
+      {
+        "c": "cq.95",
+        "n": "Football Boots"
+      },
+      {
+        "c": "cq.96",
+        "n": "Football Baby"
+      },
+      {
+        "c": "cq.146",
+        "n": "Sky Lanterns"
+      },
+      {
+        "c": "cq.57",
+        "n": "The Beast War"
+      },
+      {
+        "c": "cq.81",
+        "n": "Treasure Island"
+      },
+      {
+        "c": "cq.17",
+        "n": "Great Lion"
+      },
+      {
+        "c": "cq.44",
+        "n": "Fruit King II"
+      },
+      {
+        "c": "cq.42",
+        "n": "Sherlock Holmes"
+      },
+      {
+        "c": "cq.20",
+        "n": "888"
+      },
+      {
+        "c": "cq.182",
+        "n": "Thor 2"
+      },
+      {
+        "c": "cq.104",
+        "n": "Chicky Parm Parm"
+      },
+      {
+        "c": "cq.122",
+        "n": "Zuma Wild"
+      },
+      {
+        "c": "cq.77",
+        "n": "Red Phoenix"
+      },
+      {
+        "c": "cq.130",
+        "n": "Gold Stealer"
+      },
+      {
+        "c": "cq.86",
+        "n": "Running Toro"
+      },
+      {
+        "c": "cq.66",
+        "n": "Fire 777"
+      },
+      {
+        "c": "cq.70",
+        "n": "Wan Bao Dino"
+      },
+      {
+        "c": "cq.2",
+        "n": "God Of Chess"
+      },
+      {
+        "c": "cq.98",
+        "n": "All Star Team"
+      },
+      {
+        "c": "cq.51",
+        "n": "Ecstatic Circus"
+      },
+      {
+        "c": "cq.135",
+        "n": "Gu Gu Gu M"
+      },
+      {
+        "c": "cq.103",
+        "n": "Jewel Luxury"
+      },
+      {
+        "c": "cq.38",
+        "n": "All Wilds"
+      },
+      {
+        "c": "cq.35",
+        "n": "Crazy NuoZha"
+      },
+      {
+        "c": "cq.49",
+        "n": "Lonely Planet"
+      },
+      {
+        "c": "cq.92",
+        "n": "World Cup Russia2018"
+      },
+      {
+        "c": "cq.21",
+        "n": "Big Wolf"
+      },
+      {
+        "c": "cq.22",
+        "n": "Monkey Office Legend"
+      },
+      {
+        "c": "cq.36",
+        "n": "Pub Tycoon"
+      },
+      {
+        "c": "cq.184",
+        "n": "Six Gacha"
+      },
+      {
+        "c": "cq.188",
+        "n": "Cricket Fever"
+      },
+      {
+        "c": "cq.186",
+        "n": "Fire Queen 2"
+      },
+      {
+        "c": "cq.185",
+        "n": "Dragon Ball"
+      },
+      {
+        "c": "cq.194",
+        "n": "Fortune Dragon"
+      },
+      {
+        "c": "cq.187",
+        "n": "Wing Chun"
+      },
+      {
+        "c": "cq.199",
+        "n": "Songkran Festival"
+      },
+      {
+        "c": "cq.197",
+        "n": "Dragon's Treasure"
+      },
+      {
+        "c": "cq.195",
+        "n": "Lord Ganesha"
+      },
+      {
+        "c": "cq.5007",
+        "n": "Da Fa Cai"
+      },
+      {
+        "c": "cq.5008",
+        "n": "Da Hong Zhong"
+      },
+      {
+        "c": "cq.5009",
+        "n": "Uproar In Heaven"
+      },
+      {
+        "c": "cq.206",
+        "n": "Sweet POP"
+      },
+      {
+        "c": "cq.208",
+        "n": "Money Tree"
+      },
+      {
+        "c": "cq.209",
+        "n": "The Cupids"
+      },
+      {
+        "c": "cq.210",
+        "n": "Oo Ga Cha Ka"
+      },
+      {
+        "c": "cq.212",
+        "n": "Burning Xi-You"
+      },
+      {
+        "c": "cq.214",
+        "n": "Ninja Raccoon"
+      },
+      {
+        "c": "cq.215",
+        "n": "Hot Pinatas"
+      },
+      {
+        "c": "cq.211",
+        "n": "King of Atlantis"
+      },
+      {
+        "c": "cq.gb2",
+        "n": "Monster Hunter"
+      },
+      {
+        "c": "cq.177",
+        "n": "Aladdin's lamp"
+      },
+      {
+        "c": "cq.171",
+        "n": "Greek Gods"
+      },
+      {
+        "c": "cq.gb6",
+        "n": "Ganesha Jr."
+      },
+      {
+        "c": "cq.218",
+        "n": "Dollar Bomb"
+      },
+      {
+        "c": "cq.219",
+        "n": "King Kong Shake"
+      },
+      {
+        "c": "cq.220",
+        "n": "Floating Market"
+      },
+      {
+        "c": "cq.222",
+        "n": "Loy Krathong"
+      },
+      {
+        "c": "cq.223",
+        "n": "Acrobatics"
+      },
+      {
+        "c": "cq.226",
+        "n": "Lucky Tigers"
+      },
+      {
+        "c": "cq.225",
+        "n": "Mr. Miser"
+      },
+      {
+        "c": "cq.gb9",
+        "n": "Football Fever"
+      },
+      {
+        "c": "cq.228",
+        "n": "Mirror Mirror"
+      },
+      {
+        "c": "cq.gb12",
+        "n": "Myeong-ryang"
+      }
+    ]
+  },
+  {
+    "proveedor": "JOKERGAMING",
+    "etiqueta": "Joker Gaming",
+    "juegos": [
+      {
+        "c": "jg.rmpyyz4hmijfg",
+        "n": "Zombie Zircus"
+      },
+      {
+        "c": "jg.ibee7wqs49kpk",
+        "n": "Blockade Runner"
+      },
+      {
+        "c": "jg.ek7gyx3h8w3dg",
+        "n": "Fortune Clover 40"
+      },
+      {
+        "c": "jg.zid3zqi5znh5h",
+        "n": "Winning Horse"
+      },
+      {
+        "c": "jg.q48fayayyrdyq",
+        "n": "Heavenly Beasts"
+      },
+      {
+        "c": "jg.ipkauigi3mfho",
+        "n": "Book Of Thermopylae"
+      },
+      {
+        "c": "jg.6ogpfdcnoqyen",
+        "n": "Christmas Fortune"
+      },
+      {
+        "c": "jg.r8poqz19mtqir",
+        "n": "Super Fortune Crown"
+      },
+      {
+        "c": "jg.d5uyes4amfxf6",
+        "n": "Maya Ways"
+      },
+      {
+        "c": "jg.x4dkj69a989x6",
+        "n": "Super Seven Seas"
+      },
+      {
+        "c": "jg.aha65cfts455e",
+        "n": "Fire Master Hold And Win"
+      },
+      {
+        "c": "jg.c1qrr8e1ncebn",
+        "n": "Fortune Crown Gold Gift"
+      },
+      {
+        "c": "jg.3r369pizs144w",
+        "n": "Mahjong King"
+      },
+      {
+        "c": "jg.uiu5zss55dc7h",
+        "n": "Chilli Hunter Bandidos"
+      },
+      {
+        "c": "jg.gxgtnunpejbwy",
+        "n": "Steamboat Ride"
+      },
+      {
+        "c": "jg.mno8hejgrh1nk",
+        "n": "Seven Seas"
+      },
+      {
+        "c": "jg.m4uregaadrxb6",
+        "n": "Fortune Crown 25"
+      },
+      {
+        "c": "jg.es9sgctugyauc",
+        "n": "Savage Frontier"
+      },
+      {
+        "c": "jg.1bwmp4xq79sq4",
+        "n": "Black Knight"
+      },
+      {
+        "c": "jg.xgbi6bo8yon9w",
+        "n": "Carnaval Do Rio"
+      },
+      {
+        "c": "jg.gz8tgo1debywc",
+        "n": "Chocolate Shop"
+      },
+      {
+        "c": "jg.si838osdadyhc",
+        "n": "Fire Temple"
+      },
+      {
+        "c": "jg.ym7ny95hxi38g",
+        "n": "Fortune Crown"
+      },
+      {
+        "c": "jg.zhh6mqf3z495a",
+        "n": "Hawaii Vacay"
+      },
+      {
+        "c": "jg.1iz58azdhdo6c",
+        "n": "Legend Of Persia"
+      },
+      {
+        "c": "jg.gmfbyu4cjibrg",
+        "n": "Ramesses Relics"
+      },
+      {
+        "c": "jg.q1gfrdenycyyn",
+        "n": "Snake Of Fortune"
+      },
+      {
+        "c": "jg.sbrjp1qq39gc4",
+        "n": "World Of Emoji"
+      },
+      {
+        "c": "jg.bu4nw7mkppwg1",
+        "n": "Inca"
+      },
+      {
+        "c": "jg.9adne65axf986",
+        "n": "Super Wild Watermelon"
+      },
+      {
+        "c": "jg.ddodhamgc71gk",
+        "n": "Christmas Eve"
+      },
+      {
+        "c": "jg.xkbfobaryz7xs",
+        "n": "Bull Street"
+      },
+      {
+        "c": "jg.gdrbc1kqj7gr4",
+        "n": "Wild Watermelon"
+      },
+      {
+        "c": "jg.wpqadzg74mj7y",
+        "n": "Trick Or Treat"
+      },
+      {
+        "c": "jg.ao6qfxp1sqamn",
+        "n": "Gates Of Wealth"
+      },
+      {
+        "c": "jg.86hskqb38a9ua",
+        "n": "Masquerade"
+      },
+      {
+        "c": "jg.htacf8c11qejn",
+        "n": "Silver Hand"
+      },
+      {
+        "c": "jg.g58bao4yefdrq",
+        "n": "Pubg"
+      },
+      {
+        "c": "jg.ysj1ghuuqbazc",
+        "n": "Lion Of The East"
+      },
+      {
+        "c": "jg.f1hywikkjprr1",
+        "n": "Panda Chef"
+      },
+      {
+        "c": "jg.1abm3a9yh8uqq",
+        "n": "Safari Life 2"
+      },
+      {
+        "c": "jg.bsp1s4umpbwsh",
+        "n": "Buccaneer Deluxe"
+      },
+      {
+        "c": "jg.uh4amsg355x7a",
+        "n": "Fruit Paradise"
+      },
+      {
+        "c": "jg.e5jgac3ogr5dq",
+        "n": "Rancher's Wealth"
+      },
+      {
+        "c": "jg.e9qs4cbtga5ue",
+        "n": "Wealth God"
+      },
+      {
+        "c": "jg.nzzugaudcbosc",
+        "n": "Love Letter"
+      },
+      {
+        "c": "jg.wixa8wsu4de7c",
+        "n": "Sour Candy"
+      },
+      {
+        "c": "jg.69xaiyrbo4dae",
+        "n": "A Night Out"
+      },
+      {
+        "c": "jg.6po7ddrpokbay",
+        "n": "Alice In Wonderland"
+      },
+      {
+        "c": "jg.ie9eti6w4zfcs",
+        "n": "Ancient Artifacts"
+      },
+      {
+        "c": "jg.c96w4rytnamte",
+        "n": "Ancient Rome Deluxe"
+      },
+      {
+        "c": "jg.wfo7bzs95uq7r",
+        "n": "Archer"
+      },
+      {
+        "c": "jg.oqt9p9876m39y",
+        "n": "Azteca"
+      },
+      {
+        "c": "jg.gn1bc1kqj7gr4",
+        "n": "Bagua"
+      },
+      {
+        "c": "jg.quofrdenycyyn",
+        "n": "Bagua 2"
+      },
+      {
+        "c": "jg.rg5oqz19mtqir",
+        "n": "Bali"
+      },
+      {
+        "c": "jg.y6q14hdtq35ze",
+        "n": "Beach Life"
+      },
+      {
+        "c": "jg.ne4gq55cpitgg",
+        "n": "Beanstalk"
+      },
+      {
+        "c": "jg.swt38osdadyhc",
+        "n": "Blackbeard Legacy"
+      },
+      {
+        "c": "jg.bwwza4umpbwsh",
+        "n": "Bonus Bear"
+      },
+      {
+        "c": "jg.ioheiiqk3xrc1",
+        "n": "Book Of Ra Classic"
+      },
+      {
+        "c": "jg.hf5hx8w9u1q3r",
+        "n": "Book Of Ra"
+      },
+      {
+        "c": "jg.uafejs6a58xp6",
+        "n": "Bounty Hunter"
+      },
+      {
+        "c": "jg.ur8593z8hu17w",
+        "n": "Burning Pearl"
+      },
+      {
+        "c": "jg.86burqb38a9ua",
+        "n": "Bushido Blade"
+      },
+      {
+        "c": "jg.zygj7oqga9nck",
+        "n": "Caishen Riches"
+      },
+      {
+        "c": "jg.bes8675wqiigs",
+        "n": "Captain's Treasure"
+      },
+      {
+        "c": "jg.qieoeyodyyyoc",
+        "n": "Captain's Treasure Pro"
+      },
+      {
+        "c": "jg.n1ydr5mncpogn",
+        "n": "Chilli Hunter"
+      },
+      {
+        "c": "jg.dkzdo35rcipfs",
+        "n": "China"
+      },
+      {
+        "c": "jg.7tccifcktqre1",
+        "n": "Chinese Boss"
+      },
+      {
+        "c": "jg.aij68ciusna5c",
+        "n": "Columbus"
+      },
+      {
+        "c": "jg.zowjitp4zqhm1",
+        "n": "Critter Mania Deluxe"
+      },
+      {
+        "c": "jg.4akkze7ywgukq",
+        "n": "Crypto Mania"
+      },
+      {
+        "c": "jg.ue8mt39rhzpps",
+        "n": "Cursed Deluxe"
+      },
+      {
+        "c": "jg.b6nuk4djp3zsa",
+        "n": "Dia De Los Muertos Deluxe"
+      },
+      {
+        "c": "jg.rh8iwwntk3mie",
+        "n": "Dolphin Reef"
+      },
+      {
+        "c": "jg.ateqfxp1sqamn",
+        "n": "Dolphin Treasure"
+      },
+      {
+        "c": "jg.43bx3e7ywgukq",
+        "n": "Dolphin Pearl"
+      },
+      {
+        "c": "jg.3yfmucpss64mk",
+        "n": "Dragon Powerflame"
+      },
+      {
+        "c": "jg.8u9r4tj48chd1",
+        "n": "Dynamite Reels"
+      },
+      {
+        "c": "jg.kxyznmbpret1y",
+        "n": "Enchanted Forest"
+      },
+      {
+        "c": "jg.srd3xusx3ughr",
+        "n": "Enter KTV"
+      },
+      {
+        "c": "jg.d4fyes4amfxf6",
+        "n": "Feng Huang"
+      },
+      {
+        "c": "jg.k9gz4ebbrau1e",
+        "n": "50 Dragons"
+      },
+      {
+        "c": "jg.fk9yoi4wkifrs",
+        "n": "50 Lions"
+      },
+      {
+        "c": "jg.wr5axzs95uq7r",
+        "n": "Forest Treasure"
+      },
+      {
+        "c": "jg.qxoindypyeboy",
+        "n": "Geisha"
+      },
+      {
+        "c": "jg.b4pde45epfzg6",
+        "n": "Genie 2"
+      },
+      {
+        "c": "jg.x5ikj69a989x6",
+        "n": "Gold Trail"
+      },
+      {
+        "c": "jg.exesnxb7ge3uy",
+        "n": "Haunted House"
+      },
+      {
+        "c": "jg.7phhufritkfao",
+        "n": "Heist Deluxe"
+      },
+      {
+        "c": "jg.j9nzkkbjfaz1a",
+        "n": "Horus Eye"
+      },
+      {
+        "c": "jg.soojfuqnaxycn",
+        "n": "Hot Fruits"
+      },
+      {
+        "c": "jg.qd1fcneqbhgy4",
+        "n": "Immortals"
+      },
+      {
+        "c": "jg.ahf5icfts455e",
+        "n": "Jin Fu Xing Yun"
+      },
+      {
+        "c": "jg.gkubyu4cjibrg",
+        "n": "Joker Madness"
+      },
+      {
+        "c": "jg.8kzbot4rew7ds",
+        "n": "Journey To The West"
+      },
+      {
+        "c": "jg.satj3o6ya8dcq",
+        "n": "Just Jewels"
+      },
+      {
+        "c": "jg.wcaadzg74mj7y",
+        "n": "Lady Hawk"
+      },
+      {
+        "c": "jg.orm4x9z99u69r",
+        "n": "League Of Legends"
+      },
+      {
+        "c": "jg.1ru5x5zx7us6r",
+        "n": "Lightning God"
+      },
+      {
+        "c": "jg.wtupmzq14xepn",
+        "n": "Lions Dance"
+      },
+      {
+        "c": "jg.xmzfobaryz7xs",
+        "n": "Lord Of The Ocean"
+      },
+      {
+        "c": "jg.dhdirsn3m3xia",
+        "n": "Lucky God"
+      },
+      {
+        "c": "jg.3hj4fkfji4z4a",
+        "n": "Lucky God Progressive 2"
+      },
+      {
+        "c": "jg.7f9h9fwz11kaw",
+        "n": "Lucky Lady Charm"
+      },
+      {
+        "c": "jg.7cz37fritkfao",
+        "n": "Lucky Rooster"
+      },
+      {
+        "c": "jg.3fx69pizs144w",
+        "n": "Lucky Streak"
+      },
+      {
+        "c": "jg.67s75yrbo4dae",
+        "n": "Majapahit"
+      },
+      {
+        "c": "jg.tqi9778i7mi6o",
+        "n": "Miami"
+      },
+      {
+        "c": "jg.oajk3h9o685xq",
+        "n": "Money Vault"
+      },
+      {
+        "c": "jg.m94wkgy3daxta",
+        "n": "Mythical Sand"
+      },
+      {
+        "c": "jg.hb4cpgc6u6qj4",
+        "n": "Mythological"
+      },
+      {
+        "c": "jg.5ii9zgw5unc3h",
+        "n": "Neptune Treasure"
+      },
+      {
+        "c": "jg.84igeq3a8r9d6",
+        "n": "Nugget Hunter"
+      },
+      {
+        "c": "jg.ggutqu1xjtgwr",
+        "n": "Oasis"
+      },
+      {
+        "c": "jg.7b6c7rcs16kjk",
+        "n": "Ocean Spray"
+      },
+      {
+        "c": "jg.gsttgo1debywc",
+        "n": "Octagon Gem 2"
+      },
+      {
+        "c": "jg.a7q65cfts455e",
+        "n": "Ong Bak 2"
+      },
+      {
+        "c": "jg.bkxno75wqiigs",
+        "n": "Ong Bak Deluxe"
+      },
+      {
+        "c": "jg.c53raraonrmbq",
+        "n": "Pan Jin Lian2"
+      },
+      {
+        "c": "jg.79mafnrjt48aa",
+        "n": "Pan Jin Lian"
+      },
+      {
+        "c": "jg.u6d7fsg355x7a",
+        "n": "Panther Moon"
+      },
+      {
+        "c": "jg.kdn8ckjqfhsn4",
+        "n": "Pharaoh's Tomb"
+      },
+      {
+        "c": "jg.d8cso3u8ct1iw",
+        "n": "Phoenix 888"
+      },
+      {
+        "c": "jg.hcu3p8r71kj3y",
+        "n": "Power Stars"
+      },
+      {
+        "c": "jg.sco3dugpambhy",
+        "n": "Qatar 2022"
+      },
+      {
+        "c": "jg.5bgx7epgw61kk",
+        "n": "Queen 2"
+      },
+      {
+        "c": "jg.8nsbhokge7nrk",
+        "n": "Queen Of The Nile"
+      },
+      {
+        "c": "jg.abkqpqp6z66m4",
+        "n": "Santa's Workshop"
+      },
+      {
+        "c": "jg.pd6rhresnhkbk",
+        "n": "Shaolin"
+      },
+      {
+        "c": "jg.z1pc5tp4zqhm1",
+        "n": "Silver Bullet"
+      },
+      {
+        "c": "jg.ww3a8wsu4de7c",
+        "n": "Sizzling Hot"
+      },
+      {
+        "c": "jg.byz81hmsq748k",
+        "n": "Supreme Caishen"
+      },
+      {
+        "c": "jg.dxxsh3dfmjpio",
+        "n": "Taishang Laojun"
+      },
+      {
+        "c": "jg.5864tji8w113w",
+        "n": "Thai Paradise"
+      },
+      {
+        "c": "jg.3jxqtp7wssiks",
+        "n": "The Legend Of White Snake"
+      },
+      {
+        "c": "jg.bzgza4umpbwsh",
+        "n": "Nezha"
+      },
+      {
+        "c": "jg.yqe1n9d7qj3zy",
+        "n": "Three Kingdoms 2"
+      },
+      {
+        "c": "jg.fwria11mjbrwh",
+        "n": "Three Kingdoms Quest"
+      },
+      {
+        "c": "jg.b1cnw7mkppwg1",
+        "n": "Thug Life"
+      },
+      {
+        "c": "jg.cuarr8e1ncebn",
+        "n": "Tropical Crush"
+      },
+      {
+        "c": "jg.6c5apdrpokbay",
+        "n": "Tsai shens gift"
+      },
+      {
+        "c": "jg.5ypkuepgw61kk",
+        "n": "Water Reel"
+      },
+      {
+        "c": "jg.q9gi4yybyadoe",
+        "n": "Wild Giant Panda"
+      },
+      {
+        "c": "jg.ipz77igi3mfho",
+        "n": "Winter Sweets"
+      },
+      {
+        "c": "jg.bmr8675wqiigs",
+        "n": "Witch's Brew"
+      },
+      {
+        "c": "jg.pz7wsnombyroh",
+        "n": "Wizard Deluxe"
+      },
+      {
+        "c": "jg.texkt79w6ziqs",
+        "n": "Wukong"
+      },
+      {
+        "c": "jg.uygm7axgh91qk",
+        "n": "Yeh Hsien Deluxe"
+      },
+      {
+        "c": "jg.9ii7s6u5xbhzh",
+        "n": "Yggdrasil"
+      },
+      {
+        "c": "jg.4py9dmfpwkt4y",
+        "n": "Date With Miyo"
+      },
+      {
+        "c": "jg.ooekf9x16xaxn",
+        "n": "Kraken Hunter"
+      },
+      {
+        "c": "jg.4tyxfmpnwqokn",
+        "n": "Octagon Gem"
+      }
+    ]
+  },
+  {
+    "proveedor": "ROYALGAMING",
+    "etiqueta": "Royal Slot Gaming",
+    "juegos": [
+      {
+        "c": "rg.powerofthoriithunderstorm",
+        "n": "Power of Thor II Thunder Storm"
+      },
+      {
+        "c": "rg.richmahjong",
+        "n": "Rich Mahjong"
+      },
+      {
+        "c": "rg.richmahjong2",
+        "n": "Rich Mahjong 2"
+      },
+      {
+        "c": "rg.caishencoming",
+        "n": "Caishen Coming"
+      },
+      {
+        "c": "rg.luckydog",
+        "n": "Lucky Dog"
+      },
+      {
+        "c": "rg.fortuneofaztecs",
+        "n": "Fortune of Aztecs"
+      },
+      {
+        "c": "rg.superace2",
+        "n": "Super Ace 2"
+      },
+      {
+        "c": "rg.powerofthor",
+        "n": "Power of Thor"
+      },
+      {
+        "c": "rg.bountyhunter",
+        "n": "Bounty Hunter"
+      },
+      {
+        "c": "rg.nightmarket3",
+        "n": "Night Market 3"
+      },
+      {
+        "c": "rg.chinesenewyear3",
+        "n": "Chinese New Year 3"
+      },
+      {
+        "c": "rg.caishenfortunes",
+        "n": "Caishen Fortunes"
+      },
+      {
+        "c": "rg.fortunegems4",
+        "n": "Fortune Gems 4"
+      },
+      {
+        "c": "rg.dragonlegend",
+        "n": "Dragon Legend"
+      },
+      {
+        "c": "rg.5dragons",
+        "n": "5 Dragons"
+      },
+      {
+        "c": "rg.happyfarm",
+        "n": "Happy Farm"
+      },
+      {
+        "c": "rg.legendoflubu",
+        "n": "Legend of Lu Bu"
+      },
+      {
+        "c": "rg.jurassictreasure",
+        "n": "Jurassic Treasure"
+      },
+      {
+        "c": "rg.pharaoh",
+        "n": "Pharaoh"
+      },
+      {
+        "c": "rg.pharaohii",
+        "n": "Pharaoh II"
+      },
+      {
+        "c": "rg.luckyfruits",
+        "n": "Lucky Fruits"
+      },
+      {
+        "c": "rg.medea",
+        "n": "Medea"
+      },
+      {
+        "c": "rg.gethigh",
+        "n": "Get High"
+      },
+      {
+        "c": "rg.dragonking2",
+        "n": "Dragon King 2"
+      },
+      {
+        "c": "rg.fortunethai",
+        "n": "Fortune Thai"
+      },
+      {
+        "c": "rg.jungle",
+        "n": "Jungle"
+      },
+      {
+        "c": "rg.captainhook",
+        "n": "Captain Hook"
+      },
+      {
+        "c": "rg.huca",
+        "n": "Huca"
+      },
+      {
+        "c": "rg.sweetcandy",
+        "n": "Sweet Candy"
+      },
+      {
+        "c": "rg.firespin",
+        "n": "Fire Spin"
+      },
+      {
+        "c": "rg.popeye",
+        "n": "Popeye"
+      },
+      {
+        "c": "rg.crazydoctor",
+        "n": "Crazy Doctor"
+      },
+      {
+        "c": "rg.nonstop",
+        "n": "Nonstop"
+      },
+      {
+        "c": "rg.magicgem",
+        "n": "Magic Gem"
+      },
+      {
+        "c": "rg.72changes",
+        "n": "72 Changes"
+      },
+      {
+        "c": "rg.mermaid",
+        "n": "Mermaid"
+      },
+      {
+        "c": "rg.wildpanda",
+        "n": "Wild Panda"
+      },
+      {
+        "c": "rg.luckythailand",
+        "n": "Lucky Thailand"
+      },
+      {
+        "c": "rg.godofwealth",
+        "n": "God of Wealth"
+      },
+      {
+        "c": "rg.luckydragon",
+        "n": "Lucky Dragon"
+      },
+      {
+        "c": "rg.husa",
+        "n": "Husa"
+      },
+      {
+        "c": "rg.royal777",
+        "n": "Royal 777"
+      },
+      {
+        "c": "rg.dragonking",
+        "n": "Dragon King"
+      },
+      {
+        "c": "rg.tikiparty",
+        "n": "TiKi Party"
+      },
+      {
+        "c": "rg.goblinminer",
+        "n": "Goblin Miner"
+      },
+      {
+        "c": "rg.luckybar",
+        "n": "Lucky Bar"
+      },
+      {
+        "c": "rg.africa",
+        "n": "Africa"
+      },
+      {
+        "c": "rg.wizardstore",
+        "n": "Wizard Store"
+      },
+      {
+        "c": "rg.mrdoggy",
+        "n": "Mr.Doggy"
+      },
+      {
+        "c": "rg.disconight",
+        "n": "Disco Night"
+      },
+      {
+        "c": "rg.horrornights",
+        "n": "Horror Nights"
+      },
+      {
+        "c": "rg.chinaempress",
+        "n": "China Empress"
+      },
+      {
+        "c": "rg.lovecity",
+        "n": "Love City"
+      },
+      {
+        "c": "rg.fuwafafa",
+        "n": "Fu Wa Fa Fa"
+      },
+      {
+        "c": "rg.tarzan",
+        "n": "Tar Zan"
+      },
+      {
+        "c": "rg.jalapeno",
+        "n": "Jalapeno"
+      },
+      {
+        "c": "rg.piggypunch",
+        "n": "Piggy Punch"
+      },
+      {
+        "c": "rg.sevenshigh",
+        "n": "Sevens High"
+      },
+      {
+        "c": "rg.kunoichi",
+        "n": "Kunoichi"
+      },
+      {
+        "c": "rg.ninja",
+        "n": "Ninja"
+      },
+      {
+        "c": "rg.jelly27",
+        "n": "Jelly 27"
+      },
+      {
+        "c": "rg.angrybear",
+        "n": "Angry Bear"
+      },
+      {
+        "c": "rg.poseidon",
+        "n": "Poseidon"
+      },
+      {
+        "c": "rg.dancinglion",
+        "n": "Dancing Lion"
+      },
+      {
+        "c": "rg.medusa",
+        "n": "Medusa"
+      },
+      {
+        "c": "rg.neoncircle",
+        "n": "Neon Circle"
+      },
+      {
+        "c": "rg.cowboy",
+        "n": "Cowboy"
+      },
+      {
+        "c": "rg.thelittlematchgirl",
+        "n": "The Little Match Girl"
+      },
+      {
+        "c": "rg.mysterypanda",
+        "n": "Mystery Panda"
+      },
+      {
+        "c": "rg.bookofgold",
+        "n": "Book Of Gold"
+      },
+      {
+        "c": "rg.taichi",
+        "n": "Tai Chi"
+      },
+      {
+        "c": "rg.goldenleafclover",
+        "n": "Golden Leaf Clover"
+      },
+      {
+        "c": "rg.wizardstoregold",
+        "n": "Wizard Store Gold"
+      },
+      {
+        "c": "rg.alibaba",
+        "n": "Alibaba"
+      },
+      {
+        "c": "rg.ratsmoney",
+        "n": "Rats Money"
+      },
+      {
+        "c": "rg.songkran",
+        "n": "Songkran"
+      },
+      {
+        "c": "rg.elfarcher",
+        "n": "Elf Archer"
+      },
+      {
+        "c": "rg.luchadors",
+        "n": "Luchadors"
+      },
+      {
+        "c": "rg.bearkingdom",
+        "n": "Bear Kingdom"
+      },
+      {
+        "c": "rg.royal7777",
+        "n": "Royal 7777"
+      },
+      {
+        "c": "rg.dragonfight",
+        "n": "Dragon Fight"
+      }
+    ]
+  },
+  {
+    "proveedor": "DREAMTECH",
+    "etiqueta": "DreamTech",
+    "juegos": [
+      {
+        "c": "dt.newsd",
+        "n": "Basketball Master"
+      },
+      {
+        "c": "dt.san",
+        "n": "Battle of Red Cliffs"
+      },
+      {
+        "c": "dt.newsd5",
+        "n": "Basketball Master 2"
+      },
+      {
+        "c": "dt.newonepiece",
+        "n": "King Of Pirate"
+      },
+      {
+        "c": "dt.tgow",
+        "n": "Wealthy God Arriving"
+      },
+      {
+        "c": "dt.newyear",
+        "n": "Happy New Year"
+      },
+      {
+        "c": "dt.watermargin",
+        "n": "Tales Of Wusong"
+      },
+      {
+        "c": "dt.tlod",
+        "n": "Investiture of Gods"
+      },
+      {
+        "c": "dt.jtw",
+        "n": "Demon Hunt to West"
+      },
+      {
+        "c": "dt.whitesnake",
+        "n": "Tales of White Snake"
+      },
+      {
+        "c": "dt.dnp",
+        "n": "DragonPhoenix Prosper"
+      },
+      {
+        "c": "dt.crystal",
+        "n": "Glory of Heroes"
+      },
+      {
+        "c": "dt.fls",
+        "n": "Fulushou"
+      },
+      {
+        "c": "dt.fourss",
+        "n": "Four Holy Beasts"
+      },
+      {
+        "c": "dt.casino",
+        "n": "3D Slot"
+      },
+      {
+        "c": "dt.rocknight",
+        "n": "RocknRoll Night"
+      },
+      {
+        "c": "dt.bluesea",
+        "n": "Blue Sea"
+      },
+      {
+        "c": "dt.circus",
+        "n": "Crazy Circus"
+      },
+      {
+        "c": "dt.dash",
+        "n": "Four Wheels & Bro"
+      },
+      {
+        "c": "dt.bikini",
+        "n": "Bikini Party"
+      },
+      {
+        "c": "dt.piratetreasure",
+        "n": "Pirate Treasure"
+      },
+      {
+        "c": "dt.merryxmas",
+        "n": "Merry Xmas"
+      },
+      {
+        "c": "dt.fourbeauty",
+        "n": "Four Beauties"
+      },
+      {
+        "c": "dt.sweethouse",
+        "n": "Candy House"
+      },
+      {
+        "c": "dt.opera",
+        "n": "Beijing opera"
+      },
+      {
+        "c": "dt.bigred",
+        "n": "Big Red"
+      },
+      {
+        "c": "dt.wrathofthor",
+        "n": "Wrath of Thor"
+      },
+      {
+        "c": "dt.guhuozai",
+        "n": "Blood Street"
+      },
+      {
+        "c": "dt.boxingarena",
+        "n": "Boxing Arena"
+      },
+      {
+        "c": "dt.fantasyforest",
+        "n": "Elf Kingdom"
+      },
+      {
+        "c": "dt.egyptian",
+        "n": "Egyptian Empire"
+      },
+      {
+        "c": "dt.hotpotfeast",
+        "n": "Hotpot Feast"
+      },
+      {
+        "c": "dt.magician",
+        "n": "Magician"
+      },
+      {
+        "c": "dt.greatgatsby",
+        "n": "Great Gatsby"
+      },
+      {
+        "c": "dt.galaxywars",
+        "n": "Galaxy Wars"
+      },
+      {
+        "c": "dt.easyrider",
+        "n": "Easy Rider"
+      },
+      {
+        "c": "dt.shokudo",
+        "n": "shokudo"
+      },
+      {
+        "c": "dt.train",
+        "n": "Treasure Hunt Trip"
+      },
+      {
+        "c": "dt.lovefighters",
+        "n": "Love Fighters"
+      },
+      {
+        "c": "dt.genie",
+        "n": "Aladdin's Wish"
+      },
+      {
+        "c": "dt.garden",
+        "n": "Little Big Garden"
+      },
+      {
+        "c": "dt.legendary",
+        "n": "Legendary Tales"
+      },
+      {
+        "c": "dt.alchemist",
+        "n": "Crazy Alchemist"
+      },
+      {
+        "c": "dt.tombshadow",
+        "n": "Tomb Shadow"
+      },
+      {
+        "c": "dt.clash",
+        "n": "Clash of Three kingdoms"
+      },
+      {
+        "c": "dt.cheekyemojis",
+        "n": "Cheeky Emojis"
+      },
+      {
+        "c": "dt.icefire",
+        "n": "Ice And Fire"
+      },
+      {
+        "c": "dt.whackamole",
+        "n": "Whack-A-Mole"
+      },
+      {
+        "c": "dt.magicbean",
+        "n": "Magic Bean Legend"
+      },
+      {
+        "c": "dt.secretdate",
+        "n": "Secret Date"
+      },
+      {
+        "c": "dt.bacteria",
+        "n": "Germ Lab"
+      },
+      {
+        "c": "dt.baseball",
+        "n": "Baseball Frenzy"
+      },
+      {
+        "c": "dt.museum",
+        "n": "Wondrous Museum"
+      },
+      {
+        "c": "dt.mysticalstones",
+        "n": "Mystical Stones"
+      },
+      {
+        "c": "dt.sincity",
+        "n": "Sin City"
+      },
+      {
+        "c": "dt.wheel",
+        "n": "Secrets of The Pentagram"
+      },
+      {
+        "c": "dt.westwild",
+        "n": "West Wild"
+      },
+      {
+        "c": "dt.halloween",
+        "n": "Witch Winnings"
+      },
+      {
+        "c": "dt.bloodmoon",
+        "n": "Blood Wolf legend"
+      },
+      {
+        "c": "dt.dragonball2",
+        "n": "Heroes of the East"
+      },
+      {
+        "c": "dt.candycrush",
+        "n": "Candy Kingdom"
+      },
+      {
+        "c": "dt.muaythai",
+        "n": "Muaythai"
+      },
+      {
+        "c": "dt.sailor",
+        "n": "Sailor Princess"
+      },
+      {
+        "c": "dt.nightclub",
+        "n": "Infinity Club"
+      },
+      {
+        "c": "dt.nezha",
+        "n": "Nezha Legend"
+      },
+      {
+        "c": "dt.bird",
+        "n": "Bird Island"
+      },
+      {
+        "c": "dt.chess",
+        "n": "Dragon Auto Chess"
+      },
+      {
+        "c": "dt.honor",
+        "n": "Field Of Honor"
+      },
+      {
+        "c": "dt.rocknight2",
+        "n": "Rock Night 2"
+      },
+      {
+        "c": "dt.train2",
+        "n": "Treasure Hunt Trip 2"
+      },
+      {
+        "c": "dt.vikings",
+        "n": "Nordic Saga"
+      },
+      {
+        "c": "dt.treasures",
+        "n": "Secret Treasures"
+      },
+      {
+        "c": "dt.shiningstars",
+        "n": "Shining Stars"
+      },
+      {
+        "c": "dt.tgow2",
+        "n": "Cai Shen Dao"
+      },
+      {
+        "c": "dt.tgow2plus",
+        "n": "Cai Shen Dao Plus"
+      },
+      {
+        "c": "dt.peeping",
+        "n": "Peeping"
+      }
+    ]
+  },
+  {
+    "proveedor": "FASTSPIN",
+    "etiqueta": "FastSpin",
+    "juegos": [
+      {
+        "c": "fs.im04",
+        "n": "Imperial Majesty"
+      },
+      {
+        "c": "fs.ss02",
+        "n": "Spirit of the Sea"
+      },
+      {
+        "c": "fs.gh01",
+        "n": "Golden Horse Ride"
+      },
+      {
+        "c": "fs.ff03",
+        "n": "Frosty and Flamy"
+      },
+      {
+        "c": "fs.fj03",
+        "n": "Fortune Jewels III"
+      },
+      {
+        "c": "fs.fj02",
+        "n": "Fortune Jewels II"
+      },
+      {
+        "c": "fs.nr02",
+        "n": "Nutty Riches"
+      },
+      {
+        "c": "fs.rg03",
+        "n": "Boxing Fury"
+      },
+      {
+        "c": "fs.gm03",
+        "n": "Golden Moon Empire"
+      },
+      {
+        "c": "fs.fj01",
+        "n": "Fortune Jewels I"
+      },
+      {
+        "c": "fs.wc04",
+        "n": "Wild Calavera"
+      },
+      {
+        "c": "fs.ct01",
+        "n": "Candy Super Tumble"
+      },
+      {
+        "c": "fs.jq01",
+        "n": "Jungle Quest"
+      },
+      {
+        "c": "fs.bf03",
+        "n": "Blade of Fortune"
+      },
+      {
+        "c": "fs.wm04",
+        "n": "Wild Mafia"
+      },
+      {
+        "c": "fs.as01",
+        "n": "Alien Smash"
+      },
+      {
+        "c": "fs.st01",
+        "n": "Snake Treasure"
+      },
+      {
+        "c": "fs.gm01",
+        "n": "Guardian of The Museum"
+      },
+      {
+        "c": "fs.bl01",
+        "n": "Beasts Of Luck"
+      },
+      {
+        "c": "fs.bw01",
+        "n": "Pumpkins Go Lucky"
+      },
+      {
+        "c": "fs.ar01",
+        "n": "Apollo Ray of Luck"
+      },
+      {
+        "c": "fs.rn01",
+        "n": "Nezha"
+      },
+      {
+        "c": "fs.pg02",
+        "n": "Pai Gow Ways"
+      },
+      {
+        "c": "fs.mp03",
+        "n": "Mahjong Princess"
+      },
+      {
+        "c": "fs.cr02",
+        "n": "Caribbean Riches"
+      },
+      {
+        "c": "fs.ff02",
+        "n": "Farm of Fortune"
+      },
+      {
+        "c": "fs.aw01",
+        "n": "Adventure To The West"
+      },
+      {
+        "c": "fs.md01",
+        "n": "Money Dragon"
+      },
+      {
+        "c": "fs.rs01",
+        "n": "Ranger Showdown"
+      },
+      {
+        "c": "fs.yb01",
+        "n": "Yeti Boom"
+      },
+      {
+        "c": "fs.me01",
+        "n": "Money Empire"
+      },
+      {
+        "c": "fs.sf02",
+        "n": "Sweet Frenzy"
+      },
+      {
+        "c": "fs.lb02",
+        "n": "Leprechaun Bonanza"
+      },
+      {
+        "c": "fs.cj01",
+        "n": "City Of Jewels"
+      },
+      {
+        "c": "fs.mb03",
+        "n": "Mushroom Bandit"
+      },
+      {
+        "c": "fs.ms01",
+        "n": "Mighty Sevens"
+      },
+      {
+        "c": "fs.nr01",
+        "n": "Neko Riches"
+      },
+      {
+        "c": "fs.le04",
+        "n": "Legend of Eagle"
+      },
+      {
+        "c": "fs.nf01",
+        "n": "Neon Fantasy"
+      },
+      {
+        "c": "fs.ln01",
+        "n": "Legend of Nian"
+      },
+      {
+        "c": "fs.gs05",
+        "n": "The Great Safari"
+      },
+      {
+        "c": "fs.tr01",
+        "n": "Tiki Rush"
+      },
+      {
+        "c": "fs.tn01",
+        "n": "The Nutcrackers"
+      },
+      {
+        "c": "fs.mb02",
+        "n": "Mining Bonanza"
+      },
+      {
+        "c": "fs.hf03",
+        "n": "Heavenly Fortunes 2"
+      },
+      {
+        "c": "fs.gl03",
+        "n": "Ganesha Luck"
+      },
+      {
+        "c": "fs.hf02",
+        "n": "Heavenly Fortunes"
+      },
+      {
+        "c": "fs.sb02",
+        "n": "Safari Blitz"
+      },
+      {
+        "c": "fs.ge01",
+        "n": "Goddess Of Egypt"
+      },
+      {
+        "c": "fs.mm02",
+        "n": "The Maya Myth"
+      },
+      {
+        "c": "fs.sw01",
+        "n": "Spin and Win"
+      },
+      {
+        "c": "fs.ht01",
+        "n": "Honey Trap"
+      },
+      {
+        "c": "fs.om01",
+        "n": "Oceanic Melodies"
+      },
+      {
+        "c": "fs.lo01",
+        "n": "Loki"
+      },
+      {
+        "c": "fs.fm03",
+        "n": "Fruits Mania"
+      },
+      {
+        "c": "fs.fl03",
+        "n": "Fiery Lava"
+      },
+      {
+        "c": "fs.gw02",
+        "n": "God of Wealth"
+      },
+      {
+        "c": "fs.th01",
+        "n": "Triple Happiness"
+      },
+      {
+        "c": "fs.lf02",
+        "n": "Lucky Fortune"
+      },
+      {
+        "c": "fs.sc01",
+        "n": "Space Conquest"
+      },
+      {
+        "c": "fs.rh02",
+        "n": "Royale House"
+      },
+      {
+        "c": "fs.rm01",
+        "n": "Roma"
+      },
+      {
+        "c": "fs.vb01",
+        "n": "Sexy Vegas"
+      },
+      {
+        "c": "fs.rc01",
+        "n": "Rich Caishen"
+      },
+      {
+        "c": "fs.gr01",
+        "n": "Gold Rush Cowboys"
+      },
+      {
+        "c": "fs.rk02",
+        "n": "Royal Katt"
+      },
+      {
+        "c": "fs.ww02",
+        "n": "Wild Wet Win"
+      },
+      {
+        "c": "fs.mt01",
+        "n": "Muay Thai Fighter"
+      },
+      {
+        "c": "fs.pw03",
+        "n": "Poker Ways"
+      }
+    ]
+  },
+  {
+    "proveedor": "SPADEGAMING",
+    "etiqueta": "Spadegaming",
+    "juegos": [
+      {
+        "c": "sg.ba01",
+        "n": "888"
+      },
+      {
+        "c": "sg.jm01",
+        "n": "Juicy Market"
+      },
+      {
+        "c": "sg.lr01",
+        "n": "Legacy of Ramakien"
+      },
+      {
+        "c": "sg.fh04",
+        "n": "Fiery Sevens Hot 100"
+      },
+      {
+        "c": "sg.dw01",
+        "n": "Dragon Wish"
+      },
+      {
+        "c": "sg.gw03",
+        "n": "Gold West"
+      },
+      {
+        "c": "sg.fn01",
+        "n": "Fruit Ninja Fury"
+      },
+      {
+        "c": "sg.lt01",
+        "n": "Lucky Twin Sea"
+      },
+      {
+        "c": "sg.fm04",
+        "n": "Fury Max Lucky Road"
+      },
+      {
+        "c": "sg.sa03",
+        "n": "Secrets of Anubis"
+      },
+      {
+        "c": "sg.bk01",
+        "n": "Brothers Kingdom 2"
+      },
+      {
+        "c": "sg.rv01",
+        "n": "Royale Vegas"
+      },
+      {
+        "c": "sg.mm03",
+        "n": "Moji Mania"
+      },
+      {
+        "c": "sg.cg02",
+        "n": "Clash of the Giants"
+      },
+      {
+        "c": "sg.ff01",
+        "n": "Farmland Frenzy Maxways"
+      },
+      {
+        "c": "sg.lk02",
+        "n": "Lucky Koi Exclusive"
+      },
+      {
+        "c": "sg.jt03",
+        "n": "Joker Treasure Exclusive"
+      },
+      {
+        "c": "sg.fs02",
+        "n": "Fiery Sevens Exclusive"
+      },
+      {
+        "c": "sg.cs02",
+        "n": "Caishen"
+      },
+      {
+        "c": "sg.lk03",
+        "n": "Legacy of Kong"
+      },
+      {
+        "c": "sg.mk01",
+        "n": "Magic Kitty"
+      },
+      {
+        "c": "sg.rw01",
+        "n": "Rise of werewolves"
+      },
+      {
+        "c": "sg.hq01",
+        "n": "Hugon Quest"
+      },
+      {
+        "c": "sg.fs01",
+        "n": "Fiery Sevens"
+      },
+      {
+        "c": "sg.mg02",
+        "n": "Mayan Gems"
+      },
+      {
+        "c": "sg.cb01",
+        "n": "Crazy Bomber"
+      },
+      {
+        "c": "sg.mg01",
+        "n": "Mega 7"
+      },
+      {
+        "c": "sg.jt02",
+        "n": "Joker's Treasure"
+      },
+      {
+        "c": "sg.df03",
+        "n": "Double Flame"
+      },
+      {
+        "c": "sg.bm01",
+        "n": "Book of Myth"
+      },
+      {
+        "c": "sg.mm01",
+        "n": "Money Mouse"
+      },
+      {
+        "c": "sg.ls02",
+        "n": "Three Lucky Stars"
+      },
+      {
+        "c": "sg.sb01",
+        "n": "Sweet Bakery"
+      },
+      {
+        "c": "sg.ml01",
+        "n": "Magical Lamp"
+      },
+      {
+        "c": "sg.df02",
+        "n": "Dancing Fever"
+      },
+      {
+        "c": "sg.gp01",
+        "n": "Gold Panther"
+      },
+      {
+        "c": "sg.tp02",
+        "n": "Triple Panda"
+      },
+      {
+        "c": "sg.ly01",
+        "n": "Fa Fa Fa"
+      },
+      {
+        "c": "sg.gw01",
+        "n": "Golden Whale"
+      },
+      {
+        "c": "sg.bc01",
+        "n": "Baby Cai Shen"
+      },
+      {
+        "c": "sg.df01",
+        "n": "Double Fortune"
+      },
+      {
+        "c": "sg.dg04",
+        "n": "Dragon Gold SA"
+      },
+      {
+        "c": "sg.lk01",
+        "n": "Lucky Koi"
+      },
+      {
+        "c": "sg.hy01",
+        "n": "Ho Yeah Monkey"
+      },
+      {
+        "c": "sg.fd01",
+        "n": "5 Fortune Dragons"
+      },
+      {
+        "c": "sg.pw02",
+        "n": "Princess Wang"
+      },
+      {
+        "c": "sg.ze01",
+        "n": "Zeus"
+      },
+      {
+        "c": "sg.fm02",
+        "n": "Golden Monkey"
+      },
+      {
+        "c": "sg.cs01",
+        "n": "Cai Shen 888"
+      },
+      {
+        "c": "sg.gc03",
+        "n": "Golden Chicken"
+      },
+      {
+        "c": "sg.ly02",
+        "n": "FaFaFa 2"
+      },
+      {
+        "c": "sg.gk01",
+        "n": "Brothers Kingdom"
+      },
+      {
+        "c": "sg.tz01",
+        "n": "Jungle King"
+      },
+      {
+        "c": "sg.dx01",
+        "n": "Da Fu Xiao Fu"
+      },
+      {
+        "c": "sg.tw01",
+        "n": "Tiger Warrior"
+      },
+      {
+        "c": "sg.wp02",
+        "n": "Wow Prosperity"
+      },
+      {
+        "c": "sg.ch01",
+        "n": "Mr Chu Tycoon"
+      },
+      {
+        "c": "sg.ph02",
+        "n": "King Pharaoh"
+      },
+      {
+        "c": "sg.pg01",
+        "n": "Prosperity Gods"
+      },
+      {
+        "c": "sg.il03",
+        "n": "Iceland SA"
+      },
+      {
+        "c": "sg.fc03",
+        "n": "Big Prosperity SA"
+      },
+      {
+        "c": "sg.hf01",
+        "n": "Highway Fortune"
+      }
+    ]
+  },
+  {
+    "proveedor": "NEXTSPIN",
+    "etiqueta": "NextSpin",
+    "juegos": [
+      {
+        "c": "ns.5forstar",
+        "n": "5 Fortune Stars"
+      },
+      {
+        "c": "ns.7dragons",
+        "n": "7 Dragons"
+      },
+      {
+        "c": "ns.80434365",
+        "n": "Bounty Hunt"
+      },
+      {
+        "c": "ns.aztecgolt",
+        "n": "Aztec Gold Treasure"
+      },
+      {
+        "c": "ns.clafruit7",
+        "n": "Classic Fruits 7"
+      },
+      {
+        "c": "ns.crazymkdx",
+        "n": "Crazy Monkey Deluxe"
+      },
+      {
+        "c": "ns.crazymnky",
+        "n": "Crazy Monkey"
+      },
+      {
+        "c": "ns.dblmnky",
+        "n": "Double Monkey"
+      },
+      {
+        "c": "ns.diamond7",
+        "n": "Diamond 7"
+      },
+      {
+        "c": "ns.dolphdive",
+        "n": "Dolphin Dive"
+      },
+      {
+        "c": "ns.dp0001",
+        "n": "Nom Nom Fat Cat"
+      },
+      {
+        "c": "ns.drgblitz",
+        "n": "Dragon Blitz"
+      },
+      {
+        "c": "ns.eternalfi",
+        "n": "Eternal Fire"
+      },
+      {
+        "c": "ns.forestsec",
+        "n": "Forest Secret"
+      },
+      {
+        "c": "ns.fortoad",
+        "n": "Fortune Toad"
+      },
+      {
+        "c": "ns.fruittyc",
+        "n": "Fruit Tycoon"
+      },
+      {
+        "c": "ns.goldenfa",
+        "n": "Golden Fa"
+      },
+      {
+        "c": "ns.goldenwar",
+        "n": "Golden War"
+      },
+      {
+        "c": "ns.golwest",
+        "n": "Golden West"
+      },
+      {
+        "c": "ns.guangong",
+        "n": "Legend of Guan Gong"
+      },
+      {
+        "c": "ns.hg0001",
+        "n": "Blue Phantom"
+      },
+      {
+        "c": "ns.hg0002",
+        "n": "Sacred Fortune"
+      },
+      {
+        "c": "ns.hg0003",
+        "n": "Fortune Familiar"
+      },
+      {
+        "c": "ns.hg0004",
+        "n": "Pharaoh's Fortune Realm"
+      },
+      {
+        "c": "ns.hg0005",
+        "n": "Prosperity Horse"
+      },
+      {
+        "c": "ns.highwayb",
+        "n": "Highway Bee"
+      },
+      {
+        "c": "ns.holygoat",
+        "n": "Holy Goat"
+      },
+      {
+        "c": "ns.honey888",
+        "n": "Honey 888"
+      },
+      {
+        "c": "ns.hotsmash",
+        "n": "Hot Smash"
+      },
+      {
+        "c": "ns.jokerking",
+        "n": "Joker King"
+      },
+      {
+        "c": "ns.lightndrg",
+        "n": "Lighting Dragon"
+      },
+      {
+        "c": "ns.lightnwmn",
+        "n": "Lightning Woman"
+      },
+      {
+        "c": "ns.longx3",
+        "n": "Long Long Long"
+      },
+      {
+        "c": "ns.luckygems",
+        "n": "Lucky Gems"
+      },
+      {
+        "c": "ns.mahdrg",
+        "n": "Mahjong Dragon"
+      },
+      {
+        "c": "ns.mahphe",
+        "n": "Mahjong Phoenix"
+      },
+      {
+        "c": "ns.mayaquest",
+        "n": "Maya Quest"
+      },
+      {
+        "c": "ns.mrhippo",
+        "n": "Mr. Hippo"
+      },
+      {
+        "c": "ns.oceanches",
+        "n": "Ocean Chest"
+      },
+      {
+        "c": "ns.princessr",
+        "n": "Princess of Ra"
+      },
+      {
+        "c": "ns.princrime",
+        "n": "Princess of Crime"
+      },
+      {
+        "c": "ns.prosdrg",
+        "n": "Prosperity Dragon"
+      },
+      {
+        "c": "ns.prossnake",
+        "n": "Prosperioty Snake"
+      },
+      {
+        "c": "ns.rickytyco",
+        "n": "Ricky Tycoon"
+      },
+      {
+        "c": "ns.roma",
+        "n": "Roma"
+      },
+      {
+        "c": "ns.royalgem",
+        "n": "Royal Gems Match"
+      },
+      {
+        "c": "ns.shkboomx2",
+        "n": "Shake Boom Boom"
+      },
+      {
+        "c": "ns.shkthaix2",
+        "n": "Shake Thai Thai"
+      },
+      {
+        "c": "ns.soccerk",
+        "n": "Soccer King"
+      },
+      {
+        "c": "ns.superfor",
+        "n": "Super Fortune"
+      },
+      {
+        "c": "ns.sweetlava",
+        "n": "Sweet Lava"
+      },
+      {
+        "c": "ns.taiga88",
+        "n": "Taiga 88"
+      },
+      {
+        "c": "ns.treaatlan",
+        "n": "Treasure of Atlantis"
+      },
+      {
+        "c": "ns.trikfmnky",
+        "n": "Triple Kung Fu Monkey"
+      },
+      {
+        "c": "ns.trimnky",
+        "n": "Triple Monkey"
+      },
+      {
+        "c": "ns.twinkleic",
+        "n": "Twinkle Ice"
+      },
+      {
+        "c": "ns.winx2neko",
+        "n": "Win Win Neko"
+      },
+      {
+        "c": "ns.zeus",
+        "n": "Zeus Mighty Wealth"
+      }
+    ]
+  },
+  {
+    "proveedor": "FACHAI",
+    "etiqueta": "FaChai",
+    "juegos": [
+      {
+        "c": "fc.openvault",
+        "n": "Open Vault"
+      },
+      {
+        "c": "fc.badrichwolf",
+        "n": "Bad Rich Wolf"
+      },
+      {
+        "c": "fc.djboomboom",
+        "n": "Dj Boom Boom"
+      },
+      {
+        "c": "fc.musclefortunecat",
+        "n": "Muscle Fortune Cat"
+      },
+      {
+        "c": "fc.sugarbangbangplus",
+        "n": "Sugar Bang Bang Plus"
+      },
+      {
+        "c": "fc.pokerwin2",
+        "n": "Poker Win 2"
+      },
+      {
+        "c": "fc.catlasmoneymachine",
+        "n": "Catla's Money Machine"
+      },
+      {
+        "c": "fc.swordofking",
+        "n": "Sword Of King"
+      },
+      {
+        "c": "fc.junglebangbang",
+        "n": "Jungle Bang Bang"
+      },
+      {
+        "c": "fc.treasuresofodin",
+        "n": "Treasures Of Odin"
+      },
+      {
+        "c": "fc.phoenixfever",
+        "n": "Phoenix Fever"
+      },
+      {
+        "c": "fc.sugarbangbang2",
+        "n": "Sugar Bang Bang 2"
+      },
+      {
+        "c": "fc.boxingriches",
+        "n": "Boxing Riches"
+      },
+      {
+        "c": "fc.chinesenewyearmoreways",
+        "n": "Chinese New Year Moreways"
+      },
+      {
+        "c": "fc.pokerwin",
+        "n": "Poker Win"
+      },
+      {
+        "c": "fc.romagladiatrix",
+        "n": "Roma Gladiatrix"
+      },
+      {
+        "c": "fc.fortunegoddess",
+        "n": "Fortune Goddess"
+      },
+      {
+        "c": "fc.queenofinca",
+        "n": "Queen Of Inca"
+      },
+      {
+        "c": "fc.fortunemoneyboom",
+        "n": "Fortune Money Boom"
+      },
+      {
+        "c": "fc.fortunesheep",
+        "n": "Fortune Sheep"
+      },
+      {
+        "c": "fc.chilihuahua",
+        "n": "Chilihuahua"
+      },
+      {
+        "c": "fc.egyptbonanza",
+        "n": "Egypt Bonanza"
+      },
+      {
+        "c": "fc.fortuneegg",
+        "n": "Fortune Egg"
+      },
+      {
+        "c": "fc.zeus",
+        "n": "Zeus"
+      },
+      {
+        "c": "fc.goldengenie",
+        "n": "Golden Genie"
+      },
+      {
+        "c": "fc.mergemagic",
+        "n": "Merge Magic"
+      },
+      {
+        "c": "fc.crazybuffalo",
+        "n": "Crazy Buffalo"
+      },
+      {
+        "c": "fc.sugarbangbang",
+        "n": "Sugar Bang Bang"
+      },
+      {
+        "c": "fc.treasureraiders",
+        "n": "Treasure Raiders"
+      },
+      {
+        "c": "fc.grandblue",
+        "n": "Grand Blue"
+      },
+      {
+        "c": "fc.luckyfortunes",
+        "n": "Lucky Fortunes"
+      },
+      {
+        "c": "fc.robinhood",
+        "n": "Robin Hood"
+      },
+      {
+        "c": "fc.gloryofrome",
+        "n": "Glory Of Rome"
+      },
+      {
+        "c": "fc.goldrush",
+        "n": "Gold Rush"
+      },
+      {
+        "c": "fc.waroftheuniverse",
+        "n": "War Of The Universe"
+      },
+      {
+        "c": "fc.cowboys",
+        "n": "Cowboys"
+      },
+      {
+        "c": "fc.magicbeans",
+        "n": "Magic Beans"
+      },
+      {
+        "c": "fc.luxurygoldenpanther",
+        "n": "Luxury Golden Panther"
+      },
+      {
+        "c": "fc.dalemen",
+        "n": "Da Le Men"
+      },
+      {
+        "c": "fc.pandadragonboat",
+        "n": "Panda Dragon Boat"
+      },
+      {
+        "c": "fc.nightmarket",
+        "n": "Night Market"
+      },
+      {
+        "c": "fc.pongponghu",
+        "n": "Pong Pong Hu"
+      },
+      {
+        "c": "fc.chinesenewyear",
+        "n": "Chinese New Year"
+      },
+      {
+        "c": "fc.fortunekoi",
+        "n": "Fortune Koi"
+      },
+      {
+        "c": "fc.threelittlepigs",
+        "n": "Three Little Pigs"
+      },
+      {
+        "c": "fc.thegoldenpanther",
+        "n": "The Golden Panther"
+      },
+      {
+        "c": "fc.cybergodoffortuneplus",
+        "n": "Cyber God Of Fortune Plus"
+      },
+      {
+        "c": "fc.luckyfortune3X3",
+        "n": "Lucky Fortunes 3x3"
+      },
+      {
+        "c": "fc.legendofinca",
+        "n": "Legend Of Inca"
+      },
+      {
+        "c": "fc.superelements",
+        "n": "Super Elements"
+      },
+      {
+        "c": "fc.winwinneko",
+        "n": "Win Win Neko"
+      }
+    ]
+  },
+  {
+    "proveedor": "EVOPLAY",
+    "etiqueta": "Evoplay",
+    "juegos": [
+      {
+        "c": "ep.chinesenewyear",
+        "n": "Chinese New Year"
+      },
+      {
+        "c": "ep.jewellerystore",
+        "n": "Jewelry store"
+      },
+      {
+        "c": "ep.redcliff",
+        "n": "Red cliff"
+      },
+      {
+        "c": "ep.elvenprincesses",
+        "n": "Elven Princess"
+      },
+      {
+        "c": "ep.aeronauts",
+        "n": "Aeronauts"
+      },
+      {
+        "c": "ep.triptothefuture",
+        "n": "Trip to the Future"
+      },
+      {
+        "c": "ep.nukeworld",
+        "n": "Nook World"
+      },
+      {
+        "c": "ep.livingtales",
+        "n": "Night of the Living Tales"
+      },
+      {
+        "c": "ep.icemania",
+        "n": "Ice mania"
+      },
+      {
+        "c": "ep.valleyofdreams",
+        "n": "Valley of Dreams"
+      },
+      {
+        "c": "ep.fruitnova",
+        "n": "Fruit Nova"
+      },
+      {
+        "c": "ep.treeoflight",
+        "n": "Tree of light"
+      },
+      {
+        "c": "ep.templeofdead",
+        "n": "Temple of the dead"
+      },
+      {
+        "c": "ep.runesofdestiny",
+        "n": "Runes of Destiny"
+      },
+      {
+        "c": "ep.ellensfortune",
+        "n": "Ellen Fortune"
+      },
+      {
+        "c": "ep.unlimitedwishes",
+        "n": "Unlimited Wishes"
+      },
+      {
+        "c": "ep.foodfeast",
+        "n": "Food fist"
+      },
+      {
+        "c": "ep.epiclegends",
+        "n": "Epic legends"
+      },
+      {
+        "c": "ep.sweetsugar",
+        "n": "Sweet sugar"
+      },
+      {
+        "c": "ep.cycleofluck",
+        "n": "Cycle of Luck"
+      },
+      {
+        "c": "ep.gangsternight",
+        "n": "Gangster night"
+      },
+      {
+        "c": "ep.goldofsirens",
+        "n": "Gold of sirens"
+      },
+      {
+        "c": "ep.bloodybrilliant",
+        "n": "Bloody brilliant"
+      },
+      {
+        "c": "ep.shadowofluxor",
+        "n": "Shadow of Luxor"
+      },
+      {
+        "c": "ep.anubismoon",
+        "n": "Anubis moon"
+      },
+      {
+        "c": "ep.fruitdisco",
+        "n": "Fruit disco"
+      },
+      {
+        "c": "ep.fruitsupernova30",
+        "n": "Fruit Super Nova 30"
+      },
+      {
+        "c": "ep.curseofthepharaoh",
+        "n": "Curse of the Pharaoh"
+      },
+      {
+        "c": "ep.fruitsupernova60",
+        "n": "Fruit Super Nova 60"
+      },
+      {
+        "c": "ep.curseofthepharaohbonusbuy",
+        "n": "Curse of the Pharaoh BB"
+      },
+      {
+        "c": "ep.fruitsupernova100",
+        "n": "Fruit Super Nova 100"
+      },
+      {
+        "c": "ep.christmasreach",
+        "n": "Christmas lychee"
+      },
+      {
+        "c": "ep.fruitsupernova80",
+        "n": "Whoft Super Nova 80"
+      },
+      {
+        "c": "ep.dragonstavern",
+        "n": "Dragon's Tavern"
+      },
+      {
+        "c": "ep.wildoverlords",
+        "n": "Wild overlord"
+      },
+      {
+        "c": "ep.dragonstavernbonusbuy",
+        "n": "Dragon's Tavern BB"
+      },
+      {
+        "c": "ep.budaireels",
+        "n": "Budai reels"
+      },
+      {
+        "c": "ep.budaireelsbonusbuy",
+        "n": "Budai Lil's BB"
+      },
+      {
+        "c": "ep.moneyminter",
+        "n": "Money minter"
+      },
+      {
+        "c": "ep.juicygems",
+        "n": "Watch gem"
+      },
+      {
+        "c": "ep.juicygemsbb",
+        "n": "Watch Gem BB"
+      },
+      {
+        "c": "ep.thegreatestcatch",
+        "n": "The Greatest Catch"
+      },
+      {
+        "c": "ep.thegreatestcatchbonusbuy",
+        "n": "The Greatest Catch BB"
+      },
+      {
+        "c": "ep.treeoflightbb",
+        "n": "Tree of Light BB"
+      },
+      {
+        "c": "ep.wolfhiding",
+        "n": "Wolf Hiding"
+      },
+      {
+        "c": "ep.caminodechili",
+        "n": "Camino de Chili"
+      },
+      {
+        "c": "ep.candydreamssweetplanet",
+        "n": "Candy Dreams: Sweet Planet"
+      },
+      {
+        "c": "ep.wildoverlordsbonusbuy",
+        "n": "Wild Overlord BB"
+      },
+      {
+        "c": "ep.templeofthunder",
+        "n": "Temple of Thunder"
+      }
+    ]
+  },
+  {
+    "proveedor": "TOPTREND",
+    "etiqueta": "TopTrend",
+    "juegos": [
+      {
+        "c": "tt.reelsoffortune",
+        "n": "Reels Of Fortune"
+      },
+      {
+        "c": "tt.goldenamazon",
+        "n": "Golden Amazon"
+      },
+      {
+        "c": "tt.monkeyluck",
+        "n": "Monkey Luck"
+      },
+      {
+        "c": "tt.leagueofchampions",
+        "n": "League Of Champions"
+      },
+      {
+        "c": "tt.dynastyempire",
+        "n": "Dynasty Empire"
+      },
+      {
+        "c": "tt.superkids",
+        "n": "Super Kids"
+      },
+      {
+        "c": "tt.hotvolcanoh5",
+        "n": "Hot Volcano"
+      },
+      {
+        "c": "tt.huluwa",
+        "n": "Huluwa"
+      },
+      {
+        "c": "tt.legendoflinkh5",
+        "n": "Legend Of Link"
+      },
+      {
+        "c": "tt.detectiveblackcat",
+        "n": "Detective Black Cat"
+      },
+      {
+        "c": "tt.chilligoldh5",
+        "n": "Chilli Gold"
+      },
+      {
+        "c": "tt.silverlionh5",
+        "n": "Silver Lion"
+      },
+      {
+        "c": "tt.thunderingzeus",
+        "n": "Thundering Zeus"
+      },
+      {
+        "c": "tt.dragonpalaceh5",
+        "n": "Dragon Palace"
+      },
+      {
+        "c": "tt.madmonkey2",
+        "n": "Mad Monkey"
+      },
+      {
+        "c": "tt.medusacurse",
+        "n": "Medusa Curse"
+      },
+      {
+        "c": "tt.battleheroes",
+        "n": "Battle Heroes"
+      },
+      {
+        "c": "tt.neptunesgoldh5",
+        "n": "Neptunes Gold"
+      },
+      {
+        "c": "tt.heroesneverdie",
+        "n": "Heroes Never Die"
+      },
+      {
+        "c": "tt.wildwildwitch",
+        "n": "Wild Wild Witch"
+      },
+      {
+        "c": "tt.wildkartracers",
+        "n": "Wild Kart Racers"
+      },
+      {
+        "c": "tt.kingdinosaur",
+        "n": "King Dinosaur"
+      },
+      {
+        "c": "tt.goldengenie",
+        "n": "Golden Genie"
+      },
+      {
+        "c": "tt.ultimatefighter",
+        "n": "Ultimate Fighter"
+      },
+      {
+        "c": "tt.everlastingspins",
+        "n": "Everlasting Spins"
+      },
+      {
+        "c": "tt.zoomania",
+        "n": "Zoomania"
+      },
+      {
+        "c": "tt.diamondfortune",
+        "n": "Diamond Fortune"
+      },
+      {
+        "c": "tt.goldenclaw",
+        "n": "Golden Claw"
+      },
+      {
+        "c": "tt.pandawarrior",
+        "n": "Panda Warrior"
+      },
+      {
+        "c": "tt.royalgoldendragon",
+        "n": "Royal Golden Dragon"
+      },
+      {
+        "c": "tt.dolphingoldh5",
+        "n": "Dolphin Gold"
+      },
+      {
+        "c": "tt.dragonkingh5",
+        "n": "Dragon King"
+      },
+      {
+        "c": "tt.luckypandah5",
+        "n": "Lucky Panda"
+      }
+    ]
+  },
+  {
+    "proveedor": "FATPANDA",
+    "etiqueta": "Fat Panda",
+    "juegos": [
+      {
+        "c": "vs5luckytig",
+        "n": "Tigre Sortudo"
+      },
+      {
+        "c": "vs10fortnhs",
+        "n": "Touro Sortudo"
+      },
+      {
+        "c": "vs5luckytigly",
+        "n": "Lucky Tiger"
+      },
+      {
+        "c": "vs10fortnhsly",
+        "n": "Lucky Ox"
+      },
+      {
+        "c": "vs5wfrog",
+        "n": "Wealthy Frog"
+      },
+      {
+        "c": "vs10emotiwins",
+        "n": "Emotiwins"
+      },
+      {
+        "c": "vs5jellyc",
+        "n": "Jelly Candy"
+      },
+      {
+        "c": "vs5luckym",
+        "n": "Macaco Sortudo"
+      },
+      {
+        "c": "vs5luckydog",
+        "n": "Cachorro Sortudo"
+      },
+      {
+        "c": "vs1dragon888",
+        "n": "Plushie Wins"
+      },
+      {
+        "c": "vs5luckyt1kly",
+        "n": "Lucky Tiger 1000"
+      },
+      {
+        "c": "vs10forwildly",
+        "n": "Lucky Mouse"
+      },
+      {
+        "c": "vs5luckyphnly",
+        "n": "Lucky Phoenix"
+      },
+      {
+        "c": "vs5luckytig1k",
+        "n": "Tigre Sortudo 1000"
+      },
+      {
+        "c": "vswayssw",
+        "n": "Starlight Wins"
+      },
+      {
+        "c": "vs25pfarmfp",
+        "n": "Pig Farm"
+      },
+      {
+        "c": "vswaysaztecgm",
+        "n": "Fortune of Aztec"
+      },
+      {
+        "c": "vswaysolwfp",
+        "n": "Olympus Wins"
+      },
+      {
+        "c": "vs5luckyphn",
+        "n": "Fenix Sortuda"
+      },
+      {
+        "c": "vs1mjokfp",
+        "n": "Master Gems"
+      },
+      {
+        "c": "vs5t8goldfp",
+        "n": "777 Rush"
+      },
+      {
+        "c": "vs5tdragresk",
+        "n": "Dino Drop"
+      },
+      {
+        "c": "vs5spjokfp",
+        "n": "Code of Cairo"
+      },
+      {
+        "c": "vs7fire88fp",
+        "n": "Mystic Wishes"
+      },
+      {
+        "c": "vs5luckdce88",
+        "n": "Lucky Dice"
+      },
+      {
+        "c": "vs20fishptrn",
+        "n": "Happy Nets"
+      },
+      {
+        "c": "vs5lckpnd",
+        "n": "Lucky Panda"
+      },
+      {
+        "c": "vs10djneko",
+        "n": "DJ Neko"
+      },
+      {
+        "c": "vs5luckycol",
+        "n": "Lucky Fortune Tree"
+      },
+      {
+        "c": "vs10luckybnz",
+        "n": "Sweet Burst"
+      },
+      {
+        "c": "vs5luckytru",
+        "n": "Lucky Tiger Gold"
+      },
+      {
+        "c": "vs5luckytwr",
+        "n": "Tut’s Treasure Tower"
+      },
+      {
+        "c": "vs10dmreels",
+        "n": "Happy Dragon"
+      }
+    ]
+  }
+]

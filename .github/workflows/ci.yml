@@ -1,16 +1,76 @@
 name: Verify Maker
-on: [push, pull_request]
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: verify-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      CI: "true"
+      WRANGLER_SEND_METRICS: "false"
+      BROWSERS: chromium,firefox
+      VISUAL_BASELINE_REF: b6d354e9108f72598f319b02a358d01a4089671c
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7.0.1
         with:
-          node-version: '22'
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version-file: ".nvmrc"
           cache: npm
+      - name: Pin npm
+        run: npm install --global npm@12.2.1
       - run: npm ci
+      - run: npm run build
+      - run: npm run lint
       - run: npm test
-      - run: npx wrangler deploy --dry-run
+      - name: Preview server contracts
+        run: node --test tests/browser/static-server.test.mjs
+      - run: npm run check:assets
+      - name: Cloudflare local runtime
+        shell: bash
+        run: |
+          mkdir -p work/rebuild/test-results
+          npx --no-install wrangler dev --local --ip 127.0.0.1 --port 8787 > work/rebuild/test-results/wrangler.log 2>&1 &
+          worker_pid=$!
+          trap 'kill "$worker_pid" 2>/dev/null || true' EXIT
+          node --input-type=module <<'JS'
+          const deadline = Date.now() + 60_000;
+          while (Date.now() < deadline) {
+            try {
+              const response = await fetch('http://127.0.0.1:8787/api/health');
+              if (response.ok && (await response.json()).demo === true) process.exit(0);
+            } catch {}
+            await new Promise(resolve => setTimeout(resolve, 250));
+          }
+          throw new Error('Local Wrangler did not become ready; inspect wrangler.log');
+          JS
+          DEMO_ORIGIN=http://127.0.0.1:8787 npm run test:runtime
+      - name: Install browsers from the locked Playwright version
+        run: npx --no-install playwright install --with-deps chromium firefox
+      - name: Capture the original visual and functional reference
+        shell: bash
+        run: |
+          mkdir -p work/rebuild/baseline
+          git archive "$VISUAL_BASELINE_REF" public | tar -x -C work/rebuild/baseline
+          npm run test:browser -- --baseline
+      - name: Browser contracts and visual comparison
+        run: npm run test:browser -- --compare
+      - name: Validate the Worker bundle without deployment
+        run: npx --no-install wrangler deploy --dry-run --outdir work/rebuild/test-results/worker-bundle
+      - name: Upload test evidence
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: maker-verification-${{ github.run_id }}
+          path: work/rebuild/test-results/
+          if-no-files-found: warn
+          retention-days: 14

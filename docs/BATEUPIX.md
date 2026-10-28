@@ -22,10 +22,10 @@ Ingreso, registro, promociones y soporte muestran avisos de demostración. Los j
 
 ```sh
 node scripts/sanitize-bateupix.mjs "captura-bateupix.har"
-node scripts/register-bateupix.mjs
+node scripts/install-lobby-templates.mjs
 ```
 
-La recuperación original de Rushybet, seguida de `add-template.mjs`, conserva el registro Bateupix. Las fuentes compartidas omiten variantes sin archivo local; idiomas no cubiertos usan el respaldo del sistema.
+El registro Bateupix se conserva en `src/client/editor/template-registry.js`; la compilación genera el selector desde ese registro. Las fuentes compartidas omiten variantes sin archivo local; idiomas no cubiertos usan el respaldo del sistema.
 
 ## Verificación
 

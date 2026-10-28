@@ -1,0 +1,25 @@
+/* Compatibility inventory: the 151 utility class names present in the
+ * baseline app.css (b6d354e). These are inputs to Tailwind, not copied rules.
+ * Retaining the full set covers generated strings and states that are absent
+ * from a particular rendered page. Add future classes in the ESM/HTML sources;
+ * remove compatibility candidates only after checking all lobby/panel states.
+ */
+@source inline("@container collapse invisible visible absolute fixed relative static");
+@source inline("sticky container mx-auto mt-1 mt-1.5 mt-2 mt-3 mt-4");
+@source inline("mt-8 mb-1 mb-3 mb-6 ml-2 block flex grid");
+@source inline("hidden inline inline-block inline-flex table h-44 h-full min-h-full");
+@source inline("min-h-screen w-44 w-full max-w-5xl max-w-md flex-1 grow transform");
+@source inline("cursor-pointer resize flex-col flex-wrap items-center justify-between gap-1 gap-2");
+@source inline("gap-3 gap-4 space-y-1.5 space-y-2 space-y-4 rounded rounded-2xl rounded-lg");
+@source inline("rounded-md rounded-xl border border-b border-amber-700 border-amber-900 border-emerald-900 border-red-900");
+@source inline("border-zinc-700 border-zinc-800 bg-amber-500 bg-amber-950/30 bg-emerald-950/30 bg-orange-600 bg-red-500/10 bg-red-950/40");
+@source inline("bg-white bg-zinc-800 bg-zinc-900 bg-zinc-900/40 bg-zinc-950 bg-zinc-950/40 bg-zinc-950/50 p-2");
+@source inline("p-4 p-5 p-6 px-2 px-2.5 px-3 px-4 px-6");
+@source inline("py-0.5 py-1.5 py-2 py-2.5 py-3 text-center font-mono text-2xl");
+@source inline("text-base text-lg text-sm text-xs text-[10px] text-[11px] leading-relaxed font-bold");
+@source inline("font-semibold tracking-[0.4em] break-all text-amber-200 text-amber-300 text-amber-400 text-amber-400/80 text-black");
+@source inline("text-emerald-300 text-emerald-400 text-red-300 text-red-400 text-red-400/70 text-white text-zinc-100 text-zinc-300");
+@source inline("text-zinc-400 text-zinc-500 lowercase uppercase italic tabular-nums line-through underline");
+@source inline("antialiased ring outline blur drop-shadow invert filter transition");
+@source inline("transition-colors ease-in ease-in-out ease-out outline-none hover:border-red-800 hover:bg-amber-400 hover:bg-amber-900/40");
+@source inline("hover:bg-orange-500 hover:text-amber-400 hover:text-red-300 focus-visible:ring-2 focus-visible:ring-amber-500 disabled:opacity-50 disabled:opacity-60");

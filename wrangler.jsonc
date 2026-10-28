@@ -2,11 +2,11 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "rushybet-replica",
   "main": "src/worker.mjs",
-  "compatibility_date": "2026-10-11",
+  "compatibility_date": "2026-10-23",
   "account_id": "3904fa9871c00ad145ed8f8f5404d1bd",
   "workers_dev": true,
   "assets": {
-    "directory": "./public",
+    "directory": "./dist/public",
     "binding": "ASSETS",
     "html_handling": "none",
     "not_found_handling": "none",

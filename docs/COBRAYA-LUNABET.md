@@ -21,8 +21,8 @@ node scripts/sanitize-lobby-har.mjs lunabet "ruta/lunabet.har"
 node scripts/install-lobby-templates.mjs
 ```
 
-Los HAR permanecen fuera del repositorio. Al usar otra captura, retirar previamente los recursos generados obsoletos: el sanitizador agrega o reemplaza archivos, no limpia imágenes antiguas automáticamente. La instalación del selector también forma parte de `add-template.mjs` y `register-bateupix.mjs`.
+Los HAR permanecen fuera del repositorio. Al usar otra captura, retirar previamente los recursos generados obsoletos: el sanitizador agrega o reemplaza archivos, no limpia imágenes antiguas automáticamente. El selector se genera durante la compilación desde `src/client/editor/template-registry.js`.
 
 ## Verificación
 
-`npm test` verifica la proyección y rechazo de datos no permitidos. Con el servidor activo, ejecutar `tests/lobby-templates-browser-smoke.cjs` con `DEMO_TEMPLATE=cobraya` o `lunabet` y `WORKSPACE_NODE_MODULES` apuntando a Playwright. `DEMO_ORIGIN` permite verificar otra publicación. Comprueba catálogo, miniaturas, búsqueda, favoritos, lanzamiento local, personalización, móvil y ausencia de solicitudes externas.
+`npm test` comprueba los contratos de importación. Después de `npm run build`, ejecutar `npm run test:browser` con Playwright instalado desde el lockfile del proyecto. El recorrido común cubre las trece plantillas, búsqueda, favoritos, juego local, marca y móvil; usar `DEMO_ORIGIN` para verificar un servidor existente. Ver [PRUEBAS.md](PRUEBAS.md).

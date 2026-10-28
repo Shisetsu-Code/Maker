@@ -7,3 +7,20 @@ work/
 .env*
 .dev.vars*
 coverage/
+dist/
+test-results/
+
+# Retired captured build outputs; the maintained build emits only dist/public.
+/public/muestra/socio.js
+/public/muestra/socio-lobby.js
+/public/muestra/socio-panel.js
+/public/muestra/azul.js
+/public/muestra/blaze.js
+/public/muestra/brasa.js
+/public/muestra/app.css
+
+# Retired migration entrypoints are kept only in Git history.
+/scripts/adapt-demo.mjs
+/scripts/add-template.mjs
+/scripts/register-bateupix.mjs
+/scripts/demo-rewrite.mjs

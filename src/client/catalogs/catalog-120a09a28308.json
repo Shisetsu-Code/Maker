@@ -1,0 +1,1067 @@
+{
+  "proveedor": "PP_LIVE_PRO",
+  "etiqueta": "Pragmatic Play Live",
+  "prefijoBanner": "https://images.gscplusmd.com/",
+  "juegos": [
+    {
+      "c": "md500q83g7cdefw1",
+      "n": "Mega Wheel",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/801.png"
+    },
+    {
+      "c": "pbvzrfk1fyft4dwe",
+      "n": "Sweet Bonanza Candyland",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/1101.png"
+    },
+    {
+      "c": "spacemanyxe123nh",
+      "n": "Spaceman",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/1301.png"
+    },
+    {
+      "c": "bigbassnewbb1320",
+      "n": "Big Bass Crash",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/1320.png"
+    },
+    {
+      "c": "treasureadvgt001",
+      "n": "Treasure Island",
+      "b": "statics/staging/publics/images/games/1/1006/LIVE_CASINO/1701.png"
+    },
+    {
+      "c": "snakeladder26101",
+      "n": "Snakes & Ladders",
+      "b": "statics/staging/publics/images/games/1/1006/LIVE_CASINO/1601.png"
+    },
+    {
+      "c": "moneytime2500002",
+      "n": "Money Time",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/2750.png"
+    },
+    {
+      "c": "gatesofolympus01",
+      "n": "Ruleta Gates of Olympus",
+      "b": "statics/staging/publics/images/games/1/1006/LIVE_CASINO/2244.png"
+    },
+    {
+      "c": "1hl65ce1lxuqdrkr",
+      "n": "Ruleta Mega",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/204.png"
+    },
+    {
+      "c": "1hl323e1lxuqdrkr",
+      "n": "Ruleta Automática Mega",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/210.png"
+    },
+    {
+      "c": "megasicboauto001",
+      "n": "Mega Sic Bo",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/701.png"
+    },
+    {
+      "c": "a10megasicbaca10",
+      "n": "Mega Sic Bac",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/2101.png"
+    },
+    {
+      "c": "lucky6roulettea3",
+      "n": "Ruleta Lucky 6",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/211.png"
+    },
+    {
+      "c": "megaroulettbba91",
+      "n": "Ruleta Fortuna",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/270.png"
+    },
+    {
+      "c": "25irclas25imrcrw",
+      "n": "Ruleta Inmersiva Deluxe",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/292.png"
+    },
+    {
+      "c": "roulerw234rwl292",
+      "n": "Ruleta Latina",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/234.png"
+    },
+    {
+      "c": "cosproulttf8s6sr",
+      "n": "Ruleta Rápida Latina",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/12501.png"
+    },
+    {
+      "c": "rwbrzportrwa16rg",
+      "n": "Ruleta Brasileña",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/237.png"
+    },
+    {
+      "c": "5bzl2835s5ruvweg",
+      "n": "Ruleta Automática",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/225.png"
+    },
+    {
+      "c": "frenchroulette01",
+      "n": "Ruleta Francesa La Partage",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/28401.png"
+    },
+    {
+      "c": "s2x6b4jdeqza2ge2",
+      "n": "Ruleta Alemana",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/222.png"
+    },
+    {
+      "c": "indonesi11genric",
+      "n": "Ruleta Indonesia",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/951.png"
+    },
+    {
+      "c": "381rwkr381korean",
+      "n": "Ruleta Coreana",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/213.png"
+    },
+    {
+      "c": "romania233rwl291",
+      "n": "Ruleta Rumana",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/233.png"
+    },
+    {
+      "c": "g03y1t9vvuhrfytl",
+      "n": "Ruleta 1",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/227.png"
+    },
+    {
+      "c": "5kvxlw4c1qm3xcyn",
+      "n": "Ruleta 2 Extra Time",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/201.png"
+    },
+    {
+      "c": "chroma229rwltr22",
+      "n": "Ruleta 3",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/230.png"
+    },
+    {
+      "c": "yqpz3ichst2xg439",
+      "n": "Ruleta Macao",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/206.png"
+    },
+    {
+      "c": "t4jzencinod6iqwi",
+      "n": "Ruleta Rusa",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/221.png"
+    },
+    {
+      "c": "autorwra311autor",
+      "n": "Ruleta Rápida Automática",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/226.png"
+    },
+    {
+      "c": "fl9knouu0yjez2wi",
+      "n": "Ruleta Rápida 1",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/203.png"
+    },
+    {
+      "c": "r20speedrtwo201s",
+      "n": "Ruleta Rápida 2",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/205.png"
+    },
+    {
+      "c": "thairwa13generw1",
+      "n": "Ruleta Tailandesa",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/261.png"
+    },
+    {
+      "c": "p8l1j84prrmxzyic",
+      "n": "Ruleta Turca",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/224.png"
+    },
+    {
+      "c": "vietnamr32genric",
+      "n": "Ruleta Vietnamita",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/262.png"
+    },
+    {
+      "c": "geogamingh2rw545",
+      "n": "Ruleta VIP",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/545.png"
+    },
+    {
+      "c": "h22z8qhp17sa0vkh",
+      "n": "Baccarat 1",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/401.png"
+    },
+    {
+      "c": "9j3eagurfwmml7z2",
+      "n": "Baccarat 2",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/404.png"
+    },
+    {
+      "c": "cbcf6qas8fscb222",
+      "n": "Baccarat 3",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/422.png"
+    },
+    {
+      "c": "ne074fgn4bd1150i",
+      "n": "Baccarat 5",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/411.png"
+    },
+    {
+      "c": "oq808ojps709qqaf",
+      "n": "Baccarat 6",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/413.png"
+    },
+    {
+      "c": "bcpirpmfpeobc191",
+      "n": "Baccarat 7",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/425.png"
+    },
+    {
+      "c": "bcpirpmfpobc1912",
+      "n": "Baccarat 9",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/436.png"
+    },
+    {
+      "c": "spijbnsu408vmv71",
+      "n": "Baccarat Chino Rápido 1",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/481.png"
+    },
+    {
+      "c": "spijbnsu408vmv72",
+      "n": "Baccarat Chino Rápido 2",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/482.png"
+    },
+    {
+      "c": "spijbnsu408vmv73",
+      "n": "Baccarat Chino Rápido 3",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/483.png"
+    },
+    {
+      "c": "bcpirpmfpobc1910",
+      "n": "Baccarat Fortuna 6",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/434.png"
+    },
+    {
+      "c": "spto41bctorobc41",
+      "n": "Baccarat Japonés Rápido 1",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/488.png"
+    },
+    {
+      "c": "spto42bctorobc42",
+      "n": "Baccarat Japonés Rápido 2",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/489.png"
+    },
+    {
+      "c": "spto43bctorobc43",
+      "n": "Baccarat Japonés Rápido 3",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/490.png"
+    },
+    {
+      "c": "tobc52koreanto52",
+      "n": "Baccarat Coreano 1",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/460.png"
+    },
+    {
+      "c": "tobcspbaccarat92",
+      "n": "Baccarat Coreano 2",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/499.png"
+    },
+    {
+      "c": "bc281koreanch281",
+      "n": "Baccarat Coreano Rápido 1",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/441.png"
+    },
+    {
+      "c": "bc392chromabc392",
+      "n": "Baccarat Coreano Rápido 2",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/449.png"
+    },
+    {
+      "c": "tobc51koreanto51",
+      "n": "Baccarat Coreano Rápido 3",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/459.png"
+    },
+    {
+      "c": "tobcspbaccarat61",
+      "n": "Baccarat Coreano Rápido 5",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/476.png"
+    },
+    {
+      "c": "tobcspbaccarat62",
+      "n": "Baccarat Coreano Turbo 1",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/477.png"
+    },
+    {
+      "c": "pwnhicogrzeodk79",
+      "n": "Baccarat Rápido 1",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/402.png"
+    },
+    {
+      "c": "bcpirpmfpeobc194",
+      "n": "Baccarat Rápido 10",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/428.png"
+    },
+    {
+      "c": "cbcf6qas8fscb224",
+      "n": "Baccarat Rápido 11",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/424.png"
+    },
+    {
+      "c": "cbcf6qas8fscb221",
+      "n": "Baccarat Rápido 12",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/421.png"
+    },
+    {
+      "c": "m88hicogrzeod202",
+      "n": "Baccarat Rápido 13",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/438.png"
+    },
+    {
+      "c": "bcpirpmfpeobc193",
+      "n": "Baccarat Rápido 15",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/427.png"
+    },
+    {
+      "c": "bcpirpmfpobc1911",
+      "n": "Baccarat Rápido 16",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/435.png"
+    },
+    {
+      "c": "bcpirpmfpebc1908",
+      "n": "Baccarat Rápido 17",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/439.png"
+    },
+    {
+      "c": "b0jf7rlboleibnap",
+      "n": "Baccarat Rápido 18",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/405.png"
+    },
+    {
+      "c": "kkqnazmd8ttq7fgd",
+      "n": "Baccarat Rápido 2",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/403.png"
+    },
+    {
+      "c": "s8s9f0quk3ygiyb1",
+      "n": "Baccarat Rápido 3",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/412.png"
+    },
+    {
+      "c": "886ewimul28yw14j",
+      "n": "Baccarat Rápido 5",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/414.png"
+    },
+    {
+      "c": "2q57e43m4ivqwaq3",
+      "n": "Baccarat Rápido 6",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/415.png"
+    },
+    {
+      "c": "bcpirpmfpeobc197",
+      "n": "Baccarat Rápido 7",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/431.png"
+    },
+    {
+      "c": "bcpirpmfpeobc198",
+      "n": "Baccarat Rápido 8",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/432.png"
+    },
+    {
+      "c": "bcpirpmfpeobc196",
+      "n": "Baccarat Rápido 9",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/430.png"
+    },
+    {
+      "c": "bcadigitalsqz001",
+      "n": "Baccarat Squeeze",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/851.png"
+    },
+    {
+      "c": "speedbca14gesbc1",
+      "n": "Baccarat Tailandés Rápido 1",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/451.png"
+    },
+    {
+      "c": "speedbca14gesbc2",
+      "n": "Baccarat Tailandés Rápido 2",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/452.png"
+    },
+    {
+      "c": "bcpirpmfpeobc192",
+      "n": "Baccarat Turbo",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/426.png"
+    },
+    {
+      "c": "spto11bctorobc11",
+      "n": "Baccarat Vietnamita Rápido 1",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/479.png"
+    },
+    {
+      "c": "spto12bctorobc12",
+      "n": "Baccarat Vietnamita Rápido 2",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/480.png"
+    },
+    {
+      "c": "spto21bctorobc21",
+      "n": "Baccarat Vietnamita Rápido 3",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/484.png"
+    },
+    {
+      "c": "sba71kkmr2ssba71",
+      "n": "Sic Bo",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/711a.png"
+    },
+    {
+      "c": "rngrubyxrngbjx33",
+      "n": "Blackjack X 33",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/3233.png"
+    },
+    {
+      "c": "rngrubyxrngbjx34",
+      "n": "Blackjack X 34",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/3234.png"
+    },
+    {
+      "c": "m24f0zhzupicvchc",
+      "n": "Blackjack 1",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/515.png"
+    },
+    {
+      "c": "32pd67uvn4p4m1pi",
+      "n": "Blackjack 10",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/517.png"
+    },
+    {
+      "c": "sm9wsky7hh3ynx98",
+      "n": "Blackjack 11",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/301.png"
+    },
+    {
+      "c": "sobj111blackjack",
+      "n": "Blackjack 115",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/667.png"
+    },
+    {
+      "c": "sobj112blackjack",
+      "n": "Blackjack 116",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/668.png"
+    },
+    {
+      "c": "sobj113blackjack",
+      "n": "Blackjack 117",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/669.png"
+    },
+    {
+      "c": "sobj114blackjack",
+      "n": "Blackjack 118",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/670.png"
+    },
+    {
+      "c": "sobj115blackjack",
+      "n": "Blackjack 119",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/726.png"
+    },
+    {
+      "c": "cy8me4k2b1en4r09",
+      "n": "Blackjack 12",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/302.png"
+    },
+    {
+      "c": "sobj175blackjack",
+      "n": "Blackjack 120",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/346.png"
+    },
+    {
+      "c": "sobj116blackjack",
+      "n": "Blackjack 121",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/727.png"
+    },
+    {
+      "c": "sobj117blackjack",
+      "n": "Blackjack 122",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/728.png"
+    },
+    {
+      "c": "sobj118blackjack",
+      "n": "Blackjack 123",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/729.png"
+    },
+    {
+      "c": "sobj119blackjack",
+      "n": "Blackjack 124",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/732.png"
+    },
+    {
+      "c": "sobj120blackjack",
+      "n": "Blackjack 125",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/733.png"
+    },
+    {
+      "c": "sobj176blackjack",
+      "n": "Blackjack 126",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/347.png"
+    },
+    {
+      "c": "vu91g33enwnxhx3g",
+      "n": "Blackjack 14",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/303.png"
+    },
+    {
+      "c": "sobj221blackjack",
+      "n": "Blackjack 148",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/612.png"
+    },
+    {
+      "c": "sobj222blackjack",
+      "n": "Blackjack 149",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/613.png"
+    },
+    {
+      "c": "8d38bnlijtxhmrge",
+      "n": "Blackjack 15",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/304.png"
+    },
+    {
+      "c": "sobj251blackjack",
+      "n": "Blackjack 150",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/658.png"
+    },
+    {
+      "c": "sobj235blackjack",
+      "n": "Blackjack 151",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/645.png"
+    },
+    {
+      "c": "sobj236blackjack",
+      "n": "Blackjack 152",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/646.png"
+    },
+    {
+      "c": "bjusbim6hcmbj245",
+      "n": "Blackjack 158",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/550.png"
+    },
+    {
+      "c": "t0cdkkil0tev97gh",
+      "n": "Blackjack 16",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/305.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj17",
+      "n": "Blackjack 17",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/521.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj18",
+      "n": "Blackjack 18",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/522.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj19",
+      "n": "Blackjack 19",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/523.png"
+    },
+    {
+      "c": "22cm03wwntad3rjv",
+      "n": "Blackjack 2",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/519.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj20",
+      "n": "Blackjack 20",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/524.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj21",
+      "n": "Blackjack 21",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/525.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj22",
+      "n": "Blackjack 22",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/526.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj23",
+      "n": "Blackjack 23",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/527.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj24",
+      "n": "Blackjack 24",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/528.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj25",
+      "n": "Blackjack 25",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/529.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj26",
+      "n": "Blackjack 26",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/530.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj05",
+      "n": "Blackjack 27",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/539.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj04",
+      "n": "Blackjack 28",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/538.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj03",
+      "n": "Blackjack 29",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/537.png"
+    },
+    {
+      "c": "tjtrahl9gblxxlkc",
+      "n": "Blackjack 3",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/511.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj02",
+      "n": "Blackjack 30",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/536.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj01",
+      "n": "Blackjack 31",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/535.png"
+    },
+    {
+      "c": "bas2sgk7ph2ybj06",
+      "n": "Blackjack 32",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/540.png"
+    },
+    {
+      "c": "geogamingh2bj143",
+      "n": "Blackjack 35",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/543.png"
+    },
+    {
+      "c": "geogamingh2bj144",
+      "n": "Blackjack 36",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/544.png"
+    },
+    {
+      "c": "bjusbim6hcbj2417",
+      "n": "Blackjack 37",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/562.png"
+    },
+    {
+      "c": "bjusbim6hcbj2418",
+      "n": "Blackjack 38",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/563.png"
+    },
+    {
+      "c": "bjusbim6hcbj2419",
+      "n": "Blackjack 39",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/564.png"
+    },
+    {
+      "c": "8li4ycefgbq67uqe",
+      "n": "Blackjack 4",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/514.png"
+    },
+    {
+      "c": "bjusbim6hcbj2420",
+      "n": "Blackjack 40",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/565.png"
+    },
+    {
+      "c": "bjusbim6hcbj2410",
+      "n": "Blackjack 41",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/555.png"
+    },
+    {
+      "c": "bjusbim6hcbj2411",
+      "n": "Blackjack 42",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/556.png"
+    },
+    {
+      "c": "bjusbim6hcbj2412",
+      "n": "Blackjack 43",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/557.png"
+    },
+    {
+      "c": "bjusbim6hcbj2413",
+      "n": "Blackjack 44",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/558.png"
+    },
+    {
+      "c": "bjusbim6hcbj2414",
+      "n": "Blackjack 45",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/559.png"
+    },
+    {
+      "c": "bjusbim6hcbj2415",
+      "n": "Blackjack 46",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/560.png"
+    },
+    {
+      "c": "bjusbim6hcbj2416",
+      "n": "Blackjack 47",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/561.png"
+    },
+    {
+      "c": "bjusbim6hcmbj246",
+      "n": "Blackjack 48",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/551.png"
+    },
+    {
+      "c": "bjusbim6hcmbj247",
+      "n": "Blackjack 49",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/552.png"
+    },
+    {
+      "c": "v8ud3opn87pr3mtl",
+      "n": "Blackjack 5",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/518.png"
+    },
+    {
+      "c": "bjusbim6hcmbj248",
+      "n": "Blackjack 50",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/553.png"
+    },
+    {
+      "c": "bjusbim6hcmbj249",
+      "n": "Blackjack 51",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/554.png"
+    },
+    {
+      "c": "sobj215blackjack",
+      "n": "Blackjack 52",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/594.png"
+    },
+    {
+      "c": "sobj216blackjack",
+      "n": "Blackjack 53",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/595.png"
+    },
+    {
+      "c": "sobj217blackjack",
+      "n": "Blackjack 54",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/596.png"
+    },
+    {
+      "c": "sobj218blackjack",
+      "n": "Blackjack 55",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/597.png"
+    },
+    {
+      "c": "sobj214blackjack",
+      "n": "Blackjack 56",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/593.png"
+    },
+    {
+      "c": "sobj271blackjack",
+      "n": "Blackjack 57",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/598.png"
+    },
+    {
+      "c": "sobj272blackjack",
+      "n": "Blackjack 58",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/599.png"
+    },
+    {
+      "c": "sobj273blackjack",
+      "n": "Blackjack 59",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/600.png"
+    },
+    {
+      "c": "mlu2hu6hv0egfxcz",
+      "n": "Blackjack 6",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/512.png"
+    },
+    {
+      "c": "sobj274blackjack",
+      "n": "Blackjack 60",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/601.png"
+    },
+    {
+      "c": "sobj275blackjack",
+      "n": "Blackjack 61",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/602.png"
+    },
+    {
+      "c": "sobj276blackjack",
+      "n": "Blackjack 62",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/603.png"
+    },
+    {
+      "c": "sobj211blackjack",
+      "n": "Blackjack 63",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/590.png"
+    },
+    {
+      "c": "sobj261blackjack",
+      "n": "Blackjack 64",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/620.png"
+    },
+    {
+      "c": "sobj262blackjack",
+      "n": "Blackjack 65",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/621.png"
+    },
+    {
+      "c": "svs6717sc9512qjb",
+      "n": "Blackjack 7",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/513.png"
+    },
+    {
+      "c": "sobj267blackjack",
+      "n": "Blackjack 70",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/626.png"
+    },
+    {
+      "c": "sobj225blackjack",
+      "n": "Blackjack 71",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/616.png"
+    },
+    {
+      "c": "sobj226blackjack",
+      "n": "Blackjack 72",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/617.png"
+    },
+    {
+      "c": "sobj227blackjack",
+      "n": "Blackjack 73",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/618.png"
+    },
+    {
+      "c": "sobj228blackjack",
+      "n": "Blackjack 74",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/619.png"
+    },
+    {
+      "c": "sbjsbim6hsbj2424",
+      "n": "Blackjack 77",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/569.png"
+    },
+    {
+      "c": "sbjsbim6hsbj2425",
+      "n": "Blackjack 78",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/570.png"
+    },
+    {
+      "c": "z4u19edve6kj103k",
+      "n": "Blackjack 8",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/520.png"
+    },
+    {
+      "c": "vnaito309wbtypo8",
+      "n": "Blackjack 9",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/516.png"
+    },
+    {
+      "c": "rngindonerngbj10",
+      "n": "Blackjack X Indonesio 10",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/3314.png"
+    },
+    {
+      "c": "rngindonerngbj11",
+      "n": "Blackjack X Indonesio 11",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/3315.png"
+    },
+    {
+      "c": "rngindonerngbj12",
+      "n": "Blackjack X Indonesio 12",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/3316.png"
+    },
+    {
+      "c": "rngindonerngbj13",
+      "n": "Blackjack X Indonesio 13",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/3317.png"
+    },
+    {
+      "c": "rngindonerngbj14",
+      "n": "Blackjack X Indonesio 14",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/3318.png"
+    },
+    {
+      "c": "rngindonerngbj15",
+      "n": "Blackjack X Indonesio 15",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/3319.png"
+    },
+    {
+      "c": "rngindonerngbjx6",
+      "n": "Blackjack X Indonesio 6",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/3310.png"
+    },
+    {
+      "c": "rngindonerngbjx7",
+      "n": "Blackjack X Indonesio 7",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/3311.png"
+    },
+    {
+      "c": "rngindonerngbjx8",
+      "n": "Blackjack X Indonesio 8",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/3312.png"
+    },
+    {
+      "c": "rngindonerngbjx9",
+      "n": "Blackjack X Indonesio 9",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO_PREMIUM/3313.png"
+    },
+    {
+      "c": "sbjsbim6hsbj2421",
+      "n": "Blackjack Rápido 1",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/566.png"
+    },
+    {
+      "c": "sobj279blackjack",
+      "n": "Blackjack Rápido 10",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/606.png"
+    },
+    {
+      "c": "sobj2710blackjac",
+      "n": "Blackjack Rápido 11",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/607.png"
+    },
+    {
+      "c": "sobj2711blackjac",
+      "n": "Blackjack Rápido 12",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/608.png"
+    },
+    {
+      "c": "sobj2712blackjac",
+      "n": "Blackjack Rápido 14",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/609.png"
+    },
+    {
+      "c": "sobj223blackjack",
+      "n": "Blackjack Rápido 17",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/614.png"
+    },
+    {
+      "c": "sobj224blackjack",
+      "n": "Blackjack Rápido 18",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/615.png"
+    },
+    {
+      "c": "sbjsbim6hsbj2422",
+      "n": "Blackjack Rápido 2",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/567.png"
+    },
+    {
+      "c": "sobj252blackjack",
+      "n": "Blackjack Rápido 20",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/659.png"
+    },
+    {
+      "c": "sobj253blackjack",
+      "n": "Blackjack Rápido 21",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/660.png"
+    },
+    {
+      "c": "sobj254blackjack",
+      "n": "Blackjack Rápido 22",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/661.png"
+    },
+    {
+      "c": "sobj231blackjack",
+      "n": "Blackjack Rápido 24",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/641.png"
+    },
+    {
+      "c": "sobj232blackjack",
+      "n": "Blackjack Rápido 25",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/642.png"
+    },
+    {
+      "c": "sobj233blackjack",
+      "n": "Blackjack Rápido 26",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/643.png"
+    },
+    {
+      "c": "sobj234blackjack",
+      "n": "Blackjack Rápido 27",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/644.png"
+    },
+    {
+      "c": "sbjsbim6hsbj2423",
+      "n": "Blackjack Rápido 3",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/568.png"
+    },
+    {
+      "c": "sobj237blackjack",
+      "n": "Blackjack Rápido 30",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/647.png"
+    },
+    {
+      "c": "sobj212blackjack",
+      "n": "Blackjack Rápido 6",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/591.png"
+    },
+    {
+      "c": "sobj213blackjack",
+      "n": "Blackjack Rápido 7",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/592.png"
+    },
+    {
+      "c": "sobj277blackjack",
+      "n": "Blackjack Rápido 8",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/604.png"
+    },
+    {
+      "c": "sobj278blackjack",
+      "n": "Blackjack Rápido 9",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/605.png"
+    },
+    {
+      "c": "bjusbim6hcmbj241",
+      "n": "Blackjack VIP 1",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/546.png"
+    },
+    {
+      "c": "sobj264blackjack",
+      "n": "Blackjack VIP 10",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/623.png"
+    },
+    {
+      "c": "sobj265blackjack",
+      "n": "Blackjack VIP 11",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/624.png"
+    },
+    {
+      "c": "sobj266blackjack",
+      "n": "Blackjack VIP 12",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/625.png"
+    },
+    {
+      "c": "bjusbim6hcmbj242",
+      "n": "Blackjack VIP 2",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/547.png"
+    },
+    {
+      "c": "bjusbim6hcmbj243",
+      "n": "Blackjack VIP 3",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/548.png"
+    },
+    {
+      "c": "bjusbim6hcmbj244",
+      "n": "Blackjack VIP 4",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/549.png"
+    },
+    {
+      "c": "sobj255blackjack",
+      "n": "Blackjack VIP 6",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/662.png"
+    },
+    {
+      "c": "sobj256blackjack",
+      "n": "Blackjack VIP 7",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/663.png"
+    },
+    {
+      "c": "sobj257blackjack",
+      "n": "Blackjack VIP 8",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/664.png"
+    },
+    {
+      "c": "sobj263blackjack",
+      "n": "Blackjack VIP 9",
+      "b": "statics/production/publics/images/games/1/1006/LIVE_CASINO/622.png"
+    }
+  ]
+}

@@ -29,4 +29,4 @@ El argumento de plantilla omitido conserva Celuapuestas40. Los HAR permanecen fu
 
 ## Verificar
 
-`npm test` incluye pruebas de selección de portadas, rechazo de video, exclusión de acciones y compatibilidad con Celuapuestas40. Con servidor activo, ejecutar `tests/lobby-templates-browser-smoke.cjs` con `DEMO_TEMPLATE=bet30` o `casinotower30`, `DEMO_ORIGIN` y Playwright disponible en `WORKSPACE_NODE_MODULES`. Comprueba categoría, catálogo, portadas, búsqueda, favoritos, juego local, marca y móvil sin solicitudes externas.
+`npm test` comprueba los contratos de importación. Después de `npm run build`, ejecutar `npm run test:browser` con Playwright instalado desde el lockfile del proyecto. El recorrido común cubre las trece plantillas, búsqueda, favoritos, juego local, marca y móvil; usar `DEMO_ORIGIN` para verificar un servidor existente. Ver [PRUEBAS.md](PRUEBAS.md).
