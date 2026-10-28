@@ -1,0 +1,25 @@
+/* Tailwind 4.3.3 generates the complete preflight. These two application-level
+ * compatibility decisions preserve the b6d354e demo: its fallback font stack
+ * when Geist is unset, and Firefox's existing focus outline on iframes.
+ * Keep the overrides in the base layer so application/utility styles retain
+ * the same priority. No other preflight declarations are copied here.
+ */
+@layer base {
+  html,
+  :host {
+    font-family: var(
+      --default-font-family,
+      ui-sans-serif,
+      system-ui,
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      "Noto Color Emoji"
+    );
+  }
+
+  :-moz-focusring {
+    outline: auto;
+  }
+}

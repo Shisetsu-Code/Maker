@@ -1,0 +1,72 @@
+[
+  {
+    "entry": "socio-lobby",
+    "originalSha256": "82f11024f5c7dce62f09fdd5d01d630b62b2858fb95c343b5bcc6ba6ec893dfc",
+    "source": "src/client/views/classic-lobby.js",
+    "catalogs": [
+      "catalog-a5fe7c2bf7a9.json",
+      "catalog-120a09a28308.json",
+      "catalog-30ba068b3954.json",
+      "catalog-3c2816e2e7f8.json",
+      "catalog-18ec76479213.json"
+    ],
+    "libraries": [
+      "react",
+      "react-dom/client",
+      "react-dom",
+      "react/jsx-runtime",
+      "zod"
+    ]
+  },
+  {
+    "entry": "socio-panel",
+    "originalSha256": "da3182733dfcfe7efce0571c50bdf0b92cf5da59e6c93924642fddb10c891bb7",
+    "source": "src/client/views/panel.js",
+    "catalogs": [],
+    "libraries": [
+      "react",
+      "react-dom/client",
+      "react/jsx-runtime",
+      "react-dom",
+      "zod"
+    ]
+  },
+  {
+    "entry": "azul",
+    "originalSha256": "d646e7bae39842897d3f9225c50089a376c29567b8ecce535e743224923fda06",
+    "source": "src/client/views/azul.js",
+    "catalogs": [
+      "catalog-a5fe7c2bf7a9.json",
+      "catalog-120a09a28308.json",
+      "catalog-30ba068b3954.json",
+      "catalog-6cea04ac9fbe.json"
+    ],
+    "libraries": [
+      "react",
+      "react/jsx-runtime",
+      "react-dom/client"
+    ]
+  },
+  {
+    "entry": "blaze",
+    "originalSha256": "db4356787a32797bceb6233b13803f5f91dc55604ca734ec4d95ca953798485c",
+    "source": "src/client/views/blaze.js",
+    "catalogs": [],
+    "libraries": [
+      "react",
+      "react/jsx-runtime",
+      "react-dom/client"
+    ]
+  },
+  {
+    "entry": "brasa",
+    "originalSha256": "8bdeeff86c03cfeb53e626a9ce537b80ade48b5d94081d490c7ca2fb6904d0d5",
+    "source": "src/client/views/brasa.js",
+    "catalogs": [],
+    "libraries": [
+      "react",
+      "react/jsx-runtime",
+      "react-dom/client"
+    ]
+  }
+]

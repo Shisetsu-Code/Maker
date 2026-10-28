@@ -1,2 +1,30 @@
-import './bateupix.js';
-try{const data=await(await fetch('celuapuestas40/catalog.json')).json(),root=document.querySelector('#ce-categories');for(const group of data.groups){const b=document.createElement('button');b.dataset.filter='collection:'+group.id;const icon=document.createElement('span');icon.textContent=/vivo|live/i.test(group.name)?'◉':/fruta|moneda/i.test(group.name)?'◆':/crash/i.test(group.name)?'↗':'♠';const name=document.createElement('span');name.textContent=group.name;b.append(icon,name);root.append(b);}const live=data.groups.find(g=>g.name==='En vivo');if(live){const button=document.querySelector('#ce-live');delete button.dataset.info;button.dataset.filter='collection:'+live.id;}}catch{document.querySelector('#ce-categories').textContent='Podés explorar todos los juegos en el catálogo.';}
+import "./bateupix.js";
+try {
+  const data = await (await fetch("celuapuestas40/catalog.json")).json(),
+    root = document.querySelector("#ce-categories");
+  for (const group of data.groups) {
+    const b = document.createElement("button");
+    b.dataset.filter = "collection:" + group.id;
+    const icon = document.createElement("span");
+    icon.textContent = /vivo|live/i.test(group.name)
+      ? "◉"
+      : /fruta|moneda/i.test(group.name)
+        ? "◆"
+        : /crash/i.test(group.name)
+          ? "↗"
+          : "♠";
+    const name = document.createElement("span");
+    name.textContent = group.name;
+    b.append(icon, name);
+    root.append(b);
+  }
+  const live = data.groups.find((g) => g.name === "En vivo");
+  if (live) {
+    const button = document.querySelector("#ce-live");
+    delete button.dataset.info;
+    button.dataset.filter = "collection:" + live.id;
+  }
+} catch {
+  document.querySelector("#ce-categories").textContent =
+    "Podés explorar todos los juegos en el catálogo.";
+}

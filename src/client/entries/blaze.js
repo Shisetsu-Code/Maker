@@ -1,0 +1,1 @@
+import '../views/blaze.js';

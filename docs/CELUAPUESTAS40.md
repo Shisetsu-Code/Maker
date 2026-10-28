@@ -23,4 +23,4 @@ El HAR permanece fuera del repositorio. Si cambia la captura, limpiar antes los 
 
 ## Verificar
 
-`npm test` prueba la proyección, deduplicación y rechazo de fuentes ajenas. Con servidor activo, ejecutar `tests/lobby-templates-browser-smoke.cjs` con `DEMO_TEMPLATE=celuapuestas40`, `DEMO_ORIGIN` y Playwright disponible en `WORKSPACE_NODE_MODULES`. El recorrido comprueba categorías, catálogo, búsqueda, favoritos, demo local, registro simulado, marca y móvil sin solicitudes externas.
+`npm test` comprueba los contratos de importación. Después de `npm run build`, ejecutar `npm run test:browser` con Playwright instalado desde el lockfile del proyecto. El recorrido común cubre las trece plantillas, búsqueda, favoritos, juego local, marca y móvil; usar `DEMO_ORIGIN` para verificar un servidor existente. Ver [PRUEBAS.md](PRUEBAS.md).

@@ -1,0 +1,5 @@
+# Font files and upstream notices are checked against their original byte hashes.
+public/assets/external/fonts.gstatic.com/** -text whitespace=-blank-at-eol
+
+# Recovered React template literals intentionally retain captured whitespace.
+src/client/views/**/*.js text eol=lf whitespace=-blank-at-eol

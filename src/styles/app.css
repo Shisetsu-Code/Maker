@@ -1,0 +1,21 @@
+/* Original lobby + shared panel stylesheet. Reconstructed from Maker commit
+ * b6d354e9108f72598f319b02a358d01a4089671c.
+ *
+ * Tailwind is compiled from the installed package; no generated utilities or
+ * preflight are vendored here. Only Maker's tokens, application rules and the
+ * compatibility class inventory survive from the captured stylesheet.
+ *
+ * Sources are deliberately limited to the views that load app.css. Scanning
+ * game catalogs, vendor bundles or the other templates would turn unrelated
+ * strings into utilities and could change existing class names accidentally.
+ */
+@import "tailwindcss" source(none);
+@import "./theme.css";
+@import "./candidates.css";
+@import "./preflight-compatibility.css";
+@import "./application.css";
+
+@source "../client/views/classic-lobby/";
+@source "../client/views/panel/";
+@source "../../public/muestra/vista-socio-lobby.html";
+@source "../../public/muestra/vista-socio-panel.html";

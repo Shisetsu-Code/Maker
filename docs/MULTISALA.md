@@ -15,10 +15,10 @@ node scripts/sanitize-lobby-har.mjs multisala "ruta/multisala.har"
 node scripts/install-lobby-templates.mjs
 ```
 
-El HAR no se publica. Si se usa otra captura, limpiar previamente los recursos generados obsoletos. La instalación también se ejecuta desde `add-template.mjs` y `register-bateupix.mjs`.
+El HAR no se publica. Si se usa otra captura, limpiar previamente los recursos generados obsoletos. El selector se genera durante la compilación desde `src/client/editor/template-registry.js`.
 
 `scripts/multisala-page.mjs` genera la portada propia sobre los elementos comunes del catálogo; `multisala.css` define su distribución. El controlador compartido `bateupix.js` carga únicamente el JSON local. Los juegos usan `/api/muestra/juego-demo`; no hay apuestas ni pagos reales.
 
 ## Pruebas
 
-`npm test` incluye el contrato de sanitización de Multisala. El recorrido de navegador se ejecuta con `DEMO_TEMPLATE=multisala` mediante `tests/lobby-templates-browser-smoke.cjs`; admite `DEMO_ORIGIN` y la ubicación de Playwright en `WORKSPACE_NODE_MODULES`. Comprueba catálogo, búsqueda, favoritos, juego local, registro simulado, personalización y móvil sin solicitudes externas.
+`npm test` comprueba los contratos de importación. Después de `npm run build`, ejecutar `npm run test:browser` con Playwright instalado desde el lockfile del proyecto. El recorrido común cubre las trece plantillas, búsqueda, favoritos, juego local, marca y móvil; usar `DEMO_ORIGIN` para verificar un servidor existente. Ver [PRUEBAS.md](PRUEBAS.md).

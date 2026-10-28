@@ -16,9 +16,11 @@ Las imágenes se comprimen localmente y los ajustes permanecen en el navegador. 
 
 ## Ejecutar y verificar
 
+Usar Node.js **24.22.1 LTS** (`.nvmrc`) y npm **12.2.1**. El frontend se compila desde `src/client` y `src/styles`; Wrangler sirve `dist/public`.
+
 ```sh
 npm ci
-npm test
+npm run check
 npm run dev
 ```
 
@@ -28,6 +30,8 @@ Abrir `http://127.0.0.1:8787`. Con el servidor activo, ejecutar `npm run test:ru
 
 - [Manual del editor](docs/USO.md)
 - [Arquitectura y mantenimiento](docs/ARQUITECTURA.md)
+- [Dependencias y política de actualización](docs/DEPENDENCIAS.md)
+- [Fuentes locales y licencias](docs/FUENTES.md)
 - [Publicación y recuperación](docs/PUBLICACION.md)
 - [Pruebas y límites](docs/PRUEBAS.md)
 - [Plantilla Bateupix y sanitización](docs/BATEUPIX.md)
@@ -41,4 +45,4 @@ El nombre npm y el Worker conservan `rushybet-replica` para mantener la direcci�
 
 ## Alcance
 
-Las otras cuatro plantillas conservan la distribución capturada; banners y orden de secciones se editan en Resort. Su catálogo es una selección de ocho juegos. El panel es compartido. Los favoritos de Resort son de sesión y pueden diferir entre las vistas de computadora y celular. Algunos recursos del catálogo original no capturados todavía usan URLs externas. Los HAR, cookies, cabeceras y datos de sesión no se publican.
+Las otras cuatro plantillas conservan la distribución capturada; banners y orden de secciones se editan en Resort. Su catálogo es una selección de ocho juegos. El panel es compartido. Los favoritos de Resort son de sesión y pueden diferir entre las vistas de computadora y celular. La verificación combina referencias estáticas y recorridos de navegador; no cubre cada posible combinación de catálogos o juegos. `npm run check:assets` genera el inventario comprobado. Los HAR, cookies, cabeceras y datos de sesión no se publican.

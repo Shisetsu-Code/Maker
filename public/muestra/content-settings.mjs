@@ -1,4 +1,52 @@
-export const SECTION_NAMES=Object.freeze({hero:'Portada',discover:'Búsqueda y categorías',games:'Juegos destacados',lounge:'Casino en vivo'});
-export const DEFAULT_CONTENT=Object.freeze({title:'La suerte tiene\nun nuevo lugar.',description:'Grandes clásicos, nuevas emociones.\nElegí tu juego y hacé tuya la noche.',button:'Explorar juegos ↗',image:'',sections:Object.keys(SECTION_NAMES),hidden:[]});
-const text=(value,fallback,max)=>typeof value==='string'?value.replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g,'').slice(0,max):fallback;
-export function normalizeContent(value={}){if(!value||typeof value!=='object')value={};const sections=Array.isArray(value.sections)?[...new Set(value.sections.filter(k=>Object.hasOwn(SECTION_NAMES,k)))]:[];for(const key of Object.keys(SECTION_NAMES))if(!sections.includes(key))sections.push(key);return{title:text(value.title,DEFAULT_CONTENT.title,100),description:text(value.description,DEFAULT_CONTENT.description,220),button:text(value.button,DEFAULT_CONTENT.button,45),image:typeof value.image==='string'&&value.image.length<=800000&&/^data:image\/(?:jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(value.image)?value.image:'',sections,hidden:Array.isArray(value.hidden)?[...new Set(value.hidden.filter(k=>Object.hasOwn(SECTION_NAMES,k)))]:[]};}
+export const SECTION_NAMES = Object.freeze({
+  hero: "Portada",
+  discover: "Búsqueda y categorías",
+  games: "Juegos destacados",
+  lounge: "Casino en vivo",
+});
+export const DEFAULT_CONTENT = Object.freeze({
+  title: "La suerte tiene\nun nuevo lugar.",
+  description:
+    "Grandes clásicos, nuevas emociones.\nElegí tu juego y hacé tuya la noche.",
+  button: "Explorar juegos ↗",
+  image: "",
+  sections: Object.keys(SECTION_NAMES),
+  hidden: [],
+});
+const text = (value, fallback, max) =>
+  typeof value === "string"
+    ? value
+        .replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, "")
+        .slice(0, max)
+    : fallback;
+export function normalizeContent(value = {}) {
+  if (!value || typeof value !== "object") value = {};
+  const sections = Array.isArray(value.sections)
+    ? [
+        ...new Set(
+          value.sections.filter((k) => Object.hasOwn(SECTION_NAMES, k)),
+        ),
+      ]
+    : [];
+  for (const key of Object.keys(SECTION_NAMES))
+    if (!sections.includes(key)) sections.push(key);
+  return {
+    title: text(value.title, DEFAULT_CONTENT.title, 100),
+    description: text(value.description, DEFAULT_CONTENT.description, 220),
+    button: text(value.button, DEFAULT_CONTENT.button, 45),
+    image:
+      typeof value.image === "string" &&
+      value.image.length <= 800000 &&
+      /^data:image\/(?:jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(value.image)
+        ? value.image
+        : "",
+    sections,
+    hidden: Array.isArray(value.hidden)
+      ? [
+          ...new Set(
+            value.hidden.filter((k) => Object.hasOwn(SECTION_NAMES, k)),
+          ),
+        ]
+      : [],
+  };
+}
