@@ -1,4 +1,4 @@
-const catalog=['cobraya','lunabet','multisala','pinaplay','celuapuestas40'].includes(document.body.dataset.catalog)?document.body.dataset.catalog:'bateupix';
+const catalog=['cobraya','lunabet','multisala','pinaplay','celuapuestas40','bet30','casinotower30'].includes(document.body.dataset.catalog)?document.body.dataset.catalog:'bateupix';
 const $=selector=>document.querySelector(selector),state={groups:[],games:[],bannerMobile:[],banners:[],filter:'todos',query:'',limit:48,favorites:new Set(),banner:0,disc:{nombre:'Tu casino'},imgs:{},vars:{}};
 const dialog=$('#bp-dialog');
 function notice(title,text){$('#bp-dialog-title').textContent=title;$('#bp-dialog-body').textContent=text;dialog.showModal();}
