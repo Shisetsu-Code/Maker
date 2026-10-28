@@ -8,7 +8,7 @@
 - `content-settings.mjs`: textos acotados, imágenes data locales y secciones permitidas; elimina claves y secciones desconocidas.
 - `content-editor.js`: portada y orden de Resort. Los textos se asignan con `textContent`. No se interpreta HTML del usuario.
 - `resort.html/css/js`: lobby propio; catálogo curado, búsqueda, favoritos y vistas de juego local.
-- `bateupix.js`: controlador común de Bateupix, Cobraya, Lunabet, Multisala y Pinaplay; cada plantilla carga su catálogo y recursos locales. Pinaplay añade colecciones y portadas móviles. Ver [Cobraya/Lunabet](COBRAYA-LUNABET.md), [Multisala](MULTISALA.md) y [Pinaplay](PINAPLAY.md).
+- `bateupix.js`: controlador común de Bateupix, Cobraya, Lunabet, Multisala, Pinaplay y Celuapuestas40; cada plantilla carga su catálogo y recursos locales. Pinaplay añade colecciones y portadas móviles; Celuapuestas40 añade accesos por experiencia y categorías. Ver [Cobraya/Lunabet](COBRAYA-LUNABET.md), [Multisala](MULTISALA.md), [Pinaplay](PINAPLAY.md) y [Celuapuestas40](CELUAPUESTAS40.md).
 - `src/worker.mjs` y `src/demo-api.mjs`: recursos estáticos, alias de miniaturas y contratos de demostración. Sin base de datos ni servicios de apuestas.
 
 ## Datos
