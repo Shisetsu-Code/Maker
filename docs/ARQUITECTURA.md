@@ -3,6 +3,7 @@
 ## Capas
 
 - `public/muestra/socio.js`: personalizador original adaptado y selector de vistas. Es un bundle capturado; editar mediante adaptadores reproducibles y cambios puntuales.
+- `template-picker.js/css`: desplegable nativo de plantillas con el tema del editor. Toma sus opciones del registro existente y sincroniza selección, teclado y estado deshabilitado. `install-template-picker.mjs` lo instala desde el flujo de generación de plantillas.
 - `design-settings.mjs`: normaliza tipografía, fondos y contenido importado; genera CSS limitado a valores permitidos.
 - `design-editor.js`: monta controles, persiste ajustes y comunica vistas mediante mensajes del mismo origen. Las vistas aceptan cambios sólo desde su padre.
 - `content-settings.mjs`: textos acotados, imágenes data locales y secciones permitidas; elimina claves y secciones desconocidas.

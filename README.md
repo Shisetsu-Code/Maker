@@ -6,6 +6,7 @@ Personalizador de muestra reconstruido a partir de capturas HAR, con trece plant
 
 ## Qué se puede editar
 
+- Plantilla desde un menú desplegable compacto, integrado al tema del Maker.
 - Nombre, logo, colores, fuentes, tamaño, peso y fondos propios.
 - Portada Resort: título, descripción, botón e imagen.
 - Secciones Resort: portada, búsqueda/categorías, juegos y casino en vivo; mostrar, ocultar y ordenar.
