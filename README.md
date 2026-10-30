@@ -2,7 +2,7 @@
 
 [Demo en Cloudflare](https://rushybet-replica.braian-n-l.workers.dev) · [Repositorio](https://github.com/Shisetsu-Code/Maker)
 
-Personalizador de muestra reconstruido a partir de capturas HAR, con trece plantillas, vista de lobby y panel, simulación de computadora/celular y edición de marca. Resort (Rushybet 2) permite editar portada y distribución. Bateupix, Cobraya, Lunabet, Multisala, Pinaplay, Celuapuestas40, Bet30 y CasinoTower30 son plantillas externas reconstruidas con recursos locales e interacciones demo.
+Personalizador de muestra reconstruido a partir de capturas HAR, con diecisiete plantillas, vista de lobby y panel, simulación de computadora/celular y edición de marca. Resort (Rushybet 2) permite editar portada y distribución. Las plantillas externas Bateupix, Cobraya, Lunabet, Multisala, Pinaplay, Celuapuestas40, Bet30, CasinoTower30, Fenarys, Fortuna SJK, RavenBet y LuckRex usan recursos locales e interacciones demo.
 
 ## Qué se puede editar
 
@@ -36,6 +36,7 @@ Abrir `http://127.0.0.1:8787`. Con el servidor activo, ejecutar `npm run test:ru
 - [Plantilla Pinaplay](docs/PINAPLAY.md)
 - [Plantilla Celuapuestas40](docs/CELUAPUESTAS40.md)
 - [Plantillas Bet30 y CasinoTower30](docs/BET30-CASINOTOWER30.md)
+- [Fenarys, Fortuna SJK, RavenBet y LuckRex](docs/FENARYS-FORTUNA-RAVENBET-LUCKREX.md)
 
 El nombre npm y el Worker conservan `rushybet-replica` para mantener la dirección existente. El repositorio de entrega es Maker. La carpeta `outputs/` contiene documentos de etapas previas; las especificaciones originales describen la recuperación inicial, no todas las funciones posteriores.
 
