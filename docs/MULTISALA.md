@@ -6,7 +6,7 @@ La captura del 15/10/2026 permitió recuperar **270 juegos y 276 imágenes**: mi
 
 ## Datos recuperados
 
-El sanitizador acepta sólo `/multisala/api/games` del dominio `multisala.net`. Proyecta título, slug, proveedor, categoría y miniatura local. Las seis imágenes de identidad/salas tienen rutas explícitamente permitidas. No importa configuración de pagos, datos de usuario, movimientos, tokens, soporte, notificaciones, scripts, SVG ni juegos embebidos del proveedor. Las imágenes raster conservan sus bytes; no se eliminan metadatos incrustados.
+El sanitizador acepta sólo `/multisala/api/games` del dominio `multisala.net`. Proyecta título, slug, proveedor, categoría y miniatura local. Las seis imágenes de identidad/salas tienen rutas explícitamente permitidas. No importa configuración de pagos, datos de usuario, movimientos, tokens, soporte, notificaciones, scripts, SVG ni juegos embebidos del proveedor. Antes de publicar, la [limpieza de privacidad](PRIVACIDAD-Y-VALIDACION.md) retira metadatos descriptivos internos y comprueba la decodificación de las imágenes.
 
 ## Regenerar
 

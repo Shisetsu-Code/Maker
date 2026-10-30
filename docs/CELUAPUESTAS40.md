@@ -8,7 +8,7 @@ La captura del 27/10/2026 permitió recuperar **1.122 juegos y 1.125 imágenes l
 
 `scripts/sanitize-celuapuestas40-har.mjs` lee únicamente respuestas de `wallet.casinoenvivo.club/rest/c/listadoJuegos.aspx` y `listadoMarcas.aspx`, proyectando nombre, código y proveedor de juegos, agrupación e imagen pública. No copia los objetos completos, ni IP, identificadores de compañía, datos de billetera, sesiones o cuentas. Los grupos repetidos se unen sin duplicar juegos.
 
-Las miniaturas se admiten sólo desde `cdn.casinoenvivo.club/cms/img/logos/`; las tres portadas tienen rutas explícitas bajo `/static/img/home/`. Se normaliza la barra inicial duplicada presente en la captura. Se validan firmas raster y tamaño máximo de 8 MiB; sólo se publican archivos referenciados, renombrados mediante hash. Se conservan sus bytes, sin eliminación de metadatos incrustados.
+Las miniaturas se admiten sólo desde `cdn.casinoenvivo.club/cms/img/logos/`; las tres portadas tienen rutas explícitas bajo `/static/img/home/`. Se normaliza la barra inicial duplicada presente en la captura. Se validan firmas raster y tamaño máximo de 8 MiB; sólo se publican archivos referenciados, renombrados mediante hash. Antes de publicar, la [limpieza de privacidad](PRIVACIDAD-Y-VALIDACION.md) retira metadatos descriptivos internos y comprueba la decodificación de las imágenes.
 
 No se importa configuración de sportsbook, cuotas, billetera, apuestas, pagos, chat, analítica, cookies, cabeceras, scripts ni SVG. Todos los lanzamientos se resuelven con `/api/muestra/juego-demo`, sin conectarse al operador o a los proveedores originales.
 

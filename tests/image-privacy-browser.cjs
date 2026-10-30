@@ -1,0 +1,17 @@
+const assert=require('node:assert/strict'),path=require('node:path'),zlib=require('node:zlib');
+const {chromium}=require(path.join(process.env.WORKSPACE_NODE_MODULES,'playwright'));
+(async()=>{const browser=await chromium.launch({channel:'msedge',headless:true});try{const page=await browser.newPage(),origin=process.env.DEMO_ORIGIN||'http://127.0.0.1:8801';await page.goto(origin+'/muestra/socio.html#v=1&pl=cobraya');
+ const data=Buffer.from(await page.evaluate(()=>{const c=document.createElement('canvas');c.width=10;c.height=10;c.getContext('2d').fillRect(0,0,10,10);return c.toDataURL('image/png').split(',')[1];}),'base64');
+ const payload=Buffer.from('Author\0PRIVATE_METADATA_FIXTURE'),kind=Buffer.from('tEXt'),head=Buffer.alloc(8),crc=Buffer.alloc(4);head.writeUInt32BE(payload.length);kind.copy(head,4);crc.writeUInt32BE(zlib.crc32(Buffer.concat([kind,payload])));const raw='data:image/png;base64,'+Buffer.concat([data.subarray(0,33),head,payload,crc,data.subarray(33)]).toString('base64');
+ const result=await page.evaluate(async raw=>{const {sanitizeDesignImages}=await import('/muestra/image-privacy.mjs');return sanitizeDesignImages({image:raw,content:{image:raw},elementos:{assets:{test:raw}}});},raw);
+ await page.evaluate(async()=>{const canvas=document.createElement('canvas');canvas.width=1200;canvas.height=900;const context=canvas.getContext('2d'),pixels=context.createImageData(1200,900);let seed=12345;for(let i=0;i<pixels.data.length;i++){seed=(Math.imul(seed,1664525)+1013904223)>>>0;pixels.data[i]=i%4===3?255:seed>>>24;}context.putImageData(pixels,0,0);const original=canvas.toDataURL('image/webp',.9);if(original.length>1600000)throw Error('Fixture exceeds supported background limit');const{sanitizeDesignImages}=await import('/muestra/image-privacy.mjs');const value=await sanitizeDesignImages({ajustes:{image:original}});if(value.ajustes.image.length>1600000)throw Error('Background limit exceeded');});
+ for(const value of [result.image,result.content.image,result.elementos.assets.test]){assert.ok(!Buffer.from(value.split(',')[1],'base64').includes(Buffer.from('PRIVATE_METADATA_FIXTURE')));assert.match(value,/^data:image\/png/);}
+ await page.locator('[data-json]').setInputFiles({name:'private.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify({version:1,ajustes:{image:raw,imageEnabled:true}}))});
+ await page.waitForFunction(()=>JSON.parse(localStorage.getItem('rushybet:design-extras:v1')).imageEnabled);
+ const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('rushybet:design-extras:v1')).image);assert.ok(!Buffer.from(saved.split(',')[1],'base64').includes(Buffer.from('PRIVATE_METADATA_FIXTURE')));
+ try{await page.locator('.socio-tour-saltar').waitFor({timeout:1200});await page.locator('.socio-tour-saltar').click();}catch{}
+ await page.locator('input[type=file][accept*=svg]').first().setInputFiles({name:'PRIVATE_FILENAME_FIXTURE.png',mimeType:'image/png',buffer:Buffer.from(raw.split(',')[1],'base64')});
+ await page.waitForTimeout(500);
+ const downloadPromise=page.waitForEvent('download');await page.locator('#btn-bajar-diseno').click();const download=await downloadPromise,fs=require('node:fs/promises'),exported=await fs.readFile(await download.path(),'utf8');assert.ok(!exported.includes('PRIVATE_FILENAME_FIXTURE'));assert.ok(!exported.includes('"creado"'));
+ console.log('PASS imágenes JSON sin metadatos en fondos, contenido y elementos');
+}finally{await browser.close();}})().catch(e=>{console.error(e.stack);process.exitCode=1;});

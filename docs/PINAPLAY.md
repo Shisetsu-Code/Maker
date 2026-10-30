@@ -10,7 +10,7 @@ La captura del 27/10/2026 permitió recuperar **571 juegos, 28 colecciones, cuat
 
 Se admiten imágenes raster referenciadas y presentes en la captura: rutas de juegos/portadas de `minio.pokersistemas.com`, imágenes de `i.postimg.cc` y `/storage/drakon/` de `gator.drakon.casino`. Se valida firma y tamaño máximo de 8 MiB. Los archivos reciben nombres hash y sólo se guardan los usados. No se descargan recursos nuevos para completar huecos.
 
-No se importan tokens del chat, configuración de autenticación o retiros, contadores de jugadores, rastreadores, cookies, cabeceras, enlaces de banners, scripts ni SVG. Los bytes raster se conservan: no se eliminan metadatos incrustados. Las portadas son referencias visuales, sin promociones vigentes.
+No se importan tokens del chat, configuración de autenticación o retiros, contadores de jugadores, rastreadores, cookies, cabeceras, enlaces de banners, scripts ni SVG. Antes de publicar, la [limpieza de privacidad](PRIVACIDAD-Y-VALIDACION.md) retira metadatos descriptivos internos y comprueba la decodificación de las imágenes. Las portadas son referencias visuales, sin promociones vigentes.
 
 ## Regeneración
 

@@ -8,7 +8,7 @@ Se publican únicamente las 1.007 imágenes referenciadas por el catálogo y los
 
 El catálogo contiene 1.004 juegos con los únicos campos `id`, `name`, `code`, `provider`, `image` y `category`. Las portadas y tres banners se sirven localmente. Se descartan cookies, cabeceras, scripts, metadatos de proveedores, respuestas de cuentas y pagos, destinos de enlaces y parámetros de URLs. El HAR completo no se publica.
 
-Los archivos de imagen conservan sus bytes originales; no se realiza eliminación de metadatos internos de raster. El menú muestra doce proveedores y los restantes se pueden buscar. Se verificó la decodificación de las 1.007 imágenes, pero esto no es una auditoría general de archivos HAR.
+Antes de publicar, la [limpieza de privacidad](PRIVACIDAD-Y-VALIDACION.md) retira metadatos descriptivos internos y comprueba la decodificación de las imágenes. El menú muestra doce proveedores y los restantes se pueden buscar. Se verificó la decodificación de las 1.007 imágenes, pero esto no es una auditoría general de archivos HAR.
 
 Los banners conservan su contenido gráfico original, pero están identificados como imágenes de referencia con promociones no vigentes. No se copian afirmaciones de autorización legal del sitio, destinos de pago o contacto.
 

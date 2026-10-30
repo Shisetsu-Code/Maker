@@ -11,7 +11,7 @@ La cobertura corresponde a las respuestas presentes en los HAR, no al catálogo 
 
 ## Sanitización
 
-`scripts/sanitize-lobby-har.mjs` acepta únicamente respuestas del dominio correspondiente, de `/api/lobby`, `/api/games/list` y `/api/banners`. Proyecta campos públicos del catálogo y conserva sólo imágenes raster referenciadas, verificando firma y límite de tamaño. Los nombres de archivo son hashes. No exporta cookies, cabeceras, cuentas, sesiones, enlaces de banners, endpoints de pagos o sportsbook, scripts ni SVG. Las imágenes conservan sus bytes originales; el proceso no elimina metadatos incrustados. Los nueve banners fueron revisados visualmente.
+`scripts/sanitize-lobby-har.mjs` acepta únicamente respuestas del dominio correspondiente, de `/api/lobby`, `/api/games/list` y `/api/banners`. Proyecta campos públicos del catálogo y conserva sólo imágenes raster referenciadas, verificando firma y límite de tamaño. Los nombres de archivo son hashes. No exporta cookies, cabeceras, cuentas, sesiones, enlaces de banners, endpoints de pagos o sportsbook, scripts ni SVG. Antes de publicar, la [limpieza de privacidad](PRIVACIDAD-Y-VALIDACION.md) retira metadatos descriptivos internos y comprueba la decodificación de las imágenes. Los nueve banners fueron revisados visualmente.
 
 ## Regenerar
 
