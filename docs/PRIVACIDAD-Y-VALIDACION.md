@@ -25,6 +25,8 @@ Los controles de registro, pagos, soporte y promociones que abren avisos están 
 
 Los HAR y archivos de trabajo permanecen fuera de `public/` y de Git. La revisión por patrones del contenido publicado no encontró credenciales con los patrones comprobados. Esto no demuestra ausencia absoluta de secretos ni reemplaza una auditoría exhaustiva de dependencias y todos los bundles capturados. El nombre de marca y los textos que el usuario decide incluir son contenido del diseño y se conservan.
 
+También se actualizó Wrangler a 4.156.0 para retirar avisos de seguridad de sus dependencias de desarrollo. `npm audit` sobre el archivo de dependencias resultante informó cero vulnerabilidades conocidas en esta revisión. Estas herramientas no se incluyen en el código del navegador ni en el Worker desplegado.
+
 ## Antes de publicar o importar otra captura
 
 ```sh
