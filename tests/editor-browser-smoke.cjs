@@ -36,7 +36,7 @@ async function main(){
   await classic.locator('#design-custom-style').evaluate(el=>{if(el.textContent.includes('background-image'))throw Error('Fondo no desactivado');});
   await editor.locator('[name=imageEnabled]').check();
   await waitCSS('vista-socio-lobby.html','background-image');
-  await page.locator('#seg-plantilla [data-valor=duplicada]').click();
+  await page.getByRole('combobox',{name:'Plantilla del lobby'}).selectOption('duplicada');
   const resort=page.frameLocator('iframe[src*="resort.html"]');await resort.locator('#design-custom-style').waitFor({state:'attached'});
   await resort.locator('#design-custom-style').evaluate(el=>{if(!el.textContent.includes('Georgia')||!el.textContent.includes('data:image'))throw Error('Ajustes perdidos entre plantillas');});
   const resortSurface=await resort.locator('main').evaluate(el=>getComputedStyle(el).backgroundColor);

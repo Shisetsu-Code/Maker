@@ -7,12 +7,14 @@ Personalizador de muestra reconstruido a partir de capturas HAR, con diecisiete 
 ## Qué se puede editar
 
 - Plantilla desde un menú desplegable compacto, integrado al tema del Maker.
+- Selección directa en la vista previa para editar imágenes, textos, botones, campos y bloques de las 17 plantillas.
+- Estilos y visibilidad por elemento, restauración y deshacer/rehacer; guardado independiente por plantilla y pantalla.
 - Nombre, logo, colores, fuentes, tamaño, peso y fondos propios.
 - Portada Resort: título, descripción, botón e imagen.
 - Secciones Resort: portada, búsqueda/categorías, juegos y casino en vivo; mostrar, ocultar y ordenar.
 - Guardar/cargar ajustes JSON y restablecer los ajustes nuevos.
 
-Las imágenes se comprimen localmente y los ajustes permanecen en el navegador. No se envían diseños ni imágenes a un servidor. Los juegos abren vistas locales de demostración; no hay apuestas reales.
+Las imágenes se comprimen localmente y los ajustes permanecen en el navegador. Los archivos de ajustes y de diseño incluyen las imágenes propias y las modificaciones de elementos. No se envían diseños ni imágenes a un servidor. Los juegos abren vistas locales de demostración; no hay apuestas reales.
 
 ## Ejecutar y verificar
 
@@ -27,6 +29,7 @@ Abrir `http://127.0.0.1:8787`. Con el servidor activo, ejecutar `npm run test:ru
 ## Documentación
 
 - [Manual del editor](docs/USO.md)
+- [Edición visual de elementos](docs/EDICION-VISUAL.md)
 - [Arquitectura y mantenimiento](docs/ARQUITECTURA.md)
 - [Publicación y recuperación](docs/PUBLICACION.md)
 - [Pruebas y límites](docs/PRUEBAS.md)
@@ -42,4 +45,4 @@ El nombre npm y el Worker conservan `rushybet-replica` para mantener la direcci�
 
 ## Alcance
 
-Las otras cuatro plantillas conservan la distribución capturada; banners y orden de secciones se editan en Resort. Su catálogo es una selección de ocho juegos. El panel es compartido. Los favoritos de Resort son de sesión y pueden diferir entre las vistas de computadora y celular. Algunos recursos del catálogo original no capturados todavía usan URLs externas. Los HAR, cookies, cabeceras y datos de sesión no se publican.
+Las cuatro plantillas originales conservan la distribución capturada, con edición visual de contenido y visibilidad. Resort añade controles específicos de portada y orden de secciones. Su catálogo es una selección de ocho juegos. El panel es compartido. Los favoritos de Resort son de sesión y pueden diferir entre las vistas de computadora y celular. Algunos recursos del catálogo original no capturados todavía usan URLs externas. Los HAR, cookies, cabeceras y datos de sesión no se publican.

@@ -7,6 +7,7 @@
 - `modern-lobbies-page.mjs` y `modern-lobbies.js/css`: vistas de Fenarys, Fortuna SJK, RavenBet y LuckRex sobre el controlador común, con catálogos locales separados. Ver [recuperación y sanitización](FENARYS-FORTUNA-RAVENBET-LUCKREX.md).
 - `design-settings.mjs`: normaliza tipografía, fondos y contenido importado; genera CSS limitado a valores permitidos.
 - `design-editor.js`: monta controles, persiste ajustes y comunica vistas mediante mensajes del mismo origen. Las vistas aceptan cambios sólo desde su padre.
+- `element-settings.mjs`, `element-store.mjs`, `element-editor.js` y `element-view.js`: edición visual por plantilla/pantalla con IndexedDB, historial, restauración y recursos incluidos en archivos. Ver [edición visual](EDICION-VISUAL.md).
 - `content-settings.mjs`: textos acotados, imágenes data locales y secciones permitidas; elimina claves y secciones desconocidas.
 - `content-editor.js`: portada y orden de Resort. Los textos se asignan con `textContent`. No se interpreta HTML del usuario.
 - `resort.html/css/js`: lobby propio; catálogo curado, búsqueda, favoritos y vistas de juego local.

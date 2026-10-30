@@ -1,0 +1,5 @@
+import {normalizeElements} from './element-settings.mjs';
+let database;
+function open(){if(!database)database=new Promise((resolve,reject)=>{const request=indexedDB.open('maker-content-editor',1);request.onupgradeneeded=()=>request.result.createObjectStore('settings');request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);});return database;}
+export async function loadElements(){const db=await open();return new Promise((resolve,reject)=>{const request=db.transaction('settings').objectStore('settings').get('elements');request.onsuccess=()=>resolve(normalizeElements(request.result));request.onerror=()=>reject(request.error);});}
+export async function saveElements(value){const state=normalizeElements(value),db=await open();return new Promise((resolve,reject)=>{const transaction=db.transaction('settings','readwrite');transaction.objectStore('settings').put(state,'elements');transaction.oncomplete=()=>resolve(state);transaction.onerror=()=>reject(transaction.error);transaction.onabort=()=>reject(transaction.error||Error('No se pudo guardar.'));});}
