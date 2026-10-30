@@ -13,7 +13,7 @@ Son los recursos presentes en cada HAR. El catálogo completo del operador puede
 
 Se amplió `sanitize-celuapuestas40-har.mjs` para aceptar sólo los identificadores `celuapuestas40`, `bet30` y `casinotower30`. Para las dos nuevas marcas admite además `/rest/c/listadoComerciales.aspx` del mismo host de catálogo `wallet.casinoenvivo.club`. De ese endpoint extrae únicamente imágenes raster de `config.image` presentes en la captura. No copia acciones, enlaces, fechas, cuerpos JSON embebidos ni archivos de video; usa los pósteres raster capturados cuando existen.
 
-Se conservan las restricciones del [importador de Celuapuestas40](CELUAPUESTAS40.md): proyección de campos públicos, miniaturas referenciadas, firmas raster, límite de 8 MiB y nombres hash. Se permite `/cms/img/banners/` en el CDN para las portadas. No se publican cookies, cabeceras, IP, compañía, cuentas, billetera, apuestas, sportsbook, scripts, chat o rastreadores. Los bytes de imágenes no se modifican ni se eliminan metadatos incrustados.
+Se conservan las restricciones del [importador de Celuapuestas40](CELUAPUESTAS40.md): proyección de campos públicos, miniaturas referenciadas, firmas raster, límite de 8 MiB y nombres hash. Se permite `/cms/img/banners/` en el CDN para las portadas. No se publican cookies, cabeceras, IP, compañía, cuentas, billetera, apuestas, sportsbook, scripts, chat o rastreadores. Antes de publicar, la [limpieza de privacidad](PRIVACIDAD-Y-VALIDACION.md) retira metadatos descriptivos internos y comprueba la decodificación de las imágenes.
 
 ## Regenerar
 

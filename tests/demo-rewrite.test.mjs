@@ -17,7 +17,7 @@ test('computedRecoveredPostersUseLocalCopies', async () => {
   runInNewContext(script,context);
   assert.equal(context.window.__demoAssetURL('https://common-static.ppgames.net/game_pic/square/200/'+'vs20olympgate'+'.png'),'/assets/external/common-static.ppgames.net/game_pic/square/200/vs20olympgate.png');
   assert.equal(context.window.__demoAssetURL('./games-cartas/a.webp'),'./games-cartas/a.webp');
-  assert.equal(context.window.__demoAssetURL('https://unrecorded.example/a.png'),'https://unrecorded.example/a.png');
+  assert.equal(context.window.__demoAssetURL('https://unrecorded.example/a.png?token=PRIVATE'),'/muestra/imagen-no-disponible.svg');
 });
 test('catalogImageAndBackgroundBothResolveLocalCopy', () => {
   const source='function Ia(e){return`url("${e.replace(/"/g,``)}")`}let c=`https://cdn.example/poster.png`,g=`linear-gradient(red,blue)`;let item={img:c,vid:null,grad:g,bg:Ia(c)};item';

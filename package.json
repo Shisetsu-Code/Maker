@@ -8,9 +8,12 @@
     "test": "node --test tests/*.test.mjs",
     "test:runtime": "node --test tests/runtime-smoke.mjs",
     "check:assets": "node scripts/check-assets.mjs",
+    "sanitize:assets": "python scripts/image_privacy.py",
+    "test:privacy": "python tests/image_privacy_test.py",
+    "check:privacy": "node scripts/check-public-privacy.mjs && python scripts/image_privacy.py --check",
     "deploy": "wrangler deploy"
   },
   "devDependencies": {
-    "wrangler": "4.149.0"
+    "wrangler": "4.156.0"
   }
 }

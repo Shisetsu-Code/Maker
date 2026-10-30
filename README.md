@@ -20,6 +20,7 @@ Las imágenes se comprimen localmente y los ajustes permanecen en el navegador. 
 
 ```sh
 npm ci
+python -m pip install -r requirements-privacy.txt
 npm test
 npm run dev
 ```
@@ -33,6 +34,7 @@ Abrir `http://127.0.0.1:8787`. Con el servidor activo, ejecutar `npm run test:ru
 - [Arquitectura y mantenimiento](docs/ARQUITECTURA.md)
 - [Publicación y recuperación](docs/PUBLICACION.md)
 - [Pruebas y límites](docs/PRUEBAS.md)
+- [Privacidad, limpieza de imágenes y validación de navegación](docs/PRIVACIDAD-Y-VALIDACION.md)
 - [Plantilla Bateupix y sanitización](docs/BATEUPIX.md)
 - [Plantillas Cobraya y Lunabet](docs/COBRAYA-LUNABET.md)
 - [Plantilla Multisala](docs/MULTISALA.md)
@@ -45,4 +47,4 @@ El nombre npm y el Worker conservan `rushybet-replica` para mantener la direcci�
 
 ## Alcance
 
-Las cuatro plantillas originales conservan la distribución capturada, con edición visual de contenido y visibilidad. Resort añade controles específicos de portada y orden de secciones. Su catálogo es una selección de ocho juegos. El panel es compartido. Los favoritos de Resort son de sesión y pueden diferir entre las vistas de computadora y celular. Algunos recursos del catálogo original no capturados todavía usan URLs externas. Los HAR, cookies, cabeceras y datos de sesión no se publican.
+Las cuatro plantillas originales conservan la distribución capturada, con edición visual de contenido y visibilidad. Resort añade controles específicos de portada y orden de secciones. Su catálogo es una selección de ocho juegos. El panel es compartido. Los favoritos de Resort son de sesión y pueden diferir entre las vistas de computadora y celular. Los recursos originales no capturados usan una vista previa local de respaldo. Los HAR, cookies, cabeceras y datos de sesión no se publican. La construcción comprueba privacidad y metadatos antes de permitir el despliegue; ver el alcance y los límites en la revisión de privacidad.

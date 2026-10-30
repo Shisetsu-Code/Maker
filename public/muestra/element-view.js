@@ -1,3 +1,4 @@
+import {safeAssetReference} from './element-settings.mjs';
 import {normalizeElements,normalizeTarget,targetId} from './element-settings.mjs';
 import {loadElements} from './element-store.mjs';
 export function setupElementView(){
@@ -7,7 +8,7 @@ export function setupElementView(){
  function overlay(className){const el=document.createElement('div');el.dataset.makerUi='';el.className=className;el.hidden=true;document.body.append(el);return el;}
  const outline=overlay('maker-element-outline'),hover=overlay('maker-element-hover'),tip=overlay('maker-element-tip');
  const textNodes=el=>[...el.childNodes].filter(n=>n.nodeType===Node.TEXT_NODE);
- const url=raw=>{try{if(!raw)return'';const u=new URL(raw,location.href);return u.origin===location.origin?u.pathname+u.search:u.href;}catch{return'';}};
+ const url=raw=>{try{if(!raw)return'';const u=new URL(raw,location.href);return safeAssetReference(u.origin===location.origin?u.pathname+u.search:u.href);}catch{return'';}};
  function selector(el){if(el.id&&/^[A-Za-z_][\w-]*$/.test(el.id)&&document.querySelectorAll('#'+el.id).length===1)return'#'+el.id;const path=[];while(el&&el!==document.body){const tag=el.localName;if(!tag||path.length>18)return'';const siblings=[...el.parentElement.children].filter(n=>n.localName===tag);path.unshift(tag+':nth-of-type('+(siblings.indexOf(el)+1)+')');el=el.parentElement;}return el?'body>'+path.join('>'):'';}
  function record(el){if(!records.has(el))records.set(el,{styles:new Map(),attrs:new Map(),texts:new Map()});return records.get(el);}
  function originalAttr(el,name){const saved=records.get(el)?.attrs.get(name),current=el.getAttribute(name);return saved&&current===saved.last?saved.before:current;}

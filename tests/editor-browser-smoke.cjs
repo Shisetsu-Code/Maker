@@ -8,7 +8,7 @@ async function main(){
   async function waitCSS(url,needle,present=true){const frame=page.frames().find(frame=>frame.url().includes(url));assert.ok(frame);await frame.waitForFunction(({needle,present})=>document.getElementById('design-custom-style')?.textContent.includes(needle)===present,{needle,present});}
   const origin=process.env.DEMO_ORIGIN||'http://127.0.0.1:8787';
   await page.goto(origin+'/muestra/socio.html#v=1&p=ff5500&n=Prueba&vista=lobby&disp=celular&pl=clasica');
-  const skip=page.getByRole('button',{name:'Saltar',exact:true});if(await skip.count())await skip.click();
+  const skip=page.getByRole('button',{name:'Saltar',exact:true});try{await skip.waitFor({timeout:1500});await skip.click();}catch{}
   const editor=page.locator('.design-editor');await editor.waitFor();
   await editor.locator('summary').filter({hasText:'Tipografía'}).click();
   await editor.locator('[name=font]').selectOption('editorial');
@@ -64,7 +64,7 @@ async function main(){
   await editor.locator('[data-json]').setInputFiles({name:'ajustes.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(imported))});
   await page.waitForFunction(()=>JSON.parse(localStorage.getItem('rushybet:design-extras:v1')).font==='archivo');
   await panel.locator('body').evaluate(async()=>{await document.fonts.load('16px Archivo');if(![...document.fonts].some(font=>font.family==='Archivo'&&font.status==='loaded'))throw Error('Archivo no está cargada en el panel');});
-  await page.reload();await editor.waitFor();
+  await page.reload();try{await skip.waitFor({timeout:1500});await skip.click();}catch{}await editor.waitFor();
   assert.equal(await page.evaluate(()=>window.__designExtras.estado().font),'archivo');
   console.log('PASS: tipografía, tamaño, subida/ocultar fondo, cambios de plantilla/panel, exportación, importación, restablecer y recarga.');
  }finally{await browser.close();}

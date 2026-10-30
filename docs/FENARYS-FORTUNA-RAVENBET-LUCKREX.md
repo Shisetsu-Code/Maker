@@ -26,7 +26,7 @@ Las categorías sólo filtran juegos recuperados. Si una experiencia no tiene un
 
 Se aceptan imágenes raster referenciadas del dominio correspondiente, `cdn.softswiss.net/i/`, `cdn.content360.games/covers/`, `client.int.qtlauncher.com/images/` y `platipusgaming.cloud`. Se resuelven los envoltorios `/_next/image` y se conserva el parámetro `id` de Qt para evitar mezclar portadas de juegos que comparten la misma ruta. Se valida firma y tamaño máximo de 8 MiB; sólo se guardan los archivos usados, con nombres hash. La validación en navegador comprueba su decodificación.
 
-Las capturas incluyen respuestas de autenticación y cuentas. No se copian tokens, perfiles, saldos, transacciones, claves, configuración de pagos o chat, datos de analítica, cookies, cabeceras, enlaces de lanzamiento, scripts, video ni SVG. Los bytes de las imágenes se conservan; no se eliminan metadatos incrustados. No se completan recursos faltantes con solicitudes externas.
+Las capturas incluyen respuestas de autenticación y cuentas. No se copian tokens, perfiles, saldos, transacciones, claves, configuración de pagos o chat, datos de analítica, cookies, cabeceras, enlaces de lanzamiento, scripts, video ni SVG. Antes de publicar, la [limpieza de privacidad](PRIVACIDAD-Y-VALIDACION.md) retira metadatos descriptivos internos y comprueba la decodificación de las imágenes. No se completan recursos faltantes con solicitudes externas.
 
 ## Regenerar
 

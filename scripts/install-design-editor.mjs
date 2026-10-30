@@ -10,5 +10,7 @@ export async function installDesignEditor(){
   const path='public/muestra/socio.js';let source=await readFile(path,'utf8');
   source=source.replace('let n=ts(e,new Date),r=es(e.nombre);','let n={...ts(e,new Date),ajustes:window.__designExtras?.estado()},r=es(e.nombre);');
   await writeFile(path,source);
+  await import('./install-image-privacy.mjs?install='+Date.now());
+  await import('./install-local-policy.mjs?install='+Date.now());
 }
 if(process.argv[1]?.endsWith('install-design-editor.mjs'))await installDesignEditor();
