@@ -48,7 +48,7 @@
 
 - [x] Repetir pruebas del Maker afectadas y las nuevas, revisar capturas y limpiar metadatos nuevos.
 - [x] Una revisión independiente del cambio; resolver problemas importantes con regresiones.
-- [ ] Crear PR sobre la rama de privacidad, subir versión con alias de preview, probar URL publicada, enlazar backup y documentación.
+- [x] Crear PR sobre la rama de privacidad, publicar una Preview independiente, probar URL publicada, enlazar backup y documentación.
 
 ## Ledger
 
@@ -57,3 +57,4 @@
 
 - Implementación: 47/47 pruebas de módulos; navegador Cinematic completo, 18 opciones de selector, editor general, edición visual anterior y 17 plantillas originales pasan. Recursos nuevos: 18/18 decodificados, sin metadatos pendientes.
 - Revisión independiente del cambio: sin problemas importantes confirmados; se verificaron con navegador los casos de logo blob y sincronización del selector de imagen.
+- Entrega: PR #4 en borrador y Preview cinematic-trial. Recorrido de nueve mundos y cuatro tests HTTP publicados correctos; comprobación positiva de que la demo original conserva el estado anterior.

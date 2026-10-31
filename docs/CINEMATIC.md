@@ -4,6 +4,8 @@ La familia añade nueve mundos ilustrados del repositorio [Temas](https://github
 
 ## Probarla
 
+[Abrir la vista previa Cinematic](https://cinematic-trial-rushybet-replica.braian-n-l.workers.dev/muestra/socio.html?world=pirates&cinematicColor=world#v=1&n=Tu%20casino&vista=lobby&disp=celular&pl=cinematic). Publicación de prueba: 31 de octubre de 2026. [PR de la integración](https://github.com/Shisetsu-Code/Maker/pull/4).
+
 1. Elegir **Cinematic · prueba** en Plantilla del lobby.
 2. En el editor, elegir **Mundo**. También se puede usar **Cambiar universo** dentro del lobby.
 3. Cada mundo conserva su paleta. Activar **Usar los colores de mi marca** para aplicar los controles de color del Maker.
@@ -54,6 +56,8 @@ Los ajustes privados del navegador siguen en su origen; no forman parte del ZIP 
 ## Publicación y verificación
 
 La prueba se publica con [Cloudflare Previews](https://developers.cloudflare.com/workers/previews/configuration/), bajo el Worker existente y con `previews: {}`. Sólo utiliza los recursos estáticos de esta rama y la API de demostración, sin bindings de datos. La URL es pública, igual que la demo existente. La versión activa previa es `277536e4-acd6-4821-9809-c7bb12b4e9f9` y se conserva para comparar.
+
+La Preview `cinematic-trial` usa el despliegue `d0ccc109-0b4b-452d-95d6-0ee5f68ccf33`. Se repitió el recorrido completo de Cinematic y las cuatro comprobaciones HTTP del Worker sobre la URL publicada. Se comprobó además que la dirección original conserva su selector anterior y la dirección de prueba incorpora Cinematic.
 
 ```sh
 npx wrangler preview --name cinematic-trial --worker-name rushybet-replica --ignore-base-config
