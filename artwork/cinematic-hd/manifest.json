@@ -1,0 +1,82 @@
+{
+  "kind": "independent generated illustrations",
+  "date": "2026-10-31",
+  "resampling": "none",
+  "webFormat": "AVIF",
+  "quality": 85,
+  "subsampling": "4:4:4",
+  "files": {
+    "pirates": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2982266,
+      "pngSha256": "56fb56c084a5fb67b509207e6f2f08dfb58d5cd9bd67584c3569f42c5e6d6881",
+      "avifBytes": 645751,
+      "avifSha256": "8a2d56ff78ff70d692e13d5c4ba13f9b7318ef43bf52e6d8c208287746a1e70c"
+    },
+    "olympus": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2692980,
+      "pngSha256": "3cda3895c4b40abedcf798dace6ba7902522b3a896b02f7b5180ebc62e1d125d",
+      "avifBytes": 512223,
+      "avifSha256": "c9e83b38d91026e8945ee392e3ffdf0853913bd3328d642def1c84ab01c9e990"
+    },
+    "cyberpunk": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2600867,
+      "pngSha256": "359da9f361b49cb5f590de4a8f17ec4dffd2d970e6e7a7d958da62a0f569d7b0",
+      "avifBytes": 525192,
+      "avifSha256": "13ed7c36adb389146ce5720540e85687c5ad3b9a6b9834a9ddda6c80082d415f"
+    },
+    "steampunk": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2608671,
+      "pngSha256": "6563b7a154c4b2402fe9971fea2b02679f6f518196496a3300f231e361b44ea9",
+      "avifBytes": 497922,
+      "avifSha256": "e6f441246d14ed31cc56e552842d468f5085676655af19062015894dfe531131"
+    },
+    "space": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2926844,
+      "pngSha256": "79cf70b9532dbd457063003a92eb90d62369b7224b9a3758e6c2b334d0233f4b",
+      "avifBytes": 574089,
+      "avifSha256": "b8e88ac74a2824254d0a9520b1a037dc87385fa84d2b5ad7875535c18b6bff5c"
+    },
+    "western": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2575328,
+      "pngSha256": "09177e159c8393ee63a514de19633bc98918bd5cf4f19f4f3535726e208aa5ba",
+      "avifBytes": 436826,
+      "avifSha256": "cda112d81b852f9f735f98951abba2bda97962088b79120abefef654f3bf2293"
+    },
+    "candy": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2618818,
+      "pngSha256": "8ed8f6bcec5fd21fe53be56c311db9e689ad0252f805cecf3fb12994eeaa25fc",
+      "avifBytes": 489571,
+      "avifSha256": "a3da3bccd75558c848560aa6ad4c502bba8d2c3728e54beba03bac3a4f2a34bf"
+    },
+    "dinosaurs": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 3042505,
+      "pngSha256": "72a97039679e454c74d2466e3602d03f26937e1bd80d0aa4db7c0fab9dbbddf6",
+      "avifBytes": 673106,
+      "avifSha256": "f93e99b7df113c6aaf3e024b0e9c283edbeb1ac8241648647df4e65c6011f101"
+    },
+    "phoenix": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2779610,
+      "pngSha256": "ab05fc7a87ee15f0072250a441e26339911a2629aa0e6da0f27c3b7526a01494",
+      "avifBytes": 688569,
+      "avifSha256": "df9c50c2732c93d4654303f18db46b7b80ccebd76e6ed9cc9e5a90a4280d7afd"
+    }
+  }
+}

@@ -29,7 +29,7 @@ export async function installCinematic(sourceDirectory){
  await mkdir(target+'/assets/cinematic',{recursive:true});await mkdir(target+'/assets/icons',{recursive:true});await mkdir(target+'/themes',{recursive:true});
  for(const file of ['app.mjs','schema.mjs','motion.mjs','styles.css','icons.mjs','icons.css','icon-registry.mjs','favicon.svg']){
   let text=await readFile(path.join(source,'public/cinematic',file),'utf8');
-  if(file==='schema.mjs')text=text.replace("from '../model.mjs'","from './model.mjs'");
+  if(file==='schema.mjs')text="import {cinematicArt} from './art.mjs';\n"+text.replace("from '../model.mjs'","from './model.mjs'").replace('art:`assets/cinematic/${id}.avif`','art:cinematicArt(id)').replace('/** The imagery is cropped from the approved concept board. Replace art URLs with HD renders when available. */','/** Independent generated illustrations; original concept crops remain available for recovery. */');
   if(file==='app.mjs')text=text.replace("const KEY='temas:v1'","const KEY='maker:cinematic:catalog:v1'").replace('async function setWorld(','export async function setWorld(');
   await writeFile(target+'/'+file,text);
  }
@@ -38,6 +38,7 @@ export async function installCinematic(sourceDirectory){
  for(const id of CINEMATIC_IDS)for(const group of ['cinematic','icons'])await copyFile(path.join(source,'public/assets',group,id+'.avif'),target+'/assets/'+group+'/'+id+'.avif');
  let html=await readFile(path.join(source,'public/index.html'),'utf8');
  html=html.replaceAll('href="cinematic/','href="').replaceAll('src="cinematic/','src="').replace('<body>','<body data-catalog="cinematic">');
+  html=html.replaceAll('src="assets/cinematic/','src="assets/cinematic-hd/');
  html=html.replace('id="scene-image" src=','id="scene-image" src=').replace('alt="" aria-hidden="true" fetchpriority="high"','alt="Portada del mundo" fetchpriority="high"');
  const policy="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'";
  html=html.replace('<head>','<head><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="'+policy+'">');

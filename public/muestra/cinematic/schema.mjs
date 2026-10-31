@@ -1,7 +1,8 @@
+import {cinematicArt} from './art.mjs';
 import { GAMES, filterGames } from './model.mjs';
 export { GAMES, filterGames };
 
-/** The imagery is cropped from the approved concept board. Replace art URLs with HD renders when available. */
+/** Independent generated illustrations; original concept crops remain available for recovery. */
 const define = (name,brand,signature,title,copy,colors,effect,emblem) => Object.freeze({name,brand,signature,title:Object.freeze(title),copy,colors:Object.freeze(colors),effect,emblem});
 const configs={
  pirates:define('Piratas','MAREA','THE BLACK TIDE CLUB',['El horizonte','es solo el inicio.'],'Hay mundos que no aparecen en los mapas. Encontrá el tuyo.', ['#07161b','#0c2026','#dfb96f','#f6eddb','#aabbbd'],'spray','compass'),
@@ -15,7 +16,7 @@ const configs={
  phoenix:define('Fénix','IGNIS','EVERY LEGEND BEGINS WITH A SPARK',['Todo comienza','con una chispa.'],'De la oscuridad al fuego. Una experiencia que deja huella.', ['#1a0b0d','#2c1516','#f7c277','#faeedb','#c5aaa2'],'embers','flame'),
 };
 export const WORLD_IDS=Object.freeze(Object.keys(configs));
-export const WORLDS=Object.freeze(Object.fromEntries(WORLD_IDS.map((id,index)=>[id,Object.freeze({...configs[id],id,index,art:`assets/cinematic/${id}.avif`,light:id==='candy'})])));
+export const WORLDS=Object.freeze(Object.fromEntries(WORLD_IDS.map((id,index)=>[id,Object.freeze({...configs[id],id,index,art:cinematicArt(id),light:id==='candy'})])));
 export const COVER_WORLDS=Object.freeze({orbita:'space',velvet:'cyberpunk',solstice:'phoenix',blackjack:'steampunk',monolith:'olympus',bloom:'candy',eclipse:'pirates',baccarat:'western',prisma:'space',solar:'phoenix',ruleta:'olympus',flora:'dinosaurs'});
 export function resolveWorld(value,fallback='pirates') {
  return typeof value==='string' && Object.hasOwn(WORLDS,value) ? value : (typeof fallback==='string' && Object.hasOwn(WORLDS,fallback) ? fallback : 'pirates');

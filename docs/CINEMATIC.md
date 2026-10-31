@@ -20,7 +20,9 @@ Las direcciones `?world=pirates` hasta `?world=phoenix` permiten abrir el Maker 
 
 ## Código y recursos
 
-- `public/muestra/cinematic/`: HTML, módulos, estilos y dieciocho AVIF locales (nueve portadas y nueve atlas de iconos).
+- `public/muestra/cinematic/`: HTML, módulos, estilos, nueve portadas nuevas y los recursos originales conservados.
+- `artwork/cinematic-hd/`: originales PNG de las nueve ilustraciones nuevas y manifiesto con dimensiones y hashes; fuera del directorio publicado.
+- `scripts/prepare-cinematic-art.py`: reconstruye los AVIF desde esos originales, sin ampliar ni reducir sus dimensiones.
 - `cinematic/maker-bridge.mjs`: contrato `__demo`, nombre/logo/colores, sincronización de portada y eventos del iframe. Sólo acepta mensajes del padre del mismo origen.
 - `cinematic-controls.js/css` y `cinematic-settings.mjs`: selector secundario, preferencias, normalización y ámbito de edición.
 - `scripts/install-cinematic.mjs`: importación reproducible del checkout de Temas y registro de la familia, sin duplicarla.
@@ -57,14 +59,18 @@ Los ajustes privados del navegador siguen en su origen; no forman parte del ZIP 
 
 La prueba se publica con [Cloudflare Previews](https://developers.cloudflare.com/workers/previews/configuration/), bajo el Worker existente y con `previews: {}`. Sólo utiliza los recursos estáticos de esta rama y la API de demostración, sin bindings de datos. La URL es pública, igual que la demo existente. La versión activa previa es `277536e4-acd6-4821-9809-c7bb12b4e9f9` y se conserva para comparar.
 
-La Preview `cinematic-trial` usa el despliegue `d0ccc109-0b4b-452d-95d6-0ee5f68ccf33`. Se repitió el recorrido completo de Cinematic y las cuatro comprobaciones HTTP del Worker sobre la URL publicada. Se comprobó además que la dirección original conserva su selector anterior y la dirección de prueba incorpora Cinematic.
+La Preview `cinematic-trial` se actualiza independientemente de producción. Su primer despliegue fue `d0ccc109-0b4b-452d-95d6-0ee5f68ccf33`. Se repite el recorrido de Cinematic sobre la URL publicada. La dirección original conserva su selector anterior y la dirección de prueba incorpora Cinematic.
 
 ```sh
 npx wrangler preview --name cinematic-trial --worker-name rushybet-replica --ignore-base-config
 ```
 
-La comprobación de privacidad habitual se ejecuta antes de construir o publicar. Se verifican 18 imágenes nuevas, 47 pruebas de módulos y los recorridos del editor. `tests/cinematic-maker-browser.cjs` prueba los nueve mundos, filtros/favoritos, nombre, logo, paletas, sustitución de portada, reglas por mundo, JSON, recarga, mensajes ajenos rechazados, panel/lobby, otra plantilla y móvil. Se mantienen las pruebas anteriores de las 17 plantillas.
+La comprobación de privacidad habitual se ejecuta antes de construir o publicar. Se verifican 49 pruebas de módulos y dos pruebas de resolución, dimensiones y metadatos (`npm run test:art`), además de los recorridos del editor. `tests/cinematic-maker-browser.cjs` prueba los nueve mundos, resolución real de cada portada, filtros/favoritos, nombre, logo, paletas, sustitución de portada, reglas por mundo, JSON, recarga, mensajes ajenos rechazados, panel/lobby, otra plantilla y móvil. Se mantienen las pruebas anteriores de las 17 plantillas.
 
-## Límites visuales
+## Calidad de las ilustraciones
 
-Las portadas son recortes conceptuales pequeños, ampliados para la prueba. No se generan ilustraciones HD nuevas. Los nueve mundos comparten estructura y catálogo; cambian identidad, arte, iconos y ambientación. Las nuevas funciones de catálogo masivo o backend quedan fuera de esta prueba.
+El 31 de octubre se sustituyeron las nueve portadas conceptuales pequeñas por ilustraciones generadas individualmente a resolución nativa de **1254 × 1254 píxeles**. No son 4K ni se han ampliado artificialmente. Los nueve AVIF suman aproximadamente 5 MB; cada mundo carga su propia portada. Los atlas de iconos conservan su arte original.
+
+Los PNG y AVIF se reconstruyen sin EXIF, XMP ni comentarios mediante `python scripts/prepare-cinematic-art.py`. El manifiesto no incluye rutas privadas. La rama `backup/cinematic-concept-20261031` conserva el estado anterior y los recursos originales siguen disponibles. La identidad de las portadas se normaliza a su ruta antigua para que las imágenes personalizadas ya guardadas continúen aplicándose.
+
+Los nueve mundos comparten estructura y catálogo; cambian identidad, arte, iconos y ambientación. Las nuevas funciones de catálogo masivo o backend quedan fuera de esta prueba.
