@@ -1,0 +1,4 @@
+.maker-brand-logo{max-width:180px;max-height:50px;object-fit:contain}.brand>[hidden],.maker-brand-logo[hidden]{display:none!important}
+.button{background:var(--maker-button,var(--accent));color:var(--maker-button-ink,#171a1b)}.maker-art-off #scene-image,.maker-art-off .scene-backdrop,.maker-art-off .scene-light,.maker-art-off .scene-mist,.maker-art-off .scene-orbit,.maker-art-off .atmosphere,.maker-art-off .game-cover>img,.maker-art-off .world-choice>img,.maker-art-off .teaser>img{display:none!important}
+html[data-maker-select=true] #scene-image{pointer-events:auto}
+@media(max-width:600px){.maker-brand-logo{max-width:140px;max-height:35px}}
