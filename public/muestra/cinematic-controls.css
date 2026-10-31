@@ -1,0 +1,4 @@
+.cinematic-controls{margin:14px 0;padding:15px;border:1px solid var(--linea-2,#ffffff20);border-radius:12px;background:var(--campo,#191919)}
+.cinematic-controls[hidden]{display:none!important}.cinematic-controls h4{margin:0 0 12px;font:600 13px var(--f-cuerpo,system-ui);color:var(--tx,#eee)}
+.design-editor .cinematic-controls label{display:flex;flex-direction:column;gap:7px;margin:10px 0;font-size:12px}.design-editor .cinematic-controls select{width:100%;min-width:0;min-height:42px;color:var(--tx,#eee);background:var(--elevado,#242424);border:1px solid var(--linea-2,#444);border-radius:8px;padding:8px 10px;font:inherit}
+.design-editor .cinematic-controls .cinematic-color-choice{flex-direction:row;align-items:center;line-height:1.5}.cinematic-controls input{width:17px;height:17px;accent-color:var(--foco,#e0b05f)}.cinematic-controls p{margin:8px 0 0;color:var(--tx-2,#aaa);font-size:11px;line-height:1.6}

@@ -31,6 +31,7 @@ Abrir `http://127.0.0.1:8787`. Con el servidor activo, ejecutar `npm run test:ru
 
 - [Manual del editor](docs/USO.md)
 - [Edición visual de elementos](docs/EDICION-VISUAL.md)
+- [Prueba Cinematic: nueve mundos y respaldo](docs/CINEMATIC.md)
 - [Arquitectura y mantenimiento](docs/ARQUITECTURA.md)
 - [Publicación y recuperación](docs/PUBLICACION.md)
 - [Pruebas y límites](docs/PRUEBAS.md)
