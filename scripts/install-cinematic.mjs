@@ -2,8 +2,8 @@ import {readFile,writeFile,mkdir,copyFile} from 'node:fs/promises';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
-export const TEMAS_REVISION='3370909b82c40ee1d8d91768dc6e22ed706132d8';
-export const CINEMATIC_IDS=['pirates','olympus','cyberpunk','steampunk','space','western','candy','dinosaurs','phoenix'];
+export const TEMAS_REVISION='7c4165ba90352dce24ef2c7e888b83db0a1a1499';
+export const CINEMATIC_IDS=['pirates','olympus','cyberpunk','steampunk','space','western','candy','dinosaurs','phoenix','egypt','japan','china','india','vikings','atlantis','dragons','vampires','artdeco','masquerade','muertos','alchemy','ice','forest','racing','wasteland','eldorado','astral'];
 export function registerCinematic(source){
  if(source.includes('cinematic:`Cinematic · prueba`'))return source;
  const patches=[
@@ -27,15 +27,16 @@ export async function installCinematic(sourceDirectory){
  const revision=execFileSync('git',['-C',source,'rev-parse','HEAD'],{encoding:'utf8'}).trim();
  if(revision!==TEMAS_REVISION)throw Error('La fuente Temas no coincide con la revisión documentada');
  await mkdir(target+'/assets/cinematic',{recursive:true});await mkdir(target+'/assets/icons',{recursive:true});await mkdir(target+'/themes',{recursive:true});
- for(const file of ['app.mjs','schema.mjs','motion.mjs','styles.css','icons.mjs','icons.css','icon-registry.mjs','favicon.svg']){
+ for(const file of ['app.mjs','schema.mjs','motion.mjs','styles.css','icons.mjs','icons.css','icon-registry.mjs','favicon.svg','expansion.mjs','expansion-ui.mjs','expansion-icons.mjs','expansion.css']){
   let text=await readFile(path.join(source,'public/cinematic',file),'utf8');
-  if(file==='schema.mjs')text="import {cinematicArt} from './art.mjs';\n"+text.replace("from '../model.mjs'","from './model.mjs'").replace('art:`assets/cinematic/${id}.avif`','art:cinematicArt(id)').replace('/** The imagery is cropped from the approved concept board. Replace art URLs with HD renders when available. */','/** Independent generated illustrations; original concept crops remain available for recovery. */');
-  if(file==='app.mjs')text=text.replace("const KEY='temas:v1'","const KEY='maker:cinematic:catalog:v1'").replace('async function setWorld(','export async function setWorld(');
+  if(file==='schema.mjs')text="import {cinematicArt} from './art.mjs';\n"+text.replace("import { EXPANSION_ART } from './expansion-art.mjs';",'').replace("from '../model.mjs'","from './model.mjs'").replace('art:EXPANSION_ART[id]?.file||`assets/cinematic/${id}.avif`','art:cinematicArt(id)').replace('/** The imagery is cropped from the approved concept board. Replace art URLs with HD renders when available. */','/** Independent generated illustrations, served locally at their native resolution. */');
+  if(file==='app.mjs')text=text.replace("import { prepareExpansionArt } from './expansion-art.mjs';",'').replace("const KEY='temas:v1'","const KEY='maker:cinematic:catalog:v1'").replace('async function setWorld(','export async function setWorld(').replace("const art=id=>globalThis.TEMAS_ART?.[id]||(WORLDS[id].expansion?'data:image/png;base64,AAAA':WORLDS[id].art);","const art=id=>WORLDS[id].art;").replace('await prepareExpansionArt();','').replace(/Las ilustraciones proceden[^.]+\./,'Las ilustraciones se generaron individualmente y se sirven en alta resoluci\u00f3n desde recursos locales.');
+  if(file==='expansion-ui.mjs')text=text.replace("link.href='cinematic/expansion.css'","link.href=new URL('./expansion.css',import.meta.url).href;link.id='expansion-styles'");
   await writeFile(target+'/'+file,text);
  }
  await copyFile(path.join(source,'public/model.mjs'),target+'/model.mjs');
  await copyFile(path.join(source,'public/themes/worlds.mjs'),target+'/themes/worlds.mjs');
- for(const id of CINEMATIC_IDS)for(const group of ['cinematic','icons'])await copyFile(path.join(source,'public/assets',group,id+'.avif'),target+'/assets/'+group+'/'+id+'.avif');
+ for(const id of CINEMATIC_IDS.slice(0,9))for(const group of ['cinematic','icons'])await copyFile(path.join(source,'public/assets',group,id+'.avif'),target+'/assets/'+group+'/'+id+'.avif');
  let html=await readFile(path.join(source,'public/index.html'),'utf8');
  html=html.replaceAll('href="cinematic/','href="').replaceAll('src="cinematic/','src="').replace('<body>','<body data-catalog="cinematic">');
   html=html.replaceAll('src="assets/cinematic/','src="assets/cinematic-hd/');

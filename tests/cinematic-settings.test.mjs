@@ -1,7 +1,7 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';
 import {normalizeCinematic,cinematicFromQuery,cinematicPage,WORLD_OPTIONS} from '../public/muestra/cinematic-settings.mjs';
-test('Cinematic accepts only nine worlds and an explicit brand-color option',()=>{
- assert.equal(WORLD_OPTIONS.length,9);
+test('Cinematic accepts only 27 worlds and an explicit brand-color option',()=>{
+ assert.equal(WORLD_OPTIONS.length,27);
  assert.deepEqual(normalizeCinematic({world:'candy',brandColors:true,script:'ignored'}),{world:'candy',brandColors:true});
  for(const world of ['constructor','__proto__','../../outside','unknown'])assert.deepEqual(normalizeCinematic({world,brandColors:'true'}),{world:'pirates',brandColors:false});
  assert.deepEqual(normalizeCinematic(null),{world:'pirates',brandColors:false});
@@ -16,4 +16,12 @@ test('visual edits belong to each Cinematic world while the panel remains shared
  assert.equal(cinematicPage('cinematic','lobby',{world:'space'}),'cinematic_space:lobby');
  assert.equal(cinematicPage('cinematic','panel',{world:'space'}),'cinematic:panel');
  assert.equal(cinematicPage('ravenbet','lobby',{world:'space'}),'ravenbet:lobby');
+});
+
+test('expanded worlds preserve their own editor page and query selection',()=>{
+ for(const world of ['egypt','japan','china','india','vikings','atlantis','dragons','vampires','artdeco','masquerade','muertos','alchemy','ice','forest','racing','wasteland','eldorado','astral']){
+  assert.equal(normalizeCinematic({world}).world,world);
+  assert.equal(cinematicFromQuery('?world='+world,{}).world,world);
+  assert.equal(cinematicPage('cinematic','lobby',{world}),'cinematic_'+world+':lobby');
+ }
 });

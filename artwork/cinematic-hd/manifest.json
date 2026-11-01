@@ -77,6 +77,151 @@
       "pngSha256": "ab05fc7a87ee15f0072250a441e26339911a2629aa0e6da0f27c3b7526a01494",
       "avifBytes": 688569,
       "avifSha256": "df9c50c2732c93d4654303f18db46b7b80ccebd76e6ed9cc9e5a90a4280d7afd"
+    },
+    "egypt": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2532397,
+      "pngSha256": "9ed80237c8fed6b4fc5a96a1b180476a641385342b26fa2fdd07f3bdb36fe4fb",
+      "avifBytes": 457585,
+      "avifSha256": "d07a25b83520921a9cb2644cf7e487b0c4df73cb2a57eb57c1dbd2fc0cf6d56b"
+    },
+    "japan": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2814447,
+      "pngSha256": "344e54c71a8b015c3ae8c6089171e8f745c845025c1d9c72845a4f1992931f63",
+      "avifBytes": 570140,
+      "avifSha256": "ad16bf0483c2ad4110b12ec5cc524cdd7df4e0294e41e5edf3de11b12fb316dc"
+    },
+    "china": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2757034,
+      "pngSha256": "2459b31bfa09495a1afb1560e9d7b34d8e6fd000dba078601b60c055233bb9eb",
+      "avifBytes": 531209,
+      "avifSha256": "b430ef3c9dab9926f7599d9101eec9ae3486e52208c73498f5f4c6b5289b5e06"
+    },
+    "india": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2853578,
+      "pngSha256": "ef7ba1a83fabb6f42fe19697e4226aba7765a58c6f75ac7e615aae0d175b6eaa",
+      "avifBytes": 602883,
+      "avifSha256": "8f54d583e73ece37a8e584ca2b8ea4cea6914cd5b39904fa5e508a0e40c20a1e"
+    },
+    "vikings": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2797686,
+      "pngSha256": "7d89234c4907175841605fbed582a965061a78e565739e41ee164bb36c852f4f",
+      "avifBytes": 509247,
+      "avifSha256": "40960bd2bfd2a676f6378c01725cd4689ce258fef646ac4813a0bba3e248d001"
+    },
+    "atlantis": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 3052783,
+      "pngSha256": "114043e9c25f13a74efcb949859566311f03a85a36469590c17317668ce7f7d5",
+      "avifBytes": 682153,
+      "avifSha256": "9823741bff7006696eb5bf581aac0e912d7257781f6ce377849531b3b5b9a50f"
+    },
+    "dragons": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2727039,
+      "pngSha256": "0cf2d13cabacff91670c533d1324b51ef5d80124a344fee3c929a440dd912862",
+      "avifBytes": 508013,
+      "avifSha256": "b235c28abeca63520ce3b2d79198b4a29201ce96f2ff59bd419c6830ce727189"
+    },
+    "vampires": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2562084,
+      "pngSha256": "84203424535b899e68395a7d83a9f3888280ff94b7a11fa5ceea5eb2d8106f9b",
+      "avifBytes": 406200,
+      "avifSha256": "fef11d975e2d41ebd490eac48265f64e903adbe5d656f9c494747d3d7c16ae8b"
+    },
+    "artdeco": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2687877,
+      "pngSha256": "5733f732892e5910693a70ed34e8ef90e1230a2cf21997731b6d47fa881ef01c",
+      "avifBytes": 544637,
+      "avifSha256": "8c188e554cd1512a488ed462f1033dc05b3407075bea5fd07559f60fa8e96561"
+    },
+    "masquerade": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2799099,
+      "pngSha256": "357937f7fd325aaf440ba5eb88d423f550c17dbb77748be40f57c497611e96bb",
+      "avifBytes": 500513,
+      "avifSha256": "9b4e0247611ae162bfadf6e5e644f2c67edcdbde6cbe02cf06e9f040c8e352f2"
+    },
+    "muertos": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2813843,
+      "pngSha256": "9cfd352a43bc35d2d2db62adbb56d814f893485053209deb2111cd21574102ca",
+      "avifBytes": 611967,
+      "avifSha256": "335780f4c4daba364502f29f038a1c92413a76c459c5378852b7c68b890e7ec9"
+    },
+    "alchemy": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2624832,
+      "pngSha256": "21bc72fa22f271ae81220d86d476cd33a1b429252c6f29655fc7af3b7dfa1f4b",
+      "avifBytes": 515297,
+      "avifSha256": "55724b502e668d1337ce937ad97f867829f20efc483e00d927fc295e3d86fe95"
+    },
+    "ice": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2963859,
+      "pngSha256": "495cbae4ba35245cf3fb13b577ef60774bebf6fc08cde911b42af399e5230198",
+      "avifBytes": 586792,
+      "avifSha256": "55fccf6eae9a87bf32a55ed04a079afa39257b1ed5da8f67b1061dba9eddfb78"
+    },
+    "forest": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 3075508,
+      "pngSha256": "aa8800978ab460edb347e17d6985eba43abe42f2ebe0b7e727d932cf8f6f1f10",
+      "avifBytes": 692092,
+      "avifSha256": "36432f9400934a64608b2ec1618e4d87af53b24914acd894094d372c93723d55"
+    },
+    "racing": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2571961,
+      "pngSha256": "35c409e69350e5868f426616e107e10af45a643640d60a97cfabac827902120f",
+      "avifBytes": 427635,
+      "avifSha256": "a6f4752be7797e888e2cbb13980f6167b453f65806aa7fee358a3a65e77fb76b"
+    },
+    "wasteland": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2436898,
+      "pngSha256": "a8cf580530a6bfa1ec2894f7050edd34dbf07cfcc60c13f3ba7263f36d2ba8f7",
+      "avifBytes": 373042,
+      "avifSha256": "a957162c89b310f81f6f6546ee18cfaf9191f41b8daaf8b0a890d6beaf9caa44"
+    },
+    "eldorado": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2948118,
+      "pngSha256": "5ab48bac3d803be5ea3d912e351172f49e7ee3e595e4de7a4e4cbdc77a2a66f1",
+      "avifBytes": 642892,
+      "avifSha256": "aae6f9e558bc4ce1e9bd1ee0e28a11109e256a0b399464af9e436503f6a71c24"
+    },
+    "astral": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 3116460,
+      "pngSha256": "9cd2df5242c5622b3447ae3c9b0fe46170fab076cc0451daeb3ef5aff216b735",
+      "avifBytes": 678344,
+      "avifSha256": "fe8b844d65a048c122b70c5c7560f93882d1f7f56dca757376e95bedea6c735d"
     }
-  }
+  },
+  "updated": "2026-11-01"
 }

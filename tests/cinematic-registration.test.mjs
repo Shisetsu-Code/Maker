@@ -17,3 +17,15 @@ test('Cinematic registers one allowed family, an independent frame and its label
  assert.equal((html.match(/data-valor="cinematic"/g)||[]).length,1);
  assert.equal(installCinematicHtml(html),html);
 });
+
+test('imported runtime uses independent art and nested-frame expansion styles',async()=>{
+ const read=name=>readFile('public/muestra/cinematic/'+name,'utf8');
+ const app=await read('app.mjs'),schema=await read('schema.mjs'),ui=await read('expansion-ui.mjs');
+ assert.doesNotMatch(app,/prepareExpansionArt|TEMAS_ART|data:image\/png;base64,AAAA/);
+ assert.doesNotMatch(schema,/EXPANSION_ART/);
+ assert.match(schema,/art:cinematicArt\(id\)/);
+ assert.match(app,/export async function setWorld/);
+ assert.doesNotMatch(app,/no son renders individuales/);
+ assert.match(app,/Las ilustraciones se generaron individualmente/);
+ assert.match(ui,/new URL\('\.\/expansion\.css',import\.meta\.url\)/);
+});

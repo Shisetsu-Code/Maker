@@ -10,3 +10,10 @@ test('upgraded art keeps the same element identity so saved image replacements s
  assert.equal(canonicalCinematicAsset('/muestra/cinematic/assets/cinematic/space.avif'),'/muestra/cinematic/assets/cinematic/space.avif');
  assert.equal(canonicalCinematicAsset('/muestra/ravenbet/assets/space.avif'),'/muestra/ravenbet/assets/space.avif');
 });
+
+test('expanded world art stays local and preserves saved image identity',()=>{
+ for(const id of ['egypt','japan','china','india','vikings','atlantis','dragons','vampires','artdeco','masquerade','muertos','alchemy','ice','forest','racing','wasteland','eldorado','astral']){
+  assert.equal(cinematicArt(id),'assets/cinematic-hd/'+id+'.avif');
+  assert.equal(canonicalCinematicAsset('/muestra/cinematic/assets/cinematic-hd/'+id+'.avif'),'/muestra/cinematic/assets/cinematic/'+id+'.avif');
+ }
+});
