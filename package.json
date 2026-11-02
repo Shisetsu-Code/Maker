@@ -10,6 +10,7 @@
     "check:assets": "node scripts/check-assets.mjs",
     "sanitize:assets": "python scripts/image_privacy.py",
     "test:privacy": "python tests/image_privacy_test.py",
+    "test:art": "python tests/cinematic_art_test.py",
     "check:privacy": "node scripts/check-public-privacy.mjs && python scripts/image_privacy.py --check",
     "deploy": "wrangler deploy"
   },
