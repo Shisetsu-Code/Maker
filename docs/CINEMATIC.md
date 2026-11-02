@@ -73,7 +73,13 @@ npx wrangler preview --name cinematic-trial --worker-name rushybet-replica --ign
 
 La comprobación de privacidad habitual se ejecuta antes de construir o publicar. Se verifican 52 pruebas de módulos y tres pruebas de resolución, dimensiones, metadatos e integridad del manifiesto (`npm run test:art`), además de los recorridos del editor. `tests/cinematic-maker-browser.cjs` prueba los 27 mundos, resolución real de cada portada, buscador de universos, filtros 27/18/9, filtros/favoritos del catálogo, nombre, logo, paletas, sustitución de portada en mundos antiguos y nuevos, reglas por mundo, JSON, recarga, mensajes ajenos rechazados, panel/lobby, otra plantilla y móvil. `tests/cinematic-expansion-layout-browser.cjs` recorre los 18 mundos nuevos en computadora y celular, verifica desbordamientos y carga de recursos, y genera capturas representativas. Se mantienen las pruebas anteriores de las 17 plantillas.
 
-## Calidad de las ilustraciones
+## Marcos y separadores temáticos
+
+El 2 de noviembre de 2026 se añadieron 27 conjuntos vectoriales de esquinas y líneas, definidos en `cinematic/frames.mjs` y presentados con `frames.css`. Incluyen cabo trenzado para Piratas, grecas para Olimpo, circuitos para Cyberpunk, engranajes para Steampunk, arcos ojivales para Vampiros, olas para Atlántida y plumas de fuego para Fénix. Los motivos se aplican a portada, categorías, separadores, tarjetas y pequeños acentos. Usan el color de acento vigente, incluido el modo de marca del Maker.
+
+Las esquinas mantienen su proporción al cambiar de tamaño; en celular se reducen y las líneas laterales pierden intensidad. La capa decorativa está oculta a lectores de pantalla y no recibe clics. Se reemplaza el contorno anterior de la portada. El importador conserva estos adaptadores propios del Maker. `tests/cinematic-frames-browser.cjs` verifica los 27 motivos distintos, el cambio de mundo, una sola capa decorativa, ausencia de desbordamiento en computadora/celular y ausencia de errores de navegador.
+
+## Resolución de las ilustraciones
 
 El 31 de octubre se sustituyeron las nueve portadas conceptuales pequeñas por ilustraciones generadas individualmente. El 1 de noviembre se generaron otras 18: las 27 tienen resolución nativa de **1254 × 1254 píxeles**. No son 4K ni se han ampliado artificialmente. Los 27 AVIF suman 14.883.890 bytes, aproximadamente 15 MB; el conjunto incluye portada y miniaturas de universos, con carga diferida en la galería. Los nueve atlas de iconos originales se conservan; los nuevos iconos son vectoriales.
 

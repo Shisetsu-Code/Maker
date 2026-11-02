@@ -43,7 +43,7 @@ export async function installCinematic(sourceDirectory){
  html=html.replace('id="scene-image" src=','id="scene-image" src=').replace('alt="" aria-hidden="true" fetchpriority="high"','alt="Portada del mundo" fetchpriority="high"');
  const policy="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'";
  html=html.replace('<head>','<head><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="'+policy+'">');
- html=html.replace('</head>','<link rel="stylesheet" href="maker.css">\n</head>').replace('</body>','<script type="module" src="maker-bridge.mjs"></script><script type="module" src="../design-editor.js"></script>\n</body>');
+ html=html.replace('</head>','<link rel="stylesheet" href="maker.css">\n<link rel="stylesheet" href="frames.css">\n</head>').replace('</body>','<script type="module" src="maker-bridge.mjs"></script><script type="module" src="../design-editor.js"></script>\n</body>');
  await writeFile(target+'/index.html',html);
  await writeFile('public/muestra/socio.js',registerCinematic(await readFile('public/muestra/socio.js','utf8')));
  await writeFile('public/muestra/socio.html',installCinematicHtml(await readFile('public/muestra/socio.html','utf8')));

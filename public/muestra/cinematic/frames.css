@@ -1,0 +1,25 @@
+/* Ornament stays outside the hit area of the visual editor and navigation. */
+.thematic-frame{position:absolute;inset:12px;z-index:3;pointer-events:none;color:var(--accent);opacity:.72}
+.thematic-frame *{pointer-events:none}
+.thematic-corner{position:absolute;width:48px;height:48px;background:currentColor;mask:var(--ornament-corner) center/contain no-repeat}
+.thematic-corner.tl{left:0;top:0}.thematic-corner.tr{right:0;top:0;transform:rotate(90deg)}.thematic-corner.br{right:0;bottom:0;transform:rotate(180deg)}.thematic-corner.bl{left:0;bottom:0;transform:rotate(270deg)}
+.thematic-edge{position:absolute;background:currentColor;opacity:.5}
+.thematic-edge.top,.thematic-edge.bottom{left:47px;right:47px;height:12px;mask:var(--ornament-line) center/48px 18px repeat-x}
+.thematic-edge.top{top:0}.thematic-edge.bottom{bottom:0;transform:rotate(180deg)}
+.thematic-edge.left,.thematic-edge.right{top:47px;bottom:47px;width:1px;background:linear-gradient(transparent,currentColor 15%,currentColor 85%,transparent)}
+.thematic-edge.left{left:5px}.thematic-edge.right{right:5px}
+/* Replace the previous generic outline instead of stacking two frames. */
+html[data-frame-theme] .hero::before,html[data-frame-theme] .hero::after{display:none}
+html[data-frame-theme] .category-deck{border:0;border-radius:0;background:none;padding-bottom:14px}
+html[data-frame-theme] .category-deck::after,html[data-frame-theme] .worlds-editorial::before,html[data-frame-theme] .worlds-editorial::after{content:'';position:absolute;left:0;right:0;height:18px;pointer-events:none;background:var(--accent);mask:var(--ornament-line) center/64px 24px repeat-x;opacity:.55}
+html[data-frame-theme] .category-deck::after{bottom:0}
+html[data-frame-theme] .worlds-editorial{position:relative;border:0;padding-top:48px;padding-bottom:48px}
+html[data-frame-theme] .worlds-editorial::before{top:0}html[data-frame-theme] .worlds-editorial::after{bottom:0}
+html[data-frame-theme] .category+.category::before{width:16px;height:28px;top:calc(50% - 14px);left:-8px;background:var(--accent);mask:var(--ornament-corner) center/24px 24px no-repeat;opacity:.35}
+html[data-frame-theme] .category.active::after{height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+html[data-frame-theme] .game-cover,html[data-frame-theme] .world-choice,html[data-frame-theme] .teaser{border-radius:var(--ornament-radius);border-color:var(--line)}
+html[data-frame-theme] .game-cover::before,html[data-frame-theme] .world-choice::after{content:'';position:absolute;inset:6px;pointer-events:none;z-index:3;background:var(--accent);mask-image:var(--ornament-corner),var(--ornament-corner-reverse);mask-size:32px 32px;mask-position:top left,bottom right;mask-repeat:no-repeat;opacity:.8}
+html[data-frame-theme] .fine-line,html[data-frame-theme] .eyebrow-line{width:42px;height:12px;background:var(--accent);mask:var(--ornament-line) center/42px 16px no-repeat}
+html[data-frame-theme] .subtle-link{border-bottom:0;position:relative;padding-bottom:15px}
+html[data-frame-theme] .subtle-link::after{content:'';position:absolute;bottom:0;left:0;right:0;height:7px;background:var(--accent);mask:var(--ornament-line) center/42px 16px repeat-x;opacity:.55;pointer-events:none}
+@media(max-width:600px){.thematic-frame{inset:7px;opacity:.62}.thematic-corner{width:32px;height:32px}.thematic-edge.top,.thematic-edge.bottom{left:31px;right:31px;height:8px;mask-size:40px 14px}.thematic-edge.left,.thematic-edge.right{top:31px;bottom:31px;opacity:.2}.thematic-edge.left{left:3px}.thematic-edge.right{right:3px}html[data-frame-theme] .category-deck::after{height:12px;mask-size:48px 18px}html[data-frame-theme] .worlds-editorial{padding-top:35px;padding-bottom:35px}html[data-frame-theme] .game-cover::before,html[data-frame-theme] .world-choice::after{mask-size:24px 24px;inset:4px}}

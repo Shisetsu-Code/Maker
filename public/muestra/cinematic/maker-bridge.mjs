@@ -1,4 +1,5 @@
 import {setWorld} from './app.mjs';
+import './frames.mjs';
 import {WORLDS} from './schema.mjs';
 import {normalizeCinematic,CINEMATIC_STORAGE} from '../cinematic-settings.mjs';
 const root=document.documentElement,state={vars:{},disc:{},imgs:{}};let settings=normalizeCinematic(),applying=0,configured=parent===window;
