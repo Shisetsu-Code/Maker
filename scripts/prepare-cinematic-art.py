@@ -4,7 +4,7 @@ from pathlib import Path
 from PIL import Image
 from image_privacy import clean_image
 ROOT=Path(__file__).resolve().parents[1]
-IDS=['pirates','olympus','cyberpunk','steampunk','space','western','candy','dinosaurs','phoenix','egypt','japan','china','india','vikings','atlantis','dragons','vampires','artdeco','masquerade','muertos','alchemy','ice','forest','racing','wasteland','eldorado','astral']
+IDS=['pirates','olympus','cyberpunk','steampunk','space','western','candy','dinosaurs','phoenix','egypt','japan','china','india','vikings','atlantis','dragons','vampires','artdeco','masquerade','muertos','alchemy','ice','forest','racing','wasteland','eldorado','astral','vegas']
 def main():
  parser=argparse.ArgumentParser();parser.add_argument('--import-sources',type=Path);args=parser.parse_args()
  masters=ROOT/'artwork/cinematic-hd';public=ROOT/'public/muestra/cinematic/assets/cinematic-hd';masters.mkdir(parents=True,exist_ok=True);public.mkdir(parents=True,exist_ok=True)
@@ -23,7 +23,7 @@ def main():
    size=list(fresh.size)
   png=masters/(id+'.png');avif=public/(id+'.avif')
   manifest['files'][id]={'width':size[0],'height':size[1],'pngBytes':png.stat().st_size,'pngSha256':hashlib.sha256(png.read_bytes()).hexdigest(),'avifBytes':avif.stat().st_size,'avifSha256':hashlib.sha256(avif.read_bytes()).hexdigest()}
- manifest['updated']='2026-11-01'
+ manifest['updated']='2026-11-02'
  manifest_path.write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf8')
  print(json.dumps({'illustrations':len(manifest['files']),'imported':len(sources),'dimensions':{id:[v['width'],v['height']]for id,v in manifest['files'].items()},'publicBytes':sum(v['avifBytes']for v in manifest['files'].values())}))
 if __name__=='__main__':main()

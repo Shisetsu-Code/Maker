@@ -1,5 +1,6 @@
 import {setWorld} from './app.mjs';
 import './frames.mjs';
+import {applyCasinoSettings} from './casino.mjs';
 import {WORLDS} from './schema.mjs';
 import {normalizeCinematic,CINEMATIC_STORAGE} from '../cinematic-settings.mjs';
 const root=document.documentElement,state={vars:{},disc:{},imgs:{}};let settings=normalizeCinematic(),applying=0,configured=parent===window;
@@ -20,11 +21,11 @@ function brand(){
  for(const node of document.querySelectorAll('.brand-name')){const text=name||WORLDS[root.dataset.world]?.brand||'Tu casino';if(node.textContent!==text)node.textContent=text;}
  document.body.classList.toggle('maker-art-off',state.disc.imgOn===false);
 }
-function paint(){colors();brand();}
+function paint(){colors();brand();applyCasinoSettings(settings.presentation);}
 async function configure(value){const version=++applying;settings=normalizeCinematic(value);const success=await setWorld(settings.world,{save:true});if(!success||version!==applying)return;paint();configured=true;}
 window.__demo={vista:'lobby',listo:true,dibujos:1,vars(value){if(!value||typeof value!=='object')return;for(const[key,v]of Object.entries(value))if(key.startsWith('--dm-')&&typeof v==='string'&&!/[;{}]/.test(v)&&/^#[0-9a-f]{3,8}$/i.test(v))state.vars[key]=v;colors();},disc(value){if(value&&typeof value==='object')Object.assign(state.disc,value);brand();},imgs(value){if(value&&typeof value==='object')Object.assign(state.imgs,value);brand();},estado(){return{vars:{...state.vars},disc:{...state.disc},imgs:{...state.imgs}};}};
 addEventListener('message',event=>{if(event.source!==parent||event.origin!==location.origin)return;const data=event.data;if(data?.tipo==='maker-cinematic-config')configure(data.settings).catch(()=>{});else for(const key of ['vars','disc','imgs'])if(data?.tipo===key&&data[key])window.__demo[key](data[key]);});
 document.addEventListener('temas:themechange',()=>{paint();if(configured){const world=root.dataset.world;if(parent===window){settings={...settings,world};try{localStorage.setItem(CINEMATIC_STORAGE,JSON.stringify(settings));}catch{}}else parent.postMessage({tipo:'maker-cinematic-world',world},location.origin);}});
 const scene=document.querySelector('#scene-image');new MutationObserver(()=>{const src=scene.getAttribute('src');if(src&&!/['"\\\n\r]/.test(src))document.querySelector('#hero').style.setProperty('--scene-url','url("'+src+'")');}).observe(scene,{attributes:true,attributeFilter:['src']});
-if(parent===window){let stored;try{stored=JSON.parse(localStorage.getItem(CINEMATIC_STORAGE));}catch{}const params=new URLSearchParams(location.search);configure({...normalizeCinematic(stored),world:params.get('theme')||stored?.world,brandColors:params.get('cinematicColor')==='brand'||stored?.brandColors===true}).catch(()=>{});}
+if(parent===window){let stored;try{stored=JSON.parse(localStorage.getItem(CINEMATIC_STORAGE));}catch{}const params=new URLSearchParams(location.search);configure({...normalizeCinematic(stored),world:params.get('theme')||stored?.world,presentation:{...stored?.presentation,layout:params.get('layout')||stored?.presentation?.layout},brandColors:params.get('cinematicColor')==='brand'||stored?.brandColors===true}).catch(()=>{});}
 else{parent.postMessage({tipo:'listo',vista:'lobby'},location.origin);parent.postMessage({tipo:'maker-cinematic-ready'},location.origin);}paint();

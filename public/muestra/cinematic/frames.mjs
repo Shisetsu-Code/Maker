@@ -1,6 +1,7 @@
 /** Local vector ornament. Geometry is trusted project data, never imported user CSS. */
 const frame=(name,corner,line,radius='3px')=>Object.freeze({name,corner,line,radius});
 export const FRAME_THEMES=Object.freeze({
+ vegas:frame('Marquesina y fichas','M5 44V14a9 9 0 0 1 9-9h30M12 44V20a8 8 0 0 1 8-8h24M20 27a8 8 0 1 0 16 0 8 8 0 1 0-16 0M28 19v4m0 8v4m-8-8h4m8 0h4','M0 12h18m28 0h18M22 12l10-10 10 10-10 10ZM32 7v10M5 8h2m5 8h2m36-8h2m5 8h2','6px'),
  pirates:frame('Cabo trenzado y herrajes','M5 44V12Q5 5 12 5H44M11 44V16Q11 11 16 11H44M4 25l8-8m-8 20 8-8M25 4l-8 8m20-8-8 8M18 18l6 6m-6 0 6-6','M0 10Q8 2 16 10T32 10T48 10T64 10M0 14Q8 22 16 14T32 14T48 14T64 14M0 12h64'),
  olympus:frame('Greca de mármol','M5 45V5h40M12 38V12h26v18H21V21h9M19 45v-7h26','M0 18h8V6h16v12h-8v-6h16V6h16v12h-8v-6h16V6h8'),
  cyberpunk:frame('Circuitos y cortes de neón','M4 44V14L14 4h30M12 44V22L22 12h22M3 28h12M28 3v12M36 12v7h8','M0 16h12l8-8h14l8 8h12l6-6h4M22 12h10M46 8h6', '0px'),

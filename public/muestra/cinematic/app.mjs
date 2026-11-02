@@ -1,4 +1,6 @@
 
+import {normalizePresentation} from '../casino-settings.mjs';
+import {groupCatalog,filterSpecialCategory} from './catalog-layout.mjs';
 import { initializeExpansionUI } from './expansion-ui.mjs';
 import { WORLDS, WORLD_IDS, GAMES, COVER_WORLDS, filterGames, resolveWorld, normalizeState } from './schema.mjs';
 import { Atmosphere } from './motion.mjs';
@@ -8,7 +10,8 @@ let state;try{state=normalizeState(JSON.parse(localStorage.getItem(KEY)));}catch
 const requested=new URLSearchParams(location.search).get('theme');
 state.theme=resolveWorld(requested,state.theme);
 const filters={query:'',category:'all',provider:'all',sort:'featured',favoritesOnly:false};
-let applied=null,epoch=0,toastTimer;
+let applied=null,epoch=0,toastTimer,presentation=normalizePresentation();
+export function setCatalogPresentation(value){const next=normalizePresentation(value);if(JSON.stringify(next)!==JSON.stringify(presentation)){presentation=next;renderCatalog();}}
 const atmosphere=new Atmosphere($('#atmosphere'),$('#hero'));
 function node(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;}
 function icon(name){const s=document.createElementNS('http://www.w3.org/2000/svg','svg');s.setAttribute('class','icon');s.setAttribute('aria-hidden','true');const u=document.createElementNS(s.namespaceURI,'use');u.setAttribute('href',`#i-${name}`);s.append(u);return s;}
@@ -58,23 +61,26 @@ export async function setWorld(value,{save=false}={}){
 $('#scene-image').addEventListener('error',()=>{$('#scene-image').hidden=true;$('.art-fallback').hidden=false;$('#hero').style.setProperty('--scene-url','none');});
 
 function renderCatalog(){
- const games=filterGames(GAMES,{...filters,favorites:state.favorites}),f=document.createDocumentFragment();
- for(const game of games){
+ const games=filterSpecialCategory(filterGames(GAMES,{...filters,favorites:state.favorites}),filters.special,state.recent),f=document.createDocumentFragment();
+ const grouped=presentation.layout==='casino'&&!filters.query&&filters.category==='all'&&filters.provider==='all'&&!filters.favoritesOnly&&!filters.special&&filters.sort==='featured';const groups=grouped?groupCatalog(games,presentation.sectionOrder):[{id:'filtered',games}];
+ for(const group of groups){if(grouped){const heading=node('div','catalog-section-heading');heading.dataset.catalogSection=group.id;heading.append(node('h3','',group.label));const more=node('button','',group.id==='all'?'Ver catálogo completo':'Ver todos');more.type='button';more.dataset.category=group.id==='all'?'catalog-all':group.id;heading.append(more);f.append(heading);}
+ for(const game of group.games){
   const card=node('article','game-card'),open=node('button','game-open');open.type='button';open.dataset.preview=game.id;
   open.setAttribute('aria-label',`Ver ${game.name}`);open.setAttribute('aria-haspopup','dialog');
   const cover=node('div','game-cover');cover.setAttribute('aria-hidden','true');
-  cover.append(image(COVER_WORLDS[game.id]),node('span','cover-badge',game.label.toLocaleUpperCase('es')),node('span','cover-title',game.name),node('span','cover-line'));
+  cover.append(node('span','game-play','Jugar · demo'),image(COVER_WORLDS[game.id]),node('span','cover-badge',game.label.toLocaleUpperCase('es')),node('span','cover-title',game.name),node('span','cover-line'));
   const meta=node('div','game-meta'),copy=node('div');copy.append(node('h3','',game.name),node('p','',game.provider));meta.append(copy,icon('up'));open.append(cover,meta);
   const favorite=node('button','favorite');favorite.type='button';favorite.dataset.favorite=game.id;
   const selected=state.favorites.includes(game.id);favorite.setAttribute('aria-pressed',String(selected));favorite.setAttribute('aria-label',`${selected?'Quitar':'Guardar'} ${game.name} ${selected?'de':'en'} favoritos`);favorite.append(icon('star'));
   card.append(open,favorite);f.append(card);
+ }
  }
  $('#games').replaceChildren(f);$('#empty-state').hidden=games.length!==0;
  $('#results-count').textContent=`${games.length} ${games.length===1?'experiencia':'experiencias'} de muestra`;
  $('#favorites-count').textContent=String(state.favorites.length);
 }
 function category(id){
- filters.category=['slots','live','table'].includes(id)?id:'all';filters.favoritesOnly=id==='favorites';
+ filters.category=['slots','live','table'].includes(id)?id:'all';filters.favoritesOnly=id==='favorites';filters.special=['roulette','blackjack','recent','new','featured','catalog-all'].includes(id)?id:null;
  $$('[data-category]').forEach(b=>{const selected=b.dataset.category===id;b.setAttribute('aria-pressed',String(selected));b.classList.toggle('active',selected);});
  renderCatalog();
 }
@@ -107,13 +113,14 @@ function openDialog(dialog,trigger){
 const information={
  login:['Tu acceso, próximamente.','Esta versión muestra la interfaz: no solicita contraseñas, no crea sesiones y no inventa un saldo. El acceso se conectará al sistema de autenticación real.'],
  register:['La experiencia empieza en el diseño.','El registro y la verificación de edad todavía no están conectados. Esta demo no solicita datos personales, contraseñas ni depósitos.'],
- about:['27 universos. Una base real.','Esta edición integra la dirección visual aprobada en una web funcional. Las ilustraciones se generaron individualmente y se sirven en alta resolución desde recursos locales. Las escenas, personajes y marcas son de muestra. La animación ambiental usa CSS y partículas: no es animación 3D ni esqueletal.'],
+ about:['28 universos. Una base real.','Esta edición integra la dirección visual aprobada en una web funcional. Las ilustraciones se generaron individualmente y se sirven en alta resolución desde recursos locales. Las escenas, personajes y marcas son de muestra. La animación ambiental usa CSS y partículas: no es animación 3D ni esqueletal.'],
  responsible:['Explorar con responsabilidad.','Demo visual para mayores de 18 años, sin apuestas ni premios reales. El juego no es una fuente de ingresos. Un servicio operativo necesitará verificación de edad, límites, autoexclusión y recursos de ayuda adecuados a su jurisdicción.'],
  privacy:['Tus preferencias se quedan acá.','El tema, los favoritos y el movimiento se guardan únicamente en este navegador. No hay seguimiento, fuentes externas ni envío de datos de cuenta. Podés borrar las preferencias eliminando los datos del sitio.'],
 };
 function info(id,trigger){if(!Object.hasOwn(information,id))return;const [title,body]=information[id];$('#info-title').textContent=title;$('#info-body').textContent=body;if(['login','register'].includes(id))document.dispatchEvent(new CustomEvent('temas:accountrequest',{detail:{action:id}}));openDialog($('#info-dialog'),trigger);}
 function preview(id,trigger){
  const g=GAMES.find(g=>g.id===id);if(!g)return;
+ state.recent=[id,...(state.recent||[]).filter(value=>value!==id)].slice(0,12);persist();
  $('#game-title').textContent=g.name;$('#game-provider').textContent=g.provider.toLocaleUpperCase('es');$('#game-image').src=art(COVER_WORLDS[id]);
  openDialog($('#game-dialog'),trigger);document.dispatchEvent(new CustomEvent('temas:preview',{detail:{gameId:id}}));
 }

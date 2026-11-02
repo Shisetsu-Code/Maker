@@ -221,7 +221,15 @@
       "pngSha256": "9cd2df5242c5622b3447ae3c9b0fe46170fab076cc0451daeb3ef5aff216b735",
       "avifBytes": 678344,
       "avifSha256": "fe8b844d65a048c122b70c5c7560f93882d1f7f56dca757376e95bedea6c735d"
+    },
+    "vegas": {
+      "width": 1254,
+      "height": 1254,
+      "pngBytes": 2108183,
+      "pngSha256": "e14bfb69ff340328ecedcde1d967ffc052f0c336a3a13d173d634b4186890215",
+      "avifBytes": 337567,
+      "avifSha256": "ca6f0a3c11ceb3fabe506dfb7677263a5f085f5c3520b832ee410bb2299273e7"
     }
   },
-  "updated": "2026-11-01"
+  "updated": "2026-11-02"
 }

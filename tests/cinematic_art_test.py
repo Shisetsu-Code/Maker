@@ -9,7 +9,7 @@ class CinematicArtTests(unittest.TestCase):
   code="import {WORLDS} from './public/muestra/cinematic/schema.mjs'; console.log(JSON.stringify(Object.fromEntries(Object.entries(WORLDS).map(([key,value])=>[key,value.art]))));"
   cls.art=json.loads(subprocess.check_output(['node','--input-type=module','-e',code],cwd=ROOT,text=True))
  def test_every_world_uses_independent_art_at_least_1200_pixels_per_side(self):
-  self.assertEqual(len(self.art),27)
+  self.assertEqual(len(self.art),28)
   for world,relative in self.art.items():
    with self.subTest(world=world),Image.open(ROOT/'public/muestra/cinematic'/relative) as image:
     self.assertGreaterEqual(min(image.size),1200,'The displayed hero must not use a small concept crop')

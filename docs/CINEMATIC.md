@@ -1,6 +1,6 @@
 # Cinematic · integración de prueba
 
-La familia incorpora **27 mundos** del repositorio [Temas](https://github.com/Shisetsu-Code/Temas), revisión `7c4165ba90352dce24ef2c7e888b83db0a1a1499`. Se conservan Piratas, Dioses griegos, Cyberpunk, Steampunk, Espacial/aliens, Vaqueros, Candyworld, Dinosaurios y Fénix, con sus nueve portadas mejoradas.
+La familia incorpora **28 mundos**, sobre la base del repositorio [Temas](https://github.com/Shisetsu-Code/Temas), revisión `7c4165ba90352dce24ef2c7e888b83db0a1a1499`, más Las Vegas de medianoche, añadido en el Maker. Se conservan Piratas, Dioses griegos, Cyberpunk, Steampunk, Espacial/aliens, Vaqueros, Candyworld, Dinosaurios y Fénix, con sus nueve portadas mejoradas. La [distribución Casino estandarizada](CASINO-LAYOUT.md) comparte controles entre todos los mundos y conserva el modo Cinemático.
 
 La ampliación del 1 de noviembre de 2026 añade Egipto oscuro, Japón samurái, China imperial, India palaciega, Vikingos, Atlántida, Dragones, Vampiros, Art Déco, Baile de máscaras, Día de Muertos, Alquimia, Reino de hielo, Bosque encantado, Automovilismo, Desierto posapocalíptico, El Dorado y Palacio astral. Incluye búsqueda de universos y filtros Todos/Nuevos/Originales; son mundos dentro de una sola familia del Maker. La prueba conserva doce juegos ficticios, con búsqueda, filtros, favoritos, diálogos e iconos. No conecta cuentas, apuestas, depósitos, retiros ni proveedores reales.
 

@@ -1,0 +1,44 @@
+/* Shared presentation contract for every world. No world-specific layout overrides. */
+.casino-category,#casino-promotion{display:none}.game-play{display:none}.catalog-section-heading{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px;font:600 22px/1.3 var(--display);color:var(--ink)}.catalog-section-heading button{background:transparent;color:var(--accent);font:11px/1.4 'Segoe UI',sans-serif;padding:10px 0}
+html[data-layout=casino][data-world] .site-header{height:70px}
+html[data-layout=casino][data-world] .main-nav{gap:20px}
+html[data-layout=casino][data-world] .hero,html[data-layout=casino][data-world] .hero-inner{height:auto;min-height:var(--casino-hero-height)}
+html[data-layout=casino][data-world] .hero-topline{padding-top:12px}
+html[data-layout=casino][data-world] .hero-copy{padding-top:12px;padding-bottom:15px;max-width:65%;margin:0}
+html[data-layout=casino][data-world] .hero-copy h1{font-size:clamp(28px,3.4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:5px 0 10px;font-weight:600}
+html[data-layout=casino][data-world] .hero-copy h1 span,html[data-layout=casino][data-world] .hero-copy h1 em{display:inline;margin-right:.2em}
+html[data-layout=casino][data-world] #casino-promotion{display:block;font-size:12px;line-height:1.5;max-width:500px;color:var(--muted)}
+html[data-layout=casino][data-world] .hero-copy .eyebrow,html[data-layout=casino][data-world] #hero-description,html[data-layout=casino][data-world] .hero-caption,html[data-layout=casino][data-world] .hero-bottom,html[data-layout=casino][data-world] .hero-cta [data-open-worlds]{display:none}
+html[data-layout=casino][data-world] .hero-cta{margin-top:12px}
+html[data-layout=casino][data-world] .hero-cta .button{min-height:36px;padding:8px 15px;font-size:11px}
+html[data-layout=casino][data-world] .scene-image{height:100%;width:70%;max-width:70%;top:0;right:0;object-fit:cover;object-position:70% 50%;mask-image:linear-gradient(90deg,transparent,#000 40%)}
+html[data-layout=casino][data-world] .thematic-frame{opacity:.4}
+html[data-layout=casino][data-world] .category-deck{display:flex;overflow-x:auto;scrollbar-width:thin;gap:4px;padding:8px 0;margin:0;position:relative;border-bottom:1px solid var(--line)}
+html[data-layout=casino][data-world] .category-deck::after,html[data-layout=casino][data-world] .category+.category::before{display:none}
+html[data-layout=casino][data-world] .category{min-width:110px;flex:1 0 auto;min-height:58px;padding:12px;gap:8px;flex-direction:row;font-size:11px;border-radius:8px}
+html[data-layout=casino][data-world] .category.active{background:color-mix(in srgb,var(--accent) 12%,var(--panel));color:var(--ink)}
+html[data-layout=casino][data-world] .category.active::after{display:none}
+html[data-layout=casino][data-world] .category .icon{height:23px;width:23px}
+html[data-layout=casino][data-world] .casino-category{display:flex}
+html[data-layout=casino][data-world] .catalog-heading{position:sticky;top:0;z-index:7;display:flex;gap:20px;align-items:center;margin:0;padding:16px 0 10px;background:var(--bg)}
+html[data-layout=casino][data-world] .catalog-heading h2{font:600 24px/1.2 var(--display);margin:0}
+html[data-layout=casino][data-world] .catalog-heading .eyebrow{display:none}
+html[data-layout=casino][data-world] .search{margin:0;min-width:220px;max-width:420px;flex:1}
+html[data-layout=casino][data-world] .catalog-tools{margin:8px 0 12px}
+html[data-layout=casino][data-world] .games-grid{grid-template-columns:repeat(var(--casino-columns),minmax(0,1fr));gap:18px 14px}
+html[data-layout=casino][data-world] .game-cover{aspect-ratio:3/3.5}
+html[data-layout=casino][data-world][data-card-size=compact] .game-cover{aspect-ratio:3/2.9}
+html[data-layout=casino][data-world][data-card-size=large] .game-cover{aspect-ratio:3/4.2}
+html[data-layout=casino][data-world] .game-cover::before{opacity:.3;mask-size:20px 20px}
+html[data-layout=casino][data-world] .cover-title{font-size:clamp(19px,2.3vw,30px);bottom:38px}
+html[data-layout=casino][data-world] .game-play{display:block;position:absolute;bottom:10px;left:12px;right:12px;text-align:center;background:var(--accent);color:var(--bg);padding:7px 10px;border-radius:4px;font:600 11px/1.2 'Segoe UI',sans-serif;z-index:3;opacity:0;transition:opacity .15s}
+html[data-layout=casino][data-world] .game-open:hover .game-play,html[data-layout=casino][data-world] .game-open:focus-visible .game-play{opacity:1}
+html[data-layout=casino][data-world] .game-meta h3{font-size:12px}html[data-layout=casino][data-world] .game-meta p{font-size:10px}
+html[data-ornaments=off] .thematic-frame,html[data-ornaments=off] .category-deck::after,html[data-ornaments=off] .worlds-editorial::before,html[data-ornaments=off] .worlds-editorial::after,html[data-ornaments=off] .game-cover::before,html[data-ornaments=off] .world-choice::after{display:none}
+html[data-ornaments=subtle] .game-cover::before{opacity:.25}html[data-ornaments=subtle] .thematic-frame{opacity:.35}
+
+@media(max-width:600px){html[data-layout=casino][data-world] .site-header{height:64px}html[data-layout=casino][data-world] .shell{padding-left:16px;padding-right:16px}html[data-layout=casino][data-world] .hero,html[data-layout=casino][data-world] .hero-inner{height:auto;min-height:clamp(220px,var(--casino-hero-height),340px)}html[data-layout=casino][data-world] .edition{display:none}html[data-layout=casino][data-world] .hero-topline{justify-content:flex-end;padding-top:8px}html[data-layout=casino][data-world] .world-trigger{font-size:8px;padding:6px 8px}html[data-layout=casino][data-world] .hero-copy{padding-top:8px;max-width:83%}html[data-layout=casino][data-world] .hero-copy h1{font-size:27px;margin:2px 0 7px}html[data-layout=casino][data-world] #casino-promotion{font-size:10px;max-width:240px;line-height:1.4}html[data-layout=casino][data-world] .hero-cta{margin-top:10px}html[data-layout=casino][data-world] .scene-shade{background:linear-gradient(90deg,var(--bg),color-mix(in srgb,var(--bg) 83%,transparent) 36%,transparent)}html[data-layout=casino][data-world] .scene-image{width:100%;max-width:100%;height:100%;mask-image:linear-gradient(90deg,transparent,#000 40%);object-position:70% center}html[data-layout=casino][data-world] .category{min-width:85px;min-height:60px;padding:10px 9px;font-size:9px;flex-direction:column;gap:5px}html[data-layout=casino][data-world] .category .icon{width:20px;height:20px}html[data-layout=casino][data-world] .catalog-heading{display:block;padding:10px 0 6px}html[data-layout=casino][data-world] .catalog-heading>div{display:none}html[data-layout=casino][data-world] .search{min-width:0;max-width:none;width:100%}html[data-layout=casino][data-world] .search input{height:36px}html[data-layout=casino][data-world] .catalog-tools{margin:5px 0 10px}html[data-layout=casino][data-world] .games-grid{grid-template-columns:repeat(var(--casino-mobile-columns),minmax(0,1fr));gap:15px 10px}html[data-layout=casino][data-world] .game-play{opacity:1;font-size:9px;padding:5px;left:8px;right:8px;bottom:7px}html[data-layout=casino][data-world] .cover-title{font-size:22px;bottom:33px}html[data-layout=casino][data-world] .catalog-section-heading{font-size:20px;margin-top:4px}html[data-layout=casino][data-world] .game-meta h3{font-size:10px}html[data-layout=casino][data-world] .game-meta p{font-size:8px}html[data-layout=casino][data-world][style*="--casino-mobile-columns: 3"] .cover-title{font-size:16px}html[data-layout=casino][data-world] .game-meta{gap:5px}}
+
+@media(max-width:600px){html[data-layout=casino][data-world] .header-actions .login{display:inline-flex;font-size:9px;padding:6px 0}html[data-layout=casino][data-world] .header-actions{gap:10px}html[data-layout=casino][data-world] .site-header{gap:10px}html[data-layout=casino][data-world] .brand-name{font-size:19px}}
+
+html[data-ornaments=off] .subtle-link::after,html[data-ornaments=off] .category+.category::before{display:none}html[data-ornaments=off] .fine-line,html[data-ornaments=off] .eyebrow-line{mask:none;height:1px;width:28px;opacity:.4}html[data-ornaments=full] .thematic-frame{opacity:.72}

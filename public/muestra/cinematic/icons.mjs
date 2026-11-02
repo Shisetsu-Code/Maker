@@ -1,3 +1,4 @@
+import {vegasIconUrl} from './vegas.mjs';
 import { expansionIconUrl } from './expansion-icons.mjs';
 import { ICON_FAMILIES, resolveIcon } from './icon-registry.mjs';
 
@@ -7,7 +8,7 @@ export function initializeThemedIcons(doc=document){
  doc.documentElement.dataset.iconsInstalled='true';
  const win=doc.defaultView,root=doc.documentElement;
  const status=new Map();
- const assets=Object.fromEntries(Object.keys(ICON_FAMILIES).map(id=>[id,globalThis.TEMAS_ICONS?.[id]||expansionIconUrl(id)||`assets/icons/${id}.avif`]));
+ const assets=Object.fromEntries(Object.keys(ICON_FAMILIES).map(id=>[id,globalThis.TEMAS_ICONS?.[id]||(id==='vegas'?vegasIconUrl():expansionIconUrl(id))||`assets/icons/${id}.avif`]));
  const used=new Set(),observers=[];
  let active=root.dataset.world||'pirates';
 

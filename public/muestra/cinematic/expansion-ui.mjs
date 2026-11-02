@@ -16,7 +16,7 @@ export function initializeExpansionUI(ids){
  label.htmlFor=input.id;label.append(input);toolbar.append(label);
  const groups=document.createElement('div');groups.className='universe-groups';groups.setAttribute('role','group');groups.setAttribute('aria-label','Filtrar universos');
  let active='all';
- for(const [id,name] of [['all',`Todos (${count})`],['new','Nuevos (18)'],['original','Originales (9)']]){
+ for(const [id,name] of [['all',`Todos (${count})`],['new',`Nuevos (${count-9})`],['original','Originales (9)']]){
   const button=document.createElement('button');button.type='button';button.textContent=name;button.dataset.universeGroup=id;button.setAttribute('aria-pressed',String(id===active));
   button.addEventListener('click',()=>{active=id;groups.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.universeGroup===id)));filter();});groups.append(button);
  }
@@ -31,5 +31,5 @@ export function initializeExpansionUI(ids){
   if(!card.hidden)visible++;
  }empty.hidden=visible>0;}
  input.addEventListener('input',filter);
- const note=document.querySelector('#world-dialog .dialog-footer>span');note.textContent='27 plantillas · Conceptos visuales · Demo 18+';
+ const note=document.querySelector('#world-dialog .dialog-footer>span');note.textContent=`${count} mundos · Conceptos visuales · Demo 18+`;
 }
