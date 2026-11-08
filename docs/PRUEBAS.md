@@ -9,7 +9,7 @@
 - `tests/element-editor-coverage-browser.cjs`: edición sobre textos existentes en las 17 plantillas y selección móvil.
 - `tests/element-overlap-browser.cjs`: dos fragmentos de un mismo título conservan estilos y texto sin ciclos de mutaciones.
 
-Con Playwright disponible en el proyecto, ejecutar `node tests/editor-browser-smoke.cjs`. En Codex se puede usar el paquete incluido indicando su carpeta en `WORKSPACE_NODE_MODULES`. `DEMO_ORIGIN` permite ejecutar las mismas comprobaciones contra Cloudflare.
+Con Playwright disponible en el proyecto, ejecutar `node tests/editor-browser-smoke.cjs`. `DEMO_ORIGIN` permite ejecutar las mismas comprobaciones contra Cloudflare.
 
 ## Revisión visual
 
