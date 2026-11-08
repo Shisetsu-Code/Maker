@@ -5,6 +5,7 @@
 - `public/muestra/socio.js`: personalizador original adaptado y selector de vistas. Es un bundle capturado; editar mediante adaptadores reproducibles y cambios puntuales.
 - `template-picker.js/css`: desplegable nativo de plantillas con el tema del editor. Toma sus opciones del registro existente y sincroniza selección, teclado y estado deshabilitado. `install-template-picker.mjs` lo instala desde el flujo de generación de plantillas.
 - `modern-lobbies-page.mjs` y `modern-lobbies.js/css`: vistas de Fenarys, Fortuna SJK, RavenBet y LuckRex sobre el controlador común, con catálogos locales separados. Ver [recuperación y sanitización](FENARYS-FORTUNA-RAVENBET-LUCKREX.md).
+- `signature-lobbies-page.mjs`, `signature-lobbies.js/css` y `signature-catalog.mjs`: diseños originales Aureum, Kitsune y Orbit, con portadas propias, catálogo local curado y controlador compartido entre los tres. El instalador registra paletas, nombres y rutas; las vistas conservan `window.__demo`, `data-catalog` y `design-editor.js` para la personalización y edición visual. Ver [diseños Signature](SIGNATURE.md).
 - `design-settings.mjs`: normaliza tipografía, fondos y contenido importado; genera CSS limitado a valores permitidos.
 - `design-editor.js`: monta controles, persiste ajustes y comunica vistas mediante mensajes del mismo origen. Las vistas aceptan cambios sólo desde su padre.
 - `element-settings.mjs`, `element-store.mjs`, `element-editor.js` y `element-view.js`: edición visual por plantilla/pantalla con IndexedDB, historial, restauración y recursos incluidos en archivos. Ver [edición visual](EDICION-VISUAL.md).
@@ -30,6 +31,10 @@ npm run check:assets
 ```
 
 Los HAR permanecen fuera del repositorio. El manifiesto intermedio se genera en `work/`. El adaptador instala el editor y la descarga de ajustes; `add-template.mjs` registra Resort y no sobrescribe sus archivos propios. Antes de publicar una nueva captura, revisar conflictos, recursos faltantes y pruebas de navegador.
+
+## Regenerar las plantillas originales
+
+`node scripts/install-lobby-templates.mjs` genera también `aureum.html`, `kitsune.html` y `orbit.html`, y mantiene las veinte opciones del selector. Modificar el generador, los estilos o el controlador; los HTML se regeneran. Las imágenes de juegos se reutilizan desde recursos locales y las portadas viven en `public/muestra/signature/assets/`. No se agregan dependencias ni servicios externos.
 
 ## Añadir una sección Resort
 

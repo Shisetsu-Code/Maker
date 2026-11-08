@@ -2,12 +2,14 @@
 
 [Demo en Cloudflare](https://rushybet-replica.braian-n-l.workers.dev) · [Repositorio](https://github.com/Shisetsu-Code/Maker)
 
-Personalizador de muestra reconstruido a partir de capturas HAR, con diecisiete plantillas, vista de lobby y panel, simulación de computadora/celular y edición de marca. Resort (Rushybet 2) permite editar portada y distribución. Las plantillas externas Bateupix, Cobraya, Lunabet, Multisala, Pinaplay, Celuapuestas40, Bet30, CasinoTower30, Fenarys, Fortuna SJK, RavenBet y LuckRex usan recursos locales e interacciones demo.
+Personalizador de muestra con veinte plantillas, vista de lobby y panel, simulación de computadora/celular y edición de marca. Combina interfaces reconstruidas a partir de capturas HAR con diseños originales. Resort (Rushybet 2) permite editar portada y distribución. Las plantillas externas Bateupix, Cobraya, Lunabet, Multisala, Pinaplay, Celuapuestas40, Bet30, CasinoTower30, Fenarys, Fortuna SJK, RavenBet y LuckRex usan recursos locales e interacciones demo.
+
+**Aureum, Kitsune y Orbit** suman tres diseños originales: un club editorial verde y champán, un santuario japonés nocturno y una estación espacial azul y menta. Tienen portadas propias, catálogo local curado, búsqueda, categorías, proveedores y favoritos. Los títulos, imágenes y controles se editan desde Maker. Ver [diseños Signature](docs/SIGNATURE.md).
 
 ## Qué se puede editar
 
 - Plantilla desde un menú desplegable compacto, integrado al tema del Maker.
-- Selección directa en la vista previa para editar imágenes, textos, botones, campos y bloques de las 17 plantillas.
+- Selección directa en la vista previa para editar imágenes, textos, botones, campos y bloques de las 20 plantillas.
 - Estilos y visibilidad por elemento, restauración y deshacer/rehacer; guardado independiente por plantilla y pantalla.
 - Nombre, logo, colores, fuentes, tamaño, peso y fondos propios.
 - Portada Resort: título, descripción, botón e imagen.
@@ -40,6 +42,7 @@ Abrir `http://127.0.0.1:8787`. Con el servidor activo, ejecutar `npm run test:ru
 - [Plantilla Celuapuestas40](docs/CELUAPUESTAS40.md)
 - [Plantillas Bet30 y CasinoTower30](docs/BET30-CASINOTOWER30.md)
 - [Fenarys, Fortuna SJK, RavenBet y LuckRex](docs/FENARYS-FORTUNA-RAVENBET-LUCKREX.md)
+- [Aureum, Kitsune y Orbit](docs/SIGNATURE.md)
 
 El nombre npm y el Worker conservan `rushybet-replica` para mantener la dirección existente. El repositorio de entrega es Maker. La carpeta `outputs/` contiene documentos de etapas previas; las especificaciones originales describen la recuperación inicial, no todas las funciones posteriores.
 

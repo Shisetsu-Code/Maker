@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es" data-catalog="orbit">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0a101e">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>Orbit · Casino demo</title>
+  <link rel="stylesheet" href="signature-lobbies.css">
+</head>
+<body data-catalog="orbit">
+  <a class="sg-skip" href="#sg-discover">Ir a los juegos</a>
+
+  <header class="sg-header">
+    <div class="sg-header-inner">
+      <button id="sg-menu" class="sg-menu sg-icon-button" aria-label="Abrir menú" aria-controls="sg-sidebar" aria-expanded="false"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+      <a class="sg-brand" href="#top" aria-label="Orbit · Inicio">
+    <span class="sg-mark"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5"/><ellipse cx="12" cy="12" rx="11" ry="4" transform="rotate(-35 12 12)"/><path d="m17 3 1.5-1M5.5 22 7 21"/></svg></span>
+    <span class="sg-wordmark"><strong id="sg-name">Orbit</strong><small class="sg-brand-caption">Explore beyond</small></span>
+    <img id="sg-logo" alt="Logo de tu casino" hidden>
+  </a>
+      <nav class="sg-header-nav" aria-label="Navegación principal">
+        <button data-filter="todos" aria-pressed="true" class="active">Explorar</button>
+        <button data-filter="vivo" aria-pressed="false">En vivo</button>
+        <button data-filter="top" aria-pressed="false">Destacados</button>
+        <button data-info="Club Orbit">La misión</button>
+      </nav>
+      <div class="sg-access">
+        <span class="sg-demo-badge"><i></i> MODO DEMO</span>
+        <button class="sg-signin" data-info="Ingresar">Ingresar</button>
+        <button class="sg-button sg-register" data-info="Crear cuenta">Crear cuenta<svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <button class="sg-menu-backdrop" id="sg-menu-backdrop" aria-label="Cerrar menú" data-menu-close hidden></button>
+  <aside id="sg-sidebar" class="sg-sidebar" aria-label="Menú de exploración">
+    <div class="sg-sidebar-head"><span>CONTROL DE MISIÓN</span><button class="sg-icon-button" aria-label="Cerrar menú" data-menu-close><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"/></svg></button></div>
+    <div class="sg-sidebar-links">
+      <button data-filter="todos" aria-pressed="true" class="active"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="6" height="6" rx="1.3"/><rect x="14" y="4" width="6" height="6" rx="1.3"/><rect x="4" y="14" width="6" height="6" rx="1.3"/><rect x="14" y="14" width="6" height="6" rx="1.3"/></svg><span>Todos los juegos</span></button>
+<button data-filter="slots" aria-pressed="false"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m7 4-4 1.3 3.6 14.5 4.1-1"/><rect x="9" y="3" width="12" height="17" rx="2"/><path d="m15 8 3 3.5-3 3.5-3-3.5 3-3.5Z"/></svg><span>Slots</span></button>
+<button data-filter="vivo" aria-pressed="false"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M6.4 6.4a8 8 0 0 0 0 11.2M17.6 6.4a8 8 0 0 1 0 11.2M3.6 3.6a12 12 0 0 0 0 16.8M20.4 3.6a12 12 0 0 1 0 16.8"/></svg><span>Casino en vivo</span></button>
+<button data-filter="crash" aria-pressed="false"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 18 6-7 4 3 8-10M14 4h7v7"/><path d="M3 22h18"/></svg><span>Crash</span></button>
+    </div>
+    <p class="sg-sidebar-label">TU ESPACIO</p>
+    <div class="sg-sidebar-links">
+      <button data-filter="top" aria-pressed="false"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9L3.5 9.2l5.9-.9L12 3Z"/></svg><span>Destacados</span></button>
+      <button data-filter="favoritos" aria-pressed="false"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.8 5.9a5.4 5.4 0 0 0-7.6 0L12 7.1l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 22l8.8-8.5a5.4 5.4 0 0 0 0-7.6Z"/></svg><span>Mis favoritos</span></button>
+      <button data-info="Club"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 2 9 10-9 10L3 12 12 2Z"/><path d="M3 12h18M12 2l4 10-4 10-4-10 4-10Z"/></svg><span>Orbit Club</span></button>
+    </div>
+    <div class="sg-sidebar-bottom">
+      <div class="sg-rail-orbit" aria-hidden="true"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5"/><ellipse cx="12" cy="12" rx="11" ry="4" transform="rotate(-35 12 12)"/><path d="m17 3 1.5-1M5.5 22 7 21"/></svg><span>KEEP EXPLORING</span></div>
+      <button data-info="Ayuda"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 13v-1a8 8 0 0 1 16 0v1M4 13H2v6h4v-6H4Zm16 0h2v6h-4v-6h2ZM20 19c0 2-3 3-6 3"/></svg><span>¿Te ayudamos?</span><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+      <p>18+ <span>·</span> Modo demo</p>
+    </div>
+  </aside>
+  <main class="sg-main" id="top">
+    <div class="sg-orbit-page-heading"><div><span>BASE /</span><h2>Descubrir</h2></div><p><i></i> EXPLORACIÓN SIN LÍMITES</p></div>
+    <section class="sg-hero" id="sg-hero" aria-labelledby="sg-hero-title">
+    <img id="sg-hero-art" src="signature/assets/orbit-hero.webp" alt="Estación espacial esférica con anillos de metal y luces menta en el espacio azul profundo" fetchpriority="high" decoding="async" width="1536" height="1024">
+    <div class="sg-orbit-coordinate" aria-hidden="true"><span>O / 01</span><i></i><span>EXPLORER SERIES</span></div>
+    <div class="sg-hero-copy">
+      <p class="sg-eyebrow"><span class="sg-crosshair" aria-hidden="true">+</span>EL PRÓXIMO DESTINO LO ELEGÍS VOS</p>
+      <h1 id="sg-hero-title">Fuera de<br><em>lo habitual.</em></h1>
+      <p id="sg-hero-description">Un universo de juegos por explorar. Elegí tu destino y empezá una nueva misión.</p>
+      <div class="sg-hero-actions"><button class="sg-button" data-filter="todos">Iniciar exploración<svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button><button class="sg-text-button" data-info="Club Orbit">Descubrir Orbit<svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></button></div>
+    </div>
+    <div class="sg-orbit-hero-foot"><span><b>01</b> ELEGÍ TU DESTINO</span><i></i><span><b>02</b> INICIÁ LA MISIÓN</span></div>
+  </section>
+    <section class="sg-orbit-destinations" aria-label="Destinos de exploración">
+    <button data-filter="slots"><span class="sg-destination-icon"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m7 4-4 1.3 3.6 14.5 4.1-1"/><rect x="9" y="3" width="12" height="17" rx="2"/><path d="m15 8 3 3.5-3 3.5-3-3.5 3-3.5Z"/></svg></span><span><small>DESTINO / 01</small><strong>Universo slots</strong></span><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+    <button data-filter="vivo"><span class="sg-destination-icon"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M6.4 6.4a8 8 0 0 0 0 11.2M17.6 6.4a8 8 0 0 1 0 11.2M3.6 3.6a12 12 0 0 0 0 16.8M20.4 3.6a12 12 0 0 1 0 16.8"/></svg></span><span><small>DESTINO / 02</small><strong>Casino en vivo</strong></span><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+    <button data-filter="crash"><span class="sg-destination-icon"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 18 6-7 4 3 8-10M14 4h7v7"/><path d="M3 22h18"/></svg></span><span><small>DESTINO / 03</small><strong>Zona crash</strong></span><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+  </section>
+    <section class="sg-discover" id="sg-discover" aria-labelledby="sg-title">
+    <div class="sg-discovery-head">
+      <div><p class="sg-section-caption">TU CENTRO DE EXPLORACIÓN</p><div class="sg-title-row"><h2 id="sg-title">Todos los juegos</h2><span id="sg-count" aria-live="polite"></span></div></div>
+      <label class="sg-search-control"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><input id="sg-search" type="search" placeholder="Buscar tu próximo juego" aria-label="Buscar juegos o proveedores" autocomplete="off"><button id="sg-clear-search" class="sg-icon-button" aria-label="Borrar búsqueda" hidden><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"/></svg></button></label>
+    </div>
+    <div class="sg-discovery-nav">
+      <nav class="sg-categories" aria-label="Categorías del catálogo"><button data-filter="todos" aria-pressed="true" class="active"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="6" height="6" rx="1.3"/><rect x="14" y="4" width="6" height="6" rx="1.3"/><rect x="4" y="14" width="6" height="6" rx="1.3"/><rect x="14" y="14" width="6" height="6" rx="1.3"/></svg><span>Todos</span></button><button data-filter="slots" aria-pressed="false"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m7 4-4 1.3 3.6 14.5 4.1-1"/><rect x="9" y="3" width="12" height="17" rx="2"/><path d="m15 8 3 3.5-3 3.5-3-3.5 3-3.5Z"/></svg><span>Slots</span></button><button data-filter="vivo" aria-pressed="false"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M6.4 6.4a8 8 0 0 0 0 11.2M17.6 6.4a8 8 0 0 1 0 11.2M3.6 3.6a12 12 0 0 0 0 16.8M20.4 3.6a12 12 0 0 1 0 16.8"/></svg><span>Casino en vivo</span></button><button data-filter="crash" aria-pressed="false"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 18 6-7 4 3 8-10M14 4h7v7"/><path d="M3 22h18"/></svg><span>Crash</span></button><button data-filter="favoritos" aria-pressed="false"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.8 5.9a5.4 5.4 0 0 0-7.6 0L12 7.1l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 22l8.8-8.5a5.4 5.4 0 0 0 0-7.6Z"/></svg><span>Favoritos</span></button></nav>
+      <label class="sg-provider-control"><span class="sg-sr-only">Proveedor</span><select id="sg-provider" aria-label="Filtrar por proveedor"><option value="todos">Todos los proveedores</option></select><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m7 10 5 5 5-5"/></svg></label>
+    </div>
+    <div id="sg-games" class="sg-grid"></div>
+    <p id="sg-empty" class="sg-empty" hidden><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><span>No encontramos juegos en esta selección.</span><button class="sg-button sg-button-outline" data-reset-filters>Restablecer filtros<svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button></p>
+    <p id="sg-status" role="status" aria-live="polite"></p>
+  </section>
+    <section class="sg-closing" aria-label="Tu espacio de juego"><div><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5"/><ellipse cx="12" cy="12" rx="11" ry="4" transform="rotate(-35 12 12)"/><path d="m17 3 1.5-1M5.5 22 7 21"/></svg><div><p>El universo sigue ahí afuera.</p><span>Tus próximos destinos, en un solo lugar.</span></div></div><button class="sg-text-button" data-filter="favoritos">Mis favoritos<svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button></section>
+  <footer class="sg-footer"><p><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="5"/><ellipse cx="12" cy="12" rx="11" ry="4" transform="rotate(-35 12 12)"/><path d="m17 3 1.5-1M5.5 22 7 21"/></svg><span>EXPLORE BEYOND</span></p><div><span class="sg-age">18+</span><span>Modo demo</span><i></i><span>Sin apuestas reales</span><button data-info="Juego responsable">Juego responsable<svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 18 18 6M6 6h12v12"/></svg></button></div></footer>
+  </main>
+  <nav class="sg-mobile" aria-label="Navegación móvil">
+    <button data-filter="todos" aria-pressed="true" class="active"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m16 8-2 6-6 2 2-6 6-2Z"/></svg><span>Explorar</span></button>
+    <button data-filter="slots" aria-pressed="false"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m7 4-4 1.3 3.6 14.5 4.1-1"/><rect x="9" y="3" width="12" height="17" rx="2"/><path d="m15 8 3 3.5-3 3.5-3-3.5 3-3.5Z"/></svg><span>Slots</span></button>
+    <button data-filter="vivo" aria-pressed="false"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="3"/><path d="M6.4 6.4a8 8 0 0 0 0 11.2M17.6 6.4a8 8 0 0 1 0 11.2M3.6 3.6a12 12 0 0 0 0 16.8M20.4 3.6a12 12 0 0 1 0 16.8"/></svg><span>En vivo</span></button>
+    <button data-filter="favoritos" aria-pressed="false"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.8 5.9a5.4 5.4 0 0 0-7.6 0L12 7.1l-1.2-1.2a5.4 5.4 0 0 0-7.6 7.6L12 22l8.8-8.5a5.4 5.4 0 0 0 0-7.6Z"/></svg><span>Favoritos</span></button>
+    <button data-info="Ingresar"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/></svg><span>Mi cuenta</span></button>
+  </nav>
+  <dialog id="sg-dialog" aria-modal="true" aria-labelledby="sg-dialog-title"><button class="sg-dialog-close sg-icon-button" data-close aria-label="Cerrar"><svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M6 18 18 6"/></svg></button><p class="sg-section-caption">TU ESPACIO</p><h2 id="sg-dialog-title"></h2><div id="sg-dialog-body"></div><button class="sg-button" data-close>Volver<svg class="sg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12h15m-6-6 6 6-6 6"/></svg></button></dialog>
+  <script type="module" src="signature-lobbies.js"></script>
+  <script type="module" src="design-editor.js"></script>
+</body>
+</html>

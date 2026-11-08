@@ -1,6 +1,6 @@
 # Edición visual de las plantillas
 
-El editor permite modificar elementos de la interfaz en las 17 plantillas, tanto en el lobby como en el panel. Los cambios de contenido se guardan por **plantilla y pantalla**; los controles generales de tipografía/fondo conservan su alcance compartido.
+El editor permite modificar elementos de la interfaz en las 20 plantillas, tanto en el lobby como en el panel. Los cambios de contenido se guardan por **plantilla y pantalla**; los controles generales de tipografía/fondo conservan su alcance compartido.
 
 ## Uso
 
@@ -22,6 +22,8 @@ Durante la selección los clics eligen elementos y no ejecutan sus acciones. La 
 **Imagen de este bloque** permite llegar a una portada situada detrás de un texto o a un fondo CSS. **Seleccionar bloque contenedor** sube a la sección/tarjeta que contiene el elemento; Alt + clic también permite seleccionar un bloque.
 
 La misma imagen se identifica por su recurso original y sus copias dentro de una plantilla comparten el cambio. Las tarjetas con imagen se identifican por el recurso del juego, para que un filtro no aplique la modificación a otra tarjeta situada en la misma posición.
+
+Aureum, Kitsune y Orbit incluyen portadas originales con títulos y botones en HTML editable. Cada diseño conserva sus cambios de elementos por separado, aunque comparta imágenes del catálogo con los otros. Ver [diseños Signature](SIGNATURE.md).
 
 ## Recuperar y guardar
 
@@ -53,4 +55,4 @@ node tests/element-overlap-browser.cjs
 node tests/editor-browser-smoke.cjs
 ```
 
-El primer recorrido prueba selección, texto/estilo, imagen, ocultar, historial, recarga, aislamiento, tarjetas filtradas y archivos. El segundo modifica un texto existente en cada una de las 17 plantillas y verifica selección móvil. El tercero conserva la cobertura de tipografía, fondos, Resort y compatibilidad con archivos anteriores.
+El primer recorrido prueba selección, texto/estilo, imagen, ocultar, historial, recarga, aislamiento, tarjetas filtradas y archivos. El segundo modifica un texto existente en cada una de las 20 plantillas y verifica selección móvil. El tercero comprueba los estilos y textos de fragmentos superpuestos; el cuarto conserva la cobertura de tipografía, fondos, Resort y compatibilidad con archivos anteriores.
