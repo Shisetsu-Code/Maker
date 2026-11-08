@@ -31,4 +31,6 @@
 - [x] **2. Catalog and interactions.** Add curated local games and `filterGames(games, { category, provider, query, favorites })` to `public/muestra/signature-catalog.mjs`; test combined filters and asset paths. Implement `public/muestra/signature-lobbies.js` using the view's `sg-*` IDs, `data-filter`, `data-provider`, `data-game`, `data-favorite`, `data-info`, and `data-close` controls. Verify local demo launches and editor messages.
 - [x] **3. Maker registration.** Extend `scripts/install-lobby-templates.mjs`, regenerate HTML and editor bundle, and update selector/coverage counts to 20. Test registration and second-run idempotence.
 - [x] **4. Visual and functional verification.** Run `npm test`, runtime smoke and new browser coverage for the three themes. Check resources, responsive layouts, customization, visual editing and old-template selection. Review the complete diff independently, fix concrete issues, update documentation and commit the tested changes on the feature branch.
-- [ ] **5. Delivery.** Push the feature branch and open a reviewable pull request with screenshots and verification results. Report the three templates and PR link concisely.
+- [x] **5. Delivery.** Push the feature branch and open a reviewable pull request with screenshots and verification results. Report the three templates and PR link concisely.
+
+**Delivery:** [Pull request #5](https://github.com/Shisetsu-Code/Maker/pull/5).
