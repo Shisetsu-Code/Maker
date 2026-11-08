@@ -4,7 +4,7 @@ const {chromium}=require(process.env.WORKSPACE_NODE_MODULES?path.join(process.en
  const context=await browser.newContext({acceptDownloads:true}),page=await context.newPage({viewport:{width:1440,height:1000}}),errors=[];
  page.on('pageerror',e=>errors.push(e.message));const origin=process.env.DEMO_ORIGIN||'http://127.0.0.1:8801';
  const skip=async()=>{const b=page.locator('.socio-tour-saltar');try{await b.waitFor({state:'visible',timeout:1800});await b.click();}catch{}};
- await page.goto(origin+'/muestra/socio.html#v=1&p=c41e1e&f=080707&t=191313&n=Nahuel&vista=lobby&disp=compu&pl=ravenbet');await skip();
+ await page.goto(origin+'/muestra/socio.html#v=1&p=c41e1e&f=080707&t=191313&n=MiCasino&vista=lobby&disp=compu&pl=ravenbet');await skip();
  await page.waitForFunction(()=>window.__makerElements);const panel=page.locator('.element-editor');
  const active=()=>page.frameLocator('[data-activo="true"] iframe');
  await active().locator('.md-hero-copy h1').waitFor();

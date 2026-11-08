@@ -12,7 +12,7 @@ npx wrangler login
 npm run deploy
 ```
 
-En otra cuenta, cambiar `account_id` y autenticar con ella. No subir archivos `.env`, HAR o credenciales. Después de publicar, ejecutar las pruebas de funcionamiento con `DEMO_ORIGIN` apuntando a la URL y revisar el editor en navegador.
+Para publicar, autenticar con `wrangler login` o definir `CLOUDFLARE_ACCOUNT_ID` y `CLOUDFLARE_API_TOKEN` en el entorno (nunca en el repositorio). No subir archivos `.env`, HAR o credenciales. Después de publicar, ejecutar las pruebas de funcionamiento con `DEMO_ORIGIN` apuntando a la URL y revisar el editor en navegador.
 
 ## GitHub Maker
 

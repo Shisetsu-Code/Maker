@@ -8,7 +8,7 @@ const games=[
 {id:'joker',name:'Fire Joker',provider:'Play’n GO',code:'firejoker',vendor:'PLAYNGO',cat:'slots',image:'slot-playngo/firejoker.webp'},
 {id:'legacy',name:'Legacy of Dead',provider:'Play’n GO',code:'legacyofdead',vendor:'PLAYNGO',cat:'slots',image:'slot-playngo/legacyofdead.webp'},
 {id:'roulette',name:'Mesa de ruleta',provider:'Casino en vivo · Demo',code:'roulette',vendor:'DEMO',cat:'vivo',localImage:'azul/assets/vivo-2.webp',tag:'EN VIVO'}];
-const $=s=>document.querySelector(s),state={cat:'todos',query:'',favorites:new Set(),vars:{},disc:{nombre:'Nahuel'},imgs:{}};
+const $=s=>document.querySelector(s),state={cat:'todos',query:'',favorites:new Set(),vars:{},disc:{nombre:'Mi Casino'},imgs:{}};
 const dialog=$('#dialog');
 function notice(title,text){$('#dialog-title').textContent=title;$('#dialog-content').textContent=text;dialog.showModal();}
 function scrollGames(){const target=['#discover','.games-section','.lounge','.hero'].map($).find(node=>node&&!node.hidden);target?.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}
