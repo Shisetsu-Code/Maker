@@ -42,4 +42,4 @@ Los HAR permanecen fuera del repositorio. Si cambia la captura, limpiar previame
 
 ## Verificación
 
-`npm test` comprueba proyección, fuentes permitidas y resolución de imágenes Qt/Next. Con servidor activo, `tests/lobby-templates-browser-smoke.cjs` admite `DEMO_TEMPLATE=fenarys`, `fortunasjk`, `ravenbet` o `luckrex`, junto a `DEMO_ORIGIN` y Playwright en `WORKSPACE_NODE_MODULES`. Verifica la plantilla, catálogo, imágenes iniciales, categorías, búsqueda, favoritos, juego local, marca y móvil sin solicitudes externas. `template-picker-browser-smoke.cjs` comprueba las 17 opciones del Maker, teclado, recarga y selección móvil.
+`npm test` comprueba proyección, fuentes permitidas y resolución de imágenes Qt/Next. Con servidor activo, `tests/lobby-templates-browser-smoke.cjs` admite `DEMO_TEMPLATE=fenarys`, `fortunasjk`, `ravenbet` o `luckrex`, junto a `DEMO_ORIGIN` y Playwright en `WORKSPACE_NODE_MODULES`. Verifica la plantilla, catálogo, imágenes iniciales, categorías, búsqueda, favoritos, juego local, marca y móvil sin solicitudes externas. `template-picker-browser-smoke.cjs` comprueba las 20 opciones del Maker, teclado, recarga y selección móvil.
